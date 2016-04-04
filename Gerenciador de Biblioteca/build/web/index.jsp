@@ -17,6 +17,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <!--CSS do index.jsp -->
+    <link href="css/index.css" rel="stylesheet">
+    
+    
   </head>
   <body>
       
@@ -48,6 +53,19 @@
                 </div>
               </div>
             </nav>
+            
+            <div class="row" id="tituloIndex">
+                
+                
+                <div class="col-xs-5 col-md-4">
+                    <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
+                </div>
+                
+                <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
+                    <h1>Biblioteca</h1>
+                </hgroup>
+            
+            </div>
             
         </header>
     
