@@ -71,6 +71,33 @@
         <!-- Artigo com ele tem o conteudo da pagina -->
     <article id="pesquisaIndex"  class="row">
           
+<<<<<<< .mine
+          <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+              
+              <form class="form-horizontal">
+                  
+                  <div class="form-group">
+                    <label for="slcTipoPesquisa" class="col-xs-6 col-md-3 control-label">Pesquisar Pelo: </label>
+                    <div class="col-xs-8 col-md-6">
+                        <select class="form-control" id="slcTipoPesquisa">
+                            <option>Nome Do Livro</option>
+                            <option>Autor Do Livro</option>
+                        </select>
+                    </div>
+||||||| .r4
+          <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+              
+              <form class="form-horizontal">
+                  
+                  <div class="form-group">
+                    <label for="slcTipoPesquisa" class="col-xs-6 col-md-3 control-label">Pesquisar pelo: </label>
+                    <div class="col-xs-8 col-md-6">
+                        <select class="form-control" id="slcTipoPesquisa">
+                            <option>nome do livro</option>
+                            <option>autor do livro</option>
+                        </select>
+                    </div>
+=======
         <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
 
             <form class="form-horizontal">
@@ -82,6 +109,7 @@
                           <option>nome do livro</option>
                           <option>autor do livro</option>
                       </select>
+>>>>>>> .r6
                   </div>
                 </div>
 
