@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< .mine
+        <group/>
+||||||| .r4
+        <group>
+            <file>file:/C:/Users/i7/Documents/Projeto%205º%20Semestre%20Uninove/trunk/Gerenciador%20de%20Biblioteca/web/index.jsp</file>
+            <file>file:/C:/Users/i7/Documents/Projeto%205º%20Semestre%20Uninove/trunk/Gerenciador%20de%20Biblioteca/web/css/index.css</file>
+        </group>
+=======
         <group>
             <file>file:/C:/Users/i7/Documents/Projeto%205º%20Semestre%20Uninove/trunk/Gerenciador%20de%20Biblioteca/web/login.jsp</file>
             <file>file:/C:/Users/i7/Documents/Projeto%205º%20Semestre%20Uninove/trunk/Gerenciador%20de%20Biblioteca/web/livros.jsp</file>
@@ -10,5 +18,6 @@
             <file>file:/C:/Users/i7/Documents/Projeto%205º%20Semestre%20Uninove/trunk/Gerenciador%20de%20Biblioteca/web/index.jsp</file>
             <file>file:/C:/Users/i7/Documents/Projeto%205º%20Semestre%20Uninove/trunk/Gerenciador%20de%20Biblioteca/web/perfil.jsp</file>
         </group>
+>>>>>>> .r5
     </open-files>
 </project-private>
