@@ -56,6 +56,7 @@
         <!-- logo e titulo -->
         <div class="row" id="tituloIndex">
 
+
             <div class="col-xs-5 col-md-4">
                 <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
             </div>
@@ -69,28 +70,37 @@
     </header>
         <!-- Artigo com ele tem o conteudo da pagina -->
     <article id="pesquisaIndex"  class="row">
-          <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2"> 
-              <form class="form-horizontal">
-                  <div class="form-group">
-                    <label for="slcTipoPesquisa" class="col-xs-6 col-md-3 control-label">Pesquisar Pelo: </label>
-                    <div class="col-xs-8 col-md-6">
-                        <select class="form-control" id="slcTipoPesquisa">
-                            <option>Nome Do Livro</option>
-                            <option>Autor Do Livro</option>
-                        </select>
-                    </div>
+          
+        <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+
+            <form class="form-horizontal">
+
+                <div class="form-group">
+                  <label for="slcTipoPesquisa" class="col-xs-6 col-md-3 control-label">Pesquisar pelo: </label>
+                  <div class="col-xs-8 col-md-6">
+                      <select class="form-control" id="slcTipoPesquisa">
+                          <option>nome do livro</option>
+                          <option>autor do livro</option>
+                      </select>
+                  </div>
+                </div>
+
                 <div class="form-group">
                   <div class="col-xs-8 col-md-8 col-md-offset-1">
                       <input type="text" class="form-control" id="txtpesquisa" placeholder="Palavra Chave">
                   </div>
                 </div>
+
                 <div class="form-group">
                   <div class="col-xs-8 col-md-8 col-md-offset-1">
                       <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa">Pesquisar</button>
                   </div>
                 </div>
+
             </form>
+
         </div>       
+
     </article>
     <!-- aonde deveria ficar o rodapé se tivesse um --> 
     <footer class="footer">
@@ -102,13 +112,7 @@
     
     
     
-    
-    
-    
 
-      
-    
-    
     
 
     <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
