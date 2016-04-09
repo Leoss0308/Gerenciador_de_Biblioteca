@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09/04/2016, 17:20:21
+    Author     : Amanda
+*/
+
+@charset "UTF-8";
+
+body{
+    background: url(../img/fundo1.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+img#logo{
+    width: 150px;
+    height: 150px;
+    margin-left: 10%;
+    margin-top: 40px;
+}
+
+div#tituloLivros{
+    margin-top: 60px;
+}
+
+
+div#pesquisaLivros{
+    margin-top: -150px;
+    
+}
+
+.botao {
+ background:url(../img/pesquisar.png);
+ cursor:pointer;
+ height: 36px ;
+ width: 35px; ;
+}
+

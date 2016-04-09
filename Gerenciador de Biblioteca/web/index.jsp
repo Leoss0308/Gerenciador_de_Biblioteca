@@ -69,7 +69,7 @@
 
     </header>
         <!-- Artigo com ele tem o conteudo da pagina -->
-    <article id="pesquisaIndex"  class="row">
+   <article id="pesquisaIndex"  class="row">
           
         <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
 
