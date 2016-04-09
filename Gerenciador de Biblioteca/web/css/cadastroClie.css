@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body{
+    background: url(../img/fundo.jpg) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+img#logo{
+    width: 150px;
+    height: 150px;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+div#cadastroClie{
+    margin-top: 70px;
+}
