@@ -47,7 +47,7 @@
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Login</a></li>
+                  <li><a href="login.jsp">Login</a></li>
                 <li><a href="#">Cadastre-se</a></li>
               </ul>  
             </div>
