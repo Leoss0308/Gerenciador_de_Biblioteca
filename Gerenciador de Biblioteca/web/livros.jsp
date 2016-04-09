@@ -27,7 +27,7 @@
   </head>
   <body>
     <!-- Cabeçalho da pagina com o menu, logo e nome -->
-    <header id="cabecahome">          
+    <header id="cabecalivros">          
         <!-- menu -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">

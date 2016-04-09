@@ -41,14 +41,14 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-left">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Livros</a></li>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Fale conosco</a></li>
+                <li><a href="livros.jsp">Livros</a></li>
+                <li><a href="perfil.jsp">Perfil</a></li>
+                <li><a href="faleConosco.jsp">Fale conosco</a></li>
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
                   <li><a href="login.jsp">Login</a></li>
-                <li><a href="#">Cadastre-se</a></li>
+                  <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
               </ul>  
             </div>
           </div>
@@ -81,6 +81,9 @@
                       <select class="form-control" id="slcTipoPesquisa">
                           <option>nome do livro</option>
                           <option>autor do livro</option>
+                          <option>editora do livro</option>
+                          <option>ISBN do livro</option>
+                          
                       </select>
                   </div>
                 </div>
