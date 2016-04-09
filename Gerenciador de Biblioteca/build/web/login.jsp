@@ -1,15 +1,3 @@
-<<<<<<< .mine
-<%-- 
-    Document   : Login
-    Author     :
---%>
-||||||| .r11
-<%-- 
-    Document   : Login
-    Created on : 05/04/2016, 16:26:23
-    Author     : i7
---%>
-=======
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -19,7 +7,6 @@
     
     <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
     <title>Home</title>
->>>>>>> .r14
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
