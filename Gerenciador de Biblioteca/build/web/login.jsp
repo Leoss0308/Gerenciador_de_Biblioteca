@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-    <title>Home</title>
+    <title>Login</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +54,7 @@
           </div>
         </nav>
         <!-- logo e titulo -->
-        <div class="row" id="tituloIndex">
+        <div class="row" id="Login">
 
 
             <div class="col-xs-5 col-md-4">
