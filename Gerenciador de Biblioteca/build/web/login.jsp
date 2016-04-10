@@ -47,7 +47,7 @@
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Login</a></li>
+                  <li><a href="login.jsp">Login</a></li>
                 <li><a href="#">Cadastre-se</a></li>
               </ul>  
             </div>
@@ -76,24 +76,23 @@
             <form class="form-horizontal">
 
                 <div class="form-group">
-                  <label for="slclogin" class="col-xs-6 col-md-3 control-label">Usuario: </label>
-                  <div class="col-xs-8 col-md-6">
-                      <select class="form-control" id="slcTipoPesquisa">
-                          <option>nome do livro</option>
-                          <option>autor do livro</option>
-                      </select>
+                  <label  class="col-xs-6 col-md-3 control-label">Usuário:</label>
+                  <div class="col-xs-2 col-md-3">
+                      <input type="text" name="login" class="form-control" placeholder="Digite seu nome de Usuário">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="col-xs-8 col-md-8 col-md-offset-1">
-                      <input type="text" class="form-control" id="txtpesquisa" placeholder="Palavra Chave">
+                    <label  class="col-xs-6 col-md-3 control-label">Senha:</label>
+                  <div class="col-xs-2 col-md-3">
+                       <input type="password" name="senha" class="form-control" placeholder="Digite sua senha">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="col-xs-8 col-md-8 col-md-offset-1">
-                      <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa">Pesquisar</button>
+                  <div class="col-xs- col-md-4 col-md-offset-2">
+                      
+                      <button type="submit" class="btn btn-default btn-lg btn-block" id="btnEntrar" >Entrar</button>
                   </div>
                 </div>
 
