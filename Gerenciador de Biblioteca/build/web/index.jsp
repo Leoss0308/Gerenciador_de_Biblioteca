@@ -49,6 +49,7 @@
               <ul class="nav navbar-nav navbar-right">
                   <li><a href="login.jsp">Login</a></li>
                   <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
+                  <li><a href="faleConosco.jsp">Fale conosco</a></li>
               </ul>  
             </div>
           </div>
