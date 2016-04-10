@@ -19,13 +19,13 @@
     <![endif]-->
     
     <!--CSS do index.jsp -->
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
     
     
   </head>
   <body>
     <!-- Cabeçalho da pagina com o menu, logo e nome -->
-    <header id="cabecahome">          
+    <header id="cabecalogin">          
         <!-- menu -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
@@ -40,21 +40,21 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-left">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Livros</a></li>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Fale conosco</a></li>
+                  <li><a href="index.jsp">Inicio</a></li>
+                  <li><a href="livros.jsp">Livros</a></li>
+                  <li><a href="perfil.jsp">Perfil</a></li>
+                  <li><a href="faleConosco.jsp">Fale conosco</a></li>
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="login.jsp">Login</a></li>
-                <li><a href="#">Cadastre-se</a></li>
+                  <li><a href="#">Login</a></li>
+                  <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
               </ul>  
             </div>
           </div>
         </nav>
         <!-- logo e titulo -->
-        <div class="row" id="Login">
+        <div class="row" id="tituloLogin">
 
 
             <div class="col-xs-5 col-md-4">
@@ -76,23 +76,23 @@
             <form class="form-horizontal">
 
                 <div class="form-group">
-                  <label  class="col-xs-6 col-md-3 control-label">Usuário:</label>
-                  <div class="col-xs-2 col-md-3">
-                      <input type="text" name="login" class="form-control" placeholder="Digite seu nome de Usuário">
+                    <label for="idLogin"  class="col-xs-6 col-md-3 control-label">Usuário:</label>
+                  <div class="col-xs-8 col-md-6">
+                      <input type="text" id="idLogin" name="login" class="form-control" placeholder="Digite seu nome de Usuário">
                   </div>
                 </div>
 
                 <div class="form-group">
-                    <label  class="col-xs-6 col-md-3 control-label">Senha:</label>
-                  <div class="col-xs-2 col-md-3">
-                       <input type="password" name="senha" class="form-control" placeholder="Digite sua senha">
+                    <label for="idSenha" class="col-xs-6 col-md-3 control-label">Senha:</label>
+                  <div class="col-xs-8 col-md-6">
+                      <input type="password" id="idSenha" name="senha" class="form-control" placeholder="Digite sua senha">
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <div class="col-xs- col-md-4 col-md-offset-2">
+                  <div class="col-xs-6 col-md-6 col-md-offset-3">
                       
-                      <button type="submit" class="btn btn-default btn-lg btn-block" id="btnEntrar" >Entrar</button>
+                      <button type="submit" class="btn btn-default btn-lg btn-block" id="btnEntrar" >Logar</button>
                   </div>
                 </div>
 

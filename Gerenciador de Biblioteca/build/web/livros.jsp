@@ -1,8 +1,3 @@
-<%-- 
-    Document   : livros
-    Author     : Amanda 
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -49,15 +44,15 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-left">
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#">Livros</a></li>
-                            <li><a href="#">Perfil</a></li>
-                            <li><a href="#">Fale conosco</a></li>
+                            <li><a href="index.jsp">Inicio</a></li>
+                            <li><a href="livros.jsp">Livros</a></li>
+                            <li><a href="perfil.jsp">Perfil</a></li>
+                            <li><a href="faleConosco.jsp">Fale conosco</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Cadastre-se</a></li>
+                            <li><a href="login.jsp">Login</a></li>
+                            <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
                         </ul>  
                     </div>
                 </div>
@@ -68,6 +63,10 @@
                 <div class="col-xs-5 col-md-4">
                     <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
                 </div>
+                
+                <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
+                    <h1>Biblioteca</h1>
+                </hgroup>
 
             </div>       
 
@@ -75,20 +74,24 @@
         </header>
         <!-- Artigo com ele tem o conteudo da pagina -->
         <article id="pesquisaLivros"  class="row">
-            <div id="pesquisaLivros" class="col-xs-12 col-xs-offset-9 col-md8 col-md-offset-2">
+            <div class="col-xs-10 col-xs-offset-1 col-md11 col-md-offset-1">
 
                 <form class="form-horizontal">
                     <div class="form-group">
 
-                        <label for="slcTipoPesquisa" class="col-xs-5 col-md-2 control-label">Pesquisar Por: </label>
-                        <div class="col-xs-5 col-md-2 col-md-offset-0">
+                        <label for="slcTipoPesquisa" class="col-xs-3 col-md-2 control-label">Pesquisar Por: </label>
+                        <div class="col-xs-6 col-md-4">
                             <select class="form-control" id="slcTipoPesquisa">
-                                <option>Nome do Livro</option>
-                                <option>Autor do Livro</option>
+                                <option>nome do livro</option>
+                                <option>autor do livro</option>
+                                <option>editora do livro</option>
+                                <option>ISBN do livro</option>
                             </select>
+                            
+                            
                         </div>
 
-                        <div class="col-xs-3 col-md-3 col-md-offset-0">
+                        <div class="col-xs-6 col-md-4">
                             <input type="text" class="form-control" id="txtpesquisa" placeholder="Pesquisar"> 
                         </div>
 
@@ -98,7 +101,10 @@
                         </div>  -->
 
                         <!--Referencia para chamar icone de botao pesquisar -->
-                        <input name="botao" type="button" class="botao">
+                        <div class="col-xs-1 col-md-1">
+                            <input name="botao" type="button" class="botao">
+                        </div>
+                        
 
 
 

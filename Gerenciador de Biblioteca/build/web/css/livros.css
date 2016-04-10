@@ -31,12 +31,12 @@ div#tituloLivros{
     
 }
 
-
+/*
 div#pesquisaLivros{
     margin-top: -150px;
    
 }
-
+*/
 .botao {
  background:url(../img/pesquisar.png);
  cursor:pointer;

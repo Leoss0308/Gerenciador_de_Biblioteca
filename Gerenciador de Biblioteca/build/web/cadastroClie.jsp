@@ -1,9 +1,3 @@
-<%-- 
-    Document   : CadastroClie
-    Created on : 05/04/2016, 16:27:11
-    Author     : Erico Luiz Frank
---%>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -46,15 +40,15 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-left">
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#">Livros</a></li>
-                            <li><a href="#">Perfil</a></li>
-                            <li><a href="#">Fale conosco</a></li>
+                            <li><a href="index.jsp">Inicio</a></li>
+                            <li><a href="livros.jsp">Livros</a></li>
+                            <li><a href="perfil.jsp">Perfil</a></li>
+                            <li><a href="faleConosco.jsp">Fale conosco</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Cadastre-se</a></li>
+                            <li><a href="login.jsp">Login</a></li>
+                            <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
                         </ul>  
                     </div>
                 </div>
@@ -80,44 +74,68 @@
         <article id="Cadastro"  class="row">         
             <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
                 <form class="form-horizontal">
-                    <table>
-                        <tr>
-                            <td>Nome Completo:</td>
-                            <td><input type="text" id="nomecli" name="nomecli" required></td>                    
-                        </tr>
-                        <tr>
-                            <td>CPF:</td>
-                            <td><input type="text" id="cpfcli" name="cpfcli" required pattern="[0-9]{11}"></td>
-                        </tr>
-                        <tr>
-                            <td>Data De Nascimento:</td>
-                            <td><input type="date" id="datanascimentocli" name="datanascimentocli" required></td>
-                        </tr>
-                        <tr>
-                            <td>Email:</td>
-                            <td><input type="emailcli" id="email" name="emailcli" required></td>
-                        </tr>
-                        <tr>
-                            <td>CEP:</td>
-                            <td><input type="Number" id="cepcli" name="cepcli" required></td>
-                        </tr>
-                        <tr>
-                            <td>Endereço:</td>
-                            <td><input type="text" id="enderecocli" name="enderecocli" required></td>
-                        </tr>
-                        <tr>
-                            <td>Bairro:</td>
-                            <td><input type="text" id="bairrocli" name="bairrocli" required></td>
-                        </tr>
-                        <tr>
-                            <td>Complemento:</td>
-                            <td><input type="text" id="complementocli" name="complementocli"></td>
-                        </tr>
-                        <tr>                   
-                            <td>Estado:</td>
-                            <td>
-                                <select name="estadocli" id="estadocli"> 
-                                    <option value="ac">Acre</option> 
+                    
+                    <div class="form-group">
+                        <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtNome">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtCPF" class="col-xs-6 col-md-3 control-label">CPF: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtCPF">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtDataNasc" class="col-xs-6 col-md-3 control-label">Data De Nascimento: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="date" class="form-control" id="txtDataNasc">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="email" class="form-control" id="txtEmail">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtCEP">
+                        </div>
+                    </div>
+                     
+                    <div class="form-group">
+                        <label for="txtEndereco" class="col-xs-6 col-md-3 control-label">Endereço: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtEndereco">
+                        </div>
+                    </div>        
+                           
+                    <div class="form-group">
+                        <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtBairro">
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtComplemento">
+                        </div>
+                    </div> 
+                    
+                    <div class="form-group">
+                        <label for="txtEstado" class="col-xs-6 col-md-3 control-label">Estado: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <select class="form-control" id="txtEstado">
+                                <option value="ac">Acre</option> 
                                     <option value="al">Alagoas</option> 
                                     <option value="am">Amazonas</option> 
                                     <option value="ap">Amapá</option> 
@@ -143,30 +161,46 @@
                                     <option value="sc">Santa Catarina</option> 
                                     <option value="se">Sergipe</option> 
                                     <option value="sp">São Paulo</option> 
-                                    <option value="to">Tocantins</option> 
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Cidade:</td>
-                            <td><input type="text" id="cidadecli" name="cidadecli" required></td>
-                        </tr>
-                        <tr>
-                            <td>Telefone:</td>
-                            <td><input type="tel" id="telefonecli" name="telefonecli" required></td>
-                        </tr>
-                        <tr>
-                            <td>Login:</td>
-                            <td><input type="text" id="logincli" name="logincli" required></td>
-                        </tr>
-                        <tr>
-                            <td>Senha:</td>
-                            <td><input type="text" id="senhacli" name="senhacli" required></td>
-                        </tr>
-                        <tr>
-                            <td><input type="submit" value="Enviar" /></td>
-                        </tr>
-                    </table>
+                                    <option value="to">Tocantins</option>                          
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtCidade">
+                        </div>
+                    </div>
+                         
+                    <div class="form-group">
+                        <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="tel" class="form-control" id="txtTelefone">
+                        </div>
+                    </div>                         
+                    
+                    <div class="form-group">
+                        <label for="txtLogin" class="col-xs-6 col-md-3 control-label">Login: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtLogin">
+                        </div>
+                    </div>
+                           
+                    <div class="form-group">
+                        <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="password" class="form-control" id="txtSenha">
+                        </div>
+                    </div>   
+                    
+                    <div class="form-group">
+                        <div class="col-xs-6 col-md-6 col-md-offset-3">
+                            <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa">Enviar</button>
+                        </div>
+                    </div>
+                            
+                      
                 </form>
             </div>       
         </article>
