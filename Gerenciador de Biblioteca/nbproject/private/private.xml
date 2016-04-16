@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< .mine
+        <group>
+            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205/trunk/Gerenciador%20de%20Biblioteca/web/cadastroClie.jsp</file>
+        </group>
+||||||| .r29
+        <group>
+            <file>file:/C:/Users/Renan/Documents/Sistema%20matrix/trunk/Gerenciador%20de%20Biblioteca/web/login.jsp</file>
+            <file>file:/C:/Users/Renan/Documents/Sistema%20matrix/trunk/Gerenciador%20de%20Biblioteca/web/cadastroClie.jsp</file>
+            <file>file:/C:/Users/Renan/Documents/Sistema%20matrix/trunk/Gerenciador%20de%20Biblioteca/web/index.jsp</file>
+        </group>
+=======
         <group/>
+>>>>>>> .r33
     </open-files>
 </project-private>
