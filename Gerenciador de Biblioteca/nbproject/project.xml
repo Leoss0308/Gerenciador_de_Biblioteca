@@ -9,6 +9,7 @@
             <web-module-additional-libraries/>
             <source-roots>
                 <root id="src.dir"/>
+                <root id="src.Pacote%20de%20codigo-fonte.dir"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>

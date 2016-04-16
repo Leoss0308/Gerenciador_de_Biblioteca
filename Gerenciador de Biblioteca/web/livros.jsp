@@ -74,42 +74,38 @@
         </header>
         <!-- Artigo com ele tem o conteudo da pagina -->
         <article id="pesquisaLivros"  class="row">
-            <div class="col-xs-10 col-xs-offset-1 col-md11 col-md-offset-1">
-
-                <form class="form-horizontal">
+            <div class="col-xs-10 col-xs-offset-1 col-md12 col-md-offset-1">
+                               
+                <form class="form-inline">
+                        
                     <div class="form-group">
 
-                        <label for="slcTipoPesquisa" class="col-xs-3 col-md-2 control-label">Pesquisar Por: </label>
-                        <div class="col-xs-6 col-md-4">
-                            <select class="form-control" id="slcTipoPesquisa">
-                                <option>nome do livro</option>
-                                <option>autor do livro</option>
-                                <option>editora do livro</option>
-                                <option>ISBN do livro</option>
-                            </select>
-                            
-                            
-                        </div>
+                        <label for="slcTipoPesquisa">Pesquisar Por: </label>
 
-                        <div class="col-xs-6 col-md-4">
-                            <input type="text" class="form-control" id="txtpesquisa" placeholder="Pesquisar"> 
-                        </div>
+                        <select class="form-control" id="slcTipoPesquisa">
+                            <option>nome do livro</option>
+                            <option>autor do livro</option>
+                            <option>editora do livro</option>
+                            <option>ISBN do livro</option>
+                        </select>
 
-                        <!-- Botao por barra de pesquisa sem icone
-                        <div class="col-xs-4 col-md-2  col-md-offset-0"> 
-                        <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa" >Pesquisar</button> 
-                        </div>  -->
 
-                        <!--Referencia para chamar icone de botao pesquisar -->
-                        <div class="col-xs-1 col-md-1">
-                            <input name="botao" type="button" class="botao">
-                        </div>
+
+                    </div>  
                         
+                    <input type="text" class="form-control" id="txtpesquisa" placeholder="Pesquisar"> 
+                            
+                    <input name="botao" type="button" class="btn">
+                        
+                            <!-- Botao por barra de pesquisa sem icone
+                            <div class="col-xs-4 col-md-2  col-md-offset-0"> 
+                            <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa" >Pesquisar</button> 
+                            </div>  -->
 
+                            <!--Referencia para chamar icone de botao pesquisar -->
 
-
-                        </form>
-                    </div>
+                </form>
+ 
             </div>
 
         </article>

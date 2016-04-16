@@ -1,13 +1,10 @@
-<%-- 
-    Document   : FaleConosco
-    Created on : 10/04/2016, 15:00:52
-    Author     : Fabiano Luiz
---%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
         <title>Fale Conosco</title>
 
@@ -21,14 +18,14 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <!--CSS do faleConosco.jsp -->
+        <!--CSS do index.jsp -->
         <link href="css/faleConosco.css" rel="stylesheet">
 
 
     </head>
     <body>
         <!-- Cabeçalho da pagina com o menu, logo e nome -->
-        <header id="cabecahome">          
+        <header id="cabecaFaleConosco">          
             <!-- menu -->
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container-fluid">
@@ -52,7 +49,6 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="login.jsp">Login</a></li>
                             <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
-                            <li><a href="faleConosco.jsp">Fale conosco</a></li>
                         </ul>  
                     </div>
                 </div>
@@ -115,7 +111,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-xs-6 col-md-6 col-md-offset-3">
+                        <div class="col-xs-8 col-md-6 col-md-offset-3">
                             <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa">Enviar Mensagem</button>
                         </div>
                     </div>
