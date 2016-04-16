@@ -96,7 +96,7 @@
 
                 <div class="form-group">
                   <div class="col-xs-8 col-md-8 col-md-offset-1">
-                      <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa">Pesquisar</button>
+                    <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-lg btn-block" />
                   </div>
                 </div>
 

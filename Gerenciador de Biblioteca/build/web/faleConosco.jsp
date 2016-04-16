@@ -112,7 +112,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-xs-8 col-md-6 col-md-offset-3">
-                            <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa">Enviar Mensagem</button>
+                            <input type="submit" value="Enviar Mensagem" name="btnEnviar" class="btn btn-default btn-lg btn-block"/>
                         </div>
                     </div>
                             
