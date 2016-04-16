@@ -89,13 +89,11 @@
                             <option>ISBN do livro</option>
                         </select>
 
-
-
                     </div>  
                         
                     <input type="text" class="form-control" id="txtpesquisa" placeholder="Pesquisar"> 
                             
-                    <input name="botao" type="button" class="btn">
+                    <input name="botao" type="button" class="btn botao">
                         
                             <!-- Botao por barra de pesquisa sem icone
                             <div class="col-xs-4 col-md-2  col-md-offset-0"> 
