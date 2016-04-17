@@ -93,7 +93,7 @@
                         
                     <input type="text" class="form-control" id="txtpesquisa" placeholder="Pesquisar"> 
                             
-                    <input name="botao" type="submit" class="btn botao">
+                    <input name="botao" type="submit" value="" class="btn botao">
                         
                             <!-- Botao por barra de pesquisa sem icone
                             <div class="col-xs-4 col-md-2  col-md-offset-0"> 
