@@ -10,9 +10,10 @@ package Modelagem;
  * @author Fabiano Luiz
  */
 public class Baixa {
-  
+    
     public Baixa(){
     }
+    
     private int codBaixa = 0;
     private String motivoBaixa = "";
     private int qtdbaixa = 0;

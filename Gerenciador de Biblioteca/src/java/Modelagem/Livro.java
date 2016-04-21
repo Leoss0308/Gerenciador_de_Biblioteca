@@ -12,9 +12,10 @@ import java.util.Date;
  * @author Fabiano Luiz
  */
 public class Livro {
-    
+   
     public Livro(){
     }
+    
     private int codLivro = 0;
     private String ISBN = "";
     private String edicaoLivro = "";
