@@ -44,6 +44,7 @@
                 <li><a href="livros.jsp">Livros</a></li>
                 <li><a href="perfil.jsp">Perfil</a></li>
                 <li><a href="faleConosco.jsp">Fale conosco</a></li>
+                <li><a href="teste/testaConexão.jsp">Testa Conexão</a></li>
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
