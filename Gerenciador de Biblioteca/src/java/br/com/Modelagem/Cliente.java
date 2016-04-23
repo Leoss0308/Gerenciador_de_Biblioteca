@@ -5,7 +5,7 @@
  */
 package br.com.Modelagem;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -19,8 +19,8 @@ public class Cliente extends Pessoa {
     }
 
     private int codClie = 0;
-    private String cpfClie = "";
-    private String statusClie = "";
+    private int cpfClie = 0;
+    private int statusClie = 0;
     private String tipoCadastroClie = "";
     private Date dtCadastroClie;
     private String obsClie = "";
@@ -40,34 +40,22 @@ public class Cliente extends Pessoa {
         this.codClie = codClie;
     }
 
-    /**
-     * @return the cpfClie
-     */
-    public String getCpfClie() {
+    public int getCpfClie() {
         return cpfClie;
     }
 
-    /**
-     * @param cpfClie the cpfClie to set
-     */
-    public void setCpfClie(String cpfClie) {
+    public void setCpfClie(int cpfClie) {
         this.cpfClie = cpfClie;
     }
 
-    /**
-     * @return the statusClie
-     */
-    public String getStatusClie() {
+    public int getStatusClie() {
         return statusClie;
     }
 
-    /**
-     * @param statusClie the statusClie to set
-     */
-    public void setStatusClie(String statusClie) {
+    public void setStatusClie(int statusClie) {
         this.statusClie = statusClie;
     }
-
+    
     /**
      * @return the tipoCadastroClie
      */

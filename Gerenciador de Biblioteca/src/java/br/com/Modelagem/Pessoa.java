@@ -5,6 +5,8 @@
  */
 package br.com.Modelagem;
 
+import java.sql.Date;
+
 /**
  *
  * @author Amanda
@@ -17,11 +19,12 @@ public abstract class Pessoa {
 
     private String nome = "";
     private String end = "";
-    private int complemento = 0;
+    private String complemento = "";
     private int cep = 0;
     private String bairro = "";
     private String cidade = "";
     private String estado = "";
+    private Date dtNasc;
     private int telefone = 0;
     private String email = "";
     private String login = "";
@@ -57,17 +60,11 @@ public abstract class Pessoa {
         this.end = end;
     }
 
-    /**
-     * @return the complemento
-     */
-    public int getComplemento() {
+    public String getComplemento() {
         return complemento;
     }
 
-    /**
-     * @param complemento the complemento to set
-     */
-    public void setComplemento(int complemento) {
+    public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
 
@@ -125,6 +122,14 @@ public abstract class Pessoa {
      */
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Date getDtNasc() {
+        return dtNasc;
+    }
+
+    public void setDtNasc(Date dtNasc) {
+        this.dtNasc = dtNasc;
     }
 
     /**
