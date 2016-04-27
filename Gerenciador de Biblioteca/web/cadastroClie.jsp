@@ -78,70 +78,70 @@
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtNome" required="">
+                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="">
                         </div>
                     </div>
                                                           
                     <div class="form-group">
                         <label for="txtDataNasc" class="col-xs-6 col-md-3 control-label">Data De Nascimento: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="date" class="form-control" id="txtDataNasc" required="">
+                            <input type="date" class="form-control" id="txtDataNasc" name="txtDataNasc" required="">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtCPF" class="col-xs-6 col-md-3 control-label">CPF: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCPF" required="">
+                            <input type="text" class="form-control" id="txtCPF" name="txtCPF" required="">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail" required="">
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="tel" class="form-control" id="txtTelefone" required="">
+                            <input type="tel" class="form-control" id="txtTelefone" name="txtTelefone" required="">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCEP" required="">
+                            <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="">
                         </div>
                     </div>
                      
                     <div class="form-group">
                         <label for="txtEndereco" class="col-xs-6 col-md-3 control-label">Endereço: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtEndereco" required="">
+                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="">
                         </div>
                     </div>        
                            
                     <div class="form-group">
                         <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtBairro" required="">
+                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="">
                         </div>
                     </div> 
                     
                     <div class="form-group">
                         <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtComplemento">
+                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento">
                         </div>
                     </div> 
                     
                     <div class="form-group">
                         <label for="txtEstado" class="col-xs-6 col-md-3 control-label">Estado: </label>
                         <div class="col-xs-8 col-md-6">
-                            <select class="form-control" id="txtEstado" required="">
+                            <select class="form-control" id="txtEstado" name="txtEstado" required="">
                                 <option value="ac">Acre</option> 
                                     <option value="al">Alagoas</option> 
                                     <option value="am">Amazonas</option> 
@@ -176,21 +176,21 @@
                     <div class="form-group">
                         <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCidade" required="">
+                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="">
                         </div>
                     </div>                     
                     
                     <div class="form-group">
                         <label for="txtLogin" class="col-xs-6 col-md-3 control-label">Login: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtLogin" required="">
+                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" required="">
                         </div>
                     </div>
                            
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="password" class="form-control" id="txtSenha" required="">
+                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="">
                         </div>
                     </div>   
                     
