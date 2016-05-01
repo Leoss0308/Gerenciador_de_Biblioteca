@@ -14,45 +14,49 @@ import java.util.List;
 
 public class ClienteDAO {
     
-    private Statement cmd;
+    private Statement stmt;
     private Connection cnn;           // Atributo de conexao:
     private PreparedStatement ps = null;  // Objeto para SQL Preparado:
     
     public ClienteDAO(){
         
     }
-    
+    // tutorial usado http://www.brunorota.com.br/2012/05/14/tutorial-criar-crud-em-java-com-jdbc-parte-1/
     Conecta c = new Conecta();
-   //inserir dados no banco
+    //inserir dados no banco
     public boolean inserir(Cliente cli) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "INSERT INTO Cliente (Nome, CPF, Bairro, CEP, Cidade, Estado, Telefone, E_mail, Login, Senha, Ativo, Observacao, Data_Cadastro, Endereco, Status, Complemento, Data_Nasc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
-            ps.setString(1, cli.getNome());
-            ps.setInt(2, cli.getCpfClie());
-            ps.setString(3, cli.getBairro());
-            ps.setInt(4, cli.getCep());
-            ps.setString(5, cli.getCidade());
-            ps.setString(6, cli.getEstado());
-            ps.setInt(7, cli.getTelefone());
-            ps.setString(8, cli.getEmail());
-            ps.setString(9, cli.getLogin());
-            ps.setString(10, cli.getSenha());
-            ps.setInt(11, 1);
-            ps.setString(12, cli.getObsClie());
-            ps.setDate(13, cli.getDtCadastroClie());
-            ps.setString(14, cli.getEnd());
-            ps.setInt(15, cli.getStatusClie());
-            ps.setString(16, cli.getComplemento());
-            ps.setDate(17, cli.getDtNasc());
+                        "INSERT INTO Cliente (Cod_Cliente, Nome, CPF, Bairro, CEP, Cidade, Estado, Telefone, E_mail, Login, Senha, Ativo, Observacao, Data_Cadastro, Endereco, Status, Complemento, Data_Nasc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            ps.setInt(1, 6);
+            ps.setString(2, cli.getNome());
+            ps.setInt(3, cli.getCpfClie());
+            ps.setString(4, cli.getBairro());
+            ps.setInt(5, cli.getCep());
+            ps.setString(6, cli.getCidade());
+            ps.setString(7, cli.getEstado());
+            ps.setInt(8, cli.getTelefone());
+            ps.setString(9, cli.getEmail());
+            ps.setString(10, cli.getLogin());
+            ps.setString(11, cli.getSenha());
+            ps.setInt(12, 1);
+            ps.setString(13, cli.getObsClie());
+            ps.setDate(14, cli.getDtNasc()); //getDtCadastroClie
+            ps.setString(15, cli.getEnd());
+            ps.setInt(16, cli.getStatusClie());
+            ps.setString(17, cli.getComplemento());
+            ps.setDate(18, cli.getDtNasc());
             ps.executeUpdate();
             ps.close();
             return true;
+            
         } catch (Exception e) {
+            
             System.out.println(e.toString());
             return false;
         }
+        
     }
     //atualizar dados do banco
     public boolean atualizar(Cliente cli) throws Exception {
@@ -84,7 +88,11 @@ public class ClienteDAO {
         } catch (Exception e) {
             System.out.println(e.toString());
             return false;
-        }
+        } 
+        
+        
+        
+        
     }
     //desativar o cliente
     public boolean desativarcli(Cliente cli) throws Exception {
@@ -171,16 +179,9 @@ public class ClienteDAO {
         return cli;
     }
     
-    private ResultSet executarSQL(String strSQL) throws ClassNotFoundException, SQLException {
-        cnn = c.getConexao();
-        cmd = cnn.createStatement();
-        ResultSet objRS = cmd.executeQuery(strSQL);
-        return objRS;
-    }
 
-    private Connection abrir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+
     
     
     

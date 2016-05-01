@@ -56,7 +56,7 @@ public class ClienteServlet extends HttpServlet {
             
             ClienteDAO cliDAO = new ClienteDAO();
             cliDAO.inserir(cli);
-
+            pagina += "?msg=Sucesso ";
             
         } catch (Exception ex) {
             pagina += "?msg=Erro: " + ex.getMessage();

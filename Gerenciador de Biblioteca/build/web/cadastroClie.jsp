@@ -73,7 +73,7 @@
 
         <article id="Cadastro"  class="row">         
             <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
-                <form class="form-horizontal">
+                <form class="form-horizontal"  action="ClienteServlet" method="post">
                     
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
@@ -203,7 +203,13 @@
                             
                       
                 </form>
-            </div>       
+            </div>
+            
+            <%if (request.getParameter("msg") != null) {%>
+                <div id="erro">
+                    <p><%=request.getParameter("msg")%> </p>
+                </div>
+            <%}%>
         </article>
         <!-- aonde deveria ficar o rodapé se tivesse um --> 
         <footer class="footer">

@@ -31,7 +31,7 @@ public class Conecta {
         // Configurando a nossa conexão com um banco de dados//
             String serverName = "localhost";    //caminho do servidor do BD
 
-            String mydatabase = "mysql";        //nome do seu banco de dados
+            String mydatabase = "biblioteca";        //nome do seu banco de dados
 
             String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
 
