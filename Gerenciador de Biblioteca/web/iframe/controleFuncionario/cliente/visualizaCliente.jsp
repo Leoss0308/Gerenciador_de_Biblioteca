@@ -25,7 +25,7 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            overflow: hidden;
+            /*overflow: hidden;*/
         }   
     </style>
     
@@ -36,56 +36,57 @@
         ClienteDAO clidao = new ClienteDAO();
         List<Cliente> clientes = clidao.getLista();
     %>
-      
-    <table width="100%" align="center">
-        <tr><th colspan="18">Clientes</tr>
-        <tr>
-            <th>Código</th><th>Nome</th><th>CPF</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>Email</th><th>Login</th><th>Senha</th><th>Observacao</th><th>Data_Cadastro</th><th>Endereco</th><th>Status</th><th>Complemento</th><th>Data_Nasc</th><th></th>
-        </tr>
-        <%
-            String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
-            sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
+    <div class="table-responsive">  
+        <table class="table table-bordered">
+           <!-- <tr><th colspan="18">Clientes</tr> -->
+            <tr>
+                <th>Código</th><th>Nome</th><th>CPF</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>Email</th><th>Login</th><th>Senha</th><th>Observacao</th><th>Data_Cadastro</th><th>Endereco</th><th>Status</th><th>Complemento</th><th>Data_Nasc</th><th></th>
+            </tr>
+            <%
+                String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
+                sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
 
-            int cor = 0;
-            for (Cliente cli : clientes) {
-                String sCor = "cor" + (cor % 2);
-                cor++;
+                int cor = 0;
+                for (Cliente cli : clientes) {
+                    String sCor = "cor" + (cor % 2);
+                    cor++;
 
-                // Fazer da linha da tabela, um link para exibição:
-                out.print("");
+                    // Fazer da linha da tabela, um link para exibição:
+                    out.print("");
 
-                out.print("<tr id='" + sCor + "' " + sDestaque + ">");
-                
-                out.print("<td>" + cli.getCodClie() + "</td>");
-                out.print("<td>" + cli.getNome() + "</td>");
-                out.print("<td>" + cli.getCpfClie() + "</td>");
-                out.print("<td>" + cli.getBairro() + "</td>");
-                out.print("<td>" + cli.getCep() + "</td>");
-                out.print("<td>" + cli.getCidade() + "</td>");
-                out.print("<td>" + cli.getEstado() + "</td>");
-                out.print("<td>" + cli.getTelefone() + "</td>");
-                out.print("<td>" + cli.getEmail() + "</td>");
-                out.print("<td>" + cli.getLogin() + "</td>");
-                out.print("<td>" + cli.getSenha() + "</td>");
-                out.print("<td>" + cli.getObsClie() + "</td>");
-                out.print("<td>" + cli.getDtCadastroClie() + "</td>");
-                out.print("<td>" + cli.getEnd() + "</td>");
-                out.print("<td>" + cli.getStatusClie() + "</td>");
-                out.print("<td>" + cli.getComplemento() + "</td>");
-                out.print("<td>" + cli.getDtNasc() + "</td>");
-                
-                // Controle para manutenção:
-                out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + cli.getCodClie() + "'><img src='../../img/delete-peq.jpg' /></a></td>");
-                out.print("<td id='cmd'><a href='clienteExcluir.jsp?codClie=" + cli.getCodClie() + "'><img src='../../../img/delete-peq.jpg' /></a></td>");
-                
-                out.print("</tr>");
+                    out.print("<tr id='" + sCor + "' " + sDestaque + ">");
 
-                //out.print("</a>");
+                    out.print("<td>" + cli.getCodClie() + "</td>");
+                    out.print("<td>" + cli.getNome() + "</td>");
+                    out.print("<td>" + cli.getCpfClie() + "</td>");
+                    out.print("<td>" + cli.getBairro() + "</td>");
+                    out.print("<td>" + cli.getCep() + "</td>");
+                    out.print("<td>" + cli.getCidade() + "</td>");
+                    out.print("<td>" + cli.getEstado() + "</td>");
+                    out.print("<td>" + cli.getTelefone() + "</td>");
+                    out.print("<td>" + cli.getEmail() + "</td>");
+                    out.print("<td>" + cli.getLogin() + "</td>");
+                    out.print("<td>" + cli.getSenha() + "</td>");
+                    out.print("<td>" + cli.getObsClie() + "</td>");
+                    out.print("<td>" + cli.getDtCadastroClie() + "</td>");
+                    out.print("<td>" + cli.getEnd() + "</td>");
+                    out.print("<td>" + cli.getStatusClie() + "</td>");
+                    out.print("<td>" + cli.getComplemento() + "</td>");
+                    out.print("<td>" + cli.getDtNasc() + "</td>");
 
-            }
-        %>
-    </table>
-    
+                    // Controle para manutenção:
+                    out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + cli.getCodClie() + "'><img src='../../img/delete-peq.jpg' /></a></td>");
+                    out.print("<td id='cmd'><a href='clienteExcluir.jsp?codClie=" + cli.getCodClie() + "'><img src='../../../img/delete-peq.jpg' /></a></td>");
+
+                    out.print("</tr>");
+
+                    //out.print("</a>");
+
+                }
+            %>
+        </table>
+    </div>
+        
     
     
     
