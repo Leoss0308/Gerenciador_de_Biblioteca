@@ -10,6 +10,7 @@ import br.com.Modelagem.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -61,7 +62,9 @@ public class ClienteServletAlterar extends HttpServlet {
         } catch (Exception ex) {
             ex.getMessage();
         } finally {
-            request.getRequestDispatcher(pagina).forward(request, response);
+            // request.getRequestDispatcher(pagina).forward(request, response);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
+            dispatcher.forward(request, response);
             out.close();
         }
     }

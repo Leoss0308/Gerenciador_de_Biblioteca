@@ -63,7 +63,7 @@ public class ClienteDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "UPDATE Cliente set Nome=?,  set CPF=?, set Bairro=?, set CEP=?, set Cidade=?, set Estado=?, set Telefone=?, set E_mail=?, set Login=?, set Senha=?, set Ativo=?, set Observacao=?, set Endereco=?, set Status=?, set Complemento=?, set Data_Nasc=? where Cod_Cliente=?");
+                        "UPDATE Cliente set Nome=?, CPF=?, Bairro=?, CEP=?, Cidade=?, Estado=?, Telefone=?, E_mail=?, Login=?, Senha=?, Ativo=?, Observacao=?, Endereco=?, Status=?, Complemento=?, Data_Nasc=? where Cod_Cliente=?");
             ps.setString(1, cli.getNome());
             ps.setInt(2, cli.getCpfClie());
             ps.setString(3, cli.getBairro());

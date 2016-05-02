@@ -42,7 +42,7 @@
         
         <article id="Alteracao"  class="row">         
             <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
-                <form class="form-horizontal" action="ClienteServletAlterar" method="post">
+                <form class="form-horizontal"  action="ClienteServletAlterar" method="post">
                     
                     <div class="form-group">
                         <label for="txtCodiigo" class="col-xs-6 col-md-3 control-label">Codigo: </label>
@@ -187,7 +187,7 @@
                     
                     <div class="form-group">
                         <div class="col-xs-8 col-md-6 col-md-offset-3">
-                            <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAC" class="btn btn-success btn-lg btn-block" /> 
+                            <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAC" class="btn btn-success btn-lg btn-block"/>
                         </div>
                     </div>
                             
