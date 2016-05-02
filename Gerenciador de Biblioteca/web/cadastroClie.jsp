@@ -205,11 +205,6 @@
                 </form>
             </div>
             
-            <%if (request.getParameter("msg") != null) {%>
-                <div id="erro">
-                    <p><%=request.getParameter("msg")%> </p>
-                </div>
-            <%}%>
         </article>
         <!-- aonde deveria ficar o rodapé se tivesse um --> 
         <footer class="footer">

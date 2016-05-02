@@ -4,9 +4,17 @@
         <servlet-name>ClienteServlet</servlet-name>
         <servlet-class>br.com.Servlet.ClienteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ClienteServletAlterar</servlet-name>
+        <servlet-class>br.com.Servlet.ClienteServletAlterar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteServletAlterar</servlet-name>
+        <url-pattern>/ClienteServletAlterar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -110,6 +110,7 @@
                             <textarea type="Mensagem" class="form-control" id="txtMensagem"></textarea>
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <div class="col-xs-8 col-md-6 col-md-offset-3">
                             <input type="submit" value="Enviar Mensagem" name="btnEnviar" class="btn btn-default btn-lg btn-block"/>

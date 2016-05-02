@@ -61,15 +61,15 @@
             <div class="col-xs-3 col-md-2 sidebar">
               <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">Cliente <span class="sr-only">(current)</span></a></li>
-                <li><a href="index.jsp" target="frmConteudo">Minhas Informações</a></li>
-                <li><a href="login.jsp" target="frmConteudo">Alterar meus dados</a></li>                    
+                <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Cliente</a></li>
+                                    
               </ul>
             </div>
          
         
             <div class="col-xs-9 col-xs-offset-3 col-md-10 col-md-offset-2 main aumenta">
                 
-                <iframe class="embed-responsive-item" id="frmConteudo" name="frmConteudo" src="login.jsp"></iframe>
+                <iframe class="embed-responsive-item" id="frmConteudo" name="frmConteudo" src="iframe/default.jsp"></iframe>
                 
             </div>
             

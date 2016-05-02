@@ -63,7 +63,7 @@ public class ClienteDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "UPDATE Cliente set Nome=?,  set CPF=?, set Bairro=?, set CEP=?, set Cidade=?, set Estado=?, set Telefone=?, set E_mail=?, set Login=?, set Senha=?, set Ativo=?, set Observacao=?, set Data_Cadastro=?, set Endereco=?, set Status=?, set Complemento=?, set Data_Nasc=? where Cod_Cliente=?");
+                        "UPDATE Cliente set Nome=?,  set CPF=?, set Bairro=?, set CEP=?, set Cidade=?, set Estado=?, set Telefone=?, set E_mail=?, set Login=?, set Senha=?, set Ativo=?, set Observacao=?, set Endereco=?, set Status=?, set Complemento=?, set Data_Nasc=? where Cod_Cliente=?");
             ps.setString(1, cli.getNome());
             ps.setInt(2, cli.getCpfClie());
             ps.setString(3, cli.getBairro());
@@ -76,12 +76,11 @@ public class ClienteDAO {
             ps.setString(10, cli.getSenha());
             ps.setInt(11, 1);
             ps.setString(12, cli.getObsClie());
-            ps.setDate(13, cli.getDtCadastroClie());
-            ps.setString(14, cli.getEnd());
-            ps.setInt(15, cli.getStatusClie());
-            ps.setString(16, cli.getComplemento());
-            ps.setDate(17, cli.getDtNasc());
-            ps.setInt(18, cli.getCodClie());
+            ps.setString(13, cli.getEnd());
+            ps.setInt(14, cli.getStatusClie());
+            ps.setString(15, cli.getComplemento());
+            ps.setDate(16, cli.getDtNasc());
+            ps.setInt(17, cli.getCodClie());
             ps.executeUpdate();
             ps.close();
             return true;
@@ -95,13 +94,13 @@ public class ClienteDAO {
         
     }
     //desativar o cliente
-    public boolean desativarcli(Cliente cli) throws Exception {
+    public boolean desativarcli(int cli) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
                         "UPDATE Cliente set Ativo=? where Cod_Cliente=?");
             ps.setInt(1, 0);
-            ps.setInt(2, cli.getCodClie());
+            ps.setInt(2, cli);
             ps.executeUpdate();
             ps.close();
             return true;
@@ -147,7 +146,7 @@ public class ClienteDAO {
     }
 
     // Este método, instancia o JavaBeans para consulta de um registro:
-    public Cliente getItem(int CodClie) throws SQLException, ClassNotFoundException {
+    public Cliente getClie(int CodClie) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
         ps = cnn.prepareStatement("select * from Cliente where Cod_Cliente=?");
         ps.setInt(1, CodClie);
