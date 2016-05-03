@@ -10,10 +10,10 @@ package br.com.Modelagem;
  * @author Fabiano Luiz
  */
 public class Baixa {
-    
-    public Baixa(){
+
+    public Baixa() {
     }
-    
+
     private int codBaixa = 0;
     private String motivoBaixa = "";
     private int qtdBaixa = 0;
@@ -42,7 +42,7 @@ public class Baixa {
     public void setQtdBaixa(int qtdBaixa) {
         this.qtdBaixa = qtdBaixa;
     }
-   
+
     public String getObsBaixa() {
         return obsBaixa;
     }
@@ -51,4 +51,19 @@ public class Baixa {
         this.obsBaixa = obsBaixa;
     }
 
+    //métodos
+    public String registrarBaixa() {
+        return "";
+    }
+
+    public void consultarBaixa() {
+    }
+
+    public String alterarBaixa() {
+        return "";
+    }
+
+    public String excluirBaixa() {
+        return "";
+    }
 }

@@ -13,17 +13,16 @@ import java.util.Date;
  * @author Renan
  */
 public class Emprestimo {
-    
-    
-    public Emprestimo (){
+
+    public Emprestimo() {
     }
-    
+
     private int codEmprestimo = 0;
     private int qtdEmprestimo = 0;
     private Date dataRetirada;
     private Date dataDevolucao;
     private Time horaRetirada;
-    private Time horaDevolucao; 
+    private Time horaDevolucao;
 
     public int getCodEmprestimo() {
         return codEmprestimo;
@@ -72,33 +71,32 @@ public class Emprestimo {
     public void setHoraDevolucao(Time horaDevolucao) {
         this.horaDevolucao = horaDevolucao;
     }
-    
-    public void confirmarEmprestimo(){
-    
+
+    public boolean confirmarEmprestimo() {
+        return true;
     }
-    
-    public void alterarEmprestimo(){
-    
+
+    public String alterarEmprestimo() {
+        return "";
     }
-    
-    public void cancelarEmprestimo(){
-    
+
+    public boolean cancelarEmprestimo() {
+        return true;
     }
-    
-    public void solicitarRenovacao(){
-    
+
+    public boolean solicitarRenovacao() {
+        return true;
     }
-    
-    public void confirmarDevolucao(){
-    
+
+    public boolean confirmarDevolucao() {
+        return true;
     }
-    
-    public void verificarSituacaoEmprestimo(){
-    
+
+    public void verificarSituacaoEmprestimo() {
+
     }
-    
-    public void gerarComprovante(){
-    
+
+    public void gerarComprovante() {
+
     }
 }
-    

@@ -80,9 +80,7 @@ public class Funcionario extends Pessoa {
     }
     //getters and setters
 
-    /*O bibliotecario pode visualizar seu cadastrado (se consultar).
-    Arrumar no diagrama de classe e caso de uso 
-    Arrumar os tipos de metodos*/
+  
     //metodos
     public void consultarDadosFunc() {
     }

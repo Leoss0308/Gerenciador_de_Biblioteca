@@ -203,7 +203,7 @@ public abstract class Pessoa {
     }
     //getters and setters
 
-    //Arrumar os tipos de metodos no diagrama classe
+   
     //metodos
     public boolean fazerLogin() {
         return true;

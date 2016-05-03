@@ -99,7 +99,7 @@ public class Cliente extends Pessoa {
     }
     //getters and setters
 
-    //Arrumar os tipos de metodos no diagrama classe
+    
     //metodos
     public String cadastrarDadosClie() {
         return " ";
