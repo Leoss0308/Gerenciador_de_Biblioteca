@@ -6,6 +6,7 @@
 package br.com.Modelagem;
 
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -46,7 +47,8 @@ public class Reserva {
      * @param dataReseva the dataReseva to set
      */
     public void setDataReseva(Date dataReseva) {
-        this.dataReseva = dataReseva;
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy/mm/dd");
+        this.dataReseva = new Date();
     }
 
     /**

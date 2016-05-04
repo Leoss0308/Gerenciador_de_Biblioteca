@@ -3,6 +3,7 @@ package br.com.DAO;
 
 import br.com.Conexao.Conecta;
 import br.com.Modelagem.Reserva;
+import br.com.Modelagem.Cliente;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -26,13 +27,14 @@ public class ReservaDAO {
     
     Conecta c = new Conecta();
     //inserir dados no banco
-    public boolean inserir(Reserva Reser) throws Exception {
+    public boolean inserir(Reserva Reser, Cliente Cli) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "INSERT INTO Reserva (Data_Reserva, Hora_Reserva,) VALUES (?, ?)");
+                        "INSERT INTO Reserva (Data_Reserva, Hora_Reserva, Cod_Cliente) VALUES (?, ?, ?)");
             ps.setDate(1, (Date) Reser.getDataReseva());
             ps.setTime(2, (Time) Reser.getHoraReserva());
+            ps.setInt(3, Cli.getCodClie());
             ps.executeUpdate();
             ps.close();
             return true;
@@ -42,41 +44,6 @@ public class ReservaDAO {
             System.out.println(e.toString());
             return false;
         }
-        
-    }
-    //atualizar dados do banco
-    public boolean atualizar(Cliente cli) throws Exception {
-        try {
-            cnn = c.getConexao();
-            ps = cnn.prepareStatement(
-                        "UPDATE Cliente set Nome=?, CPF=?, Bairro=?, CEP=?, Cidade=?, Estado=?, Telefone=?, E_mail=?, Login=?, Senha=?, Ativo=?, Observacao=?, Endereco=?, Status=?, Complemento=?, Data_Nasc=? where Cod_Cliente=?");
-            ps.setString(1, cli.getNome());
-            ps.setInt(2, cli.getCpfClie());
-            ps.setString(3, cli.getBairro());
-            ps.setInt(4, cli.getCep());
-            ps.setString(5, cli.getCidade());
-            ps.setString(6, cli.getEstado());
-            ps.setInt(7, cli.getTelefone());
-            ps.setString(8, cli.getEmail());
-            ps.setString(9, cli.getLogin());
-            ps.setString(10, cli.getSenha());
-            ps.setInt(11, 1);
-            ps.setString(12, cli.getObsClie());
-            ps.setString(13, cli.getEnd());
-            ps.setInt(14, cli.getStatusClie());
-            ps.setString(15, cli.getComplemento());
-            ps.setDate(16, cli.getDtNasc());
-            ps.setInt(17, cli.getCodClie());
-            ps.executeUpdate();
-            ps.close();
-            return true;
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            return false;
-        } 
-        
-        
-        
         
     }
     //desativar o cliente
