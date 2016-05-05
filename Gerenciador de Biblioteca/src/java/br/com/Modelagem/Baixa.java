@@ -16,7 +16,6 @@ public class Baixa {
 
     private int codBaixa = 0;
     private String motivoBaixa = "";
-    private int qtdBaixa = 0;
     private String obsBaixa = "";
 
     public int getCodBaixa() {
@@ -33,14 +32,6 @@ public class Baixa {
 
     public void setMotivoBaixa(String motivoBaixa) {
         this.motivoBaixa = motivoBaixa;
-    }
-
-    public int getQtdBaixa() {
-        return qtdBaixa;
-    }
-
-    public void setQtdBaixa(int qtdBaixa) {
-        this.qtdBaixa = qtdBaixa;
     }
 
     public String getObsBaixa() {

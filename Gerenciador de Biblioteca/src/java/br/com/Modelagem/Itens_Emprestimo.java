@@ -10,12 +10,11 @@ package br.com.Modelagem;
  * @author Renan
  */
 public class Itens_Emprestimo {
-    
-    public Itens_Emprestimo(){
+
+    public Itens_Emprestimo() {
     }
-    
+
     private int codItemEmprestimo = 0;
-    private int qtdItemEmprestimo = 0;
 
     public int getCodItemEmprestimo() {
         return codItemEmprestimo;
@@ -25,12 +24,4 @@ public class Itens_Emprestimo {
         this.codItemEmprestimo = codItemEmprestimo;
     }
 
-    public int getQtdItemEmprestimo() {
-        return qtdItemEmprestimo;
-    }
-
-    public void setQtdItemEmprestimo(int qtdItemEmprestimo) {
-        this.qtdItemEmprestimo = qtdItemEmprestimo;
-    }
-    
 }

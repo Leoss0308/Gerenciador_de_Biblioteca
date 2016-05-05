@@ -30,6 +30,16 @@ public class Livro {
     private String tags = "";
     private Date dataEntrada;
     private String obsLivro = "";
+    private int avaria = 0;
+    private int emprestado = 0;
+
+    public void setAvaria(int avaria) {
+        this.avaria = avaria;
+    }
+
+    public int getAvaria() {
+        return avaria;
+    }
 
     public int getCodLivro() {
         return codLivro;
@@ -157,5 +167,19 @@ public class Livro {
 
     public String excluirLivros() {
         return "";
+    }
+
+    /**
+     * @return the emprestado
+     */
+    public int getEmprestado() {
+        return emprestado;
+    }
+
+    /**
+     * @param emprestado the emprestado to set
+     */
+    public void setEmprestado(int emprestado) {
+        this.emprestado = emprestado;
     }
 }

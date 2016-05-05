@@ -15,7 +15,6 @@ public class Itens_Reserva {
     }
 
     private int codItemReserva = 0;
-    private int qtdItemReserva = 0;
 
     /**
      * @return the codItemReserva
@@ -29,20 +28,6 @@ public class Itens_Reserva {
      */
     public void setCodItemReserva(int codItemReserva) {
         this.codItemReserva = codItemReserva;
-    }
-
-    /**
-     * @return the qtdItemReserva
-     */
-    public int getQtdItemReserva() {
-        return qtdItemReserva;
-    }
-
-    /**
-     * @param qtdItemReserva the qtdItemReserva to set
-     */
-    public void setQtdItemReserva(int qtdItemReserva) {
-        this.qtdItemReserva = qtdItemReserva;
     }
 
 }
