@@ -46,14 +46,13 @@ public class ReservaDAO {
         }
         
     }
-    //desativar o cliente
-    public boolean desativarcli(int cli) throws Exception {
+    //cacelar reserva
+    public boolean cancelareserva(int Reser) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "UPDATE Cliente set Ativo=? where Cod_Cliente=?");
-            ps.setInt(1, 0);
-            ps.setInt(2, cli);
+                        "DELETE from Reserva where Cod_Reserva=?");
+            ps.setInt(1, Reser);
             ps.executeUpdate();
             ps.close();
             return true;
@@ -64,79 +63,52 @@ public class ReservaDAO {
     }
     
      // Este método, instancia o JavaBeans para auxiliar a montar a lista:
-    public List<Cliente> getLista() throws SQLException, ClassNotFoundException {
+    public List<Reserva> getLista() throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from CLIENTE where ATIVO = 1");
+        ps = cnn.prepareStatement("select * from Reserva");
         ResultSet rs = ps.executeQuery();
-        List<Cliente> Clies = new ArrayList<Cliente>();
+        List<Reserva> Reserv = new ArrayList<Reserva>();
         while (rs.next()) {
             // Criando o objeto e setando valores:
-            Cliente cli = new Cliente();
-            cli.setCodClie(rs.getInt("Cod_Cliente"));
-            cli.setNome(rs.getString("Nome"));
-            cli.setCpfClie(rs.getInt("CPF"));
-            cli.setBairro(rs.getString("Bairro"));
-            cli.setCep(rs.getInt("CEP"));
-            cli.setCidade(rs.getString("Cidade"));
-            cli.setEstado(rs.getString("Estado"));
-            cli.setTelefone(rs.getInt("Telefone"));
-            cli.setEmail(rs.getString("E_mail"));
-            cli.setLogin(rs.getString("Login"));
-            cli.setSenha(rs.getString("Senha"));
-            cli.setObsClie(rs.getString("Observacao"));
-            cli.setDtCadastroClie(rs.getDate("Data_Cadastro"));
-            cli.setEnd(rs.getString("Endereco"));
-            cli.setStatusClie(rs.getInt("Status"));
-            cli.setComplemento(rs.getString("Complemento"));
-            cli.setDtNasc(rs.getDate("Data_Nasc"));
+            Reserva Reser = new Reserva();
+            Reser.setCodReserva(rs.getInt("Cod_Reserva"));
+            Reser.setDataReseva(rs.getDate("Data_Reserva"));
+            Reser.setHoraReserva(rs.getTime("Hora_Reserva"));
             
             // Adicionando o objeto à lista:
-            Clies.add(cli);
+            Reserv.add(Reser);
         }
         rs.close();
         ps.close();
-        return Clies;
+        return Reserv;
     }
 
     // Este método, instancia o JavaBeans para consulta de um registro:
-    public Cliente getClie(int CodClie) throws SQLException, ClassNotFoundException {
+    public Reserva getReser(int CodReserva) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Cliente where Cod_Cliente=?");
-        ps.setInt(1, CodClie);
+        ps = cnn.prepareStatement("select * from Reserva where Cod_Reserva=?");
+        ps.setInt(1, CodReserva);
         ResultSet rs = ps.executeQuery();
 
-        Cliente cli = new Cliente();
+        Reserva Reser = new Reserva();
         if (rs.next()) {
             // Criando o objeto e setando valores:
-            cli.setCodClie(rs.getInt("Cod_Cliente"));
-            cli.setNome(rs.getString("Nome"));
-            cli.setCpfClie(rs.getInt("CPF"));
-            cli.setBairro(rs.getString("Bairro"));
-            cli.setCep(rs.getInt("CEP"));
-            cli.setCidade(rs.getString("Cidade"));
-            cli.setEstado(rs.getString("Estado"));
-            cli.setTelefone(rs.getInt("Telefone"));
-            cli.setEmail(rs.getString("E_mail"));
-            cli.setLogin(rs.getString("Login"));
-            cli.setSenha(rs.getString("Senha"));
-            cli.setObsClie(rs.getString("Observacao"));
-            cli.setDtCadastroClie(rs.getDate("Data_Cadastro"));
-            cli.setEnd(rs.getString("Endereco"));
-            cli.setStatusClie(rs.getInt("Status"));
-            cli.setComplemento(rs.getString("Complemento"));
-            cli.setDtNasc(rs.getDate("Data_Nasc"));
+           Reser.setCodReserva(rs.getInt("Cod_Reserva"));
+           Reser.setDataReseva(rs.getDate("Data_Reserva"));
+           Reser.setHoraReserva(rs.getTime("Hora_Reserva"));
         }
         rs.close();
         ps.close();
-        return cli;
+        return Reser;
     }
     
 
 
 
-    
-    
     
     
     
 }
+
+    
+    

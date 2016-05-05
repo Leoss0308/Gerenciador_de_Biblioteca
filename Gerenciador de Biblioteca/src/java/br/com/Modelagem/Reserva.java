@@ -6,7 +6,6 @@
 package br.com.Modelagem;
 
 import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -72,11 +71,7 @@ public class Reserva {
     public boolean confirmarReserva() {
         return true;
     }
-    
-    public String alterarReserva() {
-        return "";
-    }
-    
+        
     public boolean cancelarReserva() {
         return true;
     }
