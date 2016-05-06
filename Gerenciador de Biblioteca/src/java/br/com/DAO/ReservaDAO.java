@@ -27,7 +27,7 @@ public class ReservaDAO {
     
     Conecta c = new Conecta();
     //inserir dados no banco
-    public boolean inserir(Reserva Reser, Cliente Cli) throws Exception {
+    public boolean inserirreserva(Reserva Reser, Cliente Cli) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
