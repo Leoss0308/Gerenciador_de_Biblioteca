@@ -20,7 +20,9 @@
 
         <!--CSS do cadastroClie.jsp -->
         <link href="css/cadastroClie.css" rel="stylesheet">
-
+        <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
+        <script src = "js/jquery.maskedinput.js"  type = "text/javascript" ></script>
+        
 
     </head>
     <body>
@@ -85,7 +87,7 @@
                     <div class="form-group">
                         <label for="txtDataNasc" class="col-xs-6 col-md-3 control-label">Data De Nascimento: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="date" class="form-control" id="txtDataNasc" name="txtDataNasc" required="">
+                            <input type="text" class="form-control" id="txtDataNasc" name="txtDataNasc" required="">
                         </div>
                     </div>
                     
@@ -106,7 +108,7 @@
                     <div class="form-group">
                         <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="tel" class="form-control" id="txtTelefone" name="txtTelefone" required="">
+                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="">
                         </div>
                     </div>
                     
@@ -210,7 +212,16 @@
         <footer class="footer">
 
         </footer>
-
+        
+        <!-- Script para fazer as mascaras dos campos -->
+        <script>
+            jQuery(function($){
+                $("#txtTelefone").mask("(99)9999-9999");
+                $("#txtCPF").mask("999.999.999-99");
+                $("#txtCEP").mask("99999-999");
+                $("#txtDataNasc").mask("99/99/9999");
+            });
+        </script>
         <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
