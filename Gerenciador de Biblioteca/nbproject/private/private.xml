@@ -2,18 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< .mine
         <group>
             <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/BaixaDAO.java</file>
             <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/LivroDAO.java</file>
             <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/ReservaDAO.java</file>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/ClienteDAO.java</file>
         </group>
-||||||| .r61
-        <group>
-            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/ReservaDAO.java</file>
-        </group>
-=======
-        <group/>
->>>>>>> .r62
     </open-files>
 </project-private>
