@@ -5,7 +5,6 @@
  */
 package br.com.Modelagem;
 
-import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -19,7 +18,6 @@ public class Reserva {
     
     private int codReserva = 0;
     private Date dataReseva;
-    private Time horaReserva;
     private int codClie = 0;
 
     public int getCodClie() {
@@ -55,24 +53,9 @@ public class Reserva {
      * @param dataReseva the dataReseva to set
      */
     public void setDataReseva(Date dataReseva) {
-        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy/mm/dd");
         this.dataReseva = new Date();
     }
-
-    /**
-     * @return the horaReserva
-     */
-    public Time getHoraReserva() {
-        return horaReserva;
-    }
-
-    /**
-     * @param horaReserva the horaReserva to set
-     */
-    public void setHoraReserva(Time horaReserva) {
-        this.horaReserva = horaReserva;
-    }
-    
+  
     public boolean inserirReserva() {
         return true;
     }
