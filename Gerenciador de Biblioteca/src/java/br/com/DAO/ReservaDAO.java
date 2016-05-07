@@ -3,7 +3,6 @@ package br.com.DAO;
 
 import br.com.Conexao.Conecta;
 import br.com.Modelagem.Reserva;
-import br.com.Modelagem.Cliente;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -27,14 +26,14 @@ public class ReservaDAO {
     
     Conecta c = new Conecta();
     //inserir dados no banco
-    public boolean inserirreserva(Reserva Reser, Cliente Cli) throws Exception {
+    public boolean inserirReserva(Reserva Reser) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
                         "INSERT INTO Reserva (Data_Reserva, Hora_Reserva, Cod_Cliente) VALUES (?, ?, ?)");
             ps.setDate(1, (Date) Reser.getDataReseva());
             ps.setTime(2, (Time) Reser.getHoraReserva());
-            ps.setInt(3, Cli.getCodClie());
+            ps.setInt(3, Reser.getCodClie());
             ps.executeUpdate();
             ps.close();
             return true;
@@ -47,7 +46,7 @@ public class ReservaDAO {
         
     }
     //cacelar reserva
-    public boolean cancelareserva(int Reser) throws Exception {
+    public boolean cancelarReserva(int Reser) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
@@ -74,6 +73,7 @@ public class ReservaDAO {
             Reser.setCodReserva(rs.getInt("Cod_Reserva"));
             Reser.setDataReseva(rs.getDate("Data_Reserva"));
             Reser.setHoraReserva(rs.getTime("Hora_Reserva"));
+            Reser.setCodClie(rs.getInt("Cod_Cliente"));
             
             // Adicionando o objeto à lista:
             Reserv.add(Reser);
@@ -96,6 +96,7 @@ public class ReservaDAO {
            Reser.setCodReserva(rs.getInt("Cod_Reserva"));
            Reser.setDataReseva(rs.getDate("Data_Reserva"));
            Reser.setHoraReserva(rs.getTime("Hora_Reserva"));
+           Reser.setCodClie(rs.getInt("Cod_Cliente"));
         }
         rs.close();
         ps.close();

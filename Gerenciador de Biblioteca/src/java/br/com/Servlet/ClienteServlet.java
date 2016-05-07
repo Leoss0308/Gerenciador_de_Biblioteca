@@ -39,19 +39,19 @@ public class ClienteServlet extends HttpServlet {
             
             Cliente cli = new Cliente();
             cli.setNome(request.getParameter("txtNome"));
-            cli.setCpfClie(Integer.parseInt(request.getParameter("txtCPF".replaceAll("\\D", ""))));
+            cli.setCpfClie(Integer.parseInt(request.getParameter("txtCPF")));
             cli.setBairro(request.getParameter("txtBairro"));
-            cli.setCep(Integer.parseInt(request.getParameter("txtCEP".replaceAll("\\D", ""))));
+            cli.setCep(Integer.parseInt(request.getParameter("txtCEP")));
             cli.setCidade(request.getParameter("txtCidade"));
             cli.setEstado(request.getParameter("txtEstado"));
-            cli.setTelefone(Integer.parseInt(request.getParameter("txtTelefone".replaceAll("\\D", ""))));
+            cli.setTelefone(Integer.parseInt(request.getParameter("txtTelefone")));
             cli.setEmail(request.getParameter("txtEmail"));
             cli.setLogin(request.getParameter("txtLogin"));
             cli.setSenha(request.getParameter("txtSenha"));
-            cli.setDtCadastroClie(null);//arrumar isso
+            cli.setDtCadastroClie((Date) new java.util.Date());//arrumar isso
             cli.setEnd(request.getParameter("txtEndereco"));
             cli.setComplemento(request.getParameter("txtComplemento"));
-            cli.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc".replaceAll("\\D", ""))));
+            cli.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
 
             
             ClienteDAO cliDAO = new ClienteDAO();

@@ -20,6 +20,15 @@ public class Reserva {
     private int codReserva = 0;
     private Date dataReseva;
     private Time horaReserva;
+    private int codClie = 0;
+
+    public int getCodClie() {
+        return codClie;
+    }
+
+    public void setCodClie(int codClie) {
+        this.codClie = codClie;
+    }
 
     /**
      * @return the codReserva
@@ -64,7 +73,7 @@ public class Reserva {
         this.horaReserva = horaReserva;
     }
     
-    public boolean solicitarReserva() {
+    public boolean inserirReserva() {
         return true;
     }
     

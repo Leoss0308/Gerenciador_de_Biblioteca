@@ -41,7 +41,7 @@ public class ClienteDAO {
             ps.setString(10, cli.getSenha());
             ps.setInt(11, 1);
             ps.setString(12, cli.getObsClie());
-            ps.setDate(13, cli.getDtNasc()); //getDtCadastroClie
+            ps.setDate(13, cli.getDtCadastroClie()); //getDtCadastroClie
             ps.setString(14, cli.getEnd());
             ps.setInt(15, cli.getStatusClie());
             ps.setString(16, cli.getComplemento());
