@@ -28,24 +28,23 @@ public class ClienteDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "INSERT INTO Cliente (Nome, CPF, Bairro, CEP, Cidade, Estado, Telefone, E_mail, Login, Senha, Ativo, Observacao, Data_Cadastro, Endereco, Status, Complemento, Data_Nasc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                        "INSERT INTO Cliente (Nome, CPF, Bairro, CEP, Cidade, Estado, Telefone, E_mail, Login, Senha, Ativo, Observacao, Endereco, Status, Complemento, Data_Nasc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, cli.getNome());
-            ps.setInt(2, cli.getCpfClie());
+            ps.setString(2, cli.getCpfClie());
             ps.setString(3, cli.getBairro());
-            ps.setInt(4, cli.getCep());
+            ps.setString(4, cli.getCep());
             ps.setString(5, cli.getCidade());
             ps.setString(6, cli.getEstado());
-            ps.setInt(7, cli.getTelefone());
+            ps.setString(7, cli.getTelefone());
             ps.setString(8, cli.getEmail());
             ps.setString(9, cli.getLogin());
             ps.setString(10, cli.getSenha());
             ps.setInt(11, 1);
             ps.setString(12, cli.getObsClie());
-            ps.setDate(13, cli.getDtCadastroClie()); //getDtCadastroClie
-            ps.setString(14, cli.getEnd());
-            ps.setInt(15, cli.getStatusClie());
-            ps.setString(16, cli.getComplemento());
-            ps.setDate(17, cli.getDtNasc());
+            ps.setString(13, cli.getEnd());
+            ps.setInt(14, cli.getStatusClie());
+            ps.setString(15, cli.getComplemento());
+            ps.setDate(16, cli.getDtNasc());
             ps.executeUpdate();
             ps.close();
             return true;
@@ -64,12 +63,12 @@ public class ClienteDAO {
             ps = cnn.prepareStatement(
                         "UPDATE Cliente set Nome=?, CPF=?, Bairro=?, CEP=?, Cidade=?, Estado=?, Telefone=?, E_mail=?, Login=?, Senha=?, Ativo=?, Observacao=?, Endereco=?, Status=?, Complemento=?, Data_Nasc=? where Cod_Cliente=?");
             ps.setString(1, cli.getNome());
-            ps.setInt(2, cli.getCpfClie());
+            ps.setString(2, cli.getCpfClie());
             ps.setString(3, cli.getBairro());
-            ps.setInt(4, cli.getCep());
+            ps.setString(4, cli.getCep());
             ps.setString(5, cli.getCidade());
             ps.setString(6, cli.getEstado());
-            ps.setInt(7, cli.getTelefone());
+            ps.setString(7, cli.getTelefone());
             ps.setString(8, cli.getEmail());
             ps.setString(9, cli.getLogin());
             ps.setString(10, cli.getSenha());
@@ -120,12 +119,12 @@ public class ClienteDAO {
             Cliente cli = new Cliente();
             cli.setCodClie(rs.getInt("Cod_Cliente"));
             cli.setNome(rs.getString("Nome"));
-            cli.setCpfClie(rs.getInt("CPF"));
+            cli.setCpfClie(rs.getString("CPF"));
             cli.setBairro(rs.getString("Bairro"));
-            cli.setCep(rs.getInt("CEP"));
+            cli.setCep(rs.getString("CEP"));
             cli.setCidade(rs.getString("Cidade"));
             cli.setEstado(rs.getString("Estado"));
-            cli.setTelefone(rs.getInt("Telefone"));
+            cli.setTelefone(rs.getString("Telefone"));
             cli.setEmail(rs.getString("E_mail"));
             cli.setLogin(rs.getString("Login"));
             cli.setSenha(rs.getString("Senha"));
@@ -156,17 +155,16 @@ public class ClienteDAO {
             // Criando o objeto e setando valores:
             cli.setCodClie(rs.getInt("Cod_Cliente"));
             cli.setNome(rs.getString("Nome"));
-            cli.setCpfClie(rs.getInt("CPF"));
+            cli.setCpfClie(rs.getString("CPF"));
             cli.setBairro(rs.getString("Bairro"));
-            cli.setCep(rs.getInt("CEP"));
+            cli.setCep(rs.getString("CEP"));
             cli.setCidade(rs.getString("Cidade"));
             cli.setEstado(rs.getString("Estado"));
-            cli.setTelefone(rs.getInt("Telefone"));
+            cli.setTelefone(rs.getString("Telefone"));
             cli.setEmail(rs.getString("E_mail"));
             cli.setLogin(rs.getString("Login"));
             cli.setSenha(rs.getString("Senha"));
             cli.setObsClie(rs.getString("Observacao"));
-            cli.setDtCadastroClie(rs.getDate("Data_Cadastro"));
             cli.setEnd(rs.getString("Endereco"));
             cli.setStatusClie(rs.getInt("Status"));
             cli.setComplemento(rs.getString("Complemento"));

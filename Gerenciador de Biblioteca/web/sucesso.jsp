@@ -19,7 +19,7 @@
     
     <style>
         body{
-            background: url(../img/fundo.jpg) no-repeat center top fixed;
+            background: url(img/fundo.jpg) no-repeat center top fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -31,7 +31,7 @@
   </head>
   <body>
       
-    <h1>Sucesso!</h1>
+    <h1><%=request.getParameter("msg")%></h1>
     
     
     

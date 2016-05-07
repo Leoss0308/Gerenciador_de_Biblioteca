@@ -20,12 +20,12 @@ public abstract class Pessoa {
     private String nome = "";
     private String end = "";
     private String complemento = "";
-    private int cep = 0;
+    private String cep = "";
     private String bairro = "";
     private String cidade = "";
     private String estado = "";
     private Date dtNasc;
-    private int telefone = 0;
+    private String telefone = "";
     private String email = "";
     private String login = "";
     private String senha = "";
@@ -68,17 +68,11 @@ public abstract class Pessoa {
         this.complemento = complemento;
     }
 
-    /**
-     * @return the cep
-     */
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
-    /**
-     * @param cep the cep to set
-     */
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
@@ -132,17 +126,11 @@ public abstract class Pessoa {
         this.dtNasc = dtNasc;
     }
 
-    /**
-     * @return the telefone
-     */
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    /**
-     * @param telefone the telefone to set
-     */
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

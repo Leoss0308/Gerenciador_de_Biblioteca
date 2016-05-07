@@ -10,7 +10,6 @@ import br.com.Modelagem.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,7 +31,7 @@ public class ClienteServletAlterar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pagina = "alterarCliente.jsp";
+        String pagina = "sucesso.jsp";
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();        
         try {
@@ -40,12 +39,12 @@ public class ClienteServletAlterar extends HttpServlet {
             Cliente cli = new Cliente();
             cli.setCodClie(Integer.parseInt(request.getParameter("txtCodigo")));
             cli.setNome(request.getParameter("txtNome"));
-            cli.setCpfClie(Integer.parseInt(request.getParameter("txtCPF")));
+            cli.setCpfClie(request.getParameter("txtCPF"));
             cli.setBairro(request.getParameter("txtBairro"));
-            cli.setCep(Integer.parseInt(request.getParameter("txtCEP")));
+            cli.setCep(request.getParameter("txtCEP"));
             cli.setCidade(request.getParameter("txtCidade"));
             cli.setEstado(request.getParameter("txtEstado"));
-            cli.setTelefone(Integer.parseInt(request.getParameter("txtTelefone")));
+            cli.setTelefone(request.getParameter("txtTelefone"));
             cli.setEmail(request.getParameter("txtEmail"));
             cli.setLogin(request.getParameter("txtLogin"));
             cli.setSenha(request.getParameter("txtSenha"));
@@ -57,14 +56,12 @@ public class ClienteServletAlterar extends HttpServlet {
             
             ClienteDAO cliDAO = new ClienteDAO();
             cliDAO.atualizar(cli);
-            
+            pagina += "?msg=Alterado com sucesso";
             
         } catch (Exception ex) {
-            ex.getMessage();
+            pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
         } finally {
-            // request.getRequestDispatcher(pagina).forward(request, response);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("sucesso.jsp");
-            dispatcher.forward(request, response);
+            request.getRequestDispatcher(pagina).forward(request, response);
             out.close();
         }
     }

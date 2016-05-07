@@ -32,23 +32,22 @@ public class ClienteServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pagina = "cadastroClie.jsp";
+        String pagina = "sucesso.jsp";
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();        
         try {
             
             Cliente cli = new Cliente();
             cli.setNome(request.getParameter("txtNome"));
-            cli.setCpfClie(Integer.parseInt(request.getParameter("txtCPF")));
+            cli.setCpfClie(request.getParameter("txtCPF"));
             cli.setBairro(request.getParameter("txtBairro"));
-            cli.setCep(Integer.parseInt(request.getParameter("txtCEP")));
+            cli.setCep(request.getParameter("txtCEP"));
             cli.setCidade(request.getParameter("txtCidade"));
             cli.setEstado(request.getParameter("txtEstado"));
-            cli.setTelefone(Integer.parseInt(request.getParameter("txtTelefone")));
+            cli.setTelefone(request.getParameter("txtTelefone"));
             cli.setEmail(request.getParameter("txtEmail"));
             cli.setLogin(request.getParameter("txtLogin"));
             cli.setSenha(request.getParameter("txtSenha"));
-            cli.setDtCadastroClie((Date) new java.util.Date());//arrumar isso
             cli.setEnd(request.getParameter("txtEndereco"));
             cli.setComplemento(request.getParameter("txtComplemento"));
             cli.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
@@ -56,10 +55,10 @@ public class ClienteServlet extends HttpServlet {
             
             ClienteDAO cliDAO = new ClienteDAO();
             cliDAO.inserir(cli);
-            pagina += "?msg=Sucesso ";
+            pagina += "?msg=Cadastrado com sucesso";
             
         } catch (Exception ex) {
-            pagina += "?msg=Erro: " + ex.getMessage();
+            pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
         } finally {
             request.getRequestDispatcher(pagina).forward(request, response);
             out.close();

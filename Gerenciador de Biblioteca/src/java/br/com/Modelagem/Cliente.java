@@ -19,7 +19,7 @@ public class Cliente extends Pessoa {
     }
 
     private int codClie = 0;
-    private int cpfClie = 0;
+    private String cpfClie = "";
     private int statusClie = 0;
     private String tipoCadastroClie = "";
     private Date dtCadastroClie;
@@ -40,11 +40,11 @@ public class Cliente extends Pessoa {
         this.codClie = codClie;
     }
 
-    public int getCpfClie() {
+    public String getCpfClie() {
         return cpfClie;
     }
 
-    public void setCpfClie(int cpfClie) {
+    public void setCpfClie(String cpfClie) {
         this.cpfClie = cpfClie;
     }
 

@@ -20,9 +20,22 @@
 
         <!--CSS do cadastroClie.jsp -->
         <link href="css/cadastroClie.css" rel="stylesheet">
+        <!-- jquery para a mascara -->
         <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
+        <script src = "js/jquery-2.1.3.js"  type = "text/javascript" ></script>
         <script src = "js/jquery.maskedinput.js"  type = "text/javascript" ></script>
+            
         
+        <!-- Para funcionar no mozila -->
+        <!-- cdn for modernizr, if you haven't included it already -->
+        <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+        <!-- polyfiller file to detect and load polyfills -->
+        <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+        <script>
+          webshims.setOptions('waitReady', false);
+          webshims.setOptions('forms-ext', {types: 'date'});
+          webshims.polyfill('forms forms-ext');
+        </script>
 
     </head>
     <body>
@@ -210,18 +223,18 @@
         </article>
         <!-- aonde deveria ficar o rodapé se tivesse um --> 
         <footer class="footer">
-
+            
         </footer>
         
-        <!-- Script para fazer as mascaras dos campos 
+        <!-- Script para fazer as mascaras dos campos --> 
         <script>
             jQuery(function($){
                 $("#txtTelefone").mask("(99)9999-9999");
                 $("#txtCPF").mask("999.999.999-99");
                 $("#txtCEP").mask("99999-999");
-                $("#txtDataNasc").mask("99/99/9999");
+                //$("#txtDataNasc").mask("99/99/9999");
             });
-        </script> -->
+        </script>
         <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
