@@ -56,7 +56,7 @@ public class ClienteServletAlterar extends HttpServlet {
             
             ClienteDAO cliDAO = new ClienteDAO();
             cliDAO.atualizar(cli);
-            pagina += "?msg=Alterado com sucesso";
+            pagina += "?msg=Alterado com sucesso!";
             
         } catch (Exception ex) {
             pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();

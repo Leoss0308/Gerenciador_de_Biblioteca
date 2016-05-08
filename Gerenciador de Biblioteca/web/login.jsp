@@ -47,7 +47,7 @@
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#">Login</a></li>
+                  <li><a href="login.jsp">Login</a></li>
                   <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
               </ul>  
             </div>
@@ -73,7 +73,7 @@
           
         <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
 
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="LoginServlet" method="post">
 
                 <div class="form-group">
                     <label for="idLogin"  class="col-xs-6 col-md-3 control-label">Usuário:</label>
@@ -96,6 +96,16 @@
                 </div>
 
             </form>
+            
+            <% 
+                if (request.getParameter("erro") != null) {
+            %>
+            <div class="col-xs-6 col-md-6 col-md-offset-3">
+                <font color="red"> Login ou senha Inválida! - Tente novamente.</font>
+            </div>
+            <%        
+                }
+            %>
 
         </div>       
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-    <title>Home</title>
+    <title>Resposta</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,13 +19,13 @@
     <![endif]-->
     
     <!--CSS do index.jsp -->
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
     
     
   </head>
   <body>
     <!-- Cabeçalho da pagina com o menu, logo e nome -->
-    <header id="cabecahome">          
+    <header id="cabecalogin">          
         <!-- menu -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
           <div class="container-fluid">
@@ -81,64 +81,8 @@
             </div>
           </div>
         </nav>
-        <!-- logo e titulo -->
-        <div class="row" id="tituloIndex">
-
-
-            <div class="col-xs-5 col-md-4">
-                <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
-            </div>
-
-            <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
-                <h1>Biblioteca</h1>
-            </hgroup>
-
-        </div>
-
-    </header>
-        <!-- Artigo com ele tem o conteudo da pagina -->
-   <article id="pesquisaIndex"  class="row">
-          
-        <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
-
-            <form class="form-horizontal">
-
-                <div class="form-group">
-                  <label for="slcTipoPesquisa" class="col-xs-6 col-md-3 control-label">Pesquisar pelo: </label>
-                  <div class="col-xs-8 col-md-6">
-                      <select class="form-control" id="slcTipoPesquisa">
-                          <option>nome do livro</option>
-                          <option>autor do livro</option>
-                          <option>editora do livro</option>
-                          <option>ISBN do livro</option>
-                          
-                      </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-xs-8 col-md-8 col-md-offset-1">
-                      <input type="text" class="form-control" id="txtpesquisa" placeholder="Palavra Chave">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-xs-8 col-md-8 col-md-offset-1">
-                    <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-lg btn-block" />
-                  </div>
-                </div>
-
-            </form>
-
-        </div>       
-
-    </article>
-    <!-- aonde deveria ficar o rodapé se tivesse um --> 
-    <footer class="footer">
-          
-      
-          
-    </footer>
+        
+        <h1><%=request.getParameter("msg")%></h1>
     
     
     

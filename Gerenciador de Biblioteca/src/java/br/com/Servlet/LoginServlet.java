@@ -5,21 +5,21 @@
  */
 package br.com.Servlet;
 
-import br.com.DAO.ClienteDAO;
-import br.com.Modelagem.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import br.com.DAO.LoginDAO;
+import br.com.Modelagem.Cliente;
 
 /**
  *
  * @author i7
  */
-public class ClienteServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,37 +32,61 @@ public class ClienteServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pagina = "sucessoPagCheia.jsp";
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();        
+        
+        // Por default chamarei a pagina index e passarei o parametro erro=1
+        String pagina = "login.jsp?erro=1";
+        
+        LoginDAO l = new LoginDAO();
+        Cliente cli = new Cliente();
+        
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
         try {
-            
-            Cliente cli = new Cliente();
-            cli.setNome(request.getParameter("txtNome"));
-            cli.setCpfClie(request.getParameter("txtCPF"));
-            cli.setBairro(request.getParameter("txtBairro"));
-            cli.setCep(request.getParameter("txtCEP"));
-            cli.setCidade(request.getParameter("txtCidade"));
-            cli.setEstado(request.getParameter("txtEstado"));
-            cli.setTelefone(request.getParameter("txtTelefone"));
-            cli.setEmail(request.getParameter("txtEmail"));
-            cli.setLogin(request.getParameter("txtLogin"));
-            cli.setSenha(request.getParameter("txtSenha"));
-            cli.setEnd(request.getParameter("txtEndereco"));
-            cli.setComplemento(request.getParameter("txtComplemento"));
-            cli.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
+           cli=l.loginCliente(login, senha);
+           
+           if (login.equals(cli.getLogin())) {
+                if (senha.equals(cli.getSenha())) {
 
-            
-            ClienteDAO cliDAO = new ClienteDAO();
-            cliDAO.inserir(cli);
-            pagina += "?msg=Cadastrado com sucesso!";
-            
+                    // Criar objeto para obter sessão do JSP:
+                    HttpSession sessao = request.getSession();
+                    
+                    String nome = cli.getNome();
+                    
+                    
+                    // Setando um atributo da sessao:
+                    sessao.setAttribute("permissao", "1");
+                    sessao.setAttribute("nome", nome);
+
+                    // Como obteve sucesso, chamar a página principal:
+                    pagina = "index.jsp";
+                }
+            }
+           
+           
+
+
         } catch (Exception ex) {
-            pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
-        } finally {
-            request.getRequestDispatcher(pagina).forward(request, response);
-            out.close();
-        }
+            ex.getMessage();
+        } 
+        
+
+        
+            
+        
+
+        response.sendRedirect(pagina);
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

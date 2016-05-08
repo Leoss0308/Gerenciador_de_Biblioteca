@@ -36,7 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Biblioteca</a>
+              <a class="navbar-brand" href="#" style="cursor:default">Biblioteca</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-left">
@@ -48,8 +48,35 @@
               </ul>
 
               <ul class="nav navbar-nav navbar-right">
+                  
+                <%
+                    if (session.getAttribute("permissao") == null) {
+                %>
+                  
                   <li><a href="login.jsp">Login</a></li>
                   <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
+                  
+                <%
+                    }
+                    if (session.getAttribute("permissao") == "1") {
+                %>  
+                    <li><a href="#" style="cursor:default">Seja bem vindo, <%out.print(session.getAttribute("nome"));%></a></li>
+                    
+                    <li><a href="LogoutServlet"> logout</a></li>
+                    
+                <%
+                    }
+                    else    
+                    if (session.getAttribute("permissao") == "2" || session.getAttribute("permissao") == "3") {
+                %>  
+                    <li><a href="#" style="cursor:default">Olá, funcionario <%out.print(session.getAttribute("nome"));%></a></li>
+                    
+                    <li><a href="LogoutServlet"> logout</a></li>
+                    
+                <%
+                    }
+                %> 
+                  
               </ul>  
             </div>
           </div>
