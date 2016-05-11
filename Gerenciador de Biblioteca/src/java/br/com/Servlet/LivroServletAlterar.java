@@ -58,7 +58,7 @@ public class LivroServletAlterar extends HttpServlet {
 
             LivroDAO livDAO = new LivroDAO();
             livDAO.atualizar(liv);
-            pagina += "?msg=Alterado com sucesso!";
+            pagina += "?msg= Alterado com sucesso!";
 
         } catch (Exception ex) {
             pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
