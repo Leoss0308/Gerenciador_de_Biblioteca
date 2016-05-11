@@ -174,13 +174,6 @@ public class ClienteDAO {
         ps.close();
         return cli;
     }
-    
-
-
-
-    
-    
-    
-    
+       
     
 }

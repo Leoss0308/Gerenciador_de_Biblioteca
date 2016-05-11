@@ -89,8 +89,8 @@
             <div class="col-xs-3 col-md-2 sidebar">
               <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">Cliente <span class="sr-only">(current)</span></a></li>
-                <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Cliente</a></li>
-                                    
+                <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Cliente</a></li>   
+                <li><a href="iframe/controleCliente/visualizaClienteClie.jsp" target="frmConteudo">Visualizar Cliente</a></li>
               </ul>
             </div>
          

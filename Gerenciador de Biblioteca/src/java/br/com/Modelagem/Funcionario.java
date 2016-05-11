@@ -84,7 +84,15 @@ public class Funcionario extends Pessoa {
     //metodos
     public void consultarDadosFunc() {
     }
+    
+     public String cadastrarDadosFunc() {
+        return " ";
+    }
 
-    //metodos
+    public String alterarDadosFunc() {
+        return " ";
+    }
+
+    
 
 }
