@@ -7,9 +7,6 @@ package br.com.DAO;
 
 import br.com.Conexao.Conecta;
 import br.com.Modelagem.Baixa;
-import br.com.Modelagem.Emprestimo;
-import br.com.Modelagem.Funcionario;
-import br.com.Modelagem.Livro;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,16 +31,16 @@ public class BaixaDAO {
     Conecta c = new Conecta();
     //inserir dados no banco
 
-    public boolean inserir(Baixa bx, Funcionario func, Emprestimo emp, Livro liv) throws Exception {
+    public boolean inserir(Baixa bx) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
                     "INSERT INTO Baixa ( Motivo_Baixa, Obs_Baixa, Matricula_Func,Cod_Emprestimo, Cod_Livro) VALUES (?,?,?,?,?)");
             ps.setString(1, bx.getMotivoBaixa());
             ps.setString(2, bx.getObsBaixa());
-            ps.setInt(3, func.getMatriculaFunc());
-            ps.setInt(4, emp.getCodEmprestimo());
-            ps.setInt(5, liv.getCodLivro());
+            ps.setInt(3, bx.getMatriculaFunc());
+            ps.setInt(4, bx.getCodEmprestimo());
+            ps.setInt(5, bx.getCodLivro());
 
             ps.executeUpdate();
             ps.close();
@@ -57,7 +54,7 @@ public class BaixaDAO {
 
     }
 
-     //atualizar dados do banco
+    //atualizar dados do banco
     public boolean atualizar(Baixa bx) throws Exception {
         try {
             cnn = c.getConexao();
@@ -101,8 +98,12 @@ public class BaixaDAO {
         while (rs.next()) {
             // Criando o objeto e setando valores:
             Baixa bx = new Baixa();
+            bx.setCodBaixa(rs.getInt("Codigo_Baixa"));
             bx.setMotivoBaixa(rs.getString("Motivo_Baixa"));
             bx.setObsBaixa(rs.getString("Obs_Baixa"));
+            bx.setMatriculaFunc(rs.getInt("Matricula_Func"));
+            bx.setCodEmprestimo(rs.getInt("Codigo_Emprestimo"));
+            bx.setCodLivro(rs.getInt("Codigo_Livro"));
 
             // Adicionando o objeto à lista:
             Baix.add(bx);
@@ -122,9 +123,12 @@ public class BaixaDAO {
         Baixa bx = new Baixa();
         if (rs.next()) {
             // Criando o objeto e setando valores:
+            bx.setCodBaixa(rs.getInt("Codigo_Baixa"));
             bx.setMotivoBaixa(rs.getString("Motivo_Baixa"));
             bx.setObsBaixa(rs.getString("Obs_Baixa"));
-
+            bx.setMatriculaFunc(rs.getInt("Matricula_Func"));
+            bx.setCodEmprestimo(rs.getInt("Codigo_Emprestimo"));
+            bx.setCodLivro(rs.getInt("Codigo_Livro"));
         }
         rs.close();
         ps.close();

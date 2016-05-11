@@ -32,6 +32,15 @@ public class Livro {
     private String obsLivro = "";
     private int avaria = 0;
     private int emprestado = 0;
+    private int matriculaFunc = 0;
+
+    public void setMatriculaFunc(int matriculaFunc) {
+        this.matriculaFunc = matriculaFunc;
+    }
+
+    public int getMatriculaFunc() {
+        return matriculaFunc;
+    }
 
     public void setAvaria(int avaria) {
         this.avaria = avaria;
@@ -153,6 +162,20 @@ public class Livro {
         this.obsLivro = obsLivro;
     }
 
+    /**
+     * @return the emprestado
+     */
+    public int getEmprestado() {
+        return emprestado;
+    }
+
+    /**
+     * @param emprestado the emprestado to set
+     */
+    public void setEmprestado(int emprestado) {
+        this.emprestado = emprestado;
+    }
+
     //métodos
     public String cadastrarLivros() {
         return "";
@@ -169,17 +192,4 @@ public class Livro {
         return "";
     }
 
-    /**
-     * @return the emprestado
-     */
-    public int getEmprestado() {
-        return emprestado;
-    }
-
-    /**
-     * @param emprestado the emprestado to set
-     */
-    public void setEmprestado(int emprestado) {
-        this.emprestado = emprestado;
-    }
 }

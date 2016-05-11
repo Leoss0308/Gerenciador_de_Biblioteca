@@ -5,8 +5,8 @@
  */
 package br.com.Servlet;
 
-import br.com.DAO.FuncionarioDAO;
-import br.com.Modelagem.Funcionario;
+import br.com.DAO.LivroDAO;
+import br.com.Modelagem.Livro;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
@@ -17,10 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Gustavo Rabelo
+ * @author Amanda
  */
-
-public class FuncionarioServlet extends HttpServlet {
+public class LivroServletAlterar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,31 +32,34 @@ public class FuncionarioServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pagina = "sucessoPagCheia.jsp";
+        String pagina = "sucesso.jsp";
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-         try {
-            Funcionario func = new Funcionario();
-            func.setMatriculaFunc(Integer.parseInt(request.getParameter("txtMatriculaFunc")));
-            func.setNome(request.getParameter("txtNome"));
-            func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
-            func.setEmail(request.getParameter("txtEmail"));
-            func.setTelefone(request.getParameter("txtTelefone"));
-            func.setCep(request.getParameter("txtCEP"));
-            func.setEnd(request.getParameter("txtEndereco"));
-            func.setBairro(request.getParameter("txtBairro"));
-            func.setComplemento(request.getParameter("txtComplemento"));
-            func.setEstado(request.getParameter("txtEstado"));
-            func.setCidade(request.getParameter("txtCidade"));
-            func.setLogin(request.getParameter("txtLogin"));
-            func.setSenha(request.getParameter("txtSenha"));
-            func.setStatusFunc(request.getParameter("txtStatus"));
-            func.setTipoFunc(Boolean.getBoolean(request.getParameter("txtTipo")));
-            
-            FuncionarioDAO funcDAO = new FuncionarioDAO();
-            funcDAO.inserir(func);
-            pagina += "?msg=Cadastrado com sucesso!";
-            
+        try {
+
+            Livro liv = new Livro();
+            liv.setCodLivro(Integer.parseInt(request.getParameter("txtCodLivro")));
+            liv.setISBN(request.getParameter("txtISBN"));
+            liv.setEdicaoLivro(request.getParameter("txtEdicao"));
+            liv.setTituloLivro(request.getParameter("txtTitulo"));
+            liv.setAutorLivro(request.getParameter("txtAutor"));
+            liv.setEditoraLivro(request.getParameter("txtEditora"));
+            liv.setResumoLivro(request.getParameter("txtResumo"));
+            liv.setPrecoLivro(request.getParameter("txtPreco"));
+            liv.setAnoPublicacao(Date.valueOf(request.getParameter("txtAnoPublicacao")));
+            liv.setQuantidade(Integer.parseInt(request.getParameter("txtQuantidade")));
+            liv.setCategoriaLivro(request.getParameter("txtCategoria"));
+            liv.setTags(request.getParameter("txtTags"));
+            liv.setDataEntrada(Date.valueOf(request.getParameter("txtDataEntrada")));
+            liv.setObsLivro(request.getParameter("txtObs"));
+            liv.setAvaria(Integer.parseInt(request.getParameter("txtAvaria")));
+            liv.setEmprestado(Integer.parseInt(request.getParameter("Emprestado")));
+            liv.setMatriculaFunc(Integer.parseInt(request.getParameter("Matricula_Func")));
+
+            LivroDAO livDAO = new LivroDAO();
+            livDAO.atualizar(liv);
+            pagina += "?msg=Alterado com sucesso!";
+
         } catch (Exception ex) {
             pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
         } finally {

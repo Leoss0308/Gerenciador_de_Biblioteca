@@ -5,11 +5,10 @@
  */
 package br.com.Servlet;
 
-import br.com.DAO.FuncionarioDAO;
-import br.com.Modelagem.Funcionario;
+import br.com.DAO.BaixaDAO;
+import br.com.Modelagem.Baixa;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,10 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Gustavo Rabelo
+ * @author Amanda
  */
-
-public class FuncionarioServlet extends HttpServlet {
+public class BaixaServletAlterar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,31 +31,22 @@ public class FuncionarioServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pagina = "sucessoPagCheia.jsp";
+        String pagina = "sucesso.jsp";
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-         try {
-            Funcionario func = new Funcionario();
-            func.setMatriculaFunc(Integer.parseInt(request.getParameter("txtMatriculaFunc")));
-            func.setNome(request.getParameter("txtNome"));
-            func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
-            func.setEmail(request.getParameter("txtEmail"));
-            func.setTelefone(request.getParameter("txtTelefone"));
-            func.setCep(request.getParameter("txtCEP"));
-            func.setEnd(request.getParameter("txtEndereco"));
-            func.setBairro(request.getParameter("txtBairro"));
-            func.setComplemento(request.getParameter("txtComplemento"));
-            func.setEstado(request.getParameter("txtEstado"));
-            func.setCidade(request.getParameter("txtCidade"));
-            func.setLogin(request.getParameter("txtLogin"));
-            func.setSenha(request.getParameter("txtSenha"));
-            func.setStatusFunc(request.getParameter("txtStatus"));
-            func.setTipoFunc(Boolean.getBoolean(request.getParameter("txtTipo")));
-            
-            FuncionarioDAO funcDAO = new FuncionarioDAO();
-            funcDAO.inserir(func);
-            pagina += "?msg=Cadastrado com sucesso!";
-            
+        try {
+            Baixa bx = new Baixa();
+            bx.setCodBaixa(Integer.parseInt(request.getParameter("txtCodBaixa")));
+            bx.setMotivoBaixa(request.getParameter("txtMotivoBaixa"));
+            bx.setObsBaixa(request.getParameter("txtObsBaixa"));
+            bx.setMatriculaFunc(Integer.parseInt(request.getParameter("txtMatriculaFunc")));
+            bx.setCodEmprestimo(Integer.parseInt(request.getParameter("txtCodEmprestimo")));
+            bx.setCodLivro(Integer.parseInt(request.getParameter("txtCodLivro")));
+
+            BaixaDAO bxDAO = new BaixaDAO();
+            bxDAO.atualizar(bx);
+            pagina += "?msg=Alterado com sucesso!";
+
         } catch (Exception ex) {
             pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
         } finally {

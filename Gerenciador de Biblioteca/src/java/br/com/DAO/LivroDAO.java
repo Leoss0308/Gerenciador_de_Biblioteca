@@ -6,7 +6,6 @@
 package br.com.DAO;
 
 import br.com.Conexao.Conecta;
-import br.com.Modelagem.Funcionario;
 import br.com.Modelagem.Livro;
 import java.sql.Connection;
 import java.sql.Date;
@@ -33,7 +32,7 @@ public class LivroDAO {
     Conecta c = new Conecta();
     //inserir dados no banco
 
-    public boolean inserir(Livro liv, Funcionario func) throws Exception {
+    public boolean inserir(Livro liv) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
@@ -54,7 +53,7 @@ public class LivroDAO {
             ps.setString(13, liv.getObsLivro());
             ps.setInt(14, 0);
             ps.setInt(15, liv.getEmprestado());
-            ps.setInt(16, func.getMatriculaFunc());
+            ps.setInt(16, liv.getMatriculaFunc());
 
             ps.executeUpdate();
             ps.close();
@@ -69,7 +68,6 @@ public class LivroDAO {
     }
 
     //atualizar dados do banco
-
     public boolean atualizar(Livro liv) throws Exception {
         try {
             cnn = c.getConexao();
@@ -92,7 +90,7 @@ public class LivroDAO {
             ps.setInt(14, 0);
             ps.setInt(15, liv.getEmprestado());
             ps.setInt(16, liv.getCodLivro());
-            
+
             ps.executeUpdate();
             ps.close();
             return true;
@@ -102,23 +100,23 @@ public class LivroDAO {
         }
 
     }
-   
-     //"desativar o livro" em caso de baixas = avarias
-     public boolean desativarLivro(int liv) throws Exception {
-     try {
-     cnn = c.getConexao();
-     ps = cnn.prepareStatement(
-     "UPDATE Livro set Avaria=? where Cod_Livro=?");
-     ps.setInt(1, 1);
-     ps.setInt(2, liv);
-     ps.executeUpdate();
-     ps.close();
-     return true;
-     } catch (Exception e) {
-     System.out.println(e.toString());
-     return false;
-     }
-     } 
+
+    //"desativar o livro" em caso de baixas = avarias
+    public boolean desativarLivro(int liv) throws Exception {
+        try {
+            cnn = c.getConexao();
+            ps = cnn.prepareStatement(
+                    "UPDATE Livro set Avaria=? where Cod_Livro=?");
+            ps.setInt(1, 1);
+            ps.setInt(2, liv);
+            ps.executeUpdate();
+            ps.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return false;
+        }
+    }
 
     // Este método, instancia o JavaBeans para auxiliar a montar a lista:
     public List<Livro> getLista() throws SQLException, ClassNotFoundException {
@@ -143,7 +141,8 @@ public class LivroDAO {
             liv.setDataEntrada(rs.getDate("Data_Entrada"));
             liv.setObsLivro(rs.getString("Obs_Livro"));
             //liv.setEmprestado(rs.getInt("Emprestado"));
-
+            //liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
+            
             // Adicionando o objeto à lista:
             Liv.add(liv);
         }
@@ -176,8 +175,9 @@ public class LivroDAO {
             liv.setTags(rs.getString("Tags"));
             liv.setDataEntrada(rs.getDate("Data_Entrada"));
             liv.setObsLivro(rs.getString("Obs_Livro"));
-           // liv.setEmprestado(rs.getInt("Emprestado"));
-              
+            //liv.setEmprestado(rs.getInt("Emprestado"));
+            //liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
+
         }
         rs.close();
         ps.close();

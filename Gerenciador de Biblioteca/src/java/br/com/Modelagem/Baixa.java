@@ -17,6 +17,9 @@ public class Baixa {
     private int codBaixa = 0;
     private String motivoBaixa = "";
     private String obsBaixa = "";
+    private int matriculaFunc = 0;
+    private int codEmprestimo = 0;
+    private int codLivro = 0;
 
     public int getCodBaixa() {
         return codBaixa;
@@ -42,6 +45,48 @@ public class Baixa {
         this.obsBaixa = obsBaixa;
     }
 
+    /**
+     * @return the matriculaFunc
+     */
+    public int getMatriculaFunc() {
+        return matriculaFunc;
+    }
+
+    /**
+     * @param matriculaFunc the matriculaFunc to set
+     */
+    public void setMatriculaFunc(int matriculaFunc) {
+        this.matriculaFunc = matriculaFunc;
+    }
+
+    /**
+     * @return the codEmprestimo
+     */
+    public int getCodEmprestimo() {
+        return codEmprestimo;
+    }
+
+    /**
+     * @param codEmprestimo the codEmprestimo to set
+     */
+    public void setCodEmprestimo(int codEmprestimo) {
+        this.codEmprestimo = codEmprestimo;
+    }
+
+    /**
+     * @return the codLivro
+     */
+    public int getCodLivro() {
+        return codLivro;
+    }
+
+    /**
+     * @param codLivro the codLivro to set
+     */
+    public void setCodLivro(int codLivro) {
+        this.codLivro = codLivro;
+    }
+
     //métodos
     public String registrarBaixa() {
         return "";
@@ -57,4 +102,5 @@ public class Baixa {
     public String excluirBaixa() {
         return "";
     }
+
 }
