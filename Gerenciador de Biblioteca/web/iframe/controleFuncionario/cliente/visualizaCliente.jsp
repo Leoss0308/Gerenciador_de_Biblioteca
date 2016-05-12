@@ -75,8 +75,8 @@
                     out.print("<td>" + cli.getDtNasc() + "</td>");
 
                     // Controle para manutenção:
-                    out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + cli.getCodClie() + "'><img src='../../img/delete-peq.jpg' /></a></td>");
-                    out.print("<td id='cmd'><a href='clienteExcluir.jsp?codClie=" + cli.getCodClie() + "'><img src='../../../img/delete-peq.jpg' /></a></td>");
+                    out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + cli.getCodClie() + "'><img src='../../../img/alterar.png' /></a></td>");
+                    out.print("<td id='cmd'><a href='clienteExcluir.jsp?codClie=" + cli.getCodClie() + "'><img src='../../../img/excluir.png' /></a></td>");
 
                     out.print("</tr>");
 
