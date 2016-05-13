@@ -50,12 +50,20 @@ public class LoginServlet extends HttpServlet {
                     // Criar objeto para obter sessão do JSP:
                     HttpSession sessao = request.getSession();
                     
-                    String nome = cli.getNome();
                     
+                    String nome = cli.getNome();
+                    String lnome = "";
+                    for( int i = 0; i < nome.length(); i++)    
+                    {    
+                     if(nome.charAt(i) !=' ')   
+                           lnome=lnome+nome.charAt(i);   
+                     else  
+                          break;    
+                    }   
                     
                     // Setando um atributo da sessao:
                     sessao.setAttribute("permissao", "1");
-                    sessao.setAttribute("nome", nome);
+                    sessao.setAttribute("nome", lnome);
 
                     // Como obteve sucesso, chamar a página principal:
                     pagina = "index.jsp";

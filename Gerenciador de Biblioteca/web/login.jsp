@@ -25,34 +25,11 @@
   </head>
   <body>
     <!-- Cabeçalho da pagina com o menu, logo e nome -->
-    <header id="cabecalogin">          
-        <!-- menu -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Biblioteca</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-left">
-                  <li><a href="index.jsp">Inicio</a></li>
-                  <li><a href="livros.jsp">Livros</a></li>
-                  <li><a href="perfil.jsp">Perfil</a></li>
-                  <li><a href="faleConosco.jsp">Fale conosco</a></li>
-              </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="login.jsp">Login</a></li>
-                  <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
-              </ul>  
-            </div>
-          </div>
-        </nav>
+    <header id="cabecalogin"> 
+        
+        <!-- Menu -->
+        <%@include file="menu.jsp" %>
+        
         <!-- logo e titulo -->
         <div class="row" id="tituloLogin">
 

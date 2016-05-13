@@ -18,77 +18,41 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <!--CSS do index.jsp -->
-    <link href="css/login.css" rel="stylesheet">
+    
+    <style>
+        body{
+            background: url(img/fundo.jpg) no-repeat center top fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            /*overflow: hidden;*/
+        }
+        
+        article{
+            margin-top: 60px;
+        }
+        
+        
+    </style> 
     
     
   </head>
   <body>
     <!-- Cabeçalho da pagina com o menu, logo e nome -->
-    <header id="cabecalogin">          
-        <!-- menu -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#" style="cursor:default">Biblioteca</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-left">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="livros.jsp">Livros</a></li>
-                <li><a href="perfil.jsp">Perfil</a></li>
-                <li><a href="faleConosco.jsp">Fale conosco</a></li>
-                <li><a href="teste/testaConexão.jsp">Testa Conexão</a></li>
-              </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                  
-                <%
-                    if (session.getAttribute("permissao") == null) {
-                %>
-                  
-                  <li><a href="login.jsp">Login</a></li>
-                  <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
-                  
-                <%
-                    }
-                    if (session.getAttribute("permissao") == "1") {
-                %>  
-                    <li><a href="#" style="cursor:default">Seja bem vindo, <%out.print(session.getAttribute("nome"));%></a></li>
-                    
-                    <li><a href="LogoutServlet"> logout</a></li>
-                    
-                <%
-                    }
-                    else    
-                    if (session.getAttribute("permissao") == "2" || session.getAttribute("permissao") == "3") {
-                %>  
-                    <li><a href="#" style="cursor:default">Olá, funcionario <%out.print(session.getAttribute("nome"));%></a></li>
-                    
-                    <li><a href="LogoutServlet"> logout</a></li>
-                    
-                <%
-                    }
-                %> 
-                  
-              </ul>  
-            </div>
-          </div>
-        </nav>
+    <header id="cabecalogin">   
         
+        <!-- Menu -->
+        <%@include file="menu.jsp" %>
+        
+    </header>
+                
+    <article>
         <h1><%=request.getParameter("msg")%></h1>
-    
-    
+    </article>
     
     
 
-    
 
     <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
