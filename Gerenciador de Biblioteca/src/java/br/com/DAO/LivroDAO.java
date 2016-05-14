@@ -36,7 +36,7 @@ public class LivroDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo_Livro, Autor_Livro, Editora_Livro, Resumo_Livro, Preco_Livro, Ano_Publicacao, Quantidade, Categoria_Livro, Tags, Data_Entrada, Obs_Livro, Avaria,Emprestado, Matricula_Func) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo_Livro, Autor_Livro, Editora_Livro, Resumo_Livro, Preco_Livro, Ano_Publicacao, Quantidade, Categoria_Livro, Tags,  Obs_Livro, Avaria,Emprestado, Matricula_Func) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -49,11 +49,10 @@ public class LivroDAO {
             ps.setInt(9, liv.getQuantidade());
             ps.setString(10, liv.getCategoriaLivro());
             ps.setString(11, liv.getTags());
-            ps.setDate(12, (Date) liv.getDataEntrada());
-            ps.setString(13, liv.getObsLivro());
+            ps.setString(12, liv.getObsLivro());
+            ps.setInt(13, 0);
             ps.setInt(14, 0);
-            ps.setInt(15, liv.getEmprestado());
-            ps.setInt(16, liv.getMatriculaFunc());
+            ps.setInt(15, liv.getMatriculaFunc());
 
             ps.executeUpdate();
             ps.close();
@@ -72,7 +71,7 @@ public class LivroDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "UPDATE Livro set  ISBN=?, Edicao_Livro=?, Titulo_Livro=?, Autor_Livro=?, Editora_Livro=?, Resumo_Livro=?, Preco_Livro=?, Ano_Publicacao=?, Quantidade=?, Categoria_Livro=?, Tags=?,Data_Entrada=?, Obs_Livro=?,Avaria=?, Emprestado=?,  where Cod_Livro=?");
+                    "UPDATE Livro set  ISBN=?, Edicao_Livro=?, Titulo_Livro=?, Autor_Livro=?, Editora_Livro=?, Resumo_Livro=?, Preco_Livro=?, Ano_Publicacao=?, Quantidade=?, Categoria_Livro=?, Tags=?, Obs_Livro=?,Avaria=?, Emprestado=? where Cod_Livro=?");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -85,11 +84,10 @@ public class LivroDAO {
             ps.setInt(9, liv.getQuantidade());
             ps.setString(10, liv.getCategoriaLivro());
             ps.setString(11, liv.getTags());
-            ps.setDate(12, (Date) liv.getDataEntrada());
-            ps.setString(13, liv.getObsLivro());
+            ps.setString(12, liv.getObsLivro());
+            ps.setInt(13, 0);
             ps.setInt(14, 0);
-            ps.setInt(15, liv.getEmprestado());
-            ps.setInt(16, liv.getCodLivro());
+            ps.setInt(15, liv.getCodLivro());
 
             ps.executeUpdate();
             ps.close();
@@ -121,12 +119,13 @@ public class LivroDAO {
     // Este método, instancia o JavaBeans para auxiliar a montar a lista:
     public List<Livro> getLista() throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Livro where Avaria = 0");
+        ps = cnn.prepareStatement("select * from Livro where Avaria = 0 and Emprestado = 0");
         ResultSet rs = ps.executeQuery();
         List<Livro> Liv = new ArrayList<Livro>();
         while (rs.next()) {
             // Criando o objeto e setando valores:
             Livro liv = new Livro();
+            liv.setCodLivro(rs.getInt("Codigo_Livro"));
             liv.setISBN(rs.getString("ISBN"));
             liv.setEdicaoLivro(rs.getString("Edicao_Livro"));
             liv.setTituloLivro(rs.getString("Titulo_Livro"));
@@ -140,9 +139,10 @@ public class LivroDAO {
             liv.setTags(rs.getString("Tags"));
             liv.setDataEntrada(rs.getDate("Data_Entrada"));
             liv.setObsLivro(rs.getString("Obs_Livro"));
-            //liv.setEmprestado(rs.getInt("Emprestado"));
-            //liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
-            
+            liv.setAvaria(rs.getInt("Avaria"));
+            liv.setEmprestado(rs.getInt("Emprestado"));
+            liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
+
             // Adicionando o objeto à lista:
             Liv.add(liv);
         }
@@ -175,8 +175,9 @@ public class LivroDAO {
             liv.setTags(rs.getString("Tags"));
             liv.setDataEntrada(rs.getDate("Data_Entrada"));
             liv.setObsLivro(rs.getString("Obs_Livro"));
-            //liv.setEmprestado(rs.getInt("Emprestado"));
-            //liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
+            liv.setAvaria(rs.getInt("Avaria"));
+            liv.setEmprestado(rs.getInt("Emprestado"));
+            liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
 
         }
         rs.close();

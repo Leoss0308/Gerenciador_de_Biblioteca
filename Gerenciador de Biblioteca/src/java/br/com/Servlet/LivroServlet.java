@@ -49,7 +49,6 @@ public class LivroServlet extends HttpServlet {
             liv.setQuantidade(Integer.parseInt(request.getParameter("txtQuantidade")));
             liv.setCategoriaLivro(request.getParameter("txtCategoria"));
             liv.setTags(request.getParameter("txtTags"));
-            liv.setDataEntrada(Date.valueOf(request.getParameter("txtDataEntrada")));
             liv.setObsLivro(request.getParameter("txtObs"));
             liv.setAvaria(Integer.parseInt(request.getParameter("txtAvaria")));
             liv.setEmprestado(Integer.parseInt(request.getParameter("Emprestado")));
