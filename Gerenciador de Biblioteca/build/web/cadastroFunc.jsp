@@ -90,14 +90,7 @@
         <article id="Cadastro"  class="row">         
             <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
                 <form class="form-horizontal"  action="FuncionarioServlet" method="post">
-                    
-                     <div class="form-group">
-                        <label for="txtMatricula" class="col-xs-6 col-md-3 control-label">Codigo Funcionario: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtMatricula" name="txtMatricula" required="">
-                        </div>
-                     </div>
-                        
+   
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
                         <div class="col-xs-8 col-md-6">
@@ -209,18 +202,11 @@
                             <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="">
                         </div>
                     </div> 
-                    
-                    <div class="form-group">
-                        <label for="txtStatus" class="col-xs-6 col-md-3 control-label">Status: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtStatus" name="txtStatus" required="">
-                        </div>
-                    </div>
-                    
+
                       <div class="form-group">
                         <label for="txtTipo" class="col-xs-6 col-md-3 control-label">Tipo: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtTipo" name="txtTipo" required="">
+                            <input type="number" class="form-control" id="txtTipo" name="txtTipo" min="2" max="3" required="">
                         </div>
                     </div>
                     

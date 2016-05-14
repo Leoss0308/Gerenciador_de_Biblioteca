@@ -32,6 +32,10 @@
         <servlet-name>BaixaServletAlterar</servlet-name>
         <servlet-class>br.com.Servlet.BaixaServletAlterar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FuncionarioServlet</servlet-name>
+        <servlet-class>br.com.Servlet.FuncionarioServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>BaixaServletAlterar</servlet-name>
         <url-pattern>/BaixaServletAlterar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FuncionarioServlet</servlet-name>
+        <url-pattern>/FuncionarioServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

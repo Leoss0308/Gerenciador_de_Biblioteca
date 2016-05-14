@@ -52,7 +52,7 @@ public class FuncionarioServletAlterar extends HttpServlet {
             func.setComplemento(request.getParameter("txtComplemento"));
             func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
             func.setStatusFunc(request.getParameter("txtStatus"));
-            func.setTipoFunc(Boolean.getBoolean(request.getParameter("txTipo")));
+            func.setTipoFunc(Integer.getInteger(request.getParameter("txTipo")));
             
             FuncionarioDAO funcDAO = new FuncionarioDAO();
             funcDAO.atualizar(func);

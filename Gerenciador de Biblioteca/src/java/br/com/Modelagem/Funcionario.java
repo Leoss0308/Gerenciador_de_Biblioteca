@@ -19,7 +19,7 @@ public class Funcionario extends Pessoa {
 
     private int matriculaFunc = 0;
     private String statusFunc = "";
-    private boolean tipoFunc = true;
+    private int tipoFunc = 0;
     private Date dtCadastroFunc;
 
     //getters and setters
@@ -51,17 +51,11 @@ public class Funcionario extends Pessoa {
         this.statusFunc = statusFunc;
     }
 
-    /**
-     * @return the tipoFunc
-     */
-    public boolean isTipoFunc() {
+    public int getTipoFunc() {
         return tipoFunc;
     }
 
-    /**
-     * @param tipoFunc the tipoFunc to set
-     */
-    public void setTipoFunc(boolean tipoFunc) {
+    public void setTipoFunc(int tipoFunc) {
         this.tipoFunc = tipoFunc;
     }
 

@@ -48,7 +48,7 @@ public class FuncionarioDAO {
             ps.setString(10, func.getLogin());
             ps.setString(11, func.getSenha());
             ps.setString(12, func.getStatusFunc());
-            ps.setInt(13, func.getPermissao());
+            ps.setInt(13,1);
             ps.setDate(14, func.getDtNasc());
             ps.executeUpdate();
             ps.close();
@@ -133,7 +133,7 @@ public class FuncionarioDAO {
             func.setEmail(rs.getString("E_mail"));
             func.setLogin(rs.getString("Login"));
             func.setSenha(rs.getString("Senha"));
-            func.setTipoFunc(rs.getBoolean("Tipo"));
+            func.setTipoFunc(rs.getInt("Tipo"));
             func.setDtCadastroFunc(rs.getDate("Data_Cadastro"));
             func.setDtNasc(rs.getDate("Data_Nasc"));
             
@@ -168,7 +168,7 @@ public class FuncionarioDAO {
             func.setLogin(rs.getString("Login"));
             func.setSenha(rs.getString("Senha"));
             func.setStatusFunc(rs.getString("Status"));
-            func.setTipoFunc(rs.getBoolean("Tipo"));
+            func.setTipoFunc(rs.getInt("Tipo"));
             func.setDtNasc(rs.getDate("Data_Nasc"));
         }
         rs.close();
