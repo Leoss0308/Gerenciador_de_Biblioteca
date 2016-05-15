@@ -8,7 +8,6 @@ package br.com.DAO;
 import br.com.Conexao.Conecta;
 import br.com.Modelagem.Livro;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -45,7 +44,7 @@ public class LivroDAO {
             ps.setString(5, liv.getEditoraLivro());
             ps.setString(6, liv.getResumoLivro());
             ps.setString(7, liv.getPrecoLivro());
-            ps.setDate(8, (Date) liv.getAnoPublicacao());
+            ps.setString(8, liv.getAnoPublicacao());
             ps.setInt(9, liv.getQuantidade());
             ps.setString(10, liv.getCategoriaLivro());
             ps.setString(11, liv.getTags());
@@ -80,7 +79,7 @@ public class LivroDAO {
             ps.setString(5, liv.getEditoraLivro());
             ps.setString(6, liv.getResumoLivro());
             ps.setString(7, liv.getPrecoLivro());
-            ps.setDate(8, (Date) liv.getAnoPublicacao());
+            ps.setString(8, liv.getAnoPublicacao());
             ps.setInt(9, liv.getQuantidade());
             ps.setString(10, liv.getCategoriaLivro());
             ps.setString(11, liv.getTags());
@@ -133,7 +132,7 @@ public class LivroDAO {
             liv.setEditoraLivro(rs.getString("Editora_Livro"));
             liv.setResumoLivro(rs.getString("Resumo_Livro"));
             liv.setPrecoLivro(rs.getString("Preco_Livro"));
-            liv.setAnoPublicacao(rs.getDate("Ano_Publicacao"));
+            liv.setAnoPublicacao(rs.getString("Ano_Publicacao"));
             liv.setQuantidade(rs.getInt("Quantidade"));
             liv.setCategoriaLivro(rs.getString("Categoria_Livro"));
             liv.setTags(rs.getString("Tags"));
@@ -169,7 +168,7 @@ public class LivroDAO {
             liv.setEditoraLivro(rs.getString("Editora_Livro"));
             liv.setResumoLivro(rs.getString("Resumo_Livro"));
             liv.setPrecoLivro(rs.getString("Preco_Livro"));
-            liv.setAnoPublicacao(rs.getDate("Ano_Publicacao"));
+            liv.setAnoPublicacao(rs.getString("Ano_Publicacao"));
             liv.setQuantidade(rs.getInt("Quantidade"));
             liv.setCategoriaLivro(rs.getString("Categoria_Livro"));
             liv.setTags(rs.getString("Tags"));

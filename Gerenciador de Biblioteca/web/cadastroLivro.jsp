@@ -127,7 +127,7 @@
                     <div class="form-group">
                         <label for="txtAnoPublicacao" class="col-xs-6 col-md-3 control-label">Ano de Publicação: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="date" class="form-control" id="txtAnoPublicacao" name="txtAnoPublicacao" required="">
+                            <input type="text" class="form-control" id="txtAnoPublicacao" name="txtAnoPublicacao" required="">
                         </div>
                     </div> 
                     
@@ -179,16 +179,15 @@
             
         </footer>
         
-        <!-- Script para fazer as mascaras dos campos  
+        <!-- Script para fazer as mascaras dos campos  -->
         <script>
             jQuery(function($){
                 
-                $("#txtCPF").mask("999.999.999-99");
-                $("#txtCEP").mask("99999-999");
-                //$("#txtDataNasc").mask("99/99/9999");
+                $("#txtAnoPublicacao").mask("9999");
+                
             });
         </script> 
-        -->
+        
         <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->

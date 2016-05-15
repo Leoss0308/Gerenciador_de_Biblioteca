@@ -3,18 +3,15 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import br.com.Modelagem.Livro;
+import br.com.DAO.LivroDAO;
 
-public final class cadastroLivro_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class alterarLivro_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
-    _jspx_dependants.add("/menu.jsp");
-  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -50,27 +47,25 @@ public final class cadastroLivro_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"pt-br\">\n");
-      out.write("    <head>\n");
-      out.write("        <meta charset=\"utf-8\">\n");
-      out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
-      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+      out.write("    \n");
+      out.write("  <head>\n");
+      out.write("    <meta charset=\"utf-8\">\n");
+      out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
+      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
+      out.write("    <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->\n");
+      out.write("    <title>Alterar Livro</title>\n");
       out.write("\n");
-      out.write("        <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->\n");
-      out.write("        <title>Cadastro de Livros</title>\n");
-      out.write("\n");
-      out.write("        <!-- Bootstrap -->\n");
-      out.write("        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n");
-      out.write("\n");
-      out.write("        <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->\n");
-      out.write("        <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->\n");
-      out.write("        <!--[if lt IE 9]>\n");
-      out.write("          <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>\n");
-      out.write("          <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n");
-      out.write("        <![endif]-->\n");
-      out.write("\n");
-      out.write("        <!--CSS do cadastroClie.jsp -->\n");
-      out.write("        <link href=\"css/cadastroClie.css\" rel=\"stylesheet\">\n");
-      out.write("        <!-- jquery para a mascara -->\n");
+      out.write("    <!-- Bootstrap -->\n");
+      out.write("    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n");
+      out.write("      \n");
+      out.write("    <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->\n");
+      out.write("    <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->\n");
+      out.write("    <!--[if lt IE 9]>\n");
+      out.write("      <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>\n");
+      out.write("      <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n");
+      out.write("    <![endif]-->\n");
+      out.write("    \n");
+      out.write("    <!-- jquery para a mascara -->\n");
       out.write("        <script src = \"js/jquery-1.12.3.min.js\"  type = \"text/javascript\" ></script>\n");
       out.write("        <script src = \"js/jquery-2.1.3.js\"  type = \"text/javascript\" ></script>\n");
       out.write("        <script src = \"js/jquery.maskedinput.js\"  type = \"text/javascript\" ></script>\n");
@@ -87,106 +82,36 @@ public final class cadastroLivro_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("          webshims.polyfill('forms forms-ext');\n");
       out.write("        </script>\n");
       out.write("\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <!-- Cabeçalho da pagina com o menu, logo e nome -->\n");
-      out.write("        <header id=\"cabecahome\">          \n");
-      out.write("            <!-- menu -->\n");
-      out.write("            \n");
-      out.write("            <!-- Menu -->\n");
-      out.write("            ");
-      out.write("        <nav class=\"navbar navbar-inverse navbar-fixed-top\">\n");
-      out.write("          <div class=\"container-fluid\">\n");
-      out.write("            <div class=\"navbar-header\">\n");
-      out.write("              <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n");
-      out.write("                <span class=\"sr-only\">Toggle navigation</span>\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("              </button>\n");
-      out.write("              <a class=\"navbar-brand\" href=\"#\" style=\"cursor:default\">Biblioteca</a>\n");
-      out.write("            </div>\n");
-      out.write("            <div id=\"navbar\" class=\"navbar-collapse collapse\">\n");
-      out.write("              <ul class=\"nav navbar-nav navbar-left\">\n");
-      out.write("                <li><a href=\"#\">Inicio</a></li>\n");
-      out.write("                <li><a href=\"livros.jsp\">Livros</a></li>\n");
-      out.write("                <li><a href=\"perfil.jsp\">Perfil</a></li>\n");
-      out.write("                <li><a href=\"faleConosco.jsp\">Fale conosco</a></li>\n");
-      out.write("                <li><a href=\"teste/testaConexão.jsp\">Testa Conexão</a></li>\n");
-      out.write("              </ul>\n");
-      out.write("\n");
-      out.write("              <ul class=\"nav navbar-nav navbar-right\">\n");
-      out.write("                  \n");
-      out.write("                ");
+      out.write("    \n");
+      out.write("    <style>\n");
+      out.write("        body{\n");
+      out.write("            background: url(../img/fundo.jpg) no-repeat center top fixed;\n");
+      out.write("            -webkit-background-size: cover;\n");
+      out.write("            -moz-background-size: cover;\n");
+      out.write("            -o-background-size: cover;\n");
+      out.write("            background-size: cover;\n");
+      out.write("            /*overflow: hidden;*/\n");
+      out.write("        }   \n");
+      out.write("    </style>\n");
+      out.write("    \n");
+      out.write("  </head>\n");
+      out.write("  <body>\n");
+      out.write("      \n");
+      out.write("        ");
 
-                    if (session.getAttribute("permissao") == null) {
-                
+            Livro liv = new Livro();
+            int cod = 0;
+            cod = Integer.parseInt(request.getParameter("codLivro"));
+            liv = new LivroDAO().getLivro(cod);  // Obtem o item do BD que foi solicitado via parâmetro.            
+            
+        
       out.write("\n");
-      out.write("                  \n");
-      out.write("                  <li><a href=\"login.jsp\">Login</a></li>\n");
-      out.write("                  <li><a href=\"cadastroClie.jsp\">Cadastre-se</a></li>\n");
-      out.write("                  \n");
-      out.write("                ");
-
-                    }
-                    if (session.getAttribute("permissao") == "1") {
-                
-      out.write("  \n");
-      out.write("                    <li><a class=\"navbar-brand\" href=\"#\" style=\"cursor:default\">Seja bem vindo, ");
-out.print(session.getAttribute("nome"));
-      out.write("</a></li>\n");
-      out.write("                    \n");
-      out.write("                    <li><a href=\"LogoutServlet\"> logout</a></li>\n");
-      out.write("                    \n");
-      out.write("                ");
-
-                    }
-                    else    
-                    if (session.getAttribute("permissao") == "2" || session.getAttribute("permissao") == "3") {
-                
-      out.write("  \n");
-      out.write("                    <li><a href=\"#\" style=\"cursor:default\">Olá, funcionario ");
-out.print(session.getAttribute("nome"));
-      out.write("</a></li>\n");
-      out.write("                    \n");
-      out.write("                    <li><a href=\"LogoutServlet\"> logout</a></li>\n");
-      out.write("                    \n");
-      out.write("                ");
-
-                    }
-                
-      out.write(" \n");
-      out.write("                  \n");
-      out.write("              </ul>  \n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("        </nav>");
-      out.write("\n");
-      out.write("            \n");
-      out.write("             <!-- Logo e Titulo -->\n");
-      out.write("            <div class=\"row\" id=\"cadastroClie\">\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                <div class=\"col-xs-5 col-md-4\">\n");
-      out.write("                    <img src=\"img/logo.png\" alt=\"Biblioteca\" id=\"logo\" class=\"img-responsive\">\n");
-      out.write("                </div>\n");
-      out.write("\n");
-      out.write("                <hgroup class=\"col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1\">\n");
-      out.write("                    <h1>Cadastro de Livros</h1>\n");
-      out.write("                </hgroup>\n");
-      out.write("\n");
-      out.write("            </div>\n");
-      out.write("           \n");
-      out.write("\n");
-      out.write("        </header>\n");
-      out.write("\n");
-      out.write("        <!-- Conteudo da Pagina -->\n");
-      out.write("\n");
-      out.write("        <article id=\"Cadastro\"  class=\"row\">         \n");
+      out.write("        \n");
+      out.write("        <article id=\"Alteracao\"  class=\"row\">         \n");
       out.write("            <div class=\"col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2\">\n");
-      out.write("                <form class=\"form-horizontal\"  action=\"LivroServlet\" method=\"post\">\n");
+      out.write("                <form class=\"form-horizontal\"  action=\"LivroServletAlterar\" method=\"post\">\n");
       out.write("                    \n");
-      out.write("                    <div class=\"form-group\">\n");
+      out.write("               <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtISBN\" class=\"col-xs-6 col-md-3 control-label\">ISBN: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
       out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtISBN\" name=\"txtISBN\" required=\"\">\n");
@@ -270,13 +195,25 @@ out.print(session.getAttribute("nome"));
       out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtObs\" name=\"txtObs\" required=\"\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
-      out.write("                           \n");
+      out.write("                    \n");
+      out.write("                    <div class=\"form-group\">\n");
+      out.write("                        <label for=\"txtAvaria\" class=\"col-xs-6 col-md-3 control-label\">Status de Avarias: </label>\n");
+      out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtAvaria\" name=\"txtAvaria\" required=\"\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    \n");
+      out.write("                    <div class=\"form-group\">\n");
+      out.write("                        <label for=\"txtEmprestado\" class=\"col-xs-6 col-md-3 control-label\">Status de Empréstimos: </label>\n");
+      out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtEmprestado\" name=\"txtEmprestado\" required=\"\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
       out.write("                    \n");
       out.write("                    \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <div class=\"col-xs-8 col-md-6 col-md-offset-3\">\n");
-      out.write("                            <input type=\"submit\" value=\"Enviar\" name=\"btnEnviar\" id=\"btnEnviarCC\" class=\"btn btn-success btn-lg\" />\n");
-      out.write("                            <input type=\"reset\" value=\"Limpar\" name=\"btnLimpar\" id=\"btnLimparCC\" class=\"btn btn-danger btn-lg\" />\n");
+      out.write("                            <input type=\"submit\" value=\"Alterar\" name=\"btnAlterar\" id=\"btnEnviarAC\" class=\"btn btn-success btn-lg btn-block\"/>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("                            \n");
@@ -285,12 +222,13 @@ out.print(session.getAttribute("nome"));
       out.write("            </div>\n");
       out.write("            \n");
       out.write("        </article>\n");
-      out.write("        <!-- aonde deveria ficar o rodapé se tivesse um --> \n");
-      out.write("        <footer class=\"footer\">\n");
-      out.write("            \n");
-      out.write("        </footer>\n");
-      out.write("        \n");
-      out.write("        <!-- Script para fazer as mascaras dos campos  -->\n");
+      out.write("      \n");
+      out.write("      \n");
+      out.write("      \n");
+      out.write("\n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("    <!-- Script para fazer as mascaras dos campos  -->\n");
       out.write("        <script>\n");
       out.write("            jQuery(function($){\n");
       out.write("                \n");
@@ -298,13 +236,13 @@ out.print(session.getAttribute("nome"));
       out.write("                \n");
       out.write("            });\n");
       out.write("        </script> \n");
-      out.write("        \n");
-      out.write("        <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->\n");
-      out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>\n");
-      out.write("        <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->\n");
-      out.write("        <script src=\"js/bootstrap.min.js\"></script>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("  \n");
+      out.write("    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->\n");
+      out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js\"></script>\n");
+      out.write("    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->\n");
+      out.write("    <script src=\"js/bootstrap.min.js\"></script>\n");
+      out.write("  </body>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -24,7 +24,7 @@ public class Livro {
     private String editoraLivro = "";
     private String resumoLivro = "";
     private String precoLivro = "";
-    private Date anoPublicacao;
+    private String anoPublicacao;
     private int quantidade = 0;
     private String categoriaLivro = "";
     private String tags = "";
@@ -114,11 +114,11 @@ public class Livro {
         this.precoLivro = precoLivro;
     }
 
-    public Date getAnoPublicacao() {
+    public String getAnoPublicacao() {
         return anoPublicacao;
     }
 
-    public void setAnoPublicacao(Date anoPublicacao) {
+    public void setAnoPublicacao(String anoPublicacao) {
         this.anoPublicacao = anoPublicacao;
     }
 
