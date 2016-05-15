@@ -174,6 +174,41 @@ public class ClienteDAO {
         ps.close();
         return cli;
     }
+    
+    public List<Cliente> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from CLIENTE where ATIVO = 1 AND " + tipo + " LIKE ?");
+        ps.setString(1, '%' + palavra + '%');
+        ResultSet rs = ps.executeQuery();
+        List<Cliente> Clies = new ArrayList<Cliente>();
+        while (rs.next()) {
+            // Criando o objeto e setando valores:
+            Cliente cli = new Cliente();
+            cli.setCodClie(rs.getInt("Cod_Cliente"));
+            cli.setNome(rs.getString("Nome"));
+            cli.setCpfClie(rs.getString("CPF"));
+            cli.setBairro(rs.getString("Bairro"));
+            cli.setCep(rs.getString("CEP"));
+            cli.setCidade(rs.getString("Cidade"));
+            cli.setEstado(rs.getString("Estado"));
+            cli.setTelefone(rs.getString("Telefone"));
+            cli.setEmail(rs.getString("E_mail"));
+            cli.setLogin(rs.getString("Login"));
+            cli.setSenha(rs.getString("Senha"));
+            cli.setObsClie(rs.getString("Observacao"));
+            cli.setDtCadastroClie(rs.getDate("Data_Cadastro"));
+            cli.setEnd(rs.getString("Endereco"));
+            cli.setStatusClie(rs.getInt("Status"));
+            cli.setComplemento(rs.getString("Complemento"));
+            cli.setDtNasc(rs.getDate("Data_Nasc"));
+            
+            // Adicionando o objeto à lista:
+            Clies.add(cli);
+        }
+        rs.close();
+        ps.close();
+        return Clies;
+    }
        
     
 }

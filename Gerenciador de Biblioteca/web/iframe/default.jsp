@@ -19,7 +19,7 @@
     
     <style>
         body{
-            background: url(../img/fundo.jpg) no-repeat center top fixed;
+            background: url(../img/fundoTabela.jpg) no-repeat center top fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -31,8 +31,8 @@
   </head>
   <body>
       
-    <h1>Olá seleciona alguma opção ao lado</h1>
-    <h2><--------------------------------</h2>
+    <h1>Selecione alguma opção ao lado para começar!</h1>    
+    <img class="img-responsive" style="width: 40%; height: 40%" src="../img/seta.png">
     
     
     

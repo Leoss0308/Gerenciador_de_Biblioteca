@@ -35,61 +35,100 @@
  
   </head>
   <body>
+        <div class="row">
+            
+                <form class="form-horizontal"  action="visualizaCliente.jsp" method="get">
+
+                    <div class="form-inline">
+                        <label for="slcTipoPesquisa" class="col-xs-2 control-label">Pesquisar pelo: </label>
+                        <div class="col-xs-2 ">
+                            <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa" style="width: 100%">
+                                <option value="Nome">Nome</option>
+                                <option value="CPF">Cpf</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-inline">
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" id="txtpesquisa" name="txtpesquisa" placeholder="Palavra Chave" style="width: 100%">
+                        </div>
+                    </div>
+
+                    <div class="form-inline">
+                        <div class="col-xs-1 ">
+                            <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-sm" style="margin-top: 2px"/>
+                        </div>
+                    </div>
+
+                </form>
+            
+        </div>
+        <div class="row">
+        </div>
   
     <%
+        List<Cliente> clientes = null;
         ClienteDAO clidao = new ClienteDAO();
-        List<Cliente> clientes = clidao.getLista();
+        String palavra = request.getParameter("txtpesquisa");
+        if(palavra == null){ 
+        clientes = clidao.getLista();
+        }else{
+        String tipo = request.getParameter("slcTipoPesquisa");
+        clientes = clidao.getListaLike(palavra, tipo);
+        }
     %>
-    <div class="table-responsive">  
-        <table class="table table-bordered">
-           <!-- <tr><th colspan="18">Clientes</tr> -->
-            <tr>
-                <th>Código</th><th>Nome</th><th>CPF</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>Email</th><th>Login</th><th>Senha</th><th>Observacao</th><th>Data_Cadastro</th><th>Endereco</th><th>Status</th><th>Complemento</th><th>Data_Nasc</th><th></th>
-            </tr>
-            <%
-                String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
-                sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
+    
+        <div class="table-responsive">  
+            <table class="table table-bordered">
+               <!-- <tr><th colspan="18">Clientes</tr> -->
+                <tr>
+                    <th>Código</th><th>Nome</th><th>CPF</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>Email</th><th>Login</th><th>Senha</th><th>Observacao</th><th>Data_Cadastro</th><th>Endereco</th><th>Status</th><th>Complemento</th><th>Data_Nasc</th><th></th><th></th>
+                </tr>
+                <%
+                    String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
+                    sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
 
-                int cor = 0;
-                for (Cliente cli : clientes) {
-                    String sCor = "cor" + (cor % 2);
-                    cor++;
+                    int cor = 0;
+                    for (Cliente cli : clientes) {
+                        String sCor = "cor" + (cor % 2);
+                        cor++;
 
-                    // Fazer da linha da tabela, um link para exibição:
-                    out.print("");
+                        // Fazer da linha da tabela, um link para exibição:
+                        out.print("");
 
-                    out.print("<tr id='" + sCor + "' " + sDestaque + ">");
+                        out.print("<tr id='" + sCor + "' " + sDestaque + ">");
 
-                    out.print("<td>" + cli.getCodClie() + "</td>");
-                    out.print("<td>" + cli.getNome() + "</td>");
-                    out.print("<td>" + cli.getCpfClie() + "</td>");
-                    out.print("<td>" + cli.getBairro() + "</td>");
-                    out.print("<td>" + cli.getCep() + "</td>");
-                    out.print("<td>" + cli.getCidade() + "</td>");
-                    out.print("<td>" + cli.getEstado() + "</td>");
-                    out.print("<td>" + cli.getTelefone() + "</td>");
-                    out.print("<td>" + cli.getEmail() + "</td>");
-                    out.print("<td>" + cli.getLogin() + "</td>");
-                    out.print("<td>" + cli.getSenha() + "</td>");
-                    out.print("<td>" + cli.getObsClie() + "</td>");
-                    out.print("<td>" + cli.getDtCadastroClie() + "</td>");
-                    out.print("<td>" + cli.getEnd() + "</td>");
-                    out.print("<td>" + cli.getStatusClie() + "</td>");
-                    out.print("<td>" + cli.getComplemento() + "</td>");
-                    out.print("<td>" + cli.getDtNasc() + "</td>");
+                        out.print("<td>" + cli.getCodClie() + "</td>");
+                        out.print("<td>" + cli.getNome() + "</td>");
+                        out.print("<td>" + cli.getCpfClie() + "</td>");
+                        out.print("<td>" + cli.getBairro() + "</td>");
+                        out.print("<td>" + cli.getCep() + "</td>");
+                        out.print("<td>" + cli.getCidade() + "</td>");
+                        out.print("<td>" + cli.getEstado() + "</td>");
+                        out.print("<td>" + cli.getTelefone() + "</td>");
+                        out.print("<td>" + cli.getEmail() + "</td>");
+                        out.print("<td>" + cli.getLogin() + "</td>");
+                        out.print("<td>" + cli.getSenha() + "</td>");
+                        out.print("<td>" + cli.getObsClie() + "</td>");
+                        out.print("<td>" + cli.getDtCadastroClie() + "</td>");
+                        out.print("<td>" + cli.getEnd() + "</td>");
+                        out.print("<td>" + cli.getStatusClie() + "</td>");
+                        out.print("<td>" + cli.getComplemento() + "</td>");
+                        out.print("<td>" + cli.getDtNasc() + "</td>");
 
-                    // Controle para manutenção:
-                    out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + cli.getCodClie() + "'><img src='../../../img/alterar.png' /></a></td>");
-                    out.print("<td id='cmd'><a href='clienteExcluir.jsp?codClie=" + cli.getCodClie() + "'><img src='../../../img/excluir.png' /></a></td>");
+                        // Controle para manutenção:
+                        out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + cli.getCodClie() + "'><img title='Alterar' src='../../../img/alterar.png' /></a></td>");
+                        out.print("<td id='cmd'><a href='clienteExcluir.jsp?codClie=" + cli.getCodClie() + "'><img title='Excluir' src='../../../img/excluir.png' /></a></td>");
 
-                    out.print("</tr>");
+                        out.print("</tr>");
 
-                    //out.print("</a>");
+                        //out.print("</a>");
 
-                }
-            %>
-        </table>
-    </div>
+                    }
+                %>
+            </table>
+        </div>
         
     
     
