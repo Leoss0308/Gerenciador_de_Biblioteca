@@ -46,7 +46,6 @@ public class LivroServletAlterar extends HttpServlet {
             liv.setResumoLivro(request.getParameter("txtResumo"));
             liv.setPrecoLivro(request.getParameter("txtPreco"));
             liv.setAnoPublicacao(request.getParameter("txtAnoPublicacao"));
-            liv.setQuantidade(Integer.parseInt(request.getParameter("txtQuantidade")));
             liv.setCategoriaLivro(request.getParameter("txtCategoria"));
             liv.setTags(request.getParameter("txtTags"));
             liv.setObsLivro(request.getParameter("txtObs"));

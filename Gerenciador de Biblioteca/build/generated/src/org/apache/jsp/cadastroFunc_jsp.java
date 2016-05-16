@@ -4,17 +4,12 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class cadastroClie_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class cadastroFunc_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
-    _jspx_dependants.add("/menu.jsp");
-  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -54,7 +49,7 @@ public final class cadastroClie_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
       out.write("\n");
       out.write("        <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->\n");
-      out.write("        <title>Cadastro De Cliente</title>\n");
+      out.write("        <title>Cadastro De Funcionario</title>\n");
       out.write("\n");
       out.write("        <!-- Bootstrap -->\n");
       out.write("        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n");
@@ -67,6 +62,7 @@ public final class cadastroClie_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        <![endif]-->\n");
       out.write("\n");
       out.write("        <!--CSS do cadastroClie.jsp -->\n");
+      out.write("        <!-- Alterar o documento css caso a pagina de cadastro funcionario seja diferente do cadastro cliente -->\n");
       out.write("        <link href=\"css/cadastroClie.css\" rel=\"stylesheet\">\n");
       out.write("        <!-- jquery para a mascara -->\n");
       out.write("        <script src = \"js/jquery-1.12.3.min.js\"  type = \"text/javascript\" ></script>\n");
@@ -90,77 +86,32 @@ public final class cadastroClie_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        <!-- Cabeçalho da pagina com o menu, logo e nome -->\n");
       out.write("        <header id=\"cabecahome\">          \n");
       out.write("            <!-- menu -->\n");
-      out.write("            \n");
-      out.write("            <!-- Menu -->\n");
-      out.write("            ");
-      out.write("        <nav class=\"navbar navbar-inverse navbar-fixed-top\">\n");
-      out.write("          <div class=\"container-fluid\">\n");
-      out.write("            <div class=\"navbar-header\">\n");
-      out.write("              <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n");
-      out.write("                <span class=\"sr-only\">Toggle navigation</span>\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("              </button>\n");
-      out.write("              <a class=\"navbar-brand\" href=\"#\" style=\"cursor:default\">Biblioteca</a>\n");
-      out.write("            </div>\n");
-      out.write("            <div id=\"navbar\" class=\"navbar-collapse collapse\">\n");
-      out.write("              <ul class=\"nav navbar-nav navbar-left\">\n");
-      out.write("                <li><a href=\"index.jsp\">Inicio</a></li>\n");
-      out.write("                <li><a href=\"livros.jsp\">Livros</a></li>\n");
-      out.write("                <li><a href=\"perfil.jsp\">Perfil</a></li>\n");
-      out.write("                <li><a href=\"faleConosco.jsp\">Fale conosco</a></li>\n");
-      out.write("                <li><a href=\"teste/testaConexão.jsp\">Testa Conexão</a></li>\n");
-      out.write("              </ul>\n");
+      out.write("            <nav class=\"navbar navbar-inverse navbar-fixed-top\">\n");
+      out.write("                <div class=\"container-fluid\">\n");
+      out.write("                    <div class=\"navbar-header\">\n");
+      out.write("                        <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n");
+      out.write("                            <span class=\"sr-only\">Toggle navigation</span>\n");
+      out.write("                            <span class=\"icon-bar\"></span>\n");
+      out.write("                            <span class=\"icon-bar\"></span>\n");
+      out.write("                            <span class=\"icon-bar\"></span>\n");
+      out.write("                        </button>\n");
+      out.write("                        <a class=\"navbar-brand\" href=\"#\">Biblioteca</a>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div id=\"navbar\" class=\"navbar-collapse collapse\">\n");
+      out.write("                        <ul class=\"nav navbar-nav navbar-left\">\n");
+      out.write("                            <li><a href=\"index.jsp\">Inicio</a></li>\n");
+      out.write("                            <li><a href=\"livros.jsp\">Livros</a></li>\n");
+      out.write("                            <li><a href=\"perfil.jsp\">Perfil</a></li>\n");
+      out.write("                            <li><a href=\"faleConosco.jsp\">Fale conosco</a></li>\n");
+      out.write("                        </ul>\n");
       out.write("\n");
-      out.write("              <ul class=\"nav navbar-nav navbar-right\">\n");
-      out.write("                  \n");
-      out.write("                ");
-
-                    if (session.getAttribute("permissao") == null) {
-                
-      out.write("\n");
-      out.write("                  \n");
-      out.write("                  <li><a href=\"login.jsp\">Login</a></li>\n");
-      out.write("                  <li><a href=\"cadastroClie.jsp\">Cadastre-se</a></li>\n");
-      out.write("                  \n");
-      out.write("                ");
-
-                    }
-                    if (session.getAttribute("permissao") == "1") {
-                
-      out.write("  \n");
-      out.write("                    <li><a class=\"navbar-brand\" href=\"#\" style=\"cursor:default\">Seja bem vindo, ");
-out.print(session.getAttribute("nome"));
-      out.write("</a></li>\n");
-      out.write("                    \n");
-      out.write("                    <li><a href=\"LogoutServlet\"> logout</a></li>\n");
-      out.write("                    \n");
-      out.write("                ");
-
-                    }
-                    else    
-                    if (session.getAttribute("permissao") == "2" || session.getAttribute("permissao") == "3") {
-                
-      out.write("  \n");
-      out.write("                    <li><a href=\"#\" style=\"cursor:default\">Olá, funcionario ");
-out.print(session.getAttribute("nome"));
-      out.write("</a></li>\n");
-      out.write("                    \n");
-      out.write("                    <li><a href=\"LogoutServlet\"> logout</a></li>\n");
-      out.write("                    \n");
-      out.write("                ");
-
-                    }
-                
-      out.write(" \n");
-      out.write("                  \n");
-      out.write("              </ul>  \n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("        </nav>");
-      out.write("\n");
-      out.write("            \n");
+      out.write("                        <ul class=\"nav navbar-nav navbar-right\">\n");
+      out.write("                            <li><a href=\"login.jsp\">Login</a></li>\n");
+      out.write("                            <li><a href=\"cadastroClie.jsp\">Cadastre-se</a></li>\n");
+      out.write("                        </ul>  \n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </nav>\n");
       out.write("            <!-- Logo e Titulo -->\n");
       out.write("            <div class=\"row\" id=\"cadastroClie\">\n");
       out.write("\n");
@@ -170,7 +121,7 @@ out.print(session.getAttribute("nome"));
       out.write("                </div>\n");
       out.write("\n");
       out.write("                <hgroup class=\"col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1\">\n");
-      out.write("                    <h1>Cadastro De Cliente</h1>\n");
+      out.write("                    <h1>Cadastro De Funcionário</h1>\n");
       out.write("                </hgroup>\n");
       out.write("\n");
       out.write("            </div>\n");
@@ -178,36 +129,15 @@ out.print(session.getAttribute("nome"));
       out.write("        </header>\n");
       out.write("\n");
       out.write("        <!-- Conteudo da Pagina -->\n");
-      out.write("        ");
-
-            if(session.getAttribute("verificacao")==null){
-            HttpSession cadclivolta = request.getSession();
-            cadclivolta.setAttribute("txtNome","");
-            cadclivolta.setAttribute("txtCPF","");
-            cadclivolta.setAttribute("txtBairro","");
-            cadclivolta.setAttribute("txtCEP","");
-            cadclivolta.setAttribute("txtCidade","");
-            cadclivolta.setAttribute("txtEstado","");
-            cadclivolta.setAttribute("txtTelefone","");
-            cadclivolta.setAttribute("txtEmail","");
-            cadclivolta.setAttribute("txtEndereco","");
-            cadclivolta.setAttribute("txtComplemento","");
-                
-            }
-        
       out.write("\n");
-      out.write("        \n");
-      out.write("        \n");
       out.write("        <article id=\"Cadastro\"  class=\"row\">         \n");
       out.write("            <div class=\"col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2\">\n");
-      out.write("                <form class=\"form-horizontal\"  action=\"ClienteServlet\" method=\"post\">\n");
-      out.write("                    \n");
+      out.write("                <form class=\"form-horizontal\"  action=\"FuncionarioServlet\" method=\"post\">\n");
+      out.write("   \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtNome\" class=\"col-xs-6 col-md-3 control-label\">Nome Completo: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtNome\" name=\"txtNome\" required=\"\" value=\"");
-out.print(session.getAttribute("txtNome"));
-      out.write("\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtNome\" name=\"txtNome\" required=\"\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("                                                          \n");
@@ -219,65 +149,44 @@ out.print(session.getAttribute("txtNome"));
       out.write("                    </div>\n");
       out.write("                    \n");
       out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label for=\"txtCPF\" class=\"col-xs-6 col-md-3 control-label\">CPF: </label>\n");
-      out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtCPF\" name=\"txtCPF\" required=\"\" value=\"");
-out.print(session.getAttribute("txtCPF"));
-      out.write("\">\n");
-      out.write("                        </div>\n");
-      out.write("                    </div>\n");
-      out.write("                    \n");
-      out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtEmail\" class=\"col-xs-6 col-md-3 control-label\">Email: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"email\" class=\"form-control\" id=\"txtEmail\" name=\"txtEmail\" required=\"\" value=\"");
-out.print(session.getAttribute("txtEmail"));
-      out.write("\">\n");
+      out.write("                            <input type=\"email\" class=\"form-control\" id=\"txtEmail\" name=\"txtEmail\" required=\"\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("                    \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtTelefone\" class=\"col-xs-6 col-md-3 control-label\">Telefone: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtTelefone\" name=\"txtTelefone\" required=\"\" value=\"");
-out.print(session.getAttribute("txtTelefone"));
-      out.write("\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtTelefone\" name=\"txtTelefone\" required=\"\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("                    \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtCEP\" class=\"col-xs-6 col-md-3 control-label\">CEP: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtCEP\" name=\"txtCEP\" required=\"\" value=\"");
-out.print(session.getAttribute("txtCEP"));
-      out.write("\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtCEP\" name=\"txtCEP\" required=\"\">\n");
       out.write("                        </div>\n");
-      out.write("                    </div>\n");
-      out.write("                     \n");
+      out.write("                    </div> \n");
+      out.write("                    \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtEndereco\" class=\"col-xs-6 col-md-3 control-label\">Endereço: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtEndereco\" name=\"txtEndereco\" required=\"\" value=\"");
-out.print(session.getAttribute("txtEndereco"));
-      out.write("\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtEndereco\" name=\"txtEndereco\" required=\"\">\n");
       out.write("                        </div>\n");
-      out.write("                    </div>        \n");
+      out.write("                    </div>\n");
       out.write("                           \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtBairro\" class=\"col-xs-6 col-md-3 control-label\">Bairro: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtBairro\" name=\"txtBairro\" required=\"\" value=\"");
-out.print(session.getAttribute("txtBairro"));
-      out.write("\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtBairro\" name=\"txtBairro\" required=\"\">\n");
       out.write("                        </div>\n");
       out.write("                    </div> \n");
       out.write("                    \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtComplemento\" class=\"col-xs-6 col-md-3 control-label\">Complemento: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtComplemento\" name=\"txtComplemento\" value=\"");
-out.print(session.getAttribute("txtComplemento"));
-      out.write("\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtComplemento\" name=\"txtComplemento\">\n");
       out.write("                        </div>\n");
       out.write("                    </div> \n");
       out.write("                    \n");
@@ -285,13 +194,7 @@ out.print(session.getAttribute("txtComplemento"));
       out.write("                        <label for=\"txtEstado\" class=\"col-xs-6 col-md-3 control-label\">Estado: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
       out.write("                            <select class=\"form-control\" id=\"txtEstado\" name=\"txtEstado\" required=\"\">\n");
-      out.write("                                    <option value=\"");
-out.print(session.getAttribute("txtEstado"));
-      out.write('"');
-      out.write('>');
-out.print(session.getAttribute("txtEstado"));
-      out.write("</option> \n");
-      out.write("                                    <option value=\"ac\">Acre</option> \n");
+      out.write("                                <option value=\"ac\">Acre</option> \n");
       out.write("                                    <option value=\"al\">Alagoas</option> \n");
       out.write("                                    <option value=\"am\">Amazonas</option> \n");
       out.write("                                    <option value=\"ap\">Amapá</option> \n");
@@ -325,9 +228,7 @@ out.print(session.getAttribute("txtEstado"));
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtCidade\" class=\"col-xs-6 col-md-3 control-label\">Cidade: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtCidade\" name=\"txtCidade\" required=\"\" value=\"");
-out.print(session.getAttribute("txtCidade"));
-      out.write("\">\n");
+      out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtCidade\" name=\"txtCidade\" required=\"\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>                     \n");
       out.write("                    \n");
@@ -337,31 +238,20 @@ out.print(session.getAttribute("txtCidade"));
       out.write("                            <input type=\"text\" class=\"form-control\" id=\"txtLogin\" name=\"txtLogin\" required=\"\">\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
-      out.write("                    \n");
-      out.write("                    ");
-                    
-                        if(request.getParameter("login") != null){
-                    
-      out.write(" \n");
-      out.write("                        \n");
-      out.write("                        \n");
-      out.write("                    <div class=\"form-group\">\n");
-      out.write("                        <label class=\"col-xs-8 col-xs-offset-3 col-md-6 col-md-offset-1 control-label\" style=\"color: red\">Login já existe!</label>                      \n");
-      out.write("                    </div>\n");
-      out.write("                    \n");
-      out.write("                    ");
-
-                        }
-                    
-      out.write("\n");
-      out.write("                    \n");
       out.write("                           \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <label for=\"txtSenha\" class=\"col-xs-6 col-md-3 control-label\">Senha: </label>\n");
       out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
       out.write("                            <input type=\"password\" class=\"form-control\" id=\"txtSenha\" name=\"txtSenha\" required=\"\">\n");
       out.write("                        </div>\n");
-      out.write("                    </div>   \n");
+      out.write("                    </div> \n");
+      out.write("\n");
+      out.write("                      <div class=\"form-group\">\n");
+      out.write("                        <label for=\"txtTipo\" class=\"col-xs-6 col-md-3 control-label\">Tipo: </label>\n");
+      out.write("                        <div class=\"col-xs-8 col-md-6\">\n");
+      out.write("                            <input type=\"number\" class=\"form-control\" id=\"txtTipo\" name=\"txtTipo\" min=\"2\" max=\"3\" required=\"\">\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
       out.write("                    \n");
       out.write("                    <div class=\"form-group\">\n");
       out.write("                        <div class=\"col-xs-8 col-md-6 col-md-offset-3\">\n");
@@ -394,7 +284,7 @@ out.print(session.getAttribute("txtCidade"));
       out.write("        <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->\n");
       out.write("        <script src=\"js/bootstrap.min.js\"></script>\n");
       out.write("    </body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

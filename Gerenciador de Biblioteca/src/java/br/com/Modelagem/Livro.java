@@ -25,7 +25,6 @@ public class Livro {
     private String resumoLivro = "";
     private String precoLivro = "";
     private String anoPublicacao;
-    private int quantidade = 0;
     private String categoriaLivro = "";
     private String tags = "";
     private Date dataEntrada;
@@ -33,23 +32,9 @@ public class Livro {
     private int avaria = 0;
     private int emprestado = 0;
     private int matriculaFunc = 0;
+    private byte imagem;
 
-    public void setMatriculaFunc(int matriculaFunc) {
-        this.matriculaFunc = matriculaFunc;
-    }
-
-    public int getMatriculaFunc() {
-        return matriculaFunc;
-    }
-
-    public void setAvaria(int avaria) {
-        this.avaria = avaria;
-    }
-
-    public int getAvaria() {
-        return avaria;
-    }
-
+    //getters and setters
     public int getCodLivro() {
         return codLivro;
     }
@@ -122,14 +107,6 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
     }
 
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
     public String getCategoriaLivro() {
         return categoriaLivro;
     }
@@ -162,19 +139,38 @@ public class Livro {
         this.obsLivro = obsLivro;
     }
 
-    /**
-     * @return the emprestado
-     */
+    public void setAvaria(int avaria) {
+        this.avaria = avaria;
+    }
+
+    public int getAvaria() {
+        return avaria;
+    }
+
     public int getEmprestado() {
         return emprestado;
     }
 
-    /**
-     * @param emprestado the emprestado to set
-     */
     public void setEmprestado(int emprestado) {
         this.emprestado = emprestado;
     }
+
+    public void setMatriculaFunc(int matriculaFunc) {
+        this.matriculaFunc = matriculaFunc;
+    }
+
+    public int getMatriculaFunc() {
+        return matriculaFunc;
+    }
+
+    public byte getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(byte imagem) {
+        this.imagem = imagem;
+    }
+    //getters and setters
 
     //métodos
     public String cadastrarLivros() {
@@ -192,4 +188,5 @@ public class Livro {
         return "";
     }
 
+    //métodos
 }

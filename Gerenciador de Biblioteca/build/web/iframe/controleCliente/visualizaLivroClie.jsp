@@ -50,7 +50,7 @@
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Livro</tr> -->
                 <tr>
-                    <th>Código</th><th>ISBN</th><th>Edição</th><th>Título<th><th>Autor</th><th>Editora</th><th>Resumo</th><th>Preco</th><th>Ano Publicacao</th><th>Quantidade</th><th>Categoria</th><th>Tags</th><th>Observação</th><th>Status Avaria</th><th>Status Empréstimo</th><th>Matrícula Funcionário</th><th></th>
+                    <th>Código</th><th>ISBN</th><th>Edição</th><th>Título<th><th>Autor</th><th>Editora</th><th>Resumo</th><th>Preco</th><th>Ano Publicacao</th><th>Categoria</th><th>Tags</th><th>Observação</th><th>Status Avaria</th><th>Status Empréstimo</th><th>Matrícula Funcionário</th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -75,7 +75,6 @@
                         out.print("<td>" + liv.getResumoLivro() + "</td>");
                         out.print("<td>" + liv.getPrecoLivro() + "</td>");
                         out.print("<td>" + liv.getAnoPublicacao() + "</td>");
-                        out.print("<td>" + liv.getQuantidade() + "</td>");
                         out.print("<td>" + liv.getCategoriaLivro() + "</td>");
                         out.print("<td>" + liv.getTags() + "</td>");
                         out.print("<td>" + liv.getObsLivro() + "</td>");

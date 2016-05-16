@@ -124,12 +124,7 @@
                         </div>
                     </div> 
 
-                    <div class="form-group">
-                        <label for="txtQuantidade" class="col-xs-6 col-md-3 control-label">Quantidade de Exemplares: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtQuantidade" name="txtQuantidade">
-                        </div>
-                    </div> 
+                   
 
                     <div class="form-group">
                         <label for="txtCategoria" class="col-xs-6 col-md-3 control-label">Categoria: </label>
