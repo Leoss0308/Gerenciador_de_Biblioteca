@@ -36,7 +36,7 @@ public class LivroServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             Livro liv = new Livro();
-            liv.setCodLivro(Integer.parseInt(request.getParameter("txtCodLivro")));
+            
             liv.setISBN(request.getParameter("txtISBN"));
             liv.setEdicaoLivro(request.getParameter("txtEdicao"));
             liv.setTituloLivro(request.getParameter("txtTitulo"));

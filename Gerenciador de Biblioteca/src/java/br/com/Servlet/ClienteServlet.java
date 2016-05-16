@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,34 +34,58 @@ public class ClienteServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String pagina = "sucessoPagCheia.jsp";
+        String errodig = "cadastroClie.jsp";
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();        
         try {
-            
-            Cliente cli = new Cliente();
-            cli.setNome(request.getParameter("txtNome"));
-            cli.setCpfClie(request.getParameter("txtCPF"));
-            cli.setBairro(request.getParameter("txtBairro"));
-            cli.setCep(request.getParameter("txtCEP"));
-            cli.setCidade(request.getParameter("txtCidade"));
-            cli.setEstado(request.getParameter("txtEstado"));
-            cli.setTelefone(request.getParameter("txtTelefone"));
-            cli.setEmail(request.getParameter("txtEmail"));
-            cli.setLogin(request.getParameter("txtLogin"));
-            cli.setSenha(request.getParameter("txtSenha"));
-            cli.setEnd(request.getParameter("txtEndereco"));
-            cli.setComplemento(request.getParameter("txtComplemento"));
-            cli.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
-
-            
             ClienteDAO cliDAO = new ClienteDAO();
-            cliDAO.inserir(cli);
-            pagina += "?msg=Cadastrado com sucesso!";
+            if(cliDAO.verificaCliLogin(request.getParameter("txtLogin")) == true ){
+                
+                
+                HttpSession cadclivolta = request.getSession();
+                cadclivolta.setAttribute("verificacao","1");
+                cadclivolta.setAttribute("txtNome",request.getParameter("txtNome"));
+                cadclivolta.setAttribute("txtCPF",request.getParameter("txtCPF"));
+                cadclivolta.setAttribute("txtBairro",request.getParameter("txtBairro"));
+                cadclivolta.setAttribute("txtCEP",request.getParameter("txtCEP"));
+                cadclivolta.setAttribute("txtCidade",request.getParameter("txtCidade"));
+                cadclivolta.setAttribute("txtEstado",request.getParameter("txtEstado"));
+                cadclivolta.setAttribute("txtTelefone",request.getParameter("txtTelefone"));
+                cadclivolta.setAttribute("txtEmail",request.getParameter("txtEmail"));
+                cadclivolta.setAttribute("txtEndereco",request.getParameter("txtEndereco"));
+                cadclivolta.setAttribute("txtComplemento",request.getParameter("txtComplemento"));
+                
+                errodig += "?login=true";
+                request.getRequestDispatcher(errodig).forward(request, response);
+            }
+            else{
+                Cliente cli = new Cliente();
+                cli.setNome(request.getParameter("txtNome"));
+                cli.setCpfClie(request.getParameter("txtCPF"));
+                cli.setBairro(request.getParameter("txtBairro"));
+                cli.setCep(request.getParameter("txtCEP"));
+                cli.setCidade(request.getParameter("txtCidade"));
+                cli.setEstado(request.getParameter("txtEstado"));
+                cli.setTelefone(request.getParameter("txtTelefone"));
+                cli.setEmail(request.getParameter("txtEmail"));
+                cli.setLogin(request.getParameter("txtLogin"));
+                cli.setSenha(request.getParameter("txtSenha"));
+                cli.setEnd(request.getParameter("txtEndereco"));
+                cli.setComplemento(request.getParameter("txtComplemento"));
+                cli.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
+
+
+
+                cliDAO.inserir(cli);
+                pagina += "?msg=Cadastrado com sucesso!";
+                request.getRequestDispatcher(pagina).forward(request, response);
+            }
             
         } catch (Exception ex) {
             pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
-        } finally {
             request.getRequestDispatcher(pagina).forward(request, response);
+            
+        } finally {
             out.close();
         }
     }

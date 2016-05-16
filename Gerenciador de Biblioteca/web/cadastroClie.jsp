@@ -63,7 +63,24 @@
         </header>
 
         <!-- Conteudo da Pagina -->
-
+        <%
+            if(session.getAttribute("verificacao")==null){
+            HttpSession cadclivolta = request.getSession();
+            cadclivolta.setAttribute("txtNome","");
+            cadclivolta.setAttribute("txtCPF","");
+            cadclivolta.setAttribute("txtBairro","");
+            cadclivolta.setAttribute("txtCEP","");
+            cadclivolta.setAttribute("txtCidade","");
+            cadclivolta.setAttribute("txtEstado","");
+            cadclivolta.setAttribute("txtTelefone","");
+            cadclivolta.setAttribute("txtEmail","");
+            cadclivolta.setAttribute("txtEndereco","");
+            cadclivolta.setAttribute("txtComplemento","");
+                
+            }
+        %>
+        
+        
         <article id="Cadastro"  class="row">         
             <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
                 <form class="form-horizontal"  action="ClienteServlet" method="post">
@@ -71,7 +88,7 @@
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="">
+                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" value="<%out.print(session.getAttribute("txtNome"));%>">
                         </div>
                     </div>
                                                           
@@ -85,49 +102,49 @@
                     <div class="form-group">
                         <label for="txtCPF" class="col-xs-6 col-md-3 control-label">CPF: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCPF" name="txtCPF" required="">
+                            <input type="text" class="form-control" id="txtCPF" name="txtCPF" required="" value="<%out.print(session.getAttribute("txtCPF"));%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="">
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" value="<%out.print(session.getAttribute("txtEmail"));%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="">
+                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%out.print(session.getAttribute("txtTelefone"));%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="">
+                            <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="" value="<%out.print(session.getAttribute("txtCEP"));%>">
                         </div>
                     </div>
                      
                     <div class="form-group">
                         <label for="txtEndereco" class="col-xs-6 col-md-3 control-label">Endereço: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="">
+                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" value="<%out.print(session.getAttribute("txtEndereco"));%>">
                         </div>
                     </div>        
                            
                     <div class="form-group">
                         <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="">
+                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" value="<%out.print(session.getAttribute("txtBairro"));%>">
                         </div>
                     </div> 
                     
                     <div class="form-group">
                         <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento">
+                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" value="<%out.print(session.getAttribute("txtComplemento"));%>">
                         </div>
                     </div> 
                     
@@ -135,7 +152,8 @@
                         <label for="txtEstado" class="col-xs-6 col-md-3 control-label">Estado: </label>
                         <div class="col-xs-8 col-md-6">
                             <select class="form-control" id="txtEstado" name="txtEstado" required="">
-                                <option value="ac">Acre</option> 
+                                    <option value="<%out.print(session.getAttribute("txtEstado"));%>"><%out.print(session.getAttribute("txtEstado"));%></option> 
+                                    <option value="ac">Acre</option> 
                                     <option value="al">Alagoas</option> 
                                     <option value="am">Amazonas</option> 
                                     <option value="ap">Amapá</option> 
@@ -169,7 +187,7 @@
                     <div class="form-group">
                         <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="">
+                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%out.print(session.getAttribute("txtCidade"));%>">
                         </div>
                     </div>                     
                     
@@ -179,6 +197,20 @@
                             <input type="text" class="form-control" id="txtLogin" name="txtLogin" required="">
                         </div>
                     </div>
+                    
+                    <%                    
+                        if(request.getParameter("login") != null){
+                    %> 
+                        
+                        
+                    <div class="form-group">
+                        <label class="col-xs-8 col-xs-offset-3 col-md-6 col-md-offset-1 control-label" style="color: red">Login já existe!</label>                      
+                    </div>
+                    
+                    <%
+                        }
+                    %>
+                    
                            
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>

@@ -209,6 +209,20 @@ public class ClienteDAO {
         ps.close();
         return Clies;
     }
+    
+    public boolean verificaCliLogin(String Login) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from Cliente where Login=?");
+        ps.setString(1, Login);
+        ResultSet rs = ps.executeQuery();
+        boolean verifica=false;
+        if (rs.next()) {
+            verifica=true;
+        }
+        rs.close();
+        ps.close();
+        return verifica;
+    }
        
     
 }

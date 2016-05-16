@@ -41,6 +41,7 @@
                     <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Cliente</a></li>   
                     <li><a href="iframe/controleCliente/visualizaClienteClie.jsp" target="frmConteudo">Visualizar Cliente</a></li>
                     <li><a href="cadastroFunc.jsp" target="frmConteudo">Ver funcionario</a></li>
+                    <li><a href="cadastroLivro.jsp" target="frmConteudo">Cadastrar Livro</a></li>
                 </ul>
             </div>
          
