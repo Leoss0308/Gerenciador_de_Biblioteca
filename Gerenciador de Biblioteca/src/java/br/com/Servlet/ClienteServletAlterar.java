@@ -59,7 +59,7 @@ public class ClienteServletAlterar extends HttpServlet {
             pagina += "?msg=Alterado com sucesso!";
             
         } catch (Exception ex) {
-            pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
+            pagina += "?msg=Desculpe, mas ocorreu um erro: " + ex.getMessage();
         } finally {
             request.getRequestDispatcher(pagina).forward(request, response);
             out.close();

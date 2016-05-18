@@ -184,9 +184,10 @@ public class FuncionarioDAO {
         while (rs.next()) {
             // Criando o objeto e setando valores:
             Funcionario func = new Funcionario();
-            func.setCodClie(rs.getInt("Cod_Cliente"));
+            func.setMatriculaFunc(rs.getInt("Cod_Matricula"));
             func.setNome(rs.getString("Nome"));
-            func.setCpfClie(rs.getString("CPF"));
+            func.setEnd(rs.getString("Endereco"));
+            func.setComplemento(rs.getString("Complemento"));
             func.setBairro(rs.getString("Bairro"));
             func.setCep(rs.getString("CEP"));
             func.setCidade(rs.getString("Cidade"));
@@ -195,24 +196,22 @@ public class FuncionarioDAO {
             func.setEmail(rs.getString("E_mail"));
             func.setLogin(rs.getString("Login"));
             func.setSenha(rs.getString("Senha"));
-            func.setObsClie(rs.getString("Observacao"));
-            func.setDtCadastroClie(rs.getDate("Data_Cadastro"));
-            func.setEnd(rs.getString("Endereco"));
-            func.setStatusClie(rs.getInt("Status"));
-            func.setComplemento(rs.getString("Complemento"));
+            func.setStatusFunc(rs.getInt("Status"));
+            func.setTipoFunc(rs.getInt("Tipo"));
+            func.setDtCadastroFunc(rs.getDate("Data_Cadastro"));
             func.setDtNasc(rs.getDate("Data_Nasc"));
             
             // Adicionando o objeto à lista:
-            Funcs.add(cli);
+            Funcs.add(func);
         }
         rs.close();
         ps.close();
-        return Clies;
+        return Funcs;
     }
     
-    public boolean verificaCliLogin(String Login) throws SQLException, ClassNotFoundException {
+    public boolean verificaFuncLogin(String Login) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Cliente where Login=?");
+        ps = cnn.prepareStatement("select * from Funcionario where Login=?");
         ps.setString(1, Login);
         ResultSet rs = ps.executeQuery();
         boolean verifica=false;

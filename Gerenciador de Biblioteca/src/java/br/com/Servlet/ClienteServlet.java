@@ -82,7 +82,7 @@ public class ClienteServlet extends HttpServlet {
             }
             
         } catch (Exception ex) {
-            pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
+            pagina += "?msg=Desculpe, mas ocorreu um erro: " + ex.getMessage();
             request.getRequestDispatcher(pagina).forward(request, response);
             
         } finally {

@@ -20,7 +20,7 @@
     
     <style>
         body{
-            background: url(../img/fundo.jpg) no-repeat center top fixed;
+            background: url(../../../img/fundoTabela.jpg) no-repeat center top fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -33,14 +33,14 @@
   <body>
       <div class="row">
             
-                <form class="form-horizontal"  action="visualizaCliente.jsp" method="get">
+                <form class="form-horizontal"  action="visualizaFuncionario.jsp" method="get">
 
                     <div class="form-inline">
                         <label for="slcTipoPesquisa" class="col-xs-2 control-label">Pesquisar pelo: </label>
                         <div class="col-xs-2 ">
                             <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa" style="width: 100%">
                                 <option value="Nome">Nome</option>
-                                <option value="CPF">Cpf</option>
+                                <option value="CPF">CPF</option>
                             </select>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
         <table class="table table-bordered">
            <!-- <tr><th colspan="18">Clientes</tr> -->
             <tr>
-                <th>Código</th><th>Nome</th><th>Endereço</th><th>Complemento</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>E-mail</th><th>Login</th><th>Senha</th><th>Data_Nascimentoo</th><th>Status</th><th>Tipo</th>
+                <th>Código</th><th>Nome</th><th>Endereço</th><th>Complemento</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>E-mail</th><th>Login</th><th>Senha</th><th>Data_Nascimentoo</th><th>Status</th><th>Tipo</th><th></th><th></th>
             </tr>
             <%
                 String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
