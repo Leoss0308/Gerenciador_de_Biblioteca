@@ -18,9 +18,7 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <!--CSS do cadastroClie.jsp -->
-        <!-- Alterar o documento css caso a pagina de cadastro funcionario seja diferente do cadastro cliente -->
-        <link href="css/cadastroClie.css" rel="stylesheet">
+        
         <!-- jquery para a mascara -->
         <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
         <script src = "js/jquery-2.1.3.js"  type = "text/javascript" ></script>
@@ -37,48 +35,33 @@
           webshims.setOptions('forms-ext', {types: 'date'});
           webshims.polyfill('forms forms-ext');
         </script>
+        
+        <style>
+        body{
+            background: url(../../../img/fundoTabela.jpg) no-repeat center top fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            /*overflow: hidden;*/
+        }
+        input#btnLimparCF, input#btnEnviarCF{
+            width: 48%;
+        }
+           
+    </style>
 
     </head>
     <body>
         <!-- Cabeçalho da pagina com o menu, logo e nome -->
         <header id="cabecahome">          
             <!-- menu -->
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">Biblioteca</a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-left">
-                            <li><a href="index.jsp">Inicio</a></li>
-                            <li><a href="livros.jsp">Livros</a></li>
-                            <li><a href="perfil.jsp">Perfil</a></li>
-                            <li><a href="faleConosco.jsp">Fale conosco</a></li>
-                        </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="login.jsp">Login</a></li>
-                            <li><a href="cadastroClie.jsp">Cadastre-se</a></li>
-                        </ul>  
-                    </div>
-                </div>
-            </nav>
+           
             <!-- Logo e Titulo -->
-            <div class="row" id="cadastroClie">
+            <div class="row">
 
-
-                <div class="col-xs-5 col-md-4">
-                    <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
-                </div>
-
-                <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
-                    <h1>Cadastro De Funcionário</h1>
+                <hgroup class="col-xs-6 col-xs-offset-3 col-md-7 col-md-offset-3">
+                    <h1>Cadastro de Funcionário</h1>
                 </hgroup>
 
             </div>
@@ -97,32 +80,11 @@
                             <input type="text" class="form-control" id="txtNome" name="txtNome" required="">
                         </div>
                     </div>
-                                                          
+                    
                     <div class="form-group">
                         <label for="txtDataNasc" class="col-xs-6 col-md-3 control-label">Data De Nascimento: </label>
                         <div class="col-xs-8 col-md-6">
                             <input type="date" class="form-control" id="txtDataNasc" name="txtDataNasc" required="">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="">
                         </div>
                     </div> 
                     
@@ -132,13 +94,6 @@
                             <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="">
                         </div>
                     </div>
-                           
-                    <div class="form-group">
-                        <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="">
-                        </div>
-                    </div> 
                     
                     <div class="form-group">
                         <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
@@ -146,6 +101,27 @@
                             <input type="text" class="form-control" id="txtComplemento" name="txtComplemento">
                         </div>
                     </div> 
+                    
+                    <div class="form-group">
+                        <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="">
+                        </div>
+                    </div>
                     
                     <div class="form-group">
                         <label for="txtEstado" class="col-xs-6 col-md-3 control-label">Estado: </label>
@@ -183,11 +159,18 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
+                        <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="">
+                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="">
                         </div>
-                    </div>                     
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
+                        <div class="col-xs-8 col-md-6">
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="">
+                        </div>
+                    </div>
                     
                     <div class="form-group">
                         <label for="txtLogin" class="col-xs-6 col-md-3 control-label">Login: </label>
@@ -201,19 +184,19 @@
                         <div class="col-xs-8 col-md-6">
                             <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="">
                         </div>
-                    </div> 
-
-                      <div class="form-group">
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="txtTipo" class="col-xs-6 col-md-3 control-label">Tipo: </label>
                         <div class="col-xs-8 col-md-6">
                             <input type="number" class="form-control" id="txtTipo" name="txtTipo" min="2" max="3" required="">
                         </div>
                     </div>
-                    
+
                     <div class="form-group">
                         <div class="col-xs-8 col-md-6 col-md-offset-3">
-                            <input type="submit" value="Enviar" name="btnEnviar" id="btnEnviarCC" class="btn btn-success btn-lg" />
-                            <input type="reset" value="Limpar" name="btnLimpar" id="btnLimparCC" class="btn btn-danger btn-lg" />
+                            <input type="submit" value="Enviar" name="btnEnviar" id="btnEnviarCF" class="btn btn-success btn-lg" />
+                            <input type="reset" value="Limpar" name="btnLimpar" id="btnLimparCF" class="btn btn-danger btn-lg" />
                         </div>
                     </div>
                             

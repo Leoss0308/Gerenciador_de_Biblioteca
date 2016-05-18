@@ -18,7 +18,7 @@ public class Funcionario extends Pessoa {
     }
 
     private int matriculaFunc = 0;
-    private String statusFunc = "";
+    private int statusFunc = 0;
     private int tipoFunc = 0;
     private Date dtCadastroFunc;
 
@@ -37,19 +37,15 @@ public class Funcionario extends Pessoa {
         this.matriculaFunc = matriculaFunc;
     }
 
-    /**
-     * @return the statusFunc
-     */
-    public String getStatusFunc() {
+    public int getStatusFunc() {
         return statusFunc;
     }
 
-    /**
-     * @param statusFunc the statusFunc to set
-     */
-    public void setStatusFunc(String statusFunc) {
+    public void setStatusFunc(int statusFunc) {
         this.statusFunc = statusFunc;
     }
+
+    
 
     public int getTipoFunc() {
         return tipoFunc;

@@ -53,7 +53,7 @@
         <%
             Funcionario func = new Funcionario();
             int cod = 0;
-            cod = Integer.parseInt(request.getParameter("Cod_Matricula"));
+            cod = Integer.parseInt(request.getParameter("MatriculaFunc"));
             func = new FuncionarioDAO().getFunc(cod);  // Obtem o item do BD que foi solicitado via parâmetro.            
             
         %>
@@ -192,13 +192,13 @@
                     <div class="form-group">
                         <label for="txtTipo" class="col-xs-6 col-md-3 control-label">Tipo: </label>
                         <div class="col-xs-8 col-md-6">
-                            <textarea class="form-control" id="txtTipo" name="txtTipo"><%=func.getPermissao()%></textarea>
+                            <input type="number" class="form-control" id="txtTipo" name="txtTipo" min="2" max="3" required="" value="<%=func.getTipoFunc()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <div class="col-xs-8 col-md-6 col-md-offset-3">
-                            <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAC" class="btn btn-success btn-lg btn-block"/>
+                            <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAF" class="btn btn-success btn-lg btn-block"/>
                         </div>
                     </div>
                             

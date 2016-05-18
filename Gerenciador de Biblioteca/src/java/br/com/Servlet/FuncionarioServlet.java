@@ -32,25 +32,24 @@ public class FuncionarioServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pagina = "sucessoPagCheia.jsp";
+        String pagina = "sucesso.jsp";
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
          try {
             Funcionario func = new Funcionario();
             func.setNome(request.getParameter("txtNome"));
-            func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
-            func.setEmail(request.getParameter("txtEmail"));
-            func.setTelefone(request.getParameter("txtTelefone"));
-            func.setCep(request.getParameter("txtCEP"));
             func.setEnd(request.getParameter("txtEndereco"));
-            func.setBairro(request.getParameter("txtBairro"));
             func.setComplemento(request.getParameter("txtComplemento"));
-            func.setEstado(request.getParameter("txtEstado"));
+            func.setBairro(request.getParameter("txtBairro"));
+            func.setCep(request.getParameter("txtCEP"));
             func.setCidade(request.getParameter("txtCidade"));
+            func.setEstado(request.getParameter("txtEstado"));
+            func.setTelefone(request.getParameter("txtTelefone"));
+            func.setEmail(request.getParameter("txtEmail"));
             func.setLogin(request.getParameter("txtLogin"));
             func.setSenha(request.getParameter("txtSenha"));
-            func.setStatusFunc(request.getParameter("txtStatus"));
             func.setTipoFunc(Integer.parseInt(request.getParameter("txtTipo")));
+            func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
             
             FuncionarioDAO funcDAO = new FuncionarioDAO();
             funcDAO.inserir(func);

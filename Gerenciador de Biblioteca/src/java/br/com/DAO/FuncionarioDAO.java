@@ -47,8 +47,8 @@ public class FuncionarioDAO {
             ps.setString(9, func.getEmail());
             ps.setString(10, func.getLogin());
             ps.setString(11, func.getSenha());
-            ps.setString(12, func.getStatusFunc());
-            ps.setInt(13,1);
+            ps.setInt(12, 1);
+            ps.setInt(13,func.getTipoFunc());
             ps.setDate(14, func.getDtNasc());
             ps.executeUpdate();
             ps.close();
@@ -79,8 +79,8 @@ public class FuncionarioDAO {
             ps.setString(9, func.getEmail());
             ps.setString(10, func.getLogin());
             ps.setString(11, func.getSenha());
-            ps.setString(12, func.getStatusFunc());
-            ps.setInt(13,1);
+            ps.setInt(12, 1);
+            ps.setInt(13,func.getTipoFunc());
             ps.setDate(14, func.getDtNasc());
             ps.setInt(15, func.getMatriculaFunc());
             ps.executeUpdate();
@@ -167,13 +167,61 @@ public class FuncionarioDAO {
             func.setEmail(rs.getString("E_mail"));
             func.setLogin(rs.getString("Login"));
             func.setSenha(rs.getString("Senha"));
-            func.setStatusFunc(rs.getString("Status"));
             func.setTipoFunc(rs.getInt("Tipo"));
             func.setDtNasc(rs.getDate("Data_Nasc"));
         }
         rs.close();
         ps.close();
         return func;
+    }
+    
+    public List<Funcionario> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from Funcionario where STATUS = 1 AND " + tipo + " LIKE ?");
+        ps.setString(1, '%' + palavra + '%');
+        ResultSet rs = ps.executeQuery();
+        List<Funcionario> Funcs = new ArrayList<Funcionario>();
+        while (rs.next()) {
+            // Criando o objeto e setando valores:
+            Funcionario func = new Funcionario();
+            func.setCodClie(rs.getInt("Cod_Cliente"));
+            func.setNome(rs.getString("Nome"));
+            func.setCpfClie(rs.getString("CPF"));
+            func.setBairro(rs.getString("Bairro"));
+            func.setCep(rs.getString("CEP"));
+            func.setCidade(rs.getString("Cidade"));
+            func.setEstado(rs.getString("Estado"));
+            func.setTelefone(rs.getString("Telefone"));
+            func.setEmail(rs.getString("E_mail"));
+            func.setLogin(rs.getString("Login"));
+            func.setSenha(rs.getString("Senha"));
+            func.setObsClie(rs.getString("Observacao"));
+            func.setDtCadastroClie(rs.getDate("Data_Cadastro"));
+            func.setEnd(rs.getString("Endereco"));
+            func.setStatusClie(rs.getInt("Status"));
+            func.setComplemento(rs.getString("Complemento"));
+            func.setDtNasc(rs.getDate("Data_Nasc"));
+            
+            // Adicionando o objeto à lista:
+            Funcs.add(cli);
+        }
+        rs.close();
+        ps.close();
+        return Clies;
+    }
+    
+    public boolean verificaCliLogin(String Login) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from Cliente where Login=?");
+        ps.setString(1, Login);
+        ResultSet rs = ps.executeQuery();
+        boolean verifica=false;
+        if (rs.next()) {
+            verifica=true;
+        }
+        rs.close();
+        ps.close();
+        return verifica;
     }
 
 }

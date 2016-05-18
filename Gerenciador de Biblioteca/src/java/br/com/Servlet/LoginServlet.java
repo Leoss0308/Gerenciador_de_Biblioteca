@@ -64,7 +64,8 @@ public class LoginServlet extends HttpServlet {
                     // Setando um atributo da sessao:
                     sessao.setAttribute("permissao", "1");
                     sessao.setAttribute("nome", lnome);
-
+                    String cod = Integer.toString(cli.getCodClie());
+                    sessao.setAttribute("cod", cod);
                     // Como obteve sucesso, chamar a página principal:
                     pagina = "index.jsp";
                 }

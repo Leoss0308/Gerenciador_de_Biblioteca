@@ -48,18 +48,18 @@ public class FuncionarioServletAlterar extends HttpServlet {
             func.setEmail(request.getParameter("txtEmail"));
             func.setLogin(request.getParameter("txtLogin"));
             func.setSenha(request.getParameter("txtSenha"));
+            func.setStatusFunc(Integer.getInteger(request.getParameter("txtStatus")));
             func.setEnd(request.getParameter("txtEndereco"));
             func.setComplemento(request.getParameter("txtComplemento"));
             func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
-            func.setStatusFunc(request.getParameter("txtStatus"));
-            func.setTipoFunc(Integer.getInteger(request.getParameter("txTipo")));
+            func.setTipoFunc(Integer.getInteger(request.getParameter("txtTipo")));
             
             FuncionarioDAO funcDAO = new FuncionarioDAO();
             funcDAO.atualizar(func);
             pagina += "?msg=Alterado com sucesso!";
             
         } catch (Exception ex) {
-            pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
+            pagina += "?msg=Desculpe, mas ocorreu um erro: " + ex.getMessage();
         } finally {
             request.getRequestDispatcher(pagina).forward(request, response);
             out.close();

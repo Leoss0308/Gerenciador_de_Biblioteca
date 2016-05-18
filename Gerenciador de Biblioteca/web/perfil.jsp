@@ -38,9 +38,12 @@
             <div class="col-xs-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
                     <li class="active"><a href="#">Cliente <span class="sr-only">(current)</span></a></li>
-                    <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Cliente</a></li>   
+                    <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Cliente</a></li>
+                    <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionario.jsp" target="frmConteudo">Ver Funcionario</a></li>
                     <li><a href="iframe/controleCliente/visualizaClienteClie.jsp" target="frmConteudo">Visualizar Cliente</a></li>
-                    <li><a href="cadastroFunc.jsp" target="frmConteudo">Ver funcionario</a></li>
+                    <!-- Criar arquivo visualizaFuncionarioFunc.jsp
+                    <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionarioFunc.jsp" target="frmConteudo">Visualizar Funcionario</a></li>-->
+                    <li><a href="cadastroFunc.jsp" target="frmConteudo">Cadastro funcionario</a></li>
                     <li><a href="cadastroLivro.jsp" target="frmConteudo">Cadastrar Livro</a></li>
                 </ul>
             </div>
