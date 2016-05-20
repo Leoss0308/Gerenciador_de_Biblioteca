@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import br.com.DAO.LoginDAO;
 import br.com.Modelagem.Cliente;
+import br.com.Modelagem.Funcionario;
 
 /**
  *
@@ -32,58 +33,88 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         // Por default chamarei a pagina index e passarei o parametro erro=1
         String pagina = "login.jsp?erro=1";
-        
+
         LoginDAO l = new LoginDAO();
         Cliente cli = new Cliente();
-        
+        Funcionario func = new Funcionario();
+
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
         try {
-           cli=l.loginCliente(login, senha);
-           
-           if (login.equals(cli.getLogin())) {
-                if (senha.equals(cli.getSenha())) {
+            cli = l.loginCliente(login, senha);
 
-                    // Criar objeto para obter sessão do JSP:
-                    HttpSession sessao = request.getSession();
-                    
-                    
-                    String nome = cli.getNome();
-                    String lnome = "";
-                    for( int i = 0; i < nome.length(); i++)    
-                    {    
-                     if(nome.charAt(i) !=' ')   
-                           lnome=lnome+nome.charAt(i);   
-                     else  
-                          break;    
-                    }   
-                    
-                    // Setando um atributo da sessao:
-                    sessao.setAttribute("permissao", "1");
-                    sessao.setAttribute("nome", lnome);
-                    String cod = Integer.toString(cli.getCodClie());
-                    sessao.setAttribute("cod", cod);
-                    // Como obteve sucesso, chamar a página principal:
-                    pagina = "index.jsp";
+                if (login.equals(cli.getLogin())) {
+                    if (senha.equals(cli.getSenha())) {
+
+                        // Criar objeto para obter sessão do JSP:
+                        HttpSession sessao = request.getSession();
+
+                        String nome = cli.getNome();
+                        String lnome = "";
+                        for (int i = 0; i < nome.length(); i++) {
+                            if (nome.charAt(i) != ' ') {
+                                lnome = lnome + nome.charAt(i);
+                            } else {
+                                break;
+                            }
+                        }
+
+                        // Setando um atributo da sessao:
+                        sessao.setAttribute("permissao", "1");
+                        sessao.setAttribute("nome", lnome);
+                        String cod = Integer.toString(cli.getCodClie());
+                        sessao.setAttribute("cod", cod);
+                        // Como obteve sucesso, chamar a página principal:
+                        pagina = "index.jsp";
+                    }
                 }
-            }
-           
-           
+
+                func = l.loginFuncionario(login, senha);
+                if (login.equals(func.getLogin())) {
+                    if (senha.equals(func.getSenha())) {
+
+                        // Criar objeto para obter sessão do JSP:
+                        HttpSession sessao = request.getSession();
+
+                        String nome = func.getNome();
+                        String lnome = "";
+                        for (int i = 0; i < nome.length(); i++) {
+                            if (nome.charAt(i) != ' ') {
+                                lnome = lnome + nome.charAt(i);
+                            } else {
+                                break;
+                            }
+                        }
+                        if (func.getTipoFunc() == 2) {
+                            // Setando um atributo da sessao:
+                            sessao.setAttribute("permissao", "2");
+                            sessao.setAttribute("nome", lnome);
+                            String cod = Integer.toString(func.getMatriculaFunc());
+                            sessao.setAttribute("cod", cod);
+                        }
+                        if (func.getTipoFunc() == 3) {
+                            sessao.setAttribute("permissao", "3");
+                            sessao.setAttribute("nome", lnome);
+                            String cod = Integer.toString(func.getMatriculaFunc());
+                            sessao.setAttribute("cod", cod);
+                        }
+
+                        // Como obteve sucesso, chamar a página principal:
+                        pagina = "index.jsp";
+                    }
+                }
+
 
 
         } catch (Exception ex) {
             ex.getMessage();
-        } 
-        
+        }
 
         response.sendRedirect(pagina);
 
-        
-     
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

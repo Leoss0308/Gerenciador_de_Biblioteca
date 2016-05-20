@@ -7,6 +7,7 @@ package br.com.DAO;
 
 import br.com.Conexao.Conecta;
 import br.com.Modelagem.Cliente;
+import br.com.Modelagem.Funcionario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,6 +55,39 @@ public class LoginDAO {
         rs.close();
         ps.close();
         return cli;
+    }
+    
+    
+    public Funcionario loginFuncionario(String login, String senha) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from Funcionario where STATUS = 1 AND Login = ? AND Senha = ?");
+        ps.setString(1, login);
+        ps.setString(2, senha);
+        
+        ResultSet rs = ps.executeQuery();
+
+        Funcionario func = new Funcionario();
+        if (rs.next()) {
+            // Criando o objeto e setando valores:
+            func.setMatriculaFunc(rs.getInt("Cod_Matricula"));
+            func.setNome(rs.getString("Nome"));
+            func.setEnd(rs.getString("Endereco"));
+            func.setComplemento(rs.getString("Complemento"));
+            func.setBairro(rs.getString("Bairro"));
+            func.setCep(rs.getString("CEP"));
+            func.setCidade(rs.getString("Cidade"));
+            func.setEstado(rs.getString("Estado"));
+            func.setTelefone(rs.getString("Telefone"));
+            func.setEmail(rs.getString("E_mail"));
+            func.setLogin(rs.getString("Login"));
+            func.setSenha(rs.getString("Senha"));
+            func.setTipoFunc(rs.getInt("Tipo"));
+            func.setDtCadastroFunc(rs.getDate("Data_Cadastro"));
+            func.setDtNasc(rs.getDate("Data_Nasc"));
+        }
+        rs.close();
+        ps.close();
+        return func;
     }
     
 }
