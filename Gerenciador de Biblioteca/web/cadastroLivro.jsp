@@ -50,7 +50,7 @@
             <!-- menu -->
 
             <!-- Menu -->
-            <%@include file="menu.jsp" %>
+            
 
             <!-- Logo e Titulo -->
             <div class="row" id="cadastroLivro">
