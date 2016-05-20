@@ -14,11 +14,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
  *
- * @author i7
+ * @author erico
  */
-public class ClienteServletAlterar extends HttpServlet {
+public class ClienteServletAutoAlterar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,11 +51,10 @@ public class ClienteServletAlterar extends HttpServlet {
             cli.setEnd(request.getParameter("txtEndereco"));
             cli.setComplemento(request.getParameter("txtComplemento"));
             cli.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
-            cli.setStatusClie(Integer.parseInt(request.getParameter("txtStatus")));
-            cli.setObsClie(request.getParameter("txtObs"));
+
             
             ClienteDAO cliDAO = new ClienteDAO();
-            cliDAO.atualizar(cli);
+            cliDAO.atualizarAuto(cli);
             pagina += "?msg=Alterado com sucesso!";
             
         } catch (Exception ex) {
@@ -64,7 +64,8 @@ public class ClienteServletAlterar extends HttpServlet {
             out.close();
         }
     }
-
+    
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

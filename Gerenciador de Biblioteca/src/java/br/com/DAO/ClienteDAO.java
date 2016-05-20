@@ -61,7 +61,7 @@ public class ClienteDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "UPDATE Cliente set Nome=?, CPF=?, Bairro=?, CEP=?, Cidade=?, Estado=?, Telefone=?, E_mail=?, Login=?, Senha=?, Ativo=?, Observacao=?, Endereco=?, Status=?, Complemento=?, Data_Nasc=? where Cod_Cliente=?");
+                        "UPDATE Cliente set Nome=?, CPF=?, Bairro=?, CEP=?, Cidade=?, Estado=?, Telefone=?, E_mail=?, Senha=?, Ativo=?, Observacao=?, Endereco=?, Status=?, Complemento=?, Data_Nasc=? where Cod_Cliente=?");
             ps.setString(1, cli.getNome());
             ps.setString(2, cli.getCpfClie());
             ps.setString(3, cli.getBairro());
@@ -70,27 +70,55 @@ public class ClienteDAO {
             ps.setString(6, cli.getEstado());
             ps.setString(7, cli.getTelefone());
             ps.setString(8, cli.getEmail());
-            ps.setString(9, cli.getLogin());
-            ps.setString(10, cli.getSenha());
-            ps.setInt(11, 1);
-            ps.setString(12, cli.getObsClie());
-            ps.setString(13, cli.getEnd());
-            ps.setInt(14, cli.getStatusClie());
-            ps.setString(15, cli.getComplemento());
-            ps.setDate(16, cli.getDtNasc());
-            ps.setInt(17, cli.getCodClie());
+            ps.setString(9, cli.getSenha());
+            ps.setInt(10, 1);
+            ps.setString(11, cli.getObsClie());
+            ps.setString(12, cli.getEnd());
+            ps.setInt(13, cli.getStatusClie());
+            ps.setString(14, cli.getComplemento());
+            ps.setDate(15, cli.getDtNasc());
+            ps.setInt(16, cli.getCodClie());
             ps.executeUpdate();
             ps.close();
             return true;
         } catch (Exception e) {
             System.out.println(e.toString());
             return false;
-        } 
-        
-        
-        
-        
+        }
+      
     }
+    
+    public boolean atualizarAuto(Cliente cli) throws Exception {
+        try {
+            cnn = c.getConexao();
+            ps = cnn.prepareStatement(
+                        "UPDATE Cliente set Nome=?, CPF=?, Bairro=?, CEP=?, Cidade=?, Estado=?, Telefone=?, E_mail=?, Senha=?, Ativo=?, Endereco=?, Complemento=?, Data_Nasc=? where Cod_Cliente=?");
+            ps.setString(1, cli.getNome());
+            ps.setString(2, cli.getCpfClie());
+            ps.setString(3, cli.getBairro());
+            ps.setString(4, cli.getCep());
+            ps.setString(5, cli.getCidade());
+            ps.setString(6, cli.getEstado());
+            ps.setString(7, cli.getTelefone());
+            ps.setString(8, cli.getEmail());
+            ps.setString(9, cli.getSenha());
+            ps.setInt(10, 1);
+            ps.setString(11, cli.getEnd());
+            ps.setString(12, cli.getComplemento());
+            ps.setDate(13, cli.getDtNasc());
+            ps.setInt(14, cli.getCodClie());
+            ps.executeUpdate();
+            ps.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return false;
+        }
+      
+    }
+    
+    
+    
     //desativar o cliente
     public boolean desativarcli(int cli) throws Exception {
         try {

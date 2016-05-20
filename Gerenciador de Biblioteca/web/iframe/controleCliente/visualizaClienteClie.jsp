@@ -9,7 +9,7 @@
     <title>Visualizar Cliente</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
       
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
@@ -19,9 +19,9 @@
     <![endif]-->
     
     <!-- jquery para a mascara -->
-        <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
-        <script src = "js/jquery-2.1.3.js"  type = "text/javascript" ></script>
-        <script src = "js/jquery.maskedinput.js"  type = "text/javascript" ></script>
+    <script src = "../../js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
+    <script src = "../../js/jquery-2.1.3.js"  type = "text/javascript" ></script>
+    <script src = "../../js/jquery.maskedinput.js"  type = "text/javascript" ></script>
             
         
         <!-- Para funcionar no mozila -->
@@ -53,130 +53,131 @@
         <%
             Cliente cli = new Cliente();
             int cod = 0;
-            cod = Integer.parseInt(request.getParameter("codClie"));
+            cod = Integer.parseInt(String.valueOf(session.getAttribute("cod")));
             cli = new ClienteDAO().getClie(cod);  // Obtem o item do BD que foi solicitado via parâmetro.            
             
         %>
         
         <article id="Alteracao"  class="row">         
             <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
-                <form class="form-horizontal"  action="ClienteServletAlterar" method="post">
+                <form class="form-horizontal"  action="" method="post">
                     
                     <div class="form-group">
-                        <label for="txtCodigo" class="col-xs-6 col-md-3 control-label">Codigo: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getCodClie()%></label>
+                        <label for="txtCodigo" class="col-xs-2 col-md-3 control-label">Codigo: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getCodClie()%></label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getNome()%></label>
+                        <label for="txtNome" class="col-xs-2 col-md-3 control-label">Nome Completo: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getNome()%></label>
                         </div>
                     </div>
                                                           
                     <div class="form-group">
-                        <label for="txtDataNasc" class="col-xs-6 col-md-3 control-label">Data De Nascimento: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getDtNasc()%></label>
+                        <label for="txtDataNasc" class="col-xs-2 col-md-3 control-label">Data De Nascimento: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getDtNasc()%></label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCPF" class="col-xs-6 col-md-3 control-label">CPF: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getCpfClie()%></label>
+                        <label for="txtCPF" class="col-xs-2 col-md-3 control-label">CPF: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getCpfClie()%></label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getEmail()%></label>
+                        <label for="txtEmail" class="col-xs-2 col-md-3 control-label">Email: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getEmail()%></label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getTelefone()%></label>
+                        <label for="txtTelefone" class="col-xs-2 col-md-3 control-label">Telefone: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getTelefone()%></label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getCep()%></label>
+                        <label for="txtCEP" class="col-xs-2 col-md-3 control-label">CEP: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getCep()%></label>
                         </div>
                     </div>
                      
                     <div class="form-group">
-                        <label for="txtEndereco" class="col-xs-6 col-md-3 control-label">Endereço: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getEnd()%></label>
+                        <label for="txtEndereco" class="col-xs-2 col-md-3 control-label">Endereço: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getEnd()%></label>
                         </div>
                     </div>        
                            
                     <div class="form-group">
-                        <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getBairro()%></label>
+                        <label for="txtBairro" class="col-xs-2 col-md-3 control-label">Bairro: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getBairro()%></label>
                         </div>
                     </div> 
                     
                     <div class="form-group">
-                        <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getComplemento()%></label>
+                        <label for="txtComplemento" class="col-xs-2 col-md-3 control-label">Complemento: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getComplemento()%></label>
                         </div>
                     </div> 
                     
                     <div class="form-group">
-                        <label for="txtEstado" class="col-xs-6 col-md-3 control-label">Estado: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getEstado()%></label>
+                        <label for="txtEstado" class="col-xs-2 col-md-3 control-label">Estado: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getEstado()%></label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getCidade()%></label>
+                        <label for="txtCidade" class="col-xs-2 col-md-3 control-label">Cidade: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getCidade()%></label>
                         </div>
                     </div>                     
                     
                     <div class="form-group">
-                        <label for="txtLogin" class="col-xs-6 col-md-3 control-label">Login: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getLogin()%></label>
+                        <label for="txtLogin" class="col-xs-2 col-md-3 control-label">Login: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getLogin()%></label>
                         </div>
                     </div>
                            
                     <div class="form-group">
-                        <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getSenha()%></label>
+                        <label for="txtSenha" class="col-xs-2 col-md-3 control-label">Senha: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getSenha()%></label>
                         </div>
                     </div> 
                         
                     <div class="form-group">
-                        <label for="txtStatus" class="col-xs-6 col-md-3 control-label">Status: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getStatusClie()%>"</label>
+                        <label for="txtStatus" class="col-xs-2 col-md-3 control-label">Status: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getStatusClie()%></label>
                         </div>
                     </div>
                         
                     <div class="form-group">
-                        <label for="txtObs" class="col-xs-6 col-md-3 control-label">observação: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <label><%=cli.getObsClie()%></label>
+                        <label for="txtObs" class="col-xs-2 col-md-3 control-label">observação: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <label class="control-label"><%=cli.getObsClie()%></label>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <div class="col-xs-8 col-md-6 col-md-offset-3">
-                            <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAC" class="btn btn-success btn-lg btn-block"/>
+                        <div class="col-xs-6 col-md-6 col-md-offset-1">
+                            <a href="../../alterarAutoCliente.jsp?codClie=+<%=cod%>" class="btn btn-success btn-lg btn-block">Alterar</a>
+                            
                         </div>
                     </div>
                             

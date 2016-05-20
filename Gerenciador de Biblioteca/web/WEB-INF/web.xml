@@ -44,6 +44,10 @@
         <servlet-name>FuncionarioServletAlterar</servlet-name>
         <servlet-class>br.com.Servlet.FuncionarioServletAlterar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ClienteServletAutoAlterar</servlet-name>
+        <servlet-class>br.com.Servlet.ClienteServletAutoAlterar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>FuncionarioServletAlterar</servlet-name>
         <url-pattern>/FuncionarioServletAlterar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteServletAutoAlterar</servlet-name>
+        <url-pattern>/ClienteServletAutoAlterar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -174,14 +174,7 @@
                             <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%=cli.getCidade()%>">
                         </div>
                     </div>                     
-                    
-                    <div class="form-group">
-                        <label for="txtLogin" class="col-xs-6 col-md-3 control-label">Login: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" required="" value="<%=cli.getLogin()%>">
-                        </div>
-                    </div>
-                           
+                                               
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
                         <div class="col-xs-8 col-md-6">
