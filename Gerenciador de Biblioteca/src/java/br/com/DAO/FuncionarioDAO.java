@@ -133,6 +133,7 @@ public class FuncionarioDAO {
             func.setEmail(rs.getString("E_mail"));
             func.setLogin(rs.getString("Login"));
             func.setSenha(rs.getString("Senha"));
+            func.setStatusFunc(rs.getInt("Status"));
             func.setTipoFunc(rs.getInt("Tipo"));
             func.setDtCadastroFunc(rs.getDate("Data_Cadastro"));
             func.setDtNasc(rs.getDate("Data_Nasc"));
@@ -167,6 +168,7 @@ public class FuncionarioDAO {
             func.setEmail(rs.getString("E_mail"));
             func.setLogin(rs.getString("Login"));
             func.setSenha(rs.getString("Senha"));
+            func.setStatusFunc(rs.getInt("Status"));
             func.setTipoFunc(rs.getInt("Tipo"));
             func.setDtNasc(rs.getDate("Data_Nasc"));
         }

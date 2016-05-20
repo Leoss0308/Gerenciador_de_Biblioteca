@@ -40,18 +40,18 @@ public class FuncionarioServletAlterar extends HttpServlet {
             Funcionario func = new Funcionario();
             func.setMatriculaFunc(Integer.parseInt(request.getParameter("txtMatricula")));
             func.setNome(request.getParameter("txtNome"));
-            func.setBairro(request.getParameter("txtBairro"));
-            func.setCep(request.getParameter("txtCEP"));
-            func.setCidade(request.getParameter("txtCidade"));
-            func.setEstado(request.getParameter("txtEstado"));
-            func.setTelefone(request.getParameter("txtTelefone"));
+            func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
             func.setEmail(request.getParameter("txtEmail"));
+            func.setTelefone(request.getParameter("txtTelefone"));
+            func.setCep(request.getParameter("txtCEP"));
+            func.setEnd(request.getParameter("txtEndereco"));
+            func.setBairro(request.getParameter("txtBairro"));
+            func.setComplemento(request.getParameter("txtComplemento"));
+            func.setEstado(request.getParameter("txtEstado"));
+            func.setCidade(request.getParameter("txtCidade"));
             func.setLogin(request.getParameter("txtLogin"));
             func.setSenha(request.getParameter("txtSenha"));
             func.setStatusFunc(Integer.getInteger(request.getParameter("txtStatus")));
-            func.setEnd(request.getParameter("txtEndereco"));
-            func.setComplemento(request.getParameter("txtComplemento"));
-            func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
             func.setTipoFunc(Integer.getInteger(request.getParameter("txtTipo")));
             
             FuncionarioDAO funcDAO = new FuncionarioDAO();
