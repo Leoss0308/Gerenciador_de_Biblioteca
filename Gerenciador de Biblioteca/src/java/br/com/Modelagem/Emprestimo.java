@@ -5,7 +5,6 @@
  */
 package br.com.Modelagem;
 
-import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -18,26 +17,20 @@ public class Emprestimo {
     }
 
     private int codEmprestimo = 0;
-    private int qtdEmprestimo = 0;
+    private String titulo;
+    private int qtdLivro = 0;
     private Date dataRetirada;
     private Date dataDevolucao;
-    private Time horaRetirada;
-    private Time horaDevolucao;
-
+    private int codReserva = 0;
+    private int codCliente = 0;
+    private int matriculaFunc = 0;
+    
     public int getCodEmprestimo() {
         return codEmprestimo;
     }
 
     public void setCodEmprestimo(int codEmprestimo) {
         this.codEmprestimo = codEmprestimo;
-    }
-
-    public int getQtdEmprestimo() {
-        return qtdEmprestimo;
-    }
-
-    public void setQtdEmprestimo(int qtdEmprestimo) {
-        this.qtdEmprestimo = qtdEmprestimo;
     }
 
     public Date getDataRetirada() {
@@ -56,47 +49,73 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public Time getHoraRetirada() {
-        return horaRetirada;
+    /**
+     * @return the titulo
+     */
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setHoraRetirada(Time horaRetirada) {
-        this.horaRetirada = horaRetirada;
+    /**
+     * @param titulo the titulo to set
+     */
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public Time getHoraDevolucao() {
-        return horaDevolucao;
+    /**
+     * @return the qtdLivro
+     */
+    public int getQtdLivro() {
+        return qtdLivro;
     }
 
-    public void setHoraDevolucao(Time horaDevolucao) {
-        this.horaDevolucao = horaDevolucao;
+    /**
+     * @param qtdLivro the qtdLivro to set
+     */
+    public void setQtdLivro(int qtdLivro) {
+        this.qtdLivro = qtdLivro;
     }
 
-    public boolean confirmarEmprestimo() {
-        return true;
+    /**
+     * @return the codReserva
+     */
+    public int getCodReserva() {
+        return codReserva;
     }
 
-    public String alterarEmprestimo() {
-        return "";
+    /**
+     * @param codReserva the codReserva to set
+     */
+    public void setCodReserva(int codReserva) {
+        this.codReserva = codReserva;
     }
 
-    public boolean cancelarEmprestimo() {
-        return true;
+    /**
+     * @return the codCliente
+     */
+    public int getCodCliente() {
+        return codCliente;
     }
 
-    public boolean solicitarRenovacao() {
-        return true;
+    /**
+     * @param codCliente the codCliente to set
+     */
+    public void setCodCliente(int codCliente) {
+        this.codCliente = codCliente;
     }
 
-    public boolean confirmarDevolucao() {
-        return true;
+    /**
+     * @return the matriculaFunc
+     */
+    public int getMatriculaFunc() {
+        return matriculaFunc;
     }
 
-    public void verificarSituacaoEmprestimo() {
-
-    }
-
-    public void gerarComprovante() {
-
+    /**
+     * @param matriculaFunc the matriculaFunc to set
+     */
+    public void setMatriculaFunc(int matriculaFunc) {
+        this.matriculaFunc = matriculaFunc;
     }
 }

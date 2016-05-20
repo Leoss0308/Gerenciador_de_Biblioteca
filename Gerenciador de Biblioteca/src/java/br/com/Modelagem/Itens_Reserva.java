@@ -15,6 +15,8 @@ public class Itens_Reserva {
     }
 
     private int codItemReserva = 0;
+    private int codReserva = 0;
+    private int codLivro = 0;
 
     /**
      * @return the codItemReserva
@@ -28,6 +30,34 @@ public class Itens_Reserva {
      */
     public void setCodItemReserva(int codItemReserva) {
         this.codItemReserva = codItemReserva;
+    }
+
+    /**
+     * @return the codReserva
+     */
+    public int getCodReserva() {
+        return codReserva;
+    }
+
+    /**
+     * @param codReserva the codReserva to set
+     */
+    public void setCodReserva(int codReserva) {
+        this.codReserva = codReserva;
+    }
+
+    /**
+     * @return the codLivro
+     */
+    public int getCodLivro() {
+        return codLivro;
+    }
+
+    /**
+     * @param codLivro the codLivro to set
+     */
+    public void setCodLivro(int codLivro) {
+        this.codLivro = codLivro;
     }
 
 }

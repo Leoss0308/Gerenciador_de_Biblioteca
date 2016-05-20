@@ -1,18 +1,18 @@
 <%-- 
-    Document   : visualizaReserva
-    Created on : 06/05/2016, 20:16:03
+    Document   : visualizaEmprestimo
+    Created on : 19/05/2016, 22:09:58
     Author     : Erico
 --%>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%@page import="br.com.Modelagem.Reserva, br.com.DAO.ReservaDAO,  java.util.List" %>
+    <%@page import="br.com.Modelagem.Emprestimo, br.com.DAO.EmprestimoDAO,  java.util.List" %>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-    <title>Tabela Reserva</title>
+    <title>Tabela Emprestimo</title>
 
     <!-- Bootstrap -->
     <link href="../../../css/bootstrap.min.css" rel="stylesheet">
@@ -39,21 +39,21 @@
   <body>
   
     <%
-        ReservaDAO reserdao = new ReservaDAO();
-        List<Reserva> reservas = reserdao.getLista();
+        EmprestimoDAO empdao = new EmprestimoDAO();
+        List<Emprestimo> Emprestimos = empdao.getLista();
     %>
     <div class="table-responsive">  
         <table class="table table-bordered">
            <!-- <tr><th colspan="18">Clientes</tr> -->
             <tr>
-                <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th></th>
+                <th>Código do Emprestimo</th><th>Código do Cliente</th><th>Funcionario</th><th>Código da Reserva</th><th>Titilo do Livro</th><th>Quantidade Do Livro</th><th>Data da Retirada</th><th>Data da Entrega</th><th></th>
             </tr>
             <%
                 String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
                 sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
 
                 int cor = 0;
-                for (Reserva reserv : reservas) {
+                for (Emprestimo Emp : Emprestimos) {
                     String sCor = "cor" + (cor % 2);
                     cor++;
 
@@ -62,13 +62,17 @@
 
                     out.print("<tr id='" + sCor + "' " + sDestaque + ">");
 
-                    out.print("<td>" + reserv.getCodReserva()+ "</td>");
-                    out.print("<td>" + reserv.getCodClie() + "</td>");
-                    out.print("<td>" + reserv.getDataReseva()+ "</td>");
+                    out.print("<td>" + Emp.getCodEmprestimo()+ "</td>");
+                    out.print("<td>" + Emp.getCodCliente()+ "</td>");
+                    out.print("<td>" + Emp.getMatriculaFunc()+ "</td>");
+                    out.print("<td>" + Emp.getCodReserva()+ "</td>");
+                    out.print("<td>" + Emp.getTitulo()+ "</td>");
+                    out.print("<td>" + Emp.getQtdLivro()+ "</td>");
+                    out.print("<td>" + Emp.getDataRetirada()+ "</td>");
+                    out.print("<td>" + Emp.getDataDevolucao()+ "</td>");
 
-                    // Controle para manutenção: // ALTERAR OS LINK'S
-                    out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + reserv.getCodClie() +"&codReserva="+ reserv.getCodReserva() +"'><img src='../../img/alterar.jpg' /></a></td>");
-                    out.print("<td id='cmd'><a href='cancelarReserva.jsp?codClie=" + reserv.getCodClie() + "&codReserva="+ reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' /></a></td>");
+                    // Controle para manutenção: // ALTERAR OS LINK
+                    out.print("<td id='cmd'><a href='../../../devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../img/alterar.jpg' /></a></td>");
 
                     out.print("</tr>");
 
