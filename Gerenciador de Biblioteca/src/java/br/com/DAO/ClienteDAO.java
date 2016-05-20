@@ -249,6 +249,16 @@ public class ClienteDAO {
         }
         rs.close();
         ps.close();
+        
+        ps = cnn.prepareStatement("select * from Funcionario where Login=?");
+        ps.setString(1, Login);
+        rs = ps.executeQuery();
+        if (rs.next()) {
+            verifica=true;
+        }
+        rs.close();
+        ps.close();
+        
         return verifica;
     }
        

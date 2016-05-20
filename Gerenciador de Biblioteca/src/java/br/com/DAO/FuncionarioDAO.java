@@ -211,7 +211,7 @@ public class FuncionarioDAO {
     
     public boolean verificaFuncLogin(String Login) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Funcionario where Login=?");
+        ps = cnn.prepareStatement("select * from Cliente where Login=?");
         ps.setString(1, Login);
         ResultSet rs = ps.executeQuery();
         boolean verifica=false;
@@ -220,6 +220,16 @@ public class FuncionarioDAO {
         }
         rs.close();
         ps.close();
+        
+        ps = cnn.prepareStatement("select * from Funcionario where Login=?");
+        ps.setString(1, Login);
+        rs = ps.executeQuery();
+        if (rs.next()) {
+            verifica=true;
+        }
+        rs.close();
+        ps.close();
+        
         return verifica;
     }
 
