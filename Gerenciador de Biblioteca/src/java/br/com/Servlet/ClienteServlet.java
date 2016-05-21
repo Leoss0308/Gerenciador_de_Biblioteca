@@ -39,10 +39,11 @@ public class ClienteServlet extends HttpServlet {
         PrintWriter out = response.getWriter();        
         try {
             ClienteDAO cliDAO = new ClienteDAO();
+            HttpSession cadclivolta = request.getSession();
             if(cliDAO.verificaCliLogin(request.getParameter("txtLogin")) == true ){
                 
                 
-                HttpSession cadclivolta = request.getSession();
+                
                 cadclivolta.setAttribute("verificacao","1");
                 cadclivolta.setAttribute("txtNome",request.getParameter("txtNome"));
                 cadclivolta.setAttribute("txtCPF",request.getParameter("txtCPF"));
@@ -78,6 +79,7 @@ public class ClienteServlet extends HttpServlet {
 
                 cliDAO.inserir(cli);
                 pagina += "?msg=Cadastrado com sucesso!";
+                cadclivolta.setAttribute("verificacao",null);
                 request.getRequestDispatcher(pagina).forward(request, response);
             }
             

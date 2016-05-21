@@ -68,7 +68,7 @@
 
                 <div class="form-group">
                   <div class="col-xs-6 col-md-6 col-md-offset-3">
-                      <input type="submit" value="Logar" name="btnLogar" class="btn btn-default btn-lg btn-block" />
+                      <input type="submit" value="Logar" name="btnLogar" class="btn btn-success btn-lg btn-block" />
                   </div>
                 </div>
 

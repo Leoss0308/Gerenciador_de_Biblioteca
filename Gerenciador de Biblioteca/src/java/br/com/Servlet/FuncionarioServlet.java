@@ -40,10 +40,11 @@ public class FuncionarioServlet extends HttpServlet {
          try {
              
              FuncionarioDAO funcDAO = new FuncionarioDAO();
+             HttpSession cadfuncvolta = request.getSession();
             if(funcDAO.verificaFuncLogin(request.getParameter("txtLogin")) == true ){
                 
                 
-                HttpSession cadfuncvolta = request.getSession();
+                
                 cadfuncvolta.setAttribute("verificacao","1");
                 cadfuncvolta.setAttribute("txtNome",request.getParameter("txtNome"));
                 cadfuncvolta.setAttribute("txtBairro",request.getParameter("txtBairro"));
@@ -78,6 +79,7 @@ public class FuncionarioServlet extends HttpServlet {
 
                 funcDAO.inserir(func);
                 pagina += "?msg=Cadastrado com sucesso!";
+                cadfuncvolta.setAttribute("verificacao",null);
                 request.getRequestDispatcher(pagina).forward(request, response);
             }
             

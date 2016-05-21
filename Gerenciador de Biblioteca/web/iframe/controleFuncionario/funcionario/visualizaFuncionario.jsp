@@ -25,8 +25,12 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            /*overflow: hidden;*/
+            /*overflow: hidden;*/           
         }   
+        
+        td {
+            white-space: nowrap;
+        }
     </style>
     
   </head>
@@ -40,7 +44,6 @@
                         <div class="col-xs-2 ">
                             <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa" style="width: 100%">
                                 <option value="Nome">Nome</option>
-                                <option value="CPF">CPF</option>
                             </select>
                         </div>
                     </div>
@@ -79,7 +82,7 @@
         <table class="table table-bordered">
            <!-- <tr><th colspan="18">Clientes</tr> -->
             <tr>
-                <th>Código</th><th>Nome</th><th>Endereço</th><th>Complemento</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>E-mail</th><th>Login</th><th>Senha</th><th>Data_Nascimentoo</th><th>Status</th><th>Tipo</th><th></th><th></th>
+                <th>Código</th><th>Nome</th><th>Endereço</th><th>Complemento</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>E-mail</th><th>Login</th><th>Senha</th><th>Data_Nascimentoo</th><th>Tipo</th><th></th><th></th>
             </tr>
             <%
                 String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";

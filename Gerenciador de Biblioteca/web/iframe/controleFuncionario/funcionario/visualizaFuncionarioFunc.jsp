@@ -9,7 +9,7 @@
     <title>Visualizar Funcionario</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
       
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
@@ -19,9 +19,9 @@
     <![endif]-->
     
     <!-- jquery para a mascara -->
-        <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
-        <script src = "js/jquery-2.1.3.js"  type = "text/javascript" ></script>
-        <script src = "js/jquery.maskedinput.js"  type = "text/javascript" ></script>
+    <script src = "../../../js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
+    <script src = "../../../js/jquery-2.1.3.js"  type = "text/javascript" ></script>
+    <script src = "../../../js/jquery.maskedinput.js"  type = "text/javascript" ></script>
             
         
         <!-- Para funcionar no mozila -->
@@ -38,7 +38,7 @@
     
     <style>
         body{
-            background: url(../img/fundo.jpg) no-repeat center top fixed;
+            background: url(../../../img/fundoTabela.jpg) no-repeat center top fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -53,156 +53,154 @@
         <%
             Funcionario func = new Funcionario();
             int cod = 0;
-            cod = Integer.parseInt(request.getParameter("MatriculaFunc"));
+            cod = Integer.parseInt(String.valueOf(session.getAttribute("cod")));
             func = new FuncionarioDAO().getFunc(cod);  // Obtem o item do BD que foi solicitado via parâmetro.            
             
         %>
         
         <article id="Alteracao"  class="row">         
-            <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+            <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
                 <form class="form-horizontal"  action="FuncionarioServletAlterar" method="post">
                     
                     <div class="form-group">
-                        <label for="txtMatricula" class="col-xs-6 col-md-3 control-label">Matricula: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtMatricula" name="txtMatricula" required="" readonly="" value="<%=func.getMatriculaFunc()%>">
+                        <label for="txtMatricula" class="col-xs-4 col-md-4 control-label">Matricula: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getMatriculaFunc()%></label>
                         </div>
                     </div>
                     
+                        <hr>
+                        
                     <div class="form-group">
-                        <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" value="<%=func.getNome()%>">
-                        </div>
-                    </div>
-                                                          
-                    <div class="form-group">
-                        <label for="txtDataNasc" class="col-xs-6 col-md-3 control-label">Data De Nascimento: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="date" class="form-control" id="txtDataNasc" name="txtDataNasc" required="" value="<%=func.getDtNasc()%>">
+                        <label for="txtNome" class="col-xs-4 col-md-4 control-label">Nome Completo: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getNome()%></label>
                         </div>
                     </div>
                     
+                        <hr>
+                                                         
                     <div class="form-group">
-                        <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" value="<%=func.getEmail()%>">
+                        <label for="txtDataNasc" class="col-xs-4 col-md-4 control-label">Data De Nascimento: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getDtNasc()%></label>
                         </div>
                     </div>
                     
+                        <hr>
+                    
                     <div class="form-group">
-                        <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="tel" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%=func.getTelefone()%>">
+                        <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getEmail()%></label>
                         </div>
                     </div>
                     
+                        <hr>
+                    
                     <div class="form-group">
-                        <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="" value="<%=func.getCep()%>">
+                        <label for="txtTelefone" class="col-xs-4 col-md-4 control-label">Telefone: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getTelefone()%></label>
+                        </div>
+                    </div>
+                    
+                        <hr>
+                    
+                    <div class="form-group">
+                        <label for="txtCEP" class="col-xs-4 col-md-4 control-label">CEP: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getCep()%></label>
                         </div>
                     </div>
                      
+                        <hr>
+                    
                     <div class="form-group">
-                        <label for="txtEndereco" class="col-xs-6 col-md-3 control-label">Endereço: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" value="<%=func.getEnd()%>">
+                        <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getEnd()%></label>
                         </div>
                     </div>        
+                    
+                        <hr>
                            
                     <div class="form-group">
-                        <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" value="<%=func.getBairro()%>">
+                        <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getBairro()%></label>
                         </div>
                     </div> 
                     
+                        <hr>
+                    
                     <div class="form-group">
-                        <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" value="<%=func.getComplemento()%>">
+                        <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getComplemento()%></label>
                         </div>
                     </div> 
                     
+                        <hr>
+                    
                     <div class="form-group">
-                        <label for="txtEstado" class="col-xs-6 col-md-3 control-label">Estado: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <select class="form-control" id="txtEstado" name="txtEstado" required="" value="<%=func.getEstado()%>">
-                                <option selected="" value="<%=func.getEstado()%>"><%=func.getEstado()%></option>
-                                <option value="ac">Acre</option> 
-                                <option value="al">Alagoas</option> 
-                                <option value="am">Amazonas</option> 
-                                <option value="ap">Amapá</option> 
-                                <option value="ba">Bahia</option> 
-                                <option value="ce">Ceará</option> 
-                                <option value="df">Distrito Federal</option> 
-                                <option value="es">Espírito Santo</option> 
-                                <option value="go">Goiás</option> 
-                                <option value="ma">Maranhão</option> 
-                                <option value="mt">Mato Grosso</option> 
-                                <option value="ms">Mato Grosso do Sul</option> 
-                                <option value="mg">Minas Gerais</option> 
-                                <option value="pa">Pará</option> 
-                                <option value="pb">Paraíba</option> 
-                                <option value="pr">Paraná</option> 
-                                <option value="pe">Pernambuco</option> 
-                                <option value="pi">Piauí</option> 
-                                <option value="rj">Rio de Janeiro</option> 
-                                <option value="rn">Rio Grande do Norte</option> 
-                                <option value="ro">Rondônia</option> 
-                                <option value="rs">Rio Grande do Sul</option> 
-                                <option value="rr">Roraima</option> 
-                                <option value="sc">Santa Catarina</option> 
-                                <option value="se">Sergipe</option> 
-                                <option value="sp">São Paulo</option> 
-                                <option value="to">Tocantins</option>                          
-                            </select>
+                        <label for="txtEstado" class="col-xs-4 col-md-4 control-label">Estado: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getEstado()%></label>
                         </div>
                     </div>
                     
+                        <hr>
+                    
                     <div class="form-group">
-                        <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%=func.getCidade()%>">
+                        <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getCidade()%></label>
                         </div>
                     </div>                     
                     
+                        <hr>
+                    
                     <div class="form-group">
-                        <label for="txtLogin" class="col-xs-6 col-md-3 control-label">Login: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" required="" value="<%=func.getLogin()%>">
-                        </div>
-                    </div>
-                           
-                    <div class="form-group">
-                        <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="" value="<%=func.getSenha()%>">
-                        </div>
-                    </div> 
-                        
-                    <div class="form-group">
-                        <label for="txtStatus" class="col-xs-6 col-md-3 control-label">Status: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="number" class="form-control" id="txtStatus" name="txtStatus" min="0" max="1" required="" value="<%=func.getStatusFunc()%>">
-                        </div>
-                    </div>
-                        
-                    <div class="form-group">
-                        <label for="txtTipo" class="col-xs-6 col-md-3 control-label">Tipo: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="number" class="form-control" id="txtTipo" name="txtTipo" min="2" max="3" required="" value="<%=func.getTipoFunc()%>">
+                        <label for="txtLogin" class="col-xs-4 col-md-4 control-label">Login: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getLogin()%></label>
                         </div>
                     </div>
                     
+                        <hr>
+                           
                     <div class="form-group">
-                        <div class="col-xs-8 col-md-6 col-md-offset-3">
-                            <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAF" class="btn btn-success btn-lg btn-block"/>
+                        <label for="txtSenha" class="col-xs-4 col-md-4 control-label">Senha: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label"><%=func.getSenha()%></label>
+                        </div>
+                    </div> 
+                    
+                        <hr>
+                    
+                    <%
+                        if(func.getTipoFunc()==2){
+                    %>   
+                    <div class="form-group">
+                        <label for="txtTipo" class="col-xs-4 col-md-4 control-label">Tipo: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label">Funcionario</label>
                         </div>
                     </div>
-                            
-                      
+                    <%
+                        }if(func.getTipoFunc()==3){
+                    %>
+                    <div class="form-group">
+                        <label for="txtTipo" class="col-xs-4 col-md-4 control-label">Tipo: </label>
+                        <div class="col-xs-8 col-md-8">
+                            <label class="control-label">Administrador</label>
+                        </div>
+                    </div>
+                    <%
+                        }
+                    %>
+
                 </form>
             </div>
             

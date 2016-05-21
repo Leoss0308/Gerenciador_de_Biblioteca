@@ -59,75 +59,75 @@
         %>
         
         <article id="Alteracao"  class="row">         
-            <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+            <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
                 <form class="form-horizontal"  action="FuncionarioServletAlterar" method="post">
                     
                     <div class="form-group">
-                        <label for="txtMatricula" class="col-xs-6 col-md-3 control-label">Matricula: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtMatricula" class="col-xs-4 col-md-4 control-label">Matricula: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtMatricula" name="txtMatricula" required="" readonly="" value="<%=func.getMatriculaFunc()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtNome" class="col-xs-4 col-md-4 control-label">Nome Completo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtNome" name="txtNome" required="" value="<%=func.getNome()%>">
                         </div>
                     </div>
                                                           
                     <div class="form-group">
-                        <label for="txtDataNasc" class="col-xs-6 col-md-3 control-label">Data De Nascimento: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtDataNasc" class="col-xs-4 col-md-4 control-label">Data De Nascimento: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="date" class="form-control" id="txtDataNasc" name="txtDataNasc" required="" value="<%=func.getDtNasc()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" value="<%=func.getEmail()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtTelefone" class="col-xs-4 col-md-4 control-label">Telefone: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="tel" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%=func.getTelefone()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtCEP" class="col-xs-4 col-md-4 control-label">CEP: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="" value="<%=func.getCep()%>">
                         </div>
                     </div>
                      
                     <div class="form-group">
-                        <label for="txtEndereco" class="col-xs-6 col-md-3 control-label">Endereço: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" value="<%=func.getEnd()%>">
                         </div>
                     </div>        
                            
                     <div class="form-group">
-                        <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" value="<%=func.getBairro()%>">
                         </div>
                     </div> 
                     
                     <div class="form-group">
-                        <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" value="<%=func.getComplemento()%>">
                         </div>
                     </div> 
                     
                     <div class="form-group">
-                        <label for="txtEstado" class="col-xs-6 col-md-3 control-label">Estado: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtEstado" class="col-xs-4 col-md-4 control-label">Estado: </label>
+                        <div class="col-xs-6 col-md-6">
                             <select class="form-control" id="txtEstado" name="txtEstado" required="" value="<%=func.getEstado()%>">
                                 <option selected="" value="<%=func.getEstado()%>"><%=func.getEstado()%></option>
                                 <option value="ac">Acre</option> 
@@ -162,31 +162,32 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%=func.getCidade()%>">
                         </div>
                     </div>                     
                                                
                     <div class="form-group">
-                        <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtSenha" class="col-xs-4 col-md-4 control-label">Senha: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="" value="<%=func.getSenha()%>">
                         </div>
                     </div> 
                                                 
                     <div class="form-group">
-                        <label for="txtTipo" class="col-xs-6 col-md-3 control-label">Tipo: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtTipo" class="col-xs-4 col-md-4 control-label">Tipo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <select class="form-control" id="txtTipo" name="txtTipo" required="">
-                                <option value="2">Funcioario</option>
+                                <option selected="" value="<%=func.getTipoFunc()%>"><%=func.getTipoFunc()%></option>
+                                <option value="2">Funcionario</option>
                                 <option value="3">Administrador</option>
                             </select>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <div class="col-xs-8 col-md-6 col-md-offset-3">
+                        <div class="col-xs-6 col-xs-offset-4 col-md-6 col-md-offset-4">
                             <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAF" class="btn btn-success btn-lg btn-block"/>
                         </div>
                     </div>

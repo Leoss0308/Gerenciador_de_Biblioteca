@@ -29,7 +29,7 @@ public abstract class Pessoa {
     private String email = "";
     private String login = "";
     private String senha = "";
-    private int permissao = 0;
+
 
     //getters and setters
     /**
@@ -175,15 +175,6 @@ public abstract class Pessoa {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-    public int getPermissao() {
-        return permissao;
-    }
-
-    public void setPermissao(int permissao) {
-        this.permissao = permissao;
-    }
-
 
     //getters and setters
 

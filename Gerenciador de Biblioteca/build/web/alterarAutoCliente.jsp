@@ -59,82 +59,82 @@
         %>
         
         <article id="Alteracao"  class="row">         
-            <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+            <div class="col-xs-9 col-xs-offset-2 col-md-9 col-md-offset-2">
                 <form class="form-horizontal"  action="ClienteServletAutoAlterar" method="post">
                     
                     <div class="form-group">
-                        <label for="txtCodiigo" class="col-xs-6 col-md-3 control-label">Codigo: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtCodiigo" class="col-xs-4 col-md-4 control-label">Codigo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCodigo" name="txtCodigo" required="" readonly="" value="<%=cli.getCodClie()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtNome" class="col-xs-4 col-md-4 control-label">Nome Completo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtNome" name="txtNome" required="" value="<%=cli.getNome()%>">
                         </div>
                     </div>
                                                           
                     <div class="form-group">
-                        <label for="txtDataNasc" class="col-xs-6 col-md-3 control-label">Data De Nascimento: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtDataNasc" class="col-xs-4 col-md-4 control-label">Data De Nascimento: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="date" class="form-control" id="txtDataNasc" name="txtDataNasc" required="" value="<%=cli.getDtNasc()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCPF" class="col-xs-6 col-md-3 control-label">CPF: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtCPF" class="col-xs-4 col-md-4 control-label">CPF: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCPF" name="txtCPF" required="" value="<%=cli.getCpfClie()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" value="<%=cli.getEmail()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtTelefone" class="col-xs-4 col-md-4 control-label">Telefone: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="tel" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%=cli.getTelefone()%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCEP" class="col-xs-6 col-md-3 control-label">CEP: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtCEP" class="col-xs-4 col-md-4 control-label">CEP: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="" value="<%=cli.getCep()%>">
                         </div>
                     </div>
                      
                     <div class="form-group">
-                        <label for="txtEndereco" class="col-xs-6 col-md-3 control-label">Endereço: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" value="<%=cli.getEnd()%>">
                         </div>
                     </div>        
                            
                     <div class="form-group">
-                        <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" value="<%=cli.getBairro()%>">
                         </div>
                     </div> 
                     
                     <div class="form-group">
-                        <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" value="<%=cli.getComplemento()%>">
                         </div>
                     </div> 
                     
                     <div class="form-group">
-                        <label for="txtEstado" class="col-xs-6 col-md-3 control-label">Estado: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtEstado" class="col-xs-4 col-md-4 control-label">Estado: </label>
+                        <div class="col-xs-6 col-md-6">
                             <select class="form-control" id="txtEstado" name="txtEstado" required="" value="<%=cli.getEstado()%>">
                                 <option selected="" value="<%=cli.getEstado()%>"><%=cli.getEstado()%></option>
                                 <option value="ac">Acre</option> 
@@ -169,22 +169,22 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%=cli.getCidade()%>">
                         </div>
                     </div>                     
                                                
                     <div class="form-group">
-                        <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtSenha" class="col-xs-4 col-md-4 control-label">Senha: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="" value="<%=cli.getSenha()%>">
                         </div>
                     </div> 
                         
 
                     <div class="form-group">
-                        <div class="col-xs-8 col-md-6 col-md-offset-3">
+                        <div class="col-xs-6 col-xs-offset-4 col-md-6 col-md-offset-4">
                             <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAC" class="btn btn-success btn-lg btn-block"/>
                         </div>
                     </div>
