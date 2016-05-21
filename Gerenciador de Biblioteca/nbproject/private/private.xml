@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/web/iframe/controleFuncionario/livros/visualizaLivro.jsp</file>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/LivroDAO.java</file>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/web/cadastroLivro.jsp</file>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/web/cadastroFunc.jsp</file>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/web/alterarLivro.jsp</file>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/web/alterarFunc.jsp</file>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/Servlet/LivroServlet.java</file>
+            <file>file:/C:/Users/Amanda/Documents/Sistema%20Biblioteca/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/Servlet/ClienteServlet.java</file>
+        </group>
     </open-files>
 </project-private>

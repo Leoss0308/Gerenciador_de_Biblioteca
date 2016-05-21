@@ -180,4 +180,38 @@ public class LivroDAO {
         return liv;
     }
 
+     public List<Livro> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from Livro where Avaria = 0 AND " + tipo + " LIKE ?");
+        ps.setString(1, '%' + palavra + '%');
+        ResultSet rs = ps.executeQuery();
+        List<Livro> Liv = new ArrayList<Livro>();
+        while (rs.next()) {
+            // Criando o objeto e setando valores:
+            Livro liv = new Livro();
+            liv.setCodLivro(rs.getInt("Codigo_Livro"));
+            liv.setISBN(rs.getString("ISBN"));
+            liv.setEdicaoLivro(rs.getString("Edicao_Livro"));
+            liv.setTituloLivro(rs.getString("Titulo_Livro"));
+            liv.setAutorLivro(rs.getString("Autor_Livro"));
+            liv.setEditoraLivro(rs.getString("Editora_Livro"));
+            liv.setResumoLivro(rs.getString("Resumo_Livro"));
+            liv.setPrecoLivro(rs.getString("Preco_Livro"));
+            liv.setAnoPublicacao(rs.getString("Ano_Publicacao"));
+            liv.setCategoriaLivro(rs.getString("Categoria_Livro"));
+            liv.setTags(rs.getString("Tags"));
+            liv.setDataEntrada(rs.getDate("Data_Entrada"));
+            liv.setObsLivro(rs.getString("Obs_Livro"));
+            liv.setAvaria(rs.getInt("Avaria"));
+            liv.setEmprestado(rs.getInt("Emprestado"));
+            liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
+            
+            // Adicionando o objeto à lista:
+            Liv.add(liv);
+        }
+        rs.close();
+        ps.close();
+        return Liv;
+    }
+    
 }

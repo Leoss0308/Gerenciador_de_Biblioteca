@@ -41,10 +41,49 @@
 
     </head>
     <body>
+    <body>
+        <div class="row">
+
+            <form class="form-horizontal"  action="visualizaLivro.jsp" method="get">
+
+                <div class="form-inline">
+                    <label for="slcTipoPesquisa" class="col-xs-2 control-label">Pesquisar pelo: </label>
+                    <div class="col-xs-2 ">
+                        <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa" style="width: 100%">
+                            <option value="Nome">Nome</option>
+                            <option value="=ISBN">ISBN</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-inline">
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" id="txtpesquisa" name="txtpesquisa" placeholder="Palavra Chave" style="width: 100%">
+                    </div>
+                </div>
+
+                <div class="form-inline">
+                    <div class="col-xs-1 ">
+                        <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-sm" style="margin-top: 2px"/>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="row">
+        </div>
 
         <%
             LivroDAO livdao = new LivroDAO();
             List<Livro> livro = livdao.getLista();
+            String palavra = request.getParameter("txtpesquisa");
+            if (palavra == null) {
+                livro = livdao.getLista();
+            } else {
+                String tipo = request.getParameter("slcTipoPesquisa");
+                livro = livdao.getListaLike(palavra, tipo);
+            }
         %>
         <div class="table-responsive">  
             <table class="table table-bordered">

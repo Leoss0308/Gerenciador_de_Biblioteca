@@ -50,22 +50,16 @@
             <!-- menu -->
 
             <!-- Menu -->
-            
+
 
             <!-- Logo e Titulo -->
-            <div class="row" id="cadastroLivro">
+            <div class="row">
 
-
-                <div class="col-xs-5 col-md-4">
-                    <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
-                </div>
-
-                <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
+                <hgroup class="col-xs-9 col-xs-offset-3 col-md-9 col-md-offset-3">
                     <h1>Cadastro de Livros</h1>
                 </hgroup>
 
             </div>
-
 
         </header>
 
@@ -99,7 +93,7 @@
                     <div class="form-group">
                         <label for="txtAutor" class="col-xs-6 col-md-3 control-label">Autor: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="txt" class="form-control" id="txtAutor" name="txtAutor" required="">
+                            <input type="text" class="form-control" id="txtAutor" name="txtAutor" required="">
                         </div>
                     </div>
 
