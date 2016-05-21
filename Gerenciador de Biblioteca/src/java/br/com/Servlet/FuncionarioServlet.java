@@ -72,6 +72,7 @@ public class FuncionarioServlet extends HttpServlet {
                 func.setEnd(request.getParameter("txtEndereco"));
                 func.setComplemento(request.getParameter("txtComplemento"));
                 func.setDtNasc(Date.valueOf(request.getParameter("txtDataNasc")));
+                func.setTipoFunc(Integer.parseInt(request.getParameter("txtTipo")));
 
 
 

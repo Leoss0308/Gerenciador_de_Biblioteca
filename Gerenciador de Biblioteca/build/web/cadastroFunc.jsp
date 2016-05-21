@@ -218,8 +218,11 @@
                     
                     <div class="form-group">
                         <label for="txtTipo" class="col-xs-6 col-md-3 control-label">Tipo: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="number" class="form-control" id="txtTipo" name="txtTipo" min="2" max="3" required="">
+                        <div class="col-xs-8 col-md-6">                            
+                            <select class="form-control" id="txtTipo" name="txtTipo" required="">
+                                <option value="2">Funcioario</option>
+                                <option value="3">Administrador</option>
+                            </select>
                         </div>
                     </div>
 

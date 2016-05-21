@@ -67,7 +67,7 @@ public class FuncionarioDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "UPDATE Funcionario set Nome=?, Endereco=?, Complemento=?, Bairro=?, CEP=?, Cidade=?, Estado=?, Telefone=?, E_mail=?, Login=?, Senha=?, Status=?, Tipo=?, Data_Nasc=? where Cod_Matricula=?");
+                    "UPDATE Funcionario set Nome=?, Endereco=?, Complemento=?, Bairro=?, CEP=?, Cidade=?, Estado=?, Telefone=?, E_mail=?, Senha=?, Status=?, Tipo=?, Data_Nasc=? where Cod_Matricula=?");
             ps.setString(1, func.getNome());
             ps.setString(2, func.getEnd());
             ps.setString(3, func.getComplemento());
@@ -77,12 +77,11 @@ public class FuncionarioDAO {
             ps.setString(7, func.getEstado());
             ps.setString(8, func.getTelefone());
             ps.setString(9, func.getEmail());
-            ps.setString(10, func.getLogin());
-            ps.setString(11, func.getSenha());
-            ps.setInt(12, 1);
-            ps.setInt(13,func.getTipoFunc());
-            ps.setDate(14, func.getDtNasc());
-            ps.setInt(15, func.getMatriculaFunc());
+            ps.setString(10, func.getSenha());
+            ps.setInt(11, 1);
+            ps.setInt(12,func.getTipoFunc());
+            ps.setDate(13, func.getDtNasc());
+            ps.setInt(14, func.getMatriculaFunc());
             ps.executeUpdate();
             ps.close();
             return true;

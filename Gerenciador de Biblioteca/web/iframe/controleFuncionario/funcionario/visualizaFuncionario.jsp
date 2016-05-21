@@ -108,7 +108,6 @@
                     out.print("<td>" + func.getLogin() + "</td>");
                     out.print("<td>" + func.getSenha() + "</td>");
                     out.print("<td>" + func.getDtNasc()+ "</td>");
-                    out.print("<td>" + func.getStatusFunc()+ "</td>");
                     out.print("<td>" + func.getTipoFunc()+ "</td>");
 
                     // Controle para manutenção:

@@ -167,32 +167,21 @@
                             <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%=func.getCidade()%>">
                         </div>
                     </div>                     
-                    
-                    <div class="form-group">
-                        <label for="txtLogin" class="col-xs-6 col-md-3 control-label">Login: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" required="" value="<%=func.getLogin()%>">
-                        </div>
-                    </div>
-                           
+                                               
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
                         <div class="col-xs-8 col-md-6">
                             <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="" value="<%=func.getSenha()%>">
                         </div>
                     </div> 
-                        
-                    <div class="form-group">
-                        <label for="txtStatus" class="col-xs-6 col-md-3 control-label">Status: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="number" class="form-control" id="txtStatus" name="txtStatus" min="0" max="1" required="" value="<%=func.getStatusFunc()%>">
-                        </div>
-                    </div>
-                        
+                                                
                     <div class="form-group">
                         <label for="txtTipo" class="col-xs-6 col-md-3 control-label">Tipo: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="number" class="form-control" id="txtTipo" name="txtTipo" min="2" max="3" required="" value="<%=func.getTipoFunc()%>">
+                            <select class="form-control" id="txtTipo" name="txtTipo" required="">
+                                <option value="2">Funcioario</option>
+                                <option value="3">Administrador</option>
+                            </select>
                         </div>
                     </div>
                     
