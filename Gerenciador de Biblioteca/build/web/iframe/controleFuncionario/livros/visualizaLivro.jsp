@@ -42,38 +42,37 @@
     </head>
     <body>
     <body>
-        <div class="row">
+       <div class="row">
+            
+                <form class="form-horizontal"  action="visualizaLivro.jsp" method="get">
 
-            <form class="form-horizontal"  action="visualizaLivro.jsp" method="get">
-
-                <div class="form-inline">
-                    <label for="slcTipoPesquisa" class="col-xs-2 control-label">Pesquisar pelo: </label>
-                    <div class="col-xs-2 ">
-                        <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa" style="width: 100%">
-                            <option value="Nome">Nome</option>
-                            <option value="=ISBN">ISBN</option>
-                        </select>
+                    <div class="form-inline">
+                        <label for="slcTipoPesquisa" class="col-xs-2 control-label">Pesquisar pelo: </label>
+                        <div class="col-xs-2 ">
+                            <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa" style="width: 100%">
+                                <option value="Titulo">Título</option>
+                                <option value="ISBN">ISBN</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-inline">
-                    <div class="col-xs-3">
-                        <input type="text" class="form-control" id="txtpesquisa" name="txtpesquisa" placeholder="Palavra Chave" style="width: 100%">
+                    <div class="form-inline">
+                        <div class="col-xs-3">
+                            <input type="text" class="form-control" id="txtpesquisa" name="txtpesquisa" placeholder="Palavra Chave" style="width: 100%">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-inline">
-                    <div class="col-xs-1 ">
-                        <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-sm" style="margin-top: 2px"/>
+                    <div class="form-inline">
+                        <div class="col-xs-1 ">
+                            <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-sm" style="margin-top: 2px"/>
+                        </div>
                     </div>
-                </div>
 
-            </form>
-
+                </form>
+            
         </div>
         <div class="row">
         </div>
-
         <%
             LivroDAO livdao = new LivroDAO();
             List<Livro> livro = livdao.getLista();
@@ -85,11 +84,12 @@
                 livro = livdao.getListaLike(palavra, tipo);
             }
         %>
+        
         <div class="table-responsive">  
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Livro</tr> -->
                 <tr>
-                    <th>Código</th><th>ISBN</th><th>Edição</th><th>Título<th><th>Autor</th><th>Editora</th><th>Resumo</th><th>Preco</th><th>Ano Publicacao</th><th>Categoria</th><th>Tags</th><th>Observação</th><th>Status Avaria</th><th>Status Empréstimo</th><th>Matrícula Funcionário</th><th></th>
+                    <th>Código</th><th>ISBN</th><th>Edição</th><th>Título</th><th>Autor</th><th>Editora</th><th>Resumo</th><th>Preço</th><th>Ano Publicação</th><th>Categoria</th><th>Tags</th><th>Observação</th><th>Status Avaria</th><th>Status Empréstimo</th><th>Funcionário Responsável</th><th></th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -122,8 +122,9 @@
                         out.print("<td>" + liv.getMatriculaFunc() + "</td>");
 
                         // Controle para manutenção:
-                        out.print("<td id='cmd'><a href='../../../alterarLivro.jsp?codLivro=" + liv.getCodLivro() + "'><img src='../../../img/alterar.png' /></a></td>");
-                        out.print("<td id='cmd'><a href='desativarLivro.jsp?codLivro=" + liv.getCodLivro() + "'><img src='../../../img/excluir.png' /></a></td>");
+                        //Coloquei um title na tag img pro usuario ao passar em cima do ícone alterar ou excluir saber do que se trata, não só pela dedução da imagem.
+                        out.print("<td id='cmd'><a href='../../../alterarLivro.jsp?CodLivro=" + liv.getCodLivro() + "'><img src='../../../img/alterar.png' title='Alterar'/></a></td>");
+                        out.print("<td id='cmd'><a href='desativarLivro.jsp?CodLivro=" + liv.getCodLivro() + "'><img src='../../../img/excluir.png' title='Excluir'/></a></td>");
 
                         out.print("</tr>");
 

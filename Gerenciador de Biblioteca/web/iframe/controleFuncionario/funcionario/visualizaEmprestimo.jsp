@@ -72,7 +72,7 @@
                     out.print("<td>" + Emp.getDataDevolucao()+ "</td>");
 
                     // Controle para manutenção: // ALTERAR OS LINK
-                    out.print("<td id='cmd'><a href='../../../devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../img/alterar.jpg' /></a></td>");
+                    out.print("<td id='cmd'><a href='../../../devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../img/alterar.jpg' title='Alterar' /></a></td>");
 
                     out.print("</tr>");
 

@@ -27,7 +27,7 @@
         <!--CSS do cadastroClie.jsp -->
         <link href="css/cadastroClie.css" rel="stylesheet">
         <!-- jquery para a mascara -->
-       <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
+        <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
         <script src = "js/jquery-2.1.3.js"  type = "text/javascript" ></script>
         <script src = "js/jquery.maskedinput.js"  type = "text/javascript" ></script>
 
@@ -39,8 +39,8 @@
         <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
         <script>
             webshims.setOptions('waitReady', false);
-          webshims.setOptions('forms-ext', {types: 'date'});
-          webshims.polyfill('forms forms-ext');
+            webshims.setOptions('forms-ext', {types: 'date'});
+            webshims.polyfill('forms forms-ext');
         </script>
 
     </head>
@@ -55,8 +55,9 @@
             <!-- Logo e Titulo -->
             <div class="row">
 
-               <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
-                    <h1>Cadastro de Livros</h1>
+                <hgroup class="col-xs-6 col-xs-offset-6 col-md-6 col-md-offset-4">
+                    <h1>Cadastro de Livros</h1> 
+                    <h1></h1>
                 </hgroup>
 
             </div>
@@ -65,85 +66,85 @@
 
         <!-- Conteudo da Pagina -->
 
-          <article id="Cadastro"  class="row">         
-            <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+        <article id="Cadastro"  class="row">         
+           <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
                 <form class="form-horizontal"  action="LivroServlet" method="post">
 
                     <div class="form-group">
-                        <label for="txtISBN" class="col-xs-6 col-md-3 control-label">ISBN: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtISBN" class="col-xs-4 col-md-4 control-label">ISBN: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtISBN" name="txtISBN" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="txtEdicao" class="col-xs-6 col-md-3 control-label">Edição: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtEdicao" class="col-xs-4 col-md-4 control-label">Edição: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtEdicao" name="txtEdicao" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="txtTitulo" class="col-xs-6 col-md-3 control-label">Título: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtTitulo" class="col-xs-4 col-md-4 control-label">Título: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="txtAutor" class="col-xs-6 col-md-3 control-label">Autor: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtAutor" class="col-xs-4 col-md-4 control-label">Autor: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtAutor" name="txtAutor" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="txtEditora" class="col-xs-6 col-md-3 control-label">Editora: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtEditora" class="col-xs-4 col-md-4 control-label">Editora: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtEditora" name="txtEditora" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="txtResumo" class="col-xs-6 col-md-3 control-label">Resumo: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtResumo" class="col-xs-4 col-md-4 control-label">Resumo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtResumo" name="txtResumo" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="txtPreco" class="col-xs-6 col-md-3 control-label">Preço: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtPreco" class="col-xs-4 col-md-4 control-label">Preço: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtPreco" name="txtPreco" required="">
                         </div>
                     </div>        
 
                     <div class="form-group">
-                        <label for="txtAnoPublicacao" class="col-xs-6 col-md-3 control-label">Ano de Publicação: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtAnoPublicacao" class="col-xs-4 col-md-4 control-label">Ano de Publicação: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtAnoPublicacao" name="txtAnoPublicacao" required="">
                         </div>
                     </div> 
 
 
                     <div class="form-group">
-                        <label for="txtCategoria" class="col-xs-6 col-md-3 control-label">Categoria: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtCategoria" class="col-xs-4 col-md-4 control-label">Categoria: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCategoria" name="txtCategoria">
                         </div>
                     </div> 
 
 
                     <div class="form-group">
-                        <label for="txtTags" class="col-xs-6 col-md-3 control-label">Tags: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtTags" class="col-xs-4 col-md-4 control-label">Tags: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtTags" name="txtTags" required="">
                         </div>
                     </div>                     
 
                     <div class="form-group">
-                        <label for="txtObs" class="col-xs-6 col-md-3 control-label">Observações: </label>
-                        <div class="col-xs-8 col-md-6">
+                        <label for="txtObs" class="col-xs-4 col-md-4 control-label">Observações: </label>
+                        <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtObs" name="txtObs" required="">
                         </div>
                     </div>
@@ -152,7 +153,7 @@
 
 
                     <div class="form-group">
-                        <div class="col-xs-8 col-md-6 col-md-offset-3">
+                        <div class="col-xs-6 col-xs-offset-4 col-md-6 col-md-offset-4">
                             <input type="submit" value="Enviar" name="btnEnviar" id="btnEnviarCC" class="btn btn-success btn-lg" />
                             <input type="reset" value="Limpar" name="btnLimpar" id="btnLimparCC" class="btn btn-danger btn-lg" />
                         </div>

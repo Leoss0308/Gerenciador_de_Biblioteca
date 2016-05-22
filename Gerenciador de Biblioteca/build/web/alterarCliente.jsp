@@ -63,7 +63,7 @@
                 <form class="form-horizontal"  action="ClienteServletAlterar" method="post">
 
                     <div class="form-group">
-                        <label for="txtCodiigo" class="col-xs-4 col-md-4 control-label">Codigo: </label>
+                        <label for="txtCodigo" class="col-xs-4 col-md-4 control-label">Codigo: </label>
                         <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCodigo" name="txtCodigo" required="" readonly="" value="<%=cli.getCodClie()%>">
                         </div>

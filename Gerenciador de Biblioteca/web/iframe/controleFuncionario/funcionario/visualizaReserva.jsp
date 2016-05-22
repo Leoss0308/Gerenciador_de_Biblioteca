@@ -67,8 +67,8 @@
                     out.print("<td>" + reserv.getDataReseva()+ "</td>");
 
                     // Controle para manutenção: // ALTERAR OS LINK'S
-                    out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + reserv.getCodClie() +"&codReserva="+ reserv.getCodReserva() +"'><img src='../../img/alterar.jpg' /></a></td>");
-                    out.print("<td id='cmd'><a href='cancelarReserva.jsp?codClie=" + reserv.getCodClie() + "&codReserva="+ reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' /></a></td>");
+                    out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + reserv.getCodClie() +"&codReserva="+ reserv.getCodReserva() +"'><img src='../../img/alterar.jpg' title='Alterar' /></a></td>");
+                    out.print("<td id='cmd'><a href='cancelarReserva.jsp?codClie=" + reserv.getCodClie() + "&codReserva="+ reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' title='Excluir'/></a></td>");
 
                     out.print("</tr>");
 

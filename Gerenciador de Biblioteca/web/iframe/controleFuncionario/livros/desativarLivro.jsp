@@ -13,7 +13,7 @@
     <body>
         <%-- Instanciar a DAO para acesso a regras  do banco e CRUD --%>
         <%
-            int liv = Integer.parseInt(request.getParameter("codLivro"));
+            int liv = Integer.parseInt(request.getParameter("CodLivro"));
             // Instanciar DAO para CRUD:
             LivroDAO livDAO = new LivroDAO();
             // Inserir (enviando objeto que coletou dados pelo Java Beans):

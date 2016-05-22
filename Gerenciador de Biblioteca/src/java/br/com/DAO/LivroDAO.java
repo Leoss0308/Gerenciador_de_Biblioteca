@@ -69,7 +69,7 @@ public class LivroDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "UPDATE Livro set  ISBN=?, Edicao_Livro=?, Titulo=?, Autor=?, Editora=?, Resumo=?, Preco=?, Ano=?, Categoria=?, Tags=?, Observacao=? where Cod_Livro=?");
+                    "UPDATE Livro set   ISBN=?, Edicao_Livro=?, Titulo=?, Autor=?, Editora=?, Resumo=?, Preco=?, Ano_Publicacao=?, Categoria=?, Tags=?,  Observacao=?, Avaria=? where Cod_Livro=?");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -82,7 +82,8 @@ public class LivroDAO {
             ps.setString(9, liv.getCategoriaLivro());
             ps.setString(10, liv.getTags());
             ps.setString(11, liv.getObsLivro());
-            ps.setInt(12, liv.getCodLivro());
+            ps.setInt(12, liv.getAvaria());
+            ps.setInt(13, liv.getCodLivro());
 
             ps.executeUpdate();
             ps.close();
@@ -120,22 +121,22 @@ public class LivroDAO {
         while (rs.next()) {
             // Criando o objeto e setando valores:
             Livro liv = new Livro();
-            liv.setCodLivro(rs.getInt("Codigo_Livro"));
+            liv.setCodLivro(rs.getInt("Cod_Livro"));
             liv.setISBN(rs.getString("ISBN"));
             liv.setEdicaoLivro(rs.getString("Edicao_Livro"));
-            liv.setTituloLivro(rs.getString("Titulo_Livro"));
-            liv.setAutorLivro(rs.getString("Autor_Livro"));
-            liv.setEditoraLivro(rs.getString("Editora_Livro"));
-            liv.setResumoLivro(rs.getString("Resumo_Livro"));
-            liv.setPrecoLivro(rs.getString("Preco_Livro"));
+            liv.setTituloLivro(rs.getString("Titulo"));
+            liv.setAutorLivro(rs.getString("Autor"));
+            liv.setEditoraLivro(rs.getString("Editora"));
+            liv.setResumoLivro(rs.getString("Resumo"));
+            liv.setPrecoLivro(rs.getString("Preco"));
             liv.setAnoPublicacao(rs.getString("Ano_Publicacao"));
-            liv.setCategoriaLivro(rs.getString("Categoria_Livro"));
+            liv.setCategoriaLivro(rs.getString("Categoria"));
             liv.setTags(rs.getString("Tags"));
             liv.setDataEntrada(rs.getDate("Data_Entrada"));
-            liv.setObsLivro(rs.getString("Obs_Livro"));
+            liv.setObsLivro(rs.getString("Observacao"));
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
-            liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
+            liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
 
             // Adicionando o objeto à lista:
             Liv.add(liv);
@@ -155,22 +156,23 @@ public class LivroDAO {
         Livro liv = new Livro();
         if (rs.next()) {
             // Criando o objeto e setando valores:
+           
             liv.setCodLivro(rs.getInt("Cod_Livro"));
             liv.setISBN(rs.getString("ISBN"));
             liv.setEdicaoLivro(rs.getString("Edicao_Livro"));
-            liv.setTituloLivro(rs.getString("Titulo_Livro"));
-            liv.setAutorLivro(rs.getString("Autor_Livro"));
-            liv.setEditoraLivro(rs.getString("Editora_Livro"));
-            liv.setResumoLivro(rs.getString("Resumo_Livro"));
-            liv.setPrecoLivro(rs.getString("Preco_Livro"));
+            liv.setTituloLivro(rs.getString("Titulo"));
+            liv.setAutorLivro(rs.getString("Autor"));
+            liv.setEditoraLivro(rs.getString("Editora"));
+            liv.setResumoLivro(rs.getString("Resumo"));
+            liv.setPrecoLivro(rs.getString("Preco"));
             liv.setAnoPublicacao(rs.getString("Ano_Publicacao"));
-            liv.setCategoriaLivro(rs.getString("Categoria_Livro"));
+            liv.setCategoriaLivro(rs.getString("Categoria"));
             liv.setTags(rs.getString("Tags"));
             liv.setDataEntrada(rs.getDate("Data_Entrada"));
-            liv.setObsLivro(rs.getString("Obs_Livro"));
+            liv.setObsLivro(rs.getString("Observacao"));
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
-            liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
+            liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
 
         }
         rs.close();
@@ -180,30 +182,29 @@ public class LivroDAO {
 
      public List<Livro> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Livro where Avaria = 0 AND " + tipo + " LIKE ?");
+        ps = cnn.prepareStatement("select * from Livro where AVARIA = 0 AND " + tipo + " LIKE ?");
         ps.setString(1, '%' + palavra + '%');
         ResultSet rs = ps.executeQuery();
         List<Livro> Liv = new ArrayList<Livro>();
         while (rs.next()) {
             // Criando o objeto e setando valores:
             Livro liv = new Livro();
-            liv.setCodLivro(rs.getInt("Codigo_Livro"));
+            liv.setCodLivro(rs.getInt("Cod_Livro"));
             liv.setISBN(rs.getString("ISBN"));
             liv.setEdicaoLivro(rs.getString("Edicao_Livro"));
-            liv.setTituloLivro(rs.getString("Titulo_Livro"));
-            liv.setAutorLivro(rs.getString("Autor_Livro"));
-            liv.setEditoraLivro(rs.getString("Editora_Livro"));
-            liv.setResumoLivro(rs.getString("Resumo_Livro"));
-            liv.setPrecoLivro(rs.getString("Preco_Livro"));
+            liv.setTituloLivro(rs.getString("Titulo"));
+            liv.setAutorLivro(rs.getString("Autor"));
+            liv.setEditoraLivro(rs.getString("Editora"));
+            liv.setResumoLivro(rs.getString("Resumo"));
+            liv.setPrecoLivro(rs.getString("Preco"));
             liv.setAnoPublicacao(rs.getString("Ano_Publicacao"));
-            liv.setCategoriaLivro(rs.getString("Categoria_Livro"));
+            liv.setCategoriaLivro(rs.getString("Categoria"));
             liv.setTags(rs.getString("Tags"));
             liv.setDataEntrada(rs.getDate("Data_Entrada"));
-            liv.setObsLivro(rs.getString("Obs_Livro"));
+            liv.setObsLivro(rs.getString("Observacao"));
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
-            liv.setMatriculaFunc(rs.getInt("Matricula_Func"));
-            
+            liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
             // Adicionando o objeto à lista:
             Liv.add(liv);
         }
