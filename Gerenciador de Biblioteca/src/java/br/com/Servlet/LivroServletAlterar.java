@@ -50,7 +50,6 @@ public class LivroServletAlterar extends HttpServlet {
             liv.setTags(request.getParameter("txtTags"));
             liv.setObsLivro(request.getParameter("txtObs"));
             liv.setAvaria(Integer.parseInt(request.getParameter("txtAvaria")));
-            liv.setEmprestado(Integer.parseInt(request.getParameter("Emprestado")));
             liv.setMatriculaFunc(Integer.parseInt(request.getParameter("Matricula_Func")));
 
             LivroDAO livDAO = new LivroDAO();

@@ -9,6 +9,7 @@ import br.com.DAO.LivroDAO;
 import br.com.Modelagem.Livro;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.jms.Session;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +32,7 @@ public class LivroServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pagina = "sucessoPagCheia.jsp";
+        String pagina = "sucesso.jsp";
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
@@ -48,8 +49,6 @@ public class LivroServlet extends HttpServlet {
             liv.setCategoriaLivro(request.getParameter("txtCategoria"));
             liv.setTags(request.getParameter("txtTags"));
             liv.setObsLivro(request.getParameter("txtObs"));
-            liv.setAvaria(Integer.parseInt(request.getParameter("txtAvaria")));
-            liv.setEmprestado(Integer.parseInt(request.getParameter("Emprestado")));
             liv.setMatriculaFunc(Integer.parseInt(request.getParameter("Matricula_Func")));
 
             LivroDAO livDAO = new LivroDAO();

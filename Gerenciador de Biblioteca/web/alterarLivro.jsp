@@ -69,129 +69,142 @@
                 <form class="form-horizontal"  action="LivroServletAlterar" method="post">
 
                     <div class="form-group">
-                        <label for="txtISBN" class="col-xs-6 col-md-3 control-label">ISBN: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtISBN" name="txtISBN" required="">
+                        <label for="txtCodLivro" class="col-xs-4 col-md-4 control-label">Codigo: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" class="form-control" id="txtCodigo" name="txtCodLivro" required="" readonly="" value="<%=liv.getCodLivro()%>">
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="txtEdicao" class="col-xs-6 col-md-3 control-label">Edição: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtEdicao" name="txtEdicao" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtTitulo" class="col-xs-6 col-md-3 control-label">Título: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtAutor" class="col-xs-6 col-md-3 control-label">Autor: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="txt" class="form-control" id="txtAutor" name="txtAutor" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtEditora" class="col-xs-6 col-md-3 control-label">Editora: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtEditora" name="txtEditora" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtResumo" class="col-xs-6 col-md-3 control-label">Resumo: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtResumo" name="txtResumo" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtPreco" class="col-xs-6 col-md-3 control-label">Preço: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtPreco" name="txtPreco" required="">
-                        </div>
-                    </div>        
-
-                    <div class="form-group">
-                        <label for="txtAnoPublicacao" class="col-xs-6 col-md-3 control-label">Ano de Publicação: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtAnoPublicacao" name="txtAnoPublicacao" required="">
-                        </div>
-                    </div> 
-
-                   
-
-                    <div class="form-group">
-                        <label for="txtCategoria" class="col-xs-6 col-md-3 control-label">Categoria: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCategoria" name="txtCategoria">
-                        </div>
-                    </div> 
-
-
-                    <div class="form-group">
-                        <label for="txtTags" class="col-xs-6 col-md-3 control-label">Tags: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtTags" name="txtTags" required="">
-                        </div>
-                    </div>                     
-
-                    <div class="form-group">
-                        <label for="txtObs" class="col-xs-6 col-md-3 control-label">Observações: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtObs" name="txtObs" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtAvaria" class="col-xs-6 col-md-3 control-label">Status de Avarias: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtAvaria" name="txtAvaria" required="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtEmprestado" class="col-xs-6 col-md-3 control-label">Status de Empréstimos: </label>
-                        <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtEmprestado" name="txtEmprestado" required="">
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <div class="col-xs-8 col-md-6 col-md-offset-3">
-                            <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAC" class="btn btn-success btn-lg btn-block"/>
-                        </div>
-                    </div>
-
-
-                </form>
             </div>
 
-        </article>
+            <div class="form-group">
+                <label for="txtISBN" class="col-xs-6 col-md-3 control-label">ISBN: </label>
+                <div class="col-xs-8 col-md-6">
+                    <input type="text" class="form-control" id="txtISBN" name="txtISBN" required="" value="<%=liv.getISBN()%>">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtEdicao" class="col-xs-6 col-md-3 control-label">Edição: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtEdicao" name="txtEdicao" required="" value="<%=liv.getEdicaoLivro()%>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtTitulo" class="col-xs-6 col-md-3 control-label">Título: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required="" value="<%=liv.getTituloLivro()%>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtAutor" class="col-xs-6 col-md-3 control-label">Autor: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="txt" class="form-control" id="txtAutor" name="txtAutor" required="" value="<%=liv.getAutorLivro()%>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtEditora" class="col-xs-6 col-md-3 control-label">Editora: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtEditora" name="txtEditora" required="" value="<%=liv.getEditoraLivro()%>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtResumo" class="col-xs-6 col-md-3 control-label">Resumo: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtResumo" name="txtResumo" required="" value="<%=liv.getResumoLivro()%>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtPreco" class="col-xs-6 col-md-3 control-label">Preço: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtPreco" name="txtPreco" required="" value="<%=liv.getPrecoLivro()%>">
+            </div>
+        </div>        
+
+        <div class="form-group">
+            <label for="txtAnoPublicacao" class="col-xs-6 col-md-3 control-label">Ano de Publicação: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtAnoPublicacao" name="txtAnoPublicacao" required="" value="<%=liv.getAnoPublicacao()%>">
+            </div>
+        </div> 
+
+
+
+        <div class="form-group">
+            <label for="txtCategoria" class="col-xs-6 col-md-3 control-label">Categoria: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtCategoria" name="txtCategoria" value="<%=liv.getCategoriaLivro()%>">
+            </div>
+        </div> 
+
+
+        <div class="form-group">
+            <label for="txtTags" class="col-xs-6 col-md-3 control-label">Tags: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtTags" name="txtTags" required="" value="<%=liv.getTags()%>">
+            </div>
+        </div>                     
+
+        <div class="form-group">
+            <label for="txtObs" class="col-xs-6 col-md-3 control-label">Observações: </label>
+            <div class="col-xs-8 col-md-6">
+                <input type="text" class="form-control" id="txtObs" name="txtObs" required="" value="<%=liv.getObsLivro()%>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtTipo" class="col-xs-4 col-md-4 control-label">Status de Avarias: </label>
+            <div class="col-xs-6 col-md-6">
+                <select class="form-control" id="txtEstado" name="txtStatus" required="" >
+                    <option selected="" value="<%=liv.getAvaria()%>"><%=liv.getAvaria()%></option>
+                    <option value="0">Livro não avariado</option>
+                    <option value="1">Livro Avariado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtMatricFunc" class="col-xs-4 col-md-4 control-label">Funcionário responsável: </label>
+            <div class="col-xs-6 col-md-6">
+                <input type="text" class="form-control" id="txtCodigo" name="txtMatricFunc" required="" readonly="" value="<%=liv.getMatriculaFunc()%>">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-xs-8 col-md-6 col-md-offset-3">
+                <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAC" class="btn btn-success btn-lg btn-block"/>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+</article>
 
 
 
 
 
 
-        <!-- Script para fazer as mascaras dos campos  -->
-        <script>
-            jQuery(function ($) {
+<!-- Script para fazer as mascaras dos campos  -->
+<script>
+    jQuery(function ($) {
 
-                $("#txtAnoPublicacao").mask("9999");
+        $("#txtAnoPublicacao").mask("9999");
 
-            });
-        </script> 
+    });
+</script> 
 
-        <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-        <script src="js/bootstrap.min.js"></script>
-    </body>
+<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+<script src="js/bootstrap.min.js"></script>
+</body>
 </html>

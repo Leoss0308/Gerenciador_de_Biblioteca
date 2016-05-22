@@ -131,11 +131,7 @@
                     }
                 %>
             </table>
-            <!--  
-             <div>
-                  <input type="submit" href="atualizaDadosLivroClie.jsp" value="Enviar" name="btnEnviar" id="btnEnviarCC" class="btn btn-success btn-lg" />
-              </div> 
-            -->
+           
         </div>
 
 

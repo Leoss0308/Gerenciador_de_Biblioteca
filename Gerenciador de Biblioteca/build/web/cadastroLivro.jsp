@@ -27,7 +27,7 @@
         <!--CSS do cadastroClie.jsp -->
         <link href="css/cadastroClie.css" rel="stylesheet">
         <!-- jquery para a mascara -->
-        <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
+       <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
         <script src = "js/jquery-2.1.3.js"  type = "text/javascript" ></script>
         <script src = "js/jquery.maskedinput.js"  type = "text/javascript" ></script>
 
@@ -39,8 +39,8 @@
         <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
         <script>
             webshims.setOptions('waitReady', false);
-            webshims.setOptions('forms-ext', {types: 'date'});
-            webshims.polyfill('forms forms-ext');
+          webshims.setOptions('forms-ext', {types: 'date'});
+          webshims.polyfill('forms forms-ext');
         </script>
 
     </head>
@@ -55,7 +55,7 @@
             <!-- Logo e Titulo -->
             <div class="row">
 
-                <hgroup class="col-xs-9 col-xs-offset-3 col-md-9 col-md-offset-3">
+               <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
                     <h1>Cadastro de Livros</h1>
                 </hgroup>
 
@@ -65,7 +65,7 @@
 
         <!-- Conteudo da Pagina -->
 
-        <article id="Cadastro"  class="row">         
+          <article id="Cadastro"  class="row">         
             <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
                 <form class="form-horizontal"  action="LivroServlet" method="post">
 
@@ -148,6 +148,7 @@
                         </div>
                     </div>
 
+                    <input type="hidden" value="<%out.print(session.getAttribute("cod"));%>" name="Matricula_Func">
 
 
                     <div class="form-group">

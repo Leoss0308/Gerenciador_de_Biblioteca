@@ -35,7 +35,7 @@ public class LivroDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo_Livro, Autor_Livro, Editora_Livro, Resumo_Livro, Preco_Livro, Ano_Publicacao, Categoria_Livro, Tags,  Obs_Livro, Avaria,Emprestado, Matricula_Func) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria,Emprestado, Cod_Matricula) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -58,7 +58,7 @@ public class LivroDAO {
 
         } catch (Exception e) {
 
-            System.out.println(e.toString());
+              System.out.println(e.toString());
             return false;
         }
 
@@ -69,7 +69,7 @@ public class LivroDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "UPDATE Livro set  ISBN=?, Edicao_Livro=?, Titulo_Livro=?, Autor_Livro=?, Editora_Livro=?, Resumo_Livro=?, Preco_Livro=?, Ano_Publicacao=?, Categoria_Livro=?, Tags=?, Obs_Livro=?,Avaria=?, Emprestado=? where Cod_Livro=?");
+                    "UPDATE Livro set  ISBN=?, Edicao_Livro=?, Titulo=?, Autor=?, Editora=?, Resumo=?, Preco=?, Ano=?, Categoria=?, Tags=?, Observacao=? where Cod_Livro=?");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -82,9 +82,7 @@ public class LivroDAO {
             ps.setString(9, liv.getCategoriaLivro());
             ps.setString(10, liv.getTags());
             ps.setString(11, liv.getObsLivro());
-            ps.setInt(12, 0);
-            ps.setInt(13, 0);
-            ps.setInt(14, liv.getCodLivro());
+            ps.setInt(12, liv.getCodLivro());
 
             ps.executeUpdate();
             ps.close();

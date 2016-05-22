@@ -39,10 +39,11 @@
                 <ul class="nav nav-sidebar">
                     <li class="active"><a href="#">Cliente<span class="sr-only">(current)</span></a></li>
                     <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Cliente</a></li>
-                    <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionario.jsp" target="frmConteudo">Ver Funcionario</a></li>
+                    <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionario.jsp" target="frmConteudo">Ver Funcionário</a></li>
                     <li><a href="iframe/controleCliente/visualizaClienteClie.jsp" target="frmConteudo">Visualizar Cliente</a></li>
-                    <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionarioFunc.jsp" target="frmConteudo">Visualizar Funcionario</a></li>
-                    <li><a href="cadastroFunc.jsp" target="frmConteudo">Cadastro funcionario</a></li>
+                    <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionarioFunc.jsp" target="frmConteudo">Visualizar Funcionário</a></li>
+                    <li><a href="iframe/controleFuncionario/livros/visualizaLivro.jsp" target="frmConteudo" >Visualizar Livro</a></li>
+                    <li><a href="cadastroFunc.jsp" target="frmConteudo">Cadastrar Funcionário</a></li>
                     <li><a href="cadastroLivro.jsp" target="frmConteudo">Cadastrar Livro</a></li>
                 </ul>
             </div>
