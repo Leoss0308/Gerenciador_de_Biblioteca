@@ -31,6 +31,10 @@
         td {
             white-space: nowrap;
         }
+        
+        th {
+            white-space: nowrap;
+        }
     </style>
  
   </head>
@@ -83,7 +87,7 @@
             <table class="table table-bordered">
                <!-- <tr><th colspan="18">Clientes</tr> -->
                 <tr>
-                    <th>Código</th><th>Nome</th><th>CPF</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>Email</th><th>Login</th><th>Senha</th><th>Observacao</th><th>Data_Cadastro</th><th>Endereco</th><th>Status</th><th>Complemento</th><th>Data_Nasc</th><th></th><th></th>
+                    <th>Código</th><th>Nome</th><th>CPF</th><th>Bairro</th><th>CEP</th><th>Cidade</th><th>Estado</th><th>Telefone</th><th>Email</th><th>Login</th><th>Senha</th><th>Observacao</th><th>Data de Cadastro</th><th>Endereco</th><th>Status</th><th>Complemento</th><th>Data de Nascimento</th><th></th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";

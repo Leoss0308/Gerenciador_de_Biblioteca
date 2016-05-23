@@ -37,6 +37,10 @@
             td {
                 white-space: nowrap;
             }
+            
+            th{
+                white-space: nowrap;
+            }
         </style>
 
     </head>
