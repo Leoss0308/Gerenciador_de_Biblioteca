@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/Servlet/ReservaServlet.java</file>
+            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/web/iframe/controleFuncionario/funcionario/visualizaReserva.jsp</file>
+            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/Modelagem/Itens_Reserva.java</file>
+            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/Modelagem/Reserva.java</file>
+            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/ReservaDAO.java</file>
+            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/ItemReservaDAO.java</file>
+        </group>
     </open-files>
 </project-private>
