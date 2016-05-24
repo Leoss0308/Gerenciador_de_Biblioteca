@@ -1,4 +1,3 @@
-
 package br.com.DAO;
 
 import br.com.Conexao.Conecta;
@@ -11,42 +10,43 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ReservaDAO {
-    
+
     private Statement stmt;
     private Connection cnn;           // Atributo de conexao:
     private PreparedStatement ps = null;  // Objeto para SQL Preparado:
-    
-    public ReservaDAO(){
-        
+
+    public ReservaDAO() {
+
     }
-    
+
     Conecta c = new Conecta();
+
     //inserir dados no banco
     public boolean inserirReserva(Reserva Reser) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "INSERT INTO Reserva (Cod_Cliente) VALUES (?)");
+                    "INSERT INTO Reserva (Cod_Cliente) VALUES (?)");
             ps.setInt(1, Reser.getCodClie());
             ps.executeUpdate();
             ps.close();
             return true;
-            
+
         } catch (Exception e) {
-            
+
             System.out.println(e.toString());
             return false;
         }
-        
+
     }
+
     //cacelar reserva
     public boolean cancelarReserva(int Reser) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "DELETE from Reserva where Cod_Reserva=?");
+                    "DELETE from Reserva where Cod_Reserva=?");
             ps.setInt(1, Reser);
             ps.executeUpdate();
             ps.close();
@@ -56,8 +56,8 @@ public class ReservaDAO {
             return false;
         }
     }
-    
-     // Este método, instancia o JavaBeans para auxiliar a montar a lista:
+
+    // Este método, instancia o JavaBeans para auxiliar a montar a lista:
     public List<Reserva> getLista() throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
         ps = cnn.prepareStatement("select * from Reserva");
@@ -69,7 +69,7 @@ public class ReservaDAO {
             Reser.setCodReserva(rs.getInt("Cod_Reserva"));
             Reser.setDataReseva(rs.getDate("Data_Reserva"));
             Reser.setCodClie(rs.getInt("Cod_Cliente"));
-            
+
             // Adicionando o objeto à lista:
             Reserv.add(Reser);
         }
@@ -88,22 +88,50 @@ public class ReservaDAO {
         Reserva Reser = new Reserva();
         if (rs.next()) {
             // Criando o objeto e setando valores:
-           Reser.setCodReserva(rs.getInt("Cod_Reserva"));
-           Reser.setDataReseva(rs.getDate("Data_Reserva"));
-           Reser.setCodClie(rs.getInt("Cod_Cliente"));
+            Reser.setCodReserva(rs.getInt("Cod_Reserva"));
+            Reser.setDataReseva(rs.getDate("Data_Reserva"));
+            Reser.setCodClie(rs.getInt("Cod_Cliente"));
         }
         rs.close();
         ps.close();
         return Reser;
     }
-    
 
+    //selecionar o ultimo registro da tabela reserva, para obter o cod da reserva
+    public int getCodReser(int CodClie) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("SELECT MAX(COD_RESERVA) AS COD_RESERVA FROM RESERVA WHERE COD_CLIENTE = ?");
+        ps.setInt(1, CodClie);
+        ResultSet rs = ps.executeQuery();
 
+        Reserva CodReser = new Reserva();
+        if (rs.next()) {
+            // Criando o objeto e setando valores:
+            CodReser.setCodReserva(rs.getInt("Cod_Reserva"));
+        }
+        rs.close();
+        ps.close();
+        return CodReser.getCodReserva();
+    }
 
-    
-    
-    
+    public List<Reserva> getReserCli(int CodClie) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from Reserva where Cod_Cliente=?");
+        ResultSet rs = ps.executeQuery();
+        List<Reserva> ReservCli = new ArrayList<Reserva>();
+        while (rs.next()) {
+            // Criando o objeto e setando valores:
+            Reserva ReserCli = new Reserva();
+            ReserCli.setCodReserva(rs.getInt("Cod_Reserva"));
+            ReserCli.setDataReseva(rs.getDate("Data_Reserva"));
+            ReserCli.setCodClie(rs.getInt("Cod_Cliente"));
+
+            // Adicionando o objeto à lista:
+            ReservCli.add(ReserCli);
+        }
+        rs.close();
+        ps.close();
+        return ReservCli;
+    }
+
 }
-
-    
-    

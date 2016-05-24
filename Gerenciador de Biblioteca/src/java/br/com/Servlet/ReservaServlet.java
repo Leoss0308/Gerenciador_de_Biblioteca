@@ -5,6 +5,8 @@
  */
 package br.com.Servlet;
 
+import br.com.Modelagem.Itens_Reserva;
+import br.com.DAO.ItemReservaDAO;
 import br.com.DAO.ReservaDAO;
 import br.com.Modelagem.Reserva;
 import java.io.IOException;
@@ -37,13 +39,21 @@ public class ReservaServlet extends HttpServlet {
         try {
             Reserva reserv = new Reserva();
             reserv.setCodClie(Integer.parseInt(request.getParameter("txtCodClie")));
-            reserv.setCodReserva(Integer.parseInt(request.getParameter("txtCodReserva")));
 
             ReservaDAO reservDAO = new ReservaDAO();
             reservDAO.inserirReserva(reserv);
 
             pagina += "?msg=Cadastrado com sucesso!";
-
+            //inserir itens reserva
+            Itens_Reserva Itens = new Itens_Reserva();
+            Itens.setCodLivro(Integer.parseInt(request.getParameter("txtCodLivro")));
+            //chama o parametro no DAO que seleciona o cod da reserva
+            Itens.setCodReserva(reservDAO.getCodReser(Integer.parseInt(request.getParameter("CodClie"))));
+            
+            ItemReservaDAO ItensDAO = new ItemReservaDAO();
+            ItensDAO.inserirItemReserva(Itens);
+                        
+            
         } catch (Exception ex) {
             pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
         } finally {

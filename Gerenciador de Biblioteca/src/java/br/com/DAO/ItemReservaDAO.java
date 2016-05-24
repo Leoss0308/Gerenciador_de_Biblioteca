@@ -43,12 +43,12 @@ public class ItemReservaDAO {
         
     }
     //cacelar reserva
-    public boolean cancelarItemReserva(int ItemR) throws Exception {
+    public boolean cancelarItemReserva(int codReserva) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                        "DELETE from Item_Reserva where Cod_Item_Reserva=?");
-            ps.setInt(1, ItemR);
+                        "DELETE from Item_Reserva where Cod_Reserva =?");
+            ps.setInt(1, codReserva);
             ps.executeUpdate();
             ps.close();
             return true;
@@ -59,9 +59,10 @@ public class ItemReservaDAO {
     }
     
      // Este método, instancia o JavaBeans para auxiliar a montar a lista:
-    public List<Itens_Reserva> getLista() throws SQLException, ClassNotFoundException {
+    public List<Itens_Reserva> getLista(int CodReserva) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Item_Reserva");
+        ps = cnn.prepareStatement("select * from Item_Reserva where Cod_Reserva = ?");
+        ps.setInt(1, CodReserva);
         ResultSet rs = ps.executeQuery();
         List<Itens_Reserva> ItemReserv = new ArrayList<Itens_Reserva>();
         while (rs.next()) {

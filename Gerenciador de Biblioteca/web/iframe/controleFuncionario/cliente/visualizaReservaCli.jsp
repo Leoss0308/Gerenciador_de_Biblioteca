@@ -1,6 +1,6 @@
 <%-- 
-    Document   : visualizaReserva
-    Created on : 06/05/2016, 20:16:03
+    Document   : visualizaReservaCli
+    Created on : 23/05/2016, 22:04:56
     Author     : Erico
 --%>
 
@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-        <title>Tabela Reserva</title>
+        <title>Visualiza Reserva</title>
 
         <!-- Bootstrap -->
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
 
         <%
             ReservaDAO reserdao = new ReservaDAO();
-            List<Reserva> reservas = reserdao.getLista();
+            List<Reserva> reservas = reserdao.getReserCli(Integer.parseInt(String.valueOf(session.getAttribute("cod"))));
         %>
         <div class="table-responsive">  
             <table class="table table-bordered">
@@ -74,8 +74,6 @@
                             out.print("<td>" + ItensR.getCodLivro() + "<td>");
 
                         }
-                        // Controle para manutenção: // ALTERAR OS LINK'S
-                        out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "'><img src='../../img/alterar.jpg' title='Alterar' /></a></td>");
                         //passagem de parametros para cancelar a reserva
                         out.print("<td id='cmd'><a href='cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' title='Excluir'/></a></td>");
 
