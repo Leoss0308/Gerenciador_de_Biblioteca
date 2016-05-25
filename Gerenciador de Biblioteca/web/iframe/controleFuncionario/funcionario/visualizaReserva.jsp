@@ -46,7 +46,7 @@
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Clientes</tr> -->
                 <tr>
-                    <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th>Código do Livro 1</th><th>Código do Livro 2</th><th>Código do Livro 3</th><th></th>
+                    <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th>Código do Livro 1</th><th>Código do Livro 2</th><th>Código do Livro 3</th><th>Efetivar Emprestimo Livro 1</th><th>Efetivar Emprestimo Livro 2</th><th>Efetivar Emprestimo Livro 3</th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -72,10 +72,10 @@
                         for (Itens_Reserva ItensR : Itens) {
 
                             out.print("<td>" + ItensR.getCodLivro() + "<td>");
+                            // Controle para manutenção: Efetiva Emprestimo, para colocar o livro como emprestado
+                            out.print("<td id='cmd'><a href='../../../efetivaEmprestimo.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "&codLivro=" + ItensR.getCodLivro() + "'><img src='../../img/alterar.jpg' title='Alterar' /></a></td>");
 
                         }
-                        // Controle para manutenção: // ALTERAR OS LINK'S
-                        out.print("<td id='cmd'><a href='../../../alterarCliente.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "'><img src='../../img/alterar.jpg' title='Alterar' /></a></td>");
                         //passagem de parametros para cancelar a reserva
                         out.print("<td id='cmd'><a href='cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' title='Excluir'/></a></td>");
 

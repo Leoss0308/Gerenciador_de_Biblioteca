@@ -71,7 +71,7 @@
                     out.print("<td>" + Emp.getDataRetirada()+ "</td>");
                     out.print("<td>" + Emp.getDataDevolucao()+ "</td>");
 
-                    // Controle para manutenção: // ALTERAR OS LINK
+                    // Controle para manutenção: Efetiva devolução do Emprestimo, colocando a data de devolução do livro
                     out.print("<td id='cmd'><a href='../../../devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../img/alterar.jpg' title='Alterar' /></a></td>");
 
                     out.print("</tr>");

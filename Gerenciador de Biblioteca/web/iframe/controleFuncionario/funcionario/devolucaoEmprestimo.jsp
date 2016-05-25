@@ -19,7 +19,7 @@
         // Inserir (enviando objeto que coletou dados pelo Java Beans:
         boolean empr = empDAO.devolucaoEmprestimo(emp);
         if (!empr) {
-            out.println ("Falha na exclusao do registro!");
+            out.println ("Falha na Devolução do Livro!");
             out.close();
         }
         %>

@@ -178,7 +178,25 @@ public class LivroDAO {
         ps.close();
         return liv;
     }
+    
+    // Este método, consulta o titulo de um livro;
+    public String getTituloLivro(int codLivro) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select Titulo from Livro where Cod_Livro=?");
+        ps.setInt(1, codLivro);
+        ResultSet rs = ps.executeQuery();
 
+        Livro livr = new Livro();
+        if (rs.next()) {
+            // Criando o objeto e setando valores:
+            livr.setTituloLivro(rs.getString("Titulo"));
+            
+        }
+        rs.close();
+        ps.close();
+        return livr.getTituloLivro();
+    }    
+            
      public List<Livro> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
         ps = cnn.prepareStatement("select * from Livro where AVARIA = 0 AND " + tipo + " LIKE ?");

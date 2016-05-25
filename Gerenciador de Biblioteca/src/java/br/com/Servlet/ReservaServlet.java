@@ -42,8 +42,6 @@ public class ReservaServlet extends HttpServlet {
 
             ReservaDAO reservDAO = new ReservaDAO();
             reservDAO.inserirReserva(reserv);
-
-            pagina += "?msg=Cadastrado com sucesso!";
             //inserir itens reserva
             Itens_Reserva Itens = new Itens_Reserva();
             Itens.setCodLivro(Integer.parseInt(request.getParameter("txtCodLivro")));
@@ -52,7 +50,8 @@ public class ReservaServlet extends HttpServlet {
             
             ItemReservaDAO ItensDAO = new ItemReservaDAO();
             ItensDAO.inserirItemReserva(Itens);
-                        
+            
+            pagina += "?msg=Cadastrado com sucesso!";            
             
         } catch (Exception ex) {
             pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();

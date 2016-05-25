@@ -28,12 +28,11 @@ public class EmprestimoDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "INSERT INTO Emprestimo (Titulo, Qtd_Livro, Cod_Reserva, Cod_Cliente, Cod_Matricula) VALUES (?,?,?,?,?)");
+                    "INSERT INTO Emprestimo (Titulo, Cod_Reserva, Cod_Cliente, Cod_Matricula) VALUES (?,?,?,?)");
             ps.setString(1, Emp.getTitulo());
-            ps.setInt(2, Emp.getQtdLivro());
-            ps.setInt(3, Emp.getCodReserva());
-            ps.setInt(4, Emp.getCodCliente());
-            ps.setInt(5, Emp.getMatriculaFunc());
+            ps.setInt(2, Emp.getCodReserva());
+            ps.setInt(3, Emp.getCodCliente());
+            ps.setInt(4, Emp.getMatriculaFunc());
             ps.executeUpdate();
             ps.close();
             return true;
@@ -74,7 +73,6 @@ public class EmprestimoDAO {
             Emprestimo Empr = new Emprestimo();
             Empr.setCodEmprestimo(rs.getInt("Cod_Emprestimo"));
             Empr.setTitulo(rs.getString("Titulo"));
-            Empr.setQtdLivro(rs.getInt("Qtd_Livro"));
             Empr.setDataRetirada(rs.getDate("Data_Retirada"));
             Empr.setDataDevolucao(rs.getDate("Data_Entrega"));
             Empr.setCodReserva(rs.getInt("Cod_Reserva"));
@@ -101,7 +99,6 @@ public class EmprestimoDAO {
             // Criando o objeto e setando valores:
             Emp.setCodEmprestimo(rs.getInt("Cod_Emprestimo"));
             Emp.setTitulo(rs.getString("Titulo"));
-            Emp.setQtdLivro(rs.getInt("Qtd_Livro"));
             Emp.setDataRetirada(rs.getDate("Data_Retirada"));
             Emp.setDataDevolucao(rs.getDate("Data_Entrega"));
             Emp.setCodReserva(rs.getInt("Cod_Reserva"));

@@ -18,7 +18,6 @@ public class Emprestimo {
 
     private int codEmprestimo = 0;
     private String titulo;
-    private int qtdLivro = 0;
     private Date dataRetirada;
     private Date dataDevolucao;
     private int codReserva = 0;
@@ -61,20 +60,6 @@ public class Emprestimo {
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    /**
-     * @return the qtdLivro
-     */
-    public int getQtdLivro() {
-        return qtdLivro;
-    }
-
-    /**
-     * @param qtdLivro the qtdLivro to set
-     */
-    public void setQtdLivro(int qtdLivro) {
-        this.qtdLivro = qtdLivro;
     }
 
     /**
