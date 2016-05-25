@@ -23,7 +23,6 @@ public class EmprestimoDAO {
     Conecta c = new Conecta();
 
     //inserir dados no banco
-
     public boolean inserirEmprestimo(Emprestimo Emp) throws Exception {
         try {
             cnn = c.getConexao();
@@ -46,7 +45,6 @@ public class EmprestimoDAO {
     }
 
     //cacelar reserva
-
     public boolean devolucaoEmprestimo(int Emp) throws Exception {
         try {
             cnn = c.getConexao();
@@ -60,6 +58,23 @@ public class EmprestimoDAO {
             System.out.println(e.toString());
             return false;
         }
+    }
+
+    //selecionar o ultimo registro da tabela emprestimo, para obter o cod do emprestimo
+    public int getCodEmpr(int CodClie) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("SELECT MAX(Cod_Emprestimo) AS Cod_Emprestimo FROM Emprestimo WHERE COD_CLIENTE = ?");
+        ps.setInt(1, CodClie);
+        ResultSet rs = ps.executeQuery();
+
+        Emprestimo CodEmp = new Emprestimo();
+        if (rs.next()) {
+            // Criando o objeto e setando valores:
+            CodEmp.setCodEmprestimo(rs.getInt("Cod_Emprestimo"));
+        }
+        rs.close();
+        ps.close();
+        return CodEmp.getCodEmprestimo();
     }
 
     // Este método, instancia o JavaBeans para auxiliar a montar a lista:

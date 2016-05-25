@@ -67,7 +67,6 @@
                     out.print("<td>" + Emp.getMatriculaFunc()+ "</td>");
                     out.print("<td>" + Emp.getCodReserva()+ "</td>");
                     out.print("<td>" + Emp.getTitulo()+ "</td>");
-                    out.print("<td>" + Emp.getQtdLivro()+ "</td>");
                     out.print("<td>" + Emp.getDataRetirada()+ "</td>");
                     out.print("<td>" + Emp.getDataDevolucao()+ "</td>");
 

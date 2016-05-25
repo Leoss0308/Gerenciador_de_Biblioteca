@@ -79,7 +79,7 @@
                         //passagem de parametros para cancelar a reserva
                         out.print("<td id='cmd'><a href='cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' title='Excluir'/></a></td>");
 
-                        out.print("</tr>");
+                        out.print("</tr>"); 
 
                         //out.print("</a>");
                     }

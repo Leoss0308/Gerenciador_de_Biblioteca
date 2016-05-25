@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="br.com.Modelagem.Emprestimo"%>
+<%@page import="br.com.Modelagem.Itens_Emprestimo"%>
 <html>
     <%@page import="br.com.DAO.EmprestimoDAO, br.com.DAO.ItemEmprestimoDAO, br.com.DAO.LivroDAO"%>
     <head>
@@ -37,17 +38,27 @@
                         
             boolean res = emprestimodao.inserirEmprestimo(emp);
             
-           // int reserv = Integer.parseInt(request.getParameter("codReserva"));
-            // Instanciar DAO para CRUD:
-           // ReservaDAO reservDAO = new ReservaDAO();
-            // Inserir (enviando objeto que coletou dados pelo Java Beans:
-           // boolean res = reservDAO.cancelarReserva(reserv);
-
+            //inserir os dados na tabela Itens Emprestimo
+            
+            ItemEmprestimoDAO itemdao = new ItemEmprestimoDAO();
+            //Requisitando os valores para inserção na tabela
+            int codEmprestimo = emprestimodao.getCodEmpr(Integer.parseInt(request.getParameter("codClie")));
+            int codLivro = Integer.parseInt(request.getParameter("codLivro"));
+            
+            // Chamando o parametro de inserção do DAO, e enviando os valores
+            
+            Itens_Emprestimo ItemEmp = new Itens_Emprestimo();
+            
+            ItemEmp.setCodEmprestimo(codEmprestimo);
+            ItemEmp.setCodLivro(codLivro);
+            
+            boolean ress = itemdao.inserirItemEmprestimo(ItemEmp);
+            
             if (!res) {
                 out.println("Falha no Emprestimo do Livro!");
                 out.close();
             }
         %>
-        <jsp:forward page="visualizaReserva.jsp"></jsp:forward>
+        <jsp:forward page="visualizaEmprestimo.jsp"></jsp:forward>
     </body>
 </html>
