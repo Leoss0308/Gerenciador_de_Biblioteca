@@ -55,14 +55,14 @@
                     <div class="form-group">
                         <label for="idLogin"  class="col-xs-6 col-md-3 control-label">Usuário:</label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" id="idLogin" name="login" class="form-control" placeholder="Digite seu nome de Usuário">
+                            <input type="text" id="idLogin" name="login" class="form-control" placeholder="Digite seu nome de Usuário" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="idSenha" class="col-xs-6 col-md-3 control-label">Senha:</label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="password" id="idSenha" name="senha" class="form-control" placeholder="Digite sua senha">
+                            <input type="password" id="idSenha" name="senha" class="form-control" placeholder="Digite sua senha" required="">
                         </div>
                     </div>
 

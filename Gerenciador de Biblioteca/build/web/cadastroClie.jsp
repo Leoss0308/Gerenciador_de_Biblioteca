@@ -36,6 +36,20 @@
           webshims.setOptions('forms-ext', {types: 'date'});
           webshims.polyfill('forms forms-ext');
         </script>
+        <script language="Javascript">
+            function limpar(){
+                document.getElementById("txtNome").value="";
+                document.getElementById("txtCPF").value="";
+                document.getElementById("txtBairro").value="";
+                document.getElementById("txtCEP").value="";
+                document.getElementById("txtCidade").value="";
+                document.getElementById("txtEstado").value="";
+                document.getElementById("txtTelefone").value="";
+                document.getElementById("txtEmail").value="";
+                document.getElementById("txtEndereco").value="";
+                document.getElementById("txtComplemento").value="";
+            }
+        </script>
 
     </head>
     <body>
@@ -88,7 +102,7 @@
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome Completo: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" value="<%out.print(session.getAttribute("txtNome"));%>">
+                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" maxlength="40" value="<%out.print(session.getAttribute("txtNome"));%>">
                         </div>
                     </div>
                                                           
@@ -109,14 +123,14 @@
                     <div class="form-group">
                         <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" value="<%out.print(session.getAttribute("txtEmail"));%>">
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" maxlength="40" value="<%out.print(session.getAttribute("txtEmail"));%>">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%out.print(session.getAttribute("txtTelefone"));%>">
+                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="" maxlength="15" placeholder="ex: (11) 94321-1234" value="<%out.print(session.getAttribute("txtTelefone"));%>">
                         </div>
                     </div>
                     
@@ -130,21 +144,21 @@
                     <div class="form-group">
                         <label for="txtEndereco" class="col-xs-6 col-md-3 control-label">Endereço: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" value="<%out.print(session.getAttribute("txtEndereco"));%>">
+                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" max="60" placeholder="ex: Rua das flores, 987" value="<%out.print(session.getAttribute("txtEndereco"));%>">
                         </div>
                     </div>        
                            
                     <div class="form-group">
                         <label for="txtBairro" class="col-xs-6 col-md-3 control-label">Bairro: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" value="<%out.print(session.getAttribute("txtBairro"));%>">
+                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" maxlength="30" placeholder="ex: Vila Maria" value="<%out.print(session.getAttribute("txtBairro"));%>">
                         </div>
                     </div> 
                     
                     <div class="form-group">
                         <label for="txtComplemento" class="col-xs-6 col-md-3 control-label">Complemento: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" value="<%out.print(session.getAttribute("txtComplemento"));%>">
+                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" maxlength="20" placeholder="ex: apto 10" value="<%out.print(session.getAttribute("txtComplemento"));%>">
                         </div>
                     </div> 
                     
@@ -187,14 +201,14 @@
                     <div class="form-group">
                         <label for="txtCidade" class="col-xs-6 col-md-3 control-label">Cidade: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%out.print(session.getAttribute("txtCidade"));%>">
+                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" maxlength="30" placeholder="ex: São paulo" value="<%out.print(session.getAttribute("txtCidade"));%>">
                         </div>
                     </div>                     
                     
                     <div class="form-group">
                         <label for="txtLogin" class="col-xs-6 col-md-3 control-label">Login: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" required="">
+                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" maxlength="30" required="">
                         </div>
                     </div>
                     
@@ -215,14 +229,14 @@
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-6 col-md-3 control-label">Senha: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="">
+                            <input type="password" class="form-control" id="txtSenha" maxlength="30" name="txtSenha" required="">
                         </div>
                     </div>   
                     
                     <div class="form-group">
                         <div class="col-xs-8 col-md-6 col-md-offset-3">
                             <input type="submit" value="Enviar" name="btnEnviar" id="btnEnviarCC" class="btn btn-success btn-lg" />
-                            <input type="reset" value="Limpar" name="btnLimpar" id="btnLimparCC" class="btn btn-danger btn-lg" />
+                            <input type="reset" value="Limpar" name="btnLimpar" onclick="limpar()" id="btnLimparCC" class="btn btn-danger btn-lg" />
                         </div>
                     </div>
                             
@@ -239,7 +253,6 @@
         <!-- Script para fazer as mascaras dos campos --> 
         <script>
             jQuery(function($){
-                $("#txtTelefone").mask("(99)9999-9999");
                 $("#txtCPF").mask("999.999.999-99");
                 $("#txtCEP").mask("99999-999");
                 //$("#txtDataNasc").mask("99/99/9999");

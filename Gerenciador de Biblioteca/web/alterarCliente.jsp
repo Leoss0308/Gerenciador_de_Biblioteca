@@ -72,7 +72,7 @@
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-4 col-md-4 control-label">Nome Completo: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" value="<%=cli.getNome()%>">
+                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" maxlength="40" value="<%=cli.getNome()%>">
                         </div>
                     </div>
 
@@ -93,14 +93,14 @@
                     <div class="form-group">
                         <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" value="<%=cli.getEmail()%>">
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" maxlength="40" value="<%=cli.getEmail()%>">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="txtTelefone" class="col-xs-4 col-md-4 control-label">Telefone: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="tel" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%=cli.getTelefone()%>">
+                            <input type="tel" class="form-control" id="txtTelefone" name="txtTelefone" required="" maxlength="15" value="<%=cli.getTelefone()%>">
                         </div>
                     </div>
 
@@ -114,21 +114,21 @@
                     <div class="form-group">
                         <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" value="<%=cli.getEnd()%>">
+                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" maxlength="60" value="<%=cli.getEnd()%>">
                         </div>
                     </div>        
 
                     <div class="form-group">
                         <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" value="<%=cli.getBairro()%>">
+                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" maxlength="30" value="<%=cli.getBairro()%>">
                         </div>
                     </div> 
 
                     <div class="form-group">
                         <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" value="<%=cli.getComplemento()%>">
+                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" maxlength="20" value="<%=cli.getComplemento()%>">
                         </div>
                     </div> 
 
@@ -171,14 +171,14 @@
                     <div class="form-group">
                         <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%=cli.getCidade()%>">
+                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" maxlength="30" value="<%=cli.getCidade()%>">
                         </div>
                     </div>                     
 
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-4 col-md-4 control-label">Senha: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="" value="<%=cli.getSenha()%>">
+                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="" maxlength="30" value="<%=cli.getSenha()%>">
                         </div>
                     </div> 
 
@@ -196,7 +196,7 @@
                     <div class="form-group">
                         <label for="txtObs" class="col-xs-4 col-md-4 control-label">observação: </label>
                         <div class="col-xs-6 col-md-6">
-                            <textarea class="form-control" id="txtObs" name="txtObs"><%=cli.getObsClie()%></textarea>
+                            <textarea class="form-control" id="txtObs" name="txtObs" maxlength="250"><%=cli.getObsClie()%></textarea>
                         </div>
                     </div>
 
@@ -219,7 +219,6 @@
         <!-- Script para fazer as mascaras dos campos --> 
         <script>
             jQuery(function ($) {
-                $("#txtTelefone").mask("(99)9999-9999");
                 $("#txtCPF").mask("999.999.999-99");
                 $("#txtCEP").mask("99999-999");
                 //$("#txtDataNasc").mask("99/99/9999");
