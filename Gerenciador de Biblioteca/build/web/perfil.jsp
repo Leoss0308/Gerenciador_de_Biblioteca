@@ -56,6 +56,9 @@
                         <li class="active"><a href="#">Empréstimos<span class="sr-only">(current)</span></a></li>
                         <li><a href="iframe/controleFuncionario/funcionario/visualizaEmprestimo.jsp" target="frmConteudo">Ver Empréstimos</a></li>
 
+                        <li class="active"><a href="#">Avarias<span class="sr-only">(current)</span></a></li>
+                        <li><a href="iframe/controleFuncionario/Avarias/visualizaAvarias.jsp" target="frmConteudo">Ver Avarias</a></li>
+                        <li><a href="cadastrarAvarias.jsp" target="frmConteudo">Cadastrar Avarias</a></li>
 
                     </ul>
                 </div>

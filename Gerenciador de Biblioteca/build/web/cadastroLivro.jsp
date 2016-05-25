@@ -73,56 +73,56 @@
                     <div class="form-group">
                         <label for="txtISBN" class="col-xs-4 col-md-4 control-label">ISBN: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtISBN" name="txtISBN" required="">
+                            <input type="text" class="form-control" id="txtISBN" maxlength="30" name="txtISBN" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="txtEdicao" class="col-xs-4 col-md-4 control-label">Edição: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtEdicao" name="txtEdicao" required="">
+                            <input type="text" class="form-control" id="txtEdicao" maxlength="10" name="txtEdicao" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="txtTitulo" class="col-xs-4 col-md-4 control-label">Título: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required="">
+                            <input type="text" class="form-control" id="txtTitulo"maxlength="100"  name="txtTitulo" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="txtAutor" class="col-xs-4 col-md-4 control-label">Autor: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtAutor" name="txtAutor" required="">
+                            <input type="text" class="form-control" id="txtAutor" maxlength="60" name="txtAutor" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="txtEditora" class="col-xs-4 col-md-4 control-label">Editora: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtEditora" name="txtEditora" required="">
+                            <input type="text" class="form-control" id="txtEditora" maxlength="40" name="txtEditora" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="txtResumo" class="col-xs-4 col-md-4 control-label">Resumo: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtResumo" name="txtResumo" required="">
+                            <input type="text" class="form-control" id="txtResumo" maxlength="100" name="txtResumo" required="">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="txtPreco" class="col-xs-4 col-md-4 control-label">Preço: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtPreco" name="txtPreco" required="">
+                            <input type="text" class="form-control" id="txtPreco" maxlength="10" name="txtPreco" required="">
                         </div>
                     </div>        
 
                     <div class="form-group">
                         <label for="txtAnoPublicacao" class="col-xs-4 col-md-4 control-label">Ano de Publicação: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtAnoPublicacao" name="txtAnoPublicacao" required="">
+                            <input type="text" class="form-control" id="txtAnoPublicacao" maxlength="4" name="txtAnoPublicacao" required="">
                         </div>
                     </div> 
 
@@ -130,7 +130,7 @@
                     <div class="form-group">
                         <label for="txtCategoria" class="col-xs-4 col-md-4 control-label">Categoria: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtCategoria" name="txtCategoria">
+                            <input type="text" class="form-control" id="txtCategoria" maxlength="60" name="txtCategoria">
                         </div>
                     </div> 
 
@@ -138,18 +138,18 @@
                     <div class="form-group">
                         <label for="txtTags" class="col-xs-4 col-md-4 control-label">Tags: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtTags" name="txtTags" required="">
+                            <input type="text" class="form-control" id="txtTags" maxlength="200" name="txtTags" required="">
                         </div>
                     </div>                     
 
                     <div class="form-group">
                         <label for="txtObs" class="col-xs-4 col-md-4 control-label">Observações: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtObs" name="txtObs" required="">
+                            <input type="text" class="form-control" id="txtObs" maxlength="250" name="txtObs" required="">
                         </div>
                     </div>
 
-                    <input type="hidden" value="<%out.print(session.getAttribute("cod"));%>" name="Matricula_Func">
+                    <input type="hidden" value="<%out.print(session.getAttribute("cod"));%>" maxlength="11" name="Matricula_Func">
 
 
                     <div class="form-group">

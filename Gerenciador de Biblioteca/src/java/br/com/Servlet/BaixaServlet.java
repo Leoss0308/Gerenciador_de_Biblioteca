@@ -31,7 +31,7 @@ public class BaixaServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pagina = "sucessoPagCheia.jsp";
+        String pagina = "sucesso.jsp";
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {

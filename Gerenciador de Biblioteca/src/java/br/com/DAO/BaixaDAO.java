@@ -134,5 +134,29 @@ public class BaixaDAO {
         ps.close();
         return bx;
     }
+    public List<Baixa> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from Baixa where Cod_Livro = ?");
+        ps.setString(1, '%' + palavra + '%');
+        ResultSet rs = ps.executeQuery();
+        List<Baixa> Baix = new ArrayList<Baixa>();
+        while (rs.next()) {
+            // Criando o objeto e setando valores:
+              // Criando o objeto e setando valores:
+            Baixa bx = new Baixa();
+            bx.setCodBaixa(rs.getInt("Codigo_Baixa"));
+            bx.setMotivoBaixa(rs.getString("Motivo_Baixa"));
+            bx.setObsBaixa(rs.getString("Obs_Baixa"));
+            bx.setMatriculaFunc(rs.getInt("Matricula_Func"));
+            bx.setCodEmprestimo(rs.getInt("Codigo_Emprestimo"));
+            bx.setCodLivro(rs.getInt("Codigo_Livro"));
+
+            // Adicionando o objeto à lista:
+            Baix.add(bx);
+        }
+        rs.close();
+        ps.close();
+        return Baix;
+    }
 
 }

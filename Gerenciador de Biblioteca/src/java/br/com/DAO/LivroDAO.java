@@ -35,7 +35,7 @@ public class LivroDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria,Emprestado, Cod_Matricula) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria, Emprestado, Cod_Matricula) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -69,7 +69,7 @@ public class LivroDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "UPDATE Livro set   ISBN=?, Edicao_Livro=?, Titulo=?, Autor=?, Editora=?, Resumo=?, Preco=?, Ano_Publicacao=?, Categoria=?, Tags=?,  Observacao=?, Avaria=? where Cod_Livro=?");
+                    "UPDATE Livro set   ISBN=?, Edicao_Livro=?, Titulo=?, Autor=?, Editora=?, Resumo=?, Preco=?, Ano_Publicacao=?, Categoria=?, Tags=?,  Observacao=? where Cod_Livro=?");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -82,8 +82,7 @@ public class LivroDAO {
             ps.setString(9, liv.getCategoriaLivro());
             ps.setString(10, liv.getTags());
             ps.setString(11, liv.getObsLivro());
-            ps.setInt(12, liv.getAvaria());
-            ps.setInt(13, liv.getCodLivro());
+            ps.setInt(12, liv.getCodLivro());
 
             ps.executeUpdate();
             ps.close();

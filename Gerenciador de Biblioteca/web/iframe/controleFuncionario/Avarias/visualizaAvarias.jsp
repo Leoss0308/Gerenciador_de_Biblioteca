@@ -1,18 +1,18 @@
 <%-- 
-    Document   : visualizaLivro
-    Created on : 14/05/2016, 18:59:32
-    Author     : Amanda
+    Document   : visualizaAvarias
+    Created on : 24/05/2016, 20:29:21
+    Author     : Drikka´s
 --%>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-    <%@page import="br.com.Modelagem.Livro, br.com.DAO.LivroDAO,  java.util.List" %>
+    <%@page import="br.com.Modelagem.Baixa, br.com.DAO.BaixaDAO,  java.util.List" %>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-        <title>Tabela Livro</title>
+        <title>Tabela de Avarias </title>
 
         <!-- Bootstrap -->
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
@@ -48,14 +48,14 @@
     <body>
        <div class="row">
             
-                <form class="form-horizontal"  action="visualizaLivro.jsp" method="get">
+                <form class="form-horizontal"  action="visualizaAvarias.jsp" method="get">
 
                     <div class="form-inline">
                         <label for="slcTipoPesquisa" class="col-xs-2 control-label">Pesquisar pelo: </label>
                         <div class="col-xs-2 ">
                             <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa" style="width: 100%">
-                                <option value="Titulo">Título</option>
-                                <option value="ISBN">ISBN</option>
+                                <option value="CodLivro">Código do Livro</option>
+                                <option value="Matricula_Func">Funcionário responsável</option>
                             </select>
                         </div>
                     </div>
@@ -78,14 +78,14 @@
         <div class="row">
         </div>
         <%
-            LivroDAO livdao = new LivroDAO();
-            List<Livro> livro = livdao.getLista();
+            BaixaDAO bxdao = new BaixaDAO();
+            List<Baixa>  baixa = bxdao.getLista();
             String palavra = request.getParameter("txtpesquisa");
             if (palavra == null) {
-                livro = livdao.getLista();
+                baixa = bxdao.getLista();
             } else {
                 String tipo = request.getParameter("slcTipoPesquisa");
-                livro = livdao.getListaLike(palavra, tipo);
+                baixa = bxdao.getListaLike(palavra, tipo);
             }
         %>
         
@@ -93,14 +93,14 @@
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Livro</tr> -->
                 <tr>
-                    <th>Código</th><th>ISBN</th><th>Edição</th><th>Título</th><th>Autor</th><th>Editora</th><th>Resumo</th><th>Preço</th><th>Ano Publicação</th><th>Categoria</th><th>Tags</th><th>Observações</th><th>Funcionário Responsável</th><th></th><th></th>
+                    <th>Código da Avaria</th><th>Motivo da Avaria</th><th>Observações</th><th>Funcionário Responsável</th><th>Código do Empréstimo</th><th>Código do Livro</th><th></th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
                     sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
 
                     int cor = 0;
-                    for (Livro liv : livro) {
+                    for (Baixa bx : baixa) {
                         String sCor = "cor" + (cor % 2);
                         cor++;
 
@@ -109,26 +109,18 @@
 
                         out.print("<tr id='" + sCor + "' " + sDestaque + ">");
 
-                        out.print("<td>" + liv.getCodLivro() + "</td>");
-                        out.print("<td>" + liv.getISBN() + "</td>");
-                        out.print("<td>" + liv.getEdicaoLivro() + "</td>");
-                        out.print("<td>" + liv.getTituloLivro() + "</td>");
-                        out.print("<td>" + liv.getAutorLivro() + "</td>");
-                        out.print("<td>" + liv.getEditoraLivro() + "</td>");
-                        out.print("<td>" + liv.getResumoLivro() + "</td>");
-                        out.print("<td>" + liv.getPrecoLivro() + "</td>");
-                        out.print("<td>" + liv.getAnoPublicacao() + "</td>");
-                        out.print("<td>" + liv.getCategoriaLivro() + "</td>");
-                        out.print("<td>" + liv.getTags() + "</td>");
-                        out.print("<td>" + liv.getObsLivro() + "</td>");
-                       // out.print("<td>" + liv.getAvaria() + "</td>");
-                       //out.print("<td>" + liv.getEmprestado() + "</td>");
-                        out.print("<td>" + liv.getMatriculaFunc() + "</td>");
-
+                        out.print("<td>" + bx.getCodBaixa()+ "</td>");
+                        out.print("<td>" + bx.getMotivoBaixa()+ "</td>");
+                        out.print("<td>" + bx.getObsBaixa()+ "</td>");
+                        out.print("<td>" + bx.getMatriculaFunc() + "</td>");
+                        out.print("<td>" + bx.getCodEmprestimo() + "</td>");
+                        out.print("<td>" + bx.getCodLivro() + "</td>");
+                       
+                     
                         // Controle para manutenção:
                         //Coloquei um title na tag img pro usuario ao passar em cima do ícone alterar ou excluir saber do que se trata, não só pela dedução da imagem.
-                        out.print("<td id='cmd'><a href='../../../alterarLivro.jsp?CodLivro=" + liv.getCodLivro() + "'><img src='../../../img/alterar.png' title='Alterar'/></a></td>");
-                        out.print("<td id='cmd'><a href='../../../cadastrarAvarias.jsp?CodLivro=" + liv.getCodLivro() + "'><img src='../../../img/excluir.png' title='Excluir'/></a></td>");
+                        out.print("<td id='cmd'><a href='../../../alterarAvarias.jsp?CodBaixa=" + bx.getCodBaixa()+ "'><img src='../../../img/alterar.png' title='Alterar'/></a></td>");
+                        out.print("<td id='cmd'><a href='desativarAvarias.jsp?CodBaixa=" + bx.getCodBaixa()+ "'><img src='../../../img/excluir.png' title='Restaurar Livro'/></a></td>");
 
                         out.print("</tr>");
 

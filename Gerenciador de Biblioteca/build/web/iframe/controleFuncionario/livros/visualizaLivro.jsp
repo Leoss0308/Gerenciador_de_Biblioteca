@@ -93,7 +93,7 @@
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Livro</tr> -->
                 <tr>
-                    <th>Código</th><th>ISBN</th><th>Edição</th><th>Título</th><th>Autor</th><th>Editora</th><th>Resumo</th><th>Preço</th><th>Ano Publicação</th><th>Categoria</th><th>Tags</th><th>Observação</th><th>Status Avaria</th><th>Status Empréstimo</th><th>Funcionário Responsável</th><th></th><th></th>
+                    <th>Código</th><th>ISBN</th><th>Edição</th><th>Título</th><th>Autor</th><th>Editora</th><th>Resumo</th><th>Preço</th><th>Ano Publicação</th><th>Categoria</th><th>Tags</th><th>Observações</th><th>Funcionário Responsável</th><th></th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -121,14 +121,14 @@
                         out.print("<td>" + liv.getCategoriaLivro() + "</td>");
                         out.print("<td>" + liv.getTags() + "</td>");
                         out.print("<td>" + liv.getObsLivro() + "</td>");
-                        out.print("<td>" + liv.getAvaria() + "</td>");
-                        out.print("<td>" + liv.getEmprestado() + "</td>");
+                       // out.print("<td>" + liv.getAvaria() + "</td>");
+                       //out.print("<td>" + liv.getEmprestado() + "</td>");
                         out.print("<td>" + liv.getMatriculaFunc() + "</td>");
 
                         // Controle para manutenção:
                         //Coloquei um title na tag img pro usuario ao passar em cima do ícone alterar ou excluir saber do que se trata, não só pela dedução da imagem.
                         out.print("<td id='cmd'><a href='../../../alterarLivro.jsp?CodLivro=" + liv.getCodLivro() + "'><img src='../../../img/alterar.png' title='Alterar'/></a></td>");
-                        out.print("<td id='cmd'><a href='desativarLivro.jsp?CodLivro=" + liv.getCodLivro() + "'><img src='../../../img/excluir.png' title='Excluir'/></a></td>");
+                        out.print("<td id='cmd'><a href='../../../cadastrarAvarias.jsp?CodLivro=" + liv.getCodLivro() + "'><img src='../../../img/excluir.png' title='Excluir'/></a></td>");
 
                         out.print("</tr>");
 

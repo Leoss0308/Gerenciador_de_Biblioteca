@@ -69,7 +69,7 @@
                 <form class="form-horizontal"  action="LivroServletAlterar" method="post">
 
                     <div class="form-group">
-                        <label for="txtCodLivro" class="col-xs-4 col-md-4 control-label">Codigo: </label>
+                        <label for="txtCodLivro" class="col-xs-4 col-md-4 control-label">Código: </label>
                         <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCodigo" name="txtCodLivro" required="" readonly="" value="<%=liv.getCodLivro()%>">
                         </div>
@@ -79,7 +79,7 @@
             <div class="form-group">
                 <label for="txtISBN" class="col-xs-4 col-md-4 control-label">ISBN: </label>
                 <div class="col-xs-6 col-md-6">
-                    <input type="text" class="form-control" id="txtISBN" name="txtISBN" required="" value="<%=liv.getISBN()%>">
+                    <input type="text" class="form-control" id="txtISBN" maxlength="30" name="txtISBN" required="" value="<%=liv.getISBN()%>">
                 </div>
             </div>
         
@@ -87,49 +87,49 @@
         <div class="form-group">
             <label for="txtEdicao" class="col-xs-4 col-md-4 control-label">Edição: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="text" class="form-control" id="txtEdicao" name="txtEdicao" required="" value="<%=liv.getEdicaoLivro()%>">
+                <input type="text" class="form-control" id="txtEdicao" maxlength="10" name="txtEdicao" required="" value="<%=liv.getEdicaoLivro()%>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="txtTitulo" class="col-xs-4 col-md-4 control-label">Título: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" required="" value="<%=liv.getTituloLivro()%>">
+                <input type="text" class="form-control" id="txtTitulo"  maxlength="100" name="txtTitulo" required="" value="<%=liv.getTituloLivro()%>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="txtAutor" class="col-xs-4 col-md-4 control-label">Autor: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="txt" class="form-control" id="txtAutor" name="txtAutor" required="" value="<%=liv.getAutorLivro()%>">
+                <input type="txt" class="form-control" id="txtAutor" maxlength="60" name="txtAutor" required="" value="<%=liv.getAutorLivro()%>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="txtEditora" class="col-xs-4 col-md-4 control-label">Editora: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="text" class="form-control" id="txtEditora" name="txtEditora" required="" value="<%=liv.getEditoraLivro()%>">
+                <input type="text" class="form-control" id="txtEditora" maxlength="40" name="txtEditora" required="" value="<%=liv.getEditoraLivro()%>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="txtResumo" class="col-xs-4 col-md-4 control-label">Resumo: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="text" class="form-control" id="txtResumo" name="txtResumo" required="" value="<%=liv.getResumoLivro()%>">
+                <input type="text" class="form-control" id="txtResumo" maxlength="100" name="txtResumo" required="" value="<%=liv.getResumoLivro()%>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="txtPreco" class="col-xs-4 col-md-4 control-label">Preço: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="text" class="form-control" id="txtPreco" name="txtPreco" required="" value="<%=liv.getPrecoLivro()%>">
+                <input type="text" class="form-control" id="txtPreco" maxlength="10" name="txtPreco" required="" value="<%=liv.getPrecoLivro()%>">
             </div>
         </div>        
 
         <div class="form-group">
             <label for="txtAnoPublicacao" class="col-xs-4 col-md-4 control-label">Ano de Publicação: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="text" class="form-control" id="txtAnoPublicacao" name="txtAnoPublicacao" required="" value="<%=liv.getAnoPublicacao()%>">
+                <input type="text" class="form-control" id="txtAnoPublicacao" maxlength="4" name="txtAnoPublicacao" required="" value="<%=liv.getAnoPublicacao()%>">
             </div>
         </div> 
 
@@ -138,7 +138,7 @@
         <div class="form-group">
             <label for="txtCategoria" class="col-xs-4 col-md-4 control-label">Categoria: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="text" class="form-control" id="txtCategoria" name="txtCategoria" value="<%=liv.getCategoriaLivro()%>">
+                <input type="text" class="form-control" id="txtCategoria" maxlength="60" name="txtCategoria" value="<%=liv.getCategoriaLivro()%>">
             </div>
         </div> 
 
@@ -146,7 +146,7 @@
         <div class="form-group">
             <label for="txtTags" class="col-xs-4 col-md-4 control-label">Tags: </label>
             <div class="col-xs-6 col-md-6">
-                <input type="text" class="form-control" id="txtTags" name="txtTags" required="" value="<%=liv.getTags()%>">
+                <input type="text" class="form-control" id="txtTags" maxlength="200" name="txtTags" required="" value="<%=liv.getTags()%>">
             </div>
         </div>                     
 
@@ -157,21 +157,12 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="txtAvaria" class="col-xs-4 col-md-4 control-label">Status de Avarias: </label>
-            <div class="col-xs-6 col-md-6">
-                           <select class="form-control" id="txtAvaria" name="txtAvaria" required="" value="<%=liv.getAvaria()%>">
-                                <option selected="" value="<%=liv.getAvaria()%>"></option>
-                                <option value="0">Livro sem avarias</option>
-                                <option value="1">Livro com avarias</option>
-                            </select>
-                        </div>
-        </div>
+     
 
         <div class="form-group">
             <label for="Matricula_Func" class="col-xs-4 col-md-4 control-label">Funcionário responsável: </label>
             <div class="col-xs-6 col-md-6">
-               <input type="text" class="form-control" id="Matricula_Func" name="Matricula_Func" required="" readonly="" value="<%=liv.getMatriculaFunc()%>">
+               <input type="text" class="form-control" maxlength="11"  id="Matricula_Func" name="Matricula_Func" required="" readonly="" value="<%=liv.getMatriculaFunc()%>">
                
             </div>
         </div>
