@@ -1,7 +1,7 @@
 <%-- 
     Document   : cadastrarAvarias
     Created on : 24/05/2016, 20:53:34
-    Author     : Drikka´s
+    Author     : Amanda
 --%>
 
 <!DOCTYPE html>
@@ -85,10 +85,8 @@
                     </div>
 
                     <input type="hidden" value="<%out.print(session.getAttribute("cod"));%>" maxlength="11" name="txtMatriculaFunc">
-
-                    <input type="hidden" value="<%out.print(session.getAttribute("cod"));%>" maxlength="11" name="txtCodEmprestimo">
                     
-                    <input type="hidden" value="<%out.print(session.getAttribute("cod"));%>" maxlength="11" name="txtCodLivro">
+                    <input type="hidden" value="<%out.print(request.getParameter("CodLivro"));%>" maxlength="11" name="txtCodLivro">
                     
                     <div class="form-group">
                         <div class="col-xs-6 col-xs-offset-4 col-md-6 col-md-offset-4">

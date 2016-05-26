@@ -1,7 +1,7 @@
 <%-- 
     Document   : desativarAvarias
     Created on : 24/05/2016, 20:29:44
-    Author     : Drikka´s
+    Author     : Amanda
 --%>
 
 <html>
@@ -14,10 +14,11 @@
         <%-- Instanciar a DAO para acesso a regras  do banco e CRUD --%>
         <%
             int bx = Integer.parseInt(request.getParameter("CodBaixa"));
+            int Liv = Integer.parseInt(request.getParameter("CodLivro"));
             // Instanciar DAO para CRUD:
             BaixaDAO bxDAO = new BaixaDAO();
             // Inserir (enviando objeto que coletou dados pelo Java Beans):
-            boolean res = bxDAO.cancelarBaixa(bx);
+            boolean res = bxDAO.cancelarBaixa(bx,Liv);
             if (!res) {
                 out.println("Falha na exclusão do registro!");
                 out.close();

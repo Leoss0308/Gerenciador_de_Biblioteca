@@ -100,6 +100,8 @@ public class LoginServlet extends HttpServlet {
                             sessao.setAttribute("nome", lnome);
                             String cod = Integer.toString(func.getMatriculaFunc());
                             sessao.setAttribute("cod", cod);
+                            
+                            
                         }
 
                         // Como obteve sucesso, chamar a página principal:

@@ -1,7 +1,7 @@
 <%-- 
     Document   : alterarAvarias
     Created on : 24/05/2016, 20:54:12
-    Author     : Drikka´s
+    Author     : Amanda
 --%>
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@
             int cod = 0;
             cod = Integer.parseInt(request.getParameter("CodBaixa"));
             bx = new BaixaDAO().getBaixa(cod);  // Obtem o item do BD que foi solicitado via parâmetro.            
-
+            
         %>
 
         <article id="Alteracao"  class="row">         

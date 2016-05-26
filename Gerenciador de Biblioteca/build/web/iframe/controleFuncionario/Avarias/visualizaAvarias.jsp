@@ -1,7 +1,7 @@
 <%-- 
     Document   : visualizaAvarias
     Created on : 24/05/2016, 20:29:21
-    Author     : Drikka´s
+    Author     : Amanda
 --%>
 
 <!DOCTYPE html>
@@ -119,8 +119,8 @@
                      
                         // Controle para manutenção:
                         //Coloquei um title na tag img pro usuario ao passar em cima do ícone alterar ou excluir saber do que se trata, não só pela dedução da imagem.
-                        out.print("<td id='cmd'><a href='../../../alterarAvarias.jsp?CodBaixa=" + bx.getCodBaixa()+ "'><img src='../../../img/alterar.png' title='Alterar'/></a></td>");
-                        out.print("<td id='cmd'><a href='desativarAvarias.jsp?CodBaixa=" + bx.getCodBaixa()+ "'><img src='../../../img/excluir.png' title='Restaurar Livro'/></a></td>");
+                        out.print("<td id='cmd'><a href='../../../alterarAvarias.jsp?CodBaixa=" + bx.getCodBaixa()+ "&CodLivro=" + bx.getCodLivro() + "'><img src='../../../img/alterar.png' title='Alterar'/></a></td>");
+                        out.print("<td id='cmd'><a href='desativarAvarias.jsp?CodBaixa=" + bx.getCodBaixa()+ "&CodLivro=" + bx.getCodLivro() + "'><img src='../../../img/excluir.png' title='Restaurar Livro'/></a></td>");
 
                         out.print("</tr>");
 

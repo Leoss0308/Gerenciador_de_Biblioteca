@@ -35,13 +35,17 @@ public class BaixaDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "INSERT INTO Baixa ( Motivo_Baixa, Obs_Baixa, Matricula_Func,Cod_Emprestimo, Cod_Livro) VALUES (?,?,?,?,?)");
+                    "INSERT INTO Baixa ( Motivo_Baixa, Observacao, Cod_Matricula, Cod_Livro) VALUES (?,?,?,?)");
             ps.setString(1, bx.getMotivoBaixa());
             ps.setString(2, bx.getObsBaixa());
             ps.setInt(3, bx.getMatriculaFunc());
-            ps.setInt(4, bx.getCodEmprestimo());
-            ps.setInt(5, bx.getCodLivro());
+            ps.setInt(4, bx.getCodLivro());
 
+            ps.executeUpdate();
+            ps.close();
+            ps = cnn.prepareStatement(
+                    "UPDATE Livro set Avaria= 1 Where Cod_Livro=? ");
+            ps.setInt(1, bx.getCodLivro());
             ps.executeUpdate();
             ps.close();
             return true;
@@ -59,7 +63,7 @@ public class BaixaDAO {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "UPDATE Baixa set  Motivo_Baixa=?, Obs_Baixa=? where Cod_Baixa=?");
+                    "UPDATE Baixa set  Motivo_Baixa=?, Observacao=? where Cod_Baixa=?");
 
             ps.setString(1, bx.getMotivoBaixa());
             ps.setString(2, bx.getObsBaixa());
@@ -74,7 +78,7 @@ public class BaixaDAO {
 
     }
 
-    public boolean cancelarBaixa(int Baix) throws Exception {
+    public boolean cancelarBaixa(int Baix, int Liv) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
@@ -82,6 +86,12 @@ public class BaixaDAO {
             ps.setInt(1, Baix);
             ps.executeUpdate();
             ps.close();
+            ps = cnn.prepareStatement(
+                    "UPDATE Livro set Avaria= 0 Where Cod_Livro=? ");
+            ps.setInt(1, Liv);
+            ps.executeUpdate();
+            ps.close();
+            
             return true;
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -98,12 +108,12 @@ public class BaixaDAO {
         while (rs.next()) {
             // Criando o objeto e setando valores:
             Baixa bx = new Baixa();
-            bx.setCodBaixa(rs.getInt("Codigo_Baixa"));
+            bx.setCodBaixa(rs.getInt("Cod_Baixa"));
             bx.setMotivoBaixa(rs.getString("Motivo_Baixa"));
-            bx.setObsBaixa(rs.getString("Obs_Baixa"));
-            bx.setMatriculaFunc(rs.getInt("Matricula_Func"));
-            bx.setCodEmprestimo(rs.getInt("Codigo_Emprestimo"));
-            bx.setCodLivro(rs.getInt("Codigo_Livro"));
+            bx.setObsBaixa(rs.getString("Observacao"));
+            bx.setMatriculaFunc(rs.getInt("Cod_Matricula"));
+            bx.setCodEmprestimo(rs.getInt("Cod_Emprestimo"));
+            bx.setCodLivro(rs.getInt("Cod_Livro"));
 
             // Adicionando o objeto à lista:
             Baix.add(bx);
@@ -123,12 +133,12 @@ public class BaixaDAO {
         Baixa bx = new Baixa();
         if (rs.next()) {
             // Criando o objeto e setando valores:
-            bx.setCodBaixa(rs.getInt("Codigo_Baixa"));
+            bx.setCodBaixa(rs.getInt("Cod_Baixa"));
             bx.setMotivoBaixa(rs.getString("Motivo_Baixa"));
-            bx.setObsBaixa(rs.getString("Obs_Baixa"));
-            bx.setMatriculaFunc(rs.getInt("Matricula_Func"));
-            bx.setCodEmprestimo(rs.getInt("Codigo_Emprestimo"));
-            bx.setCodLivro(rs.getInt("Codigo_Livro"));
+            bx.setObsBaixa(rs.getString("Observacao"));
+            bx.setMatriculaFunc(rs.getInt("Cod_Matricula"));
+            bx.setCodEmprestimo(rs.getInt("Cod_Emprestimo"));
+            bx.setCodLivro(rs.getInt("Cod_Livro"));
         }
         rs.close();
         ps.close();
@@ -144,12 +154,12 @@ public class BaixaDAO {
             // Criando o objeto e setando valores:
               // Criando o objeto e setando valores:
             Baixa bx = new Baixa();
-            bx.setCodBaixa(rs.getInt("Codigo_Baixa"));
+            bx.setCodBaixa(rs.getInt("Cod_Baixa"));
             bx.setMotivoBaixa(rs.getString("Motivo_Baixa"));
-            bx.setObsBaixa(rs.getString("Obs_Baixa"));
-            bx.setMatriculaFunc(rs.getInt("Matricula_Func"));
-            bx.setCodEmprestimo(rs.getInt("Codigo_Emprestimo"));
-            bx.setCodLivro(rs.getInt("Codigo_Livro"));
+            bx.setObsBaixa(rs.getString("Observacao"));
+            bx.setMatriculaFunc(rs.getInt("Cod_Matricula"));
+            bx.setCodEmprestimo(rs.getInt("Cod_Emprestimo"));
+            bx.setCodLivro(rs.getInt("Cod_Livro"));
 
             // Adicionando o objeto à lista:
             Baix.add(bx);

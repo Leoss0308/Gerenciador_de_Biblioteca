@@ -7,6 +7,7 @@ package br.com.Servlet;
 
 import br.com.DAO.BaixaDAO;
 import br.com.Modelagem.Baixa;
+import br.com.Modelagem.Livro;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,12 +36,12 @@ public class BaixaServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
+          
             Baixa bx = new Baixa();
-            bx.setCodBaixa(Integer.parseInt(request.getParameter("txtCodBaixa")));
             bx.setMotivoBaixa(request.getParameter("txtMotivoBaixa"));
             bx.setObsBaixa(request.getParameter("txtObsBaixa"));
             bx.setMatriculaFunc(Integer.parseInt(request.getParameter("txtMatriculaFunc")));
-            bx.setCodEmprestimo(Integer.parseInt(request.getParameter("txtCodEmprestimo")));
+           
             bx.setCodLivro(Integer.parseInt(request.getParameter("txtCodLivro")));
 
             BaixaDAO bxDAO = new BaixaDAO();
