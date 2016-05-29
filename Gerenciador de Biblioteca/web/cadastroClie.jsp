@@ -130,7 +130,7 @@
                     <div class="form-group">
                         <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="" maxlength="15" placeholder="ex: (11) 94321-1234" value="<%out.print(session.getAttribute("txtTelefone"));%>">
+                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%out.print(session.getAttribute("txtTelefone"));%>">
                         </div>
                     </div>
                     
@@ -253,6 +253,7 @@
         <!-- Script para fazer as mascaras dos campos --> 
         <script>
             jQuery(function($){
+                $("#txtTelefone").mask("(99)9999-9999");
                 $("#txtCPF").mask("999.999.999-99");
                 $("#txtCEP").mask("99999-999");
                 //$("#txtDataNasc").mask("99/99/9999");

@@ -72,7 +72,7 @@
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-4 col-md-4 control-label">Nome Completo: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" value="<%=func.getNome()%>">
+                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" maxlength="40" value="<%=func.getNome()%>">
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@
                     <div class="form-group">
                         <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" value="<%=func.getEmail()%>">
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" maxlength="40" value="<%=func.getEmail()%>">
                         </div>
                     </div>
 
@@ -107,21 +107,21 @@
                     <div class="form-group">
                         <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" value="<%=func.getEnd()%>">
+                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" maxlength="60" value="<%=func.getEnd()%>">
                         </div>
                     </div>        
 
                     <div class="form-group">
                         <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" value="<%=func.getBairro()%>">
+                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" maxlength="30" value="<%=func.getBairro()%>">
                         </div>
                     </div> 
 
                     <div class="form-group">
                         <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" value="<%=func.getComplemento()%>">
+                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" maxlength="20" value="<%=func.getComplemento()%>">
                         </div>
                     </div> 
 
@@ -164,14 +164,14 @@
                     <div class="form-group">
                         <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%=func.getCidade()%>">
+                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" maxlength="30" value="<%=func.getCidade()%>">
                         </div>
                     </div>                     
 
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-4 col-md-4 control-label">Senha: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="" value="<%=func.getSenha()%>">
+                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="" maxlength="30" value="<%=func.getSenha()%>">
                         </div>
                     </div> 
 

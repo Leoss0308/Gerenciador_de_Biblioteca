@@ -94,7 +94,7 @@
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-4 col-md-4 control-label">Nome Completo: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" value="<%out.print(session.getAttribute("txtNome"));%>">
+                            <input type="text" class="form-control" id="txtNome" name="txtNome" required="" maxlength="40" value="<%out.print(session.getAttribute("txtNome"));%>">
                         </div>
                     </div>
 
@@ -106,39 +106,46 @@
                     </div> 
 
                     <div class="form-group">
-                        <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
+                        <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" value="<%out.print(session.getAttribute("txtEndereco"));%>">
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" maxlength="40" value="<%out.print(session.getAttribute("txtEmail"));%>">
                         </div>
                     </div>
-
+                        
                     <div class="form-group">
-                        <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
+                        <label for="txtTelefone" class="col-xs-4 col-md-4 control-label">Telefone: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento"value="<%out.print(session.getAttribute("txtComplemento"));%>">
-                        </div>
-                    </div> 
-
-                    <div class="form-group">
-                        <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" value="<%out.print(session.getAttribute("txtBairro"));%>">
+                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%out.print(session.getAttribute("txtTelefone"));%>">
                         </div>
                     </div>
-
+                      
                     <div class="form-group">
                         <label for="txtCEP" class="col-xs-4 col-md-4 control-label">CEP: </label>
                         <div class="col-xs-6 col-md-6">
                             <input type="text" class="form-control" id="txtCEP" name="txtCEP" required="" value="<%out.print(session.getAttribute("txtCEP"));%>">
                         </div>
                     </div>
-
+                        
                     <div class="form-group">
-                        <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
+                        <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" value="<%out.print(session.getAttribute("txtCidade"));%>">
+                            <input type="text" class="form-control" id="txtEndereco" name="txtEndereco" required="" maxlength="60" value="<%out.print(session.getAttribute("txtEndereco"));%>">
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" class="form-control" id="txtBairro" name="txtBairro" required="" maxlength="30" value="<%out.print(session.getAttribute("txtBairro"));%>">
+                        </div>
+                    </div>
+                        
+                    <div class="form-group">
+                        <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <input type="text" class="form-control" id="txtComplemento" name="txtComplemento" maxlength="20" value="<%out.print(session.getAttribute("txtComplemento"));%>">
+                        </div>
+                    </div> 
 
                     <div class="form-group">
                         <label for="txtEstado" class="col-xs-4 col-md-4 control-label">Estado: </label>
@@ -176,23 +183,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="txtTelefone" class="col-xs-4 col-md-4 control-label">Telefone: </label>
+                        <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="" value="<%out.print(session.getAttribute("txtTelefone"));%>">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" required="" value="<%out.print(session.getAttribute("txtEmail"));%>">
+                            <input type="text" class="form-control" id="txtCidade" name="txtCidade" required="" maxlength="30" value="<%out.print(session.getAttribute("txtCidade"));%>">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="txtLogin" class="col-xs-4 col-md-4 control-label">Login: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" required="">
+                            <input type="text" class="form-control" id="txtLogin" name="txtLogin" maxlength="30" required="">
                         </div>
                     </div>
 
@@ -212,7 +212,7 @@
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-4 col-md-4 control-label">Senha: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" required="">
+                            <input type="password" class="form-control" id="txtSenha" name="txtSenha" maxlength="30" required="">
                         </div>
                     </div>
 
