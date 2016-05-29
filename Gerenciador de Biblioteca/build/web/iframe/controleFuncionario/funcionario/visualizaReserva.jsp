@@ -1,7 +1,7 @@
-    <%-- 
-    Document   : visualizaReserva
-    Created on : 06/05/2016, 20:16:03
-    Author     : Erico
+<%-- 
+Document   : visualizaReserva
+Created on : 06/05/2016, 20:16:03
+Author     : Erico
 --%>
 
 <!DOCTYPE html>
@@ -37,16 +37,17 @@
 
     </head>
     <body>
-        
+
         <%
             ReservaDAO reserdao = new ReservaDAO();
             List<Reserva> reservas = reserdao.getLista();
         %>
+
         <div class="table-responsive">  
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Clientes</tr> -->
                 <tr>
-                    <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th>Código do Livro 1</th><th>Código do Livro 2</th><th>Código do Livro 3</th><th>Efetivar Emprestimo Livro 1</th><th>Efetivar Emprestimo Livro 2</th><th>Efetivar Emprestimo Livro 3</th><th></th>
+                    <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th>Código do Livro 1</th><th>Efetivar Reserva 1</th><th>Código do Livro 2</th><th>Efetivar Reserva 2</th><th>Código do Livro 3</th><th>Efetivar Reserva 3</th><th></th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -54,6 +55,7 @@
 
                     int cor = 0;
                     for (Reserva reserv : reservas) {
+
                         String sCor = "cor" + (cor % 2);
                         cor++;
 
@@ -71,17 +73,22 @@
 
                         for (Itens_Reserva ItensR : Itens) {
 
-                            out.print("<td>" + ItensR.getCodLivro() + "<td>");
-                            // Controle para manutenção: Efetiva Emprestimo, para colocar o livro como emprestado
-                            out.print("<td id='cmd'><a href='../../../efetivaEmprestimo.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "&codLivro=" + ItensR.getCodLivro() + "'><img src='../../img/alterar.jpg' title='Alterar' /></a></td>");
+                            out.print("<td>" + ItensR.getCodLivro() + "</td>");
+                            //out.print("<td>");
+                            //Controle para manutenção: Efetiva Emprestimo, para colocar o livro como emprestado
+                            out.print("<td id='cmd'><a href='../../../efetivaEmprestimo.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "&codLivro=" + ItensR.getCodLivro() + "'><img src='../../../img/confirmar.png' title='Efetivar Emprestimo' /></a></td>");
 
                         }
+
+                        //gambi, era isso ou o ícone de excluir ia ficar desalinhado, ae fizemos este css inline para "tratar" isso eeeeeee
+                        out.print("<td <div id='teste' style='display:none'></div>>");
+                        out.print("<td <div id='teste' style='display:none'></div>>");
+                        out.print("<td <div id='teste' style='display:none'></div>>");
+                        out.print("<td <div id='teste' style='display:none'></div>>");
                         //passagem de parametros para cancelar a reserva
-                        out.print("<td id='cmd'><a href='cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' title='Excluir'/></a></td>");
+                        out.print("<td id='cmd'><a href='cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/excluir.png' title='Cancelar Reserva'/></a></td>");
 
-                        out.print("</tr>"); 
-
-                        //out.print("</a>");
+                        // out.print("</tr>");
                     }
                 %>
             </table>

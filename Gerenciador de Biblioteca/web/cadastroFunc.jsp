@@ -220,7 +220,7 @@
                         <label for="txtTipo" class="col-xs-4 col-md-4 control-label">Tipo: </label>
                         <div class="col-xs-6 col-md-6">                            
                             <select class="form-control" id="txtTipo" name="txtTipo" required="">
-                                <option value="2">Funcioario</option>
+                                <option value="2">Funcionário</option>
                                 <option value="3">Administrador</option>
                             </select>
                         </div>

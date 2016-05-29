@@ -38,7 +38,7 @@
                 <%
                 } else if (session.getAttribute("permissao") == "2" || session.getAttribute("permissao") == "3") {
                 %>  
-                <li><a href="#" style="cursor:default">Olá funcionário, <%out.print(session.getAttribute("nome"));%></a></li>
+                <li><a href="#" style="cursor:default">Olá Funcionário, <%out.print(session.getAttribute("nome"));%></a></li>
 
                 <li><a href="LogoutServlet"> logout</a></li>
 
