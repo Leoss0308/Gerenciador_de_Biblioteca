@@ -46,7 +46,7 @@
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Clientes</tr> -->
                 <tr>
-                    <th>Código do Emprestimo</th><th>Código do Cliente</th><th>Funcionario</th><th>Código da Reserva</th><th>Titilo do Livro</th><th>Quantidade Do Livro</th><th>Data da Retirada</th><th>Data da Entrega</th><th>Código do Livro 1</th><th>Código do Livro 2</th><th>Código do Livro 3</th><th></th>
+                    <th>Código do Emprestimo</th><th>Código do Cliente</th><th>Funcionario</th><th>Código da Reserva</th><th>Titilo do Livro</th><th>Data da Retirada</th><th>Data da Entrega</th><th>Código do Livro 1</th><th>Livro 1 Devolvido</th><th>Código do Livro 2</th><th>Livro 2 Devolvido</th><th>Código do Livro 3</th><th>Livro 3 Devolvido</th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -78,13 +78,11 @@
                             out.print("<td>" + ItenE.getCodLivro() + "</td>");
 
                             // Controle para manutenção: Efetiva devolução do Emprestimo, colocando a data de devolução do livro
-                            out.print("<td id='cmd'><a href='../../../devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../img/alterar.jpg' title='Livro Devolvido' /></a></td>");
+                            out.print("<td id='cmd'><a href='../../../devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../../img/confirmar.png' title='Livro Devolvido' /></a></td>");
 
                         }
 
-                        out.print("</tr>");
-
-                        //out.print("</a>");
+                       
                     }
                 %>
             </table>
