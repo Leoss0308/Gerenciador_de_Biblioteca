@@ -1,6 +1,6 @@
 <%-- 
-    Document   : visualizaEmprestimo
-    Created on : 19/05/2016, 22:09:58
+    Document   : visualizaEmprestimoCli
+    Created on : 27/05/2016, 22:14:34
     Author     : Erico
 --%>
 
@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">            
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-        <title>Tabela Emprestimo</title>
+        <title>Visualiza Emprestimo</title>
 
         <!-- Bootstrap -->
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
 
         <%
             EmprestimoDAO empdao = new EmprestimoDAO();
-            List<Emprestimo> Emprestimos = empdao.getLista();
+            List<Emprestimo> Emprestimos = empdao.getEmprestimoCli(Integer.parseInt(String.valueOf(session.getAttribute("cod"))));
         %>
         <div class="table-responsive">  
             <table class="table table-bordered">
@@ -76,9 +76,6 @@
                         for (Itens_Emprestimo ItenE : Itens) {
 
                             out.print("<td>" + ItenE.getCodLivro() + "</td>");
-
-                            // Controle para manutenção: Efetiva devolução do Emprestimo, colocando a data de devolução do livro
-                            out.print("<td id='cmd'><a href='../../../devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../img/alterar.jpg' title='Alterar' /></a></td>");
 
                         }
 

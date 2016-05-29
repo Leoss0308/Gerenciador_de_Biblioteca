@@ -1,4 +1,4 @@
-<%-- 
+    <%-- 
     Document   : visualizaReserva
     Created on : 06/05/2016, 20:16:03
     Author     : Erico
@@ -37,7 +37,7 @@
 
     </head>
     <body>
-
+        
         <%
             ReservaDAO reserdao = new ReservaDAO();
             List<Reserva> reservas = reserdao.getLista();

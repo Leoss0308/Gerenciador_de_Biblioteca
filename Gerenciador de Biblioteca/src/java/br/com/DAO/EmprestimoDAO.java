@@ -103,7 +103,7 @@ public class EmprestimoDAO {
     }
 
     // Este método, instancia o JavaBeans para consulta de um registro:
-    public Emprestimo getReser(int CodEmprestimo) throws SQLException, ClassNotFoundException {
+    public Emprestimo getEmp(int CodEmprestimo) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
         ps = cnn.prepareStatement("select * from Emprestimo where Cod_Emprestimo=?");
         ps.setInt(1, CodEmprestimo);
@@ -124,5 +124,31 @@ public class EmprestimoDAO {
         ps.close();
         return Emp;
     }
+    
+        public List<Emprestimo> getEmprestimoCli(int CodClie) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("select * from Emprestimo where Cod_Cliente=?");
+        ResultSet rs = ps.executeQuery();
+        List<Emprestimo> EmpCli = new ArrayList<Emprestimo>();
+        while (rs.next()) {
+            // Criando o objeto e setando valores:
+            Emprestimo EmprCli = new Emprestimo();
+            
+            EmprCli.setCodEmprestimo(rs.getInt("Cod_Emprestimo"));
+            EmprCli.setTitulo(rs.getString("Titulo"));
+            EmprCli.setDataRetirada(rs.getDate("Data_Retirada"));
+            EmprCli.setDataDevolucao(rs.getDate("Data_Entrega"));
+            EmprCli.setCodReserva(rs.getInt("Cod_Reserva"));
+            EmprCli.setCodCliente(rs.getInt("Cod_Cliente"));
+            EmprCli.setMatriculaFunc(rs.getInt("Cod_Matricula"));
+
+            // Adicionando o objeto à lista:
+            EmpCli.add(EmprCli);
+        }
+        rs.close();
+        ps.close();
+        return EmpCli;
+    }
+
 
 }
