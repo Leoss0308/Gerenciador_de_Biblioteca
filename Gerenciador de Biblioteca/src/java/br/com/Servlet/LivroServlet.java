@@ -49,6 +49,7 @@ public class LivroServlet extends HttpServlet {
             liv.setTags(request.getParameter("txtTags"));
             liv.setObsLivro(request.getParameter("txtObs"));
             liv.setMatriculaFunc(Integer.parseInt(request.getParameter("Matricula_Func")));
+            liv.setImagem(Byte.parseByte(request.getParameter("txtImagem")));
 
             LivroDAO livDAO = new LivroDAO();
             livDAO.inserir(liv);

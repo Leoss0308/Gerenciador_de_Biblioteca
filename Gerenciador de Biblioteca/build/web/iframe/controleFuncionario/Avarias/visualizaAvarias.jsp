@@ -54,8 +54,8 @@
                         <label for="slcTipoPesquisa" class="col-xs-2 control-label">Pesquisar pelo: </label>
                         <div class="col-xs-2 ">
                             <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa" style="width: 100%">
-                                <option value="CodLivro">Código do Livro</option>
-                                <option value="Matricula_Func">Funcionário responsável</option>
+                                <option value="Cod_Livro">Código do Livro</option>
+                                <option value="Cod_Matricula">Funcionário responsável</option>
                             </select>
                         </div>
                     </div>

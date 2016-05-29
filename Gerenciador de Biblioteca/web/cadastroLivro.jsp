@@ -67,7 +67,7 @@
         <!-- Conteudo da Pagina -->
 
         <article id="Cadastro"  class="row">         
-           <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
+            <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
                 <form class="form-horizontal"  action="LivroServlet" method="post">
 
                     <div class="form-group">
@@ -150,7 +150,13 @@
                     </div>
 
                     <input type="hidden" value="<%out.print(session.getAttribute("cod"));%>" maxlength="11" name="Matricula_Func">
-
+                    
+                    <div class="form-group" enctype="multipart/form-data">
+                        <label for="txtImagem" class="col-xs-4 col-md-4 control-label">Carregar Imagem: </label>
+                        <div class="col-xs-6 col-md-6">
+                            <input type="file" name="txtImagem" id="txtImagem" >
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="col-xs-6 col-xs-offset-4 col-md-6 col-md-offset-4">

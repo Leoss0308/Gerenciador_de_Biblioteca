@@ -33,6 +33,7 @@ public class Livro {
     private int emprestado = 0;
     private int matriculaFunc = 0;
     private byte imagem;
+   
 
     //getters and setters
     public int getCodLivro() {

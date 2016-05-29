@@ -79,7 +79,7 @@ Author     : Erico
                             out.print("<td id='cmd'><a href='../../../efetivaEmprestimo.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "&codLivro=" + ItensR.getCodLivro() + "'><img src='../../../img/confirmar.png' title='Efetivar Emprestimo' /></a></td>");
 
                         }
-
+                        //POG ALERT !!!
                         //gambi, era isso ou o ícone de excluir ia ficar desalinhado, ae fizemos este css inline para "tratar" isso eeeeeee
                         out.print("<td <div id='teste' style='display:none'></div>>");
                         out.print("<td <div id='teste' style='display:none'></div>>");

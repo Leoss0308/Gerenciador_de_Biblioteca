@@ -146,13 +146,12 @@ public class BaixaDAO {
     }
     public List<Baixa> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Baixa where Cod_Livro = ?");
+        ps = cnn.prepareStatement("select * from Baixa where Cod_Livro = ? AND Cod_Matricula = ?");
         ps.setString(1, '%' + palavra + '%');
         ResultSet rs = ps.executeQuery();
         List<Baixa> Baix = new ArrayList<Baixa>();
         while (rs.next()) {
             // Criando o objeto e setando valores:
-              // Criando o objeto e setando valores:
             Baixa bx = new Baixa();
             bx.setCodBaixa(rs.getInt("Cod_Baixa"));
             bx.setMotivoBaixa(rs.getString("Motivo_Baixa"));

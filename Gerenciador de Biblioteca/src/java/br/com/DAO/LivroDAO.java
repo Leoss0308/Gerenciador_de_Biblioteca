@@ -7,6 +7,8 @@ package br.com.DAO;
 
 import br.com.Conexao.Conecta;
 import br.com.Modelagem.Livro;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,9 +35,10 @@ public class LivroDAO {
 
     public boolean inserir(Livro liv) throws Exception {
         try {
+            InputStream fin = new FileInputStream ("Imagem");
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria, Emprestado, Cod_Matricula) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria, Emprestado, Cod_Matricula, Imagem) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -51,7 +54,7 @@ public class LivroDAO {
             ps.setInt(12, 0);
             ps.setInt(13, 0);
             ps.setInt(14, liv.getMatriculaFunc());
-
+            ps.setBinaryStream (15, fin);
             ps.executeUpdate();
             ps.close();
             return true;
