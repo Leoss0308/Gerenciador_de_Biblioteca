@@ -7,6 +7,8 @@ package br.com.Servlet;
 
 import br.com.DAO.LivroDAO;
 import br.com.Modelagem.Livro;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -49,10 +51,12 @@ public class LivroServlet extends HttpServlet {
             liv.setTags(request.getParameter("txtTags"));
             liv.setObsLivro(request.getParameter("txtObs"));
             liv.setMatriculaFunc(Integer.parseInt(request.getParameter("Matricula_Func")));
-            liv.setImagem(Byte.parseByte(request.getParameter("txtImagem")));
-
+            //liv.setImagem(Byte.parseByte(request.getParameter("txtImagem")));
+            File imgfile = new File("C:" + File.separatorChar + request.getParameter("txtImagem"));
+            FileInputStream fin = new FileInputStream(imgfile);
+            
             LivroDAO livDAO = new LivroDAO();
-            livDAO.inserir(liv);
+            livDAO.inserir(liv, imgfile, fin);
             pagina += "?msg=Cadastrado com sucesso!";
 
         } catch (Exception ex) {
