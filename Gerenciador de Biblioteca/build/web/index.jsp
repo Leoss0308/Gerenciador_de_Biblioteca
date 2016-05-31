@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="br.com.Modelagem.Livro"%>
+<%@page import="br.com.DAO.LivroDAO"%>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -45,48 +48,57 @@
 
             </div>
 
-        </header>
+        </head>
         <!-- Artigo com ele tem o conteudo da pagina -->
         <article id="pesquisaIndex"  class="row">
 
-            <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+            <div class="col-xs-9 col-xs-offset-3  col-md-offset-2">
 
                 <form class="form-horizontal">
 
                     <div class="form-group">
-                        <label for="slcTipoPesquisa" class="col-xs-6 col-md-3 control-label">Pesquisar pelo: </label>
+                        <label for="slcTipoPesquisa" class="col-xs-6 col-md-3 control-label">Pesquisar livro pelo: </label>
                         <div class="col-xs-8 col-md-6">
                             <select class="form-control" id="slcTipoPesquisa">
-                                <option>Nome do livro</option>
-                                <option>Autor do livro</option>
-                                <option>Editora do livro</option>
-                                <option>ISBN do livro</option>
-
+                                <option value="Titulo">Título</option>
+                                <option value="ISBN">ISBN</option>
+                                <option value="Autor">Nome do Autor </option>
+                                <option value="Editora">Editora</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-xs-8 col-md-8 col-md-offset-1">
-                            <input type="text" class="form-control" id="txtpesquisa" placeholder="Palavra Chave">
+                            <input type="text" class="form-control" id="txtpesquisa" placeholder="Palavra Chave" style="width: 100%">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-xs-8 col-md-8 col-md-offset-1">
-                            <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-lg btn-block" />
+                            <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-lg btn-block" style="margin-top: 2px" />
                         </div>
                     </div>
 
                 </form>
 
             </div>       
-
+  <%
+            LivroDAO livdao = new LivroDAO();
+            List<Livro> livro = livdao.getLista();
+            String palavra = request.getParameter("txtpesquisa");
+            if (palavra == null) {
+                livro = livdao.getLista();
+            } else {
+                String tipo = request.getParameter("slcTipoPesquisa");
+                livro = livdao.getListaLike(palavra, tipo);
+            }
+        %>
+        
         </article>
+        
         <!-- aonde deveria ficar o rodapé se tivesse um --> 
         <footer class="footer">
-
-
 
         </footer>
 

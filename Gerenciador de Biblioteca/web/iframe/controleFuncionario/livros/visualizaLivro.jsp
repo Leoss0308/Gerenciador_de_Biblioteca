@@ -75,8 +75,7 @@
                 </form>
             
         </div>
-        <div class="row">
-        </div>
+        
         <%
             LivroDAO livdao = new LivroDAO();
             List<Livro> livro = livdao.getLista();
@@ -124,7 +123,7 @@
                        // out.print("<td>" + liv.getAvaria() + "</td>");
                        //out.print("<td>" + liv.getEmprestado() + "</td>");
                         out.print("<td>" + liv.getMatriculaFunc() + "</td>");
-                        out.print("<td>" + liv.getImagem()+ "</td>");
+                        // out.print("<td>" + liv.getImagem()+ "</td>");
                         // Controle para manutenção:
                         //Coloquei um title na tag img pro usuario ao passar em cima do ícone alterar ou excluir saber do que se trata, não só pela dedução da imagem.
                         out.print("<td id='cmd'><a href='../../../alterarLivro.jsp?CodLivro=" + liv.getCodLivro() + "'><img src='../../../img/alterar.png' title='Alterar'/></a></td>");

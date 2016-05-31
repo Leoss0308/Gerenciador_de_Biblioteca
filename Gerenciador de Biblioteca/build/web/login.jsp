@@ -38,7 +38,7 @@
                     <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
                 </div>
 
-                <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
+                <hgroup class="col-xs-8 col-xs-offset-1 col-md-7 col-md-offset-1">
                     <h1>Login</h1>
                 </hgroup>
 
@@ -48,7 +48,7 @@
         <!-- Artigo com ele tem o conteudo da pagina -->
         <article id="pesquisaIndex"  class="row">
 
-            <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
+            <div class="col-xs-9 col-xs-offset-3 col-md-9 col-md-offset-2">
 
                 <form class="form-horizontal" action="LoginServlet" method="post">
 
