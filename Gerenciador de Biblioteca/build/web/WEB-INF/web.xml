@@ -52,6 +52,10 @@
         <servlet-name>EmprestimoServlet</servlet-name>
         <servlet-class>br.com.Servlet.EmprestimoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>br.com.Servlet.ImageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>EmprestimoServlet</servlet-name>
         <url-pattern>/EmprestimoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/ImageServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

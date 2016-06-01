@@ -62,7 +62,7 @@
 
                     <div class="form-inline">
                         <div class="col-xs-3">
-                            <input type="text" class="form-control" id="txtpesquisa" name="txtpesquisa" placeholder="Palavra Chave" style="width: 100%">
+                            <input type="number" class="form-control" id="txtpesquisa" name="txtpesquisa"  min="0" style="width: 100%">
                         </div>
                     </div>
 

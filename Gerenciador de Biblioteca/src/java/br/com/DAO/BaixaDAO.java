@@ -91,7 +91,7 @@ public class BaixaDAO {
             ps.setInt(1, Liv);
             ps.executeUpdate();
             ps.close();
-            
+
             return true;
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -144,10 +144,19 @@ public class BaixaDAO {
         ps.close();
         return bx;
     }
+
     public List<Baixa> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Baixa where Cod_Livro = ? AND Cod_Matricula = ?");
-        ps.setString(1, '%' + palavra + '%');
+        if (palavra == "") {
+            palavra = "0";
+        }
+        if (palavra == "0") {
+            ps = cnn.prepareStatement("select * from Baixa ");
+        } else {
+            ps = cnn.prepareStatement("select * from Baixa where " + tipo + "  = ?");
+            ps.setInt(1, Integer.parseInt(palavra));
+        }
+       
         ResultSet rs = ps.executeQuery();
         List<Baixa> Baix = new ArrayList<Baixa>();
         while (rs.next()) {

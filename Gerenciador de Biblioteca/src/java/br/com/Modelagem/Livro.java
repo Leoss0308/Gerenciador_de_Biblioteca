@@ -7,6 +7,7 @@ package br.com.Modelagem;
 
 import java.util.Date;
 
+
 /**
  *
  * @author Fabiano Luiz
@@ -32,9 +33,10 @@ public class Livro {
     private int avaria = 0;
     private int emprestado = 0;
     private int matriculaFunc = 0;
-    private byte imagem;
+    private byte[] imagem;
    
 
+    
     //getters and setters
     public int getCodLivro() {
         return codLivro;
@@ -164,11 +166,11 @@ public class Livro {
         return matriculaFunc;
     }
 
-    public byte getImagem() {
+    public byte[] getImagem() {
         return imagem;
     }
 
-    public void setImagem(byte imagem) {
+    public void setImagem(byte [] imagem) {
         this.imagem = imagem;
     }
     //getters and setters
@@ -190,4 +192,7 @@ public class Livro {
     }
 
     //métodos
+    
+    
+
 }

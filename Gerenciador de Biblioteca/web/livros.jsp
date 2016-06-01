@@ -1,3 +1,7 @@
+<%@page import="java.io.File"%>
+<%@page import="java.util.List"%>
+<%@page import="br.com.Modelagem.Livro"%>
+<%@page import="br.com.DAO.LivroDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -30,19 +34,19 @@
     <body>
         <!-- Cabeçalho da pagina com o menu, logo e nome -->
         <header id="cabecalivros">    
-            
+
             <!-- Menu -->
             <%@include file="menu.jsp" %>
-            
+
             <!-- logo e titulo -->
             <div class="row" id="tituloLivros">
 
                 <div class="col-xs-5 col-md-4">
                     <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
                 </div>
-                
+
                 <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
-                    <h1>Biblioteca</h1>
+                    <h1>Livros</h1>
                 </hgroup>
 
             </div>       
@@ -52,36 +56,80 @@
         <!-- Artigo com ele tem o conteudo da pagina -->
         <article id="pesquisaLivros"  class="row">
             <div class="col-xs-10 col-xs-offset-1 col-md12 col-md-offset-1">
-                               
+
                 <form class="form-inline">
-                        
+
                     <div class="form-group">
 
-                        <label for="slcTipoPesquisa">Pesquisar Por: </label>
+                        <label for="slcTipoPesquisa">Pesquisar livro pelo: </label>
 
                         <select class="form-control" id="slcTipoPesquisa">
-                            <option>nome do livro</option>
-                            <option>autor do livro</option>
-                            <option>editora do livro</option>
-                            <option>ISBN do livro</option>
+                            <option value="Titulo">Título</option>
+                            <option value="ISBN">ISBN</option>
+                            <option value="Autor">Nome do Autor </option>
+                            <option value="Editora">Editora</option>
                         </select>
 
                     </div>  
-                        
-                    <input type="text" class="form-control" id="txtpesquisa" placeholder="Pesquisar"> 
-                            
-                    <input name="botao" type="submit" value="" class="btn botao">
-                        
-                            <!-- Botao por barra de pesquisa sem icone
-                            <div class="col-xs-4 col-md-2  col-md-offset-0"> 
-                            <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa" >Pesquisar</button> 
-                            </div>  -->
 
-                            <!--Referencia para chamar icone de botao pesquisar -->
+                    <input type="text" class="form-control" id="txtpesquisa" placeholder="Pesquisar"> 
+
+                    <input name="botao" type="submit" value="" class="btn botao">
+
+                    <!-- Botao por barra de pesquisa sem icone
+                    <div class="col-xs-4 col-md-2  col-md-offset-0"> 
+                    <button type="button" class="btn btn-default btn-lg btn-block" id="btnPesquisa" >Pesquisar</button> 
+                    </div>  -->
+
+                    <!--Referencia para chamar icone de botao pesquisar -->
 
                 </form>
- 
+
             </div>
+
+            <%                LivroDAO livdao = new LivroDAO();
+                List<Livro> livro = livdao.getLista();
+                String palavra = request.getParameter("txtpesquisa");
+                if (palavra == null) {
+                    livro = livdao.getLista();
+                } else {
+                    String tipo = request.getParameter("slcTipoPesquisa");
+                    livro = livdao.getListaLike(palavra, tipo);
+                }
+            %>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <div class="table-responsive">  
+                        <table class="table table-bordered">
+
+                            <%
+                                String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
+                                sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
+
+                                int cor = 0;
+                                for (Livro liv : livro) {
+                                    String sCor = "cor" + (cor % 2);
+                                    cor++;
+
+                                    // Fazer da linha da tabela, um link para exibição:
+                                    out.print("");
+
+                                    out.print("<tr id='" + sCor + "' " + sDestaque + ">");
+
+                                    out.print("<td>" + liv.getTituloLivro() + "</td>");
+                                    //out.print("<td>" + "<img src='capa" + liv.getCodLivro() + ".jpg'/>" + "</td>");
+                                    //out.print("<td>" + "<img src='capa " + liv.getCodLivro() + ".jpg'height='40px' width='40px' align='left' />" + "</td>");
+                                    out.print("</tr>");
+
+                                    //out.print("</a>");
+                                }
+                            %>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
 
         </article>
         <!-- aonde deveria ficar o rodapé se tivesse um --> 

@@ -47,7 +47,7 @@ public class BaixaServlet extends HttpServlet {
             BaixaDAO bxDAO = new BaixaDAO();
             bxDAO.inserir(bx);
 
-            pagina += "?msg=Cadastrado com sucesso!";
+            pagina += "?msg=Avaria registrada com sucesso!";
 
         } catch (Exception ex) {
             pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
