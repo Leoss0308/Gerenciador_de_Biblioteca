@@ -54,6 +54,7 @@ public class LivroServlet extends HttpServlet {
             //liv.setImagem(Byte.parseByte(request.getParameter("txtImagem")));
             File imgfile = new File("C:" + File.separatorChar + request.getParameter("txtImagem"));
             FileInputStream fin = new FileInputStream(imgfile);
+        
             
             LivroDAO livDAO = new LivroDAO();
             livDAO.inserir(liv, imgfile, fin);

@@ -154,7 +154,7 @@
                     <div class="form-group" enctype="multipart/form-data">
                         <label for="txtImagem" class="col-xs-4 col-md-4 control-label">Carregar Imagem: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="file" name="txtImagem" id="txtImagem" >
+                            <input type="file" name="txtImagem" id="txtImagem">
                         </div>
                     </div>
 

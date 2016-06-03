@@ -168,13 +168,7 @@
                     </div>
                 </div>
 
-              <!--   <div class="form-group">
-                    <label for="txtImagem" class="col-xs-4 col-md-4 control-label">Imagem: </label>
-                    <div class="col-xs-6 col-md-6">
-                        <input type="image" class="form-control" id="txtImagem" name="txtImagem" required="" value="<%=liv.getImagem()%>">
-                    </div>
-                </div>
-              -->
+                 
                 <div class="form-group">
                     <div class="col-xs-6 col-xs-offset-4 col-md-6 col-md-offset-4">
                         <input type="submit" value="Alterar" name="btnAlterar" id="btnEnviarAC" class="btn btn-success btn-lg btn-block"/>
