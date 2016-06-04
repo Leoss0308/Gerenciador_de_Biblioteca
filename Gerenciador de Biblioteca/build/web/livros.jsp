@@ -102,8 +102,7 @@
             %>
             <div class="row" >
                <div class="col-xs-10 col-xs-offset-1">
-                    <div class="table-responsive">  
-                        <table class="table-hover">
+                    
                             <%
                                 String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
                                 sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
@@ -114,25 +113,25 @@
                                     cor++;
 
                                     // Fazer da linha da tabela, um link para exibição:
-                                    out.print("");
+                                    //out.print("");
 
-                                    out.print("<tr id='" + sCor + "' " + sDestaque + ">");
+                                   // out.print("<tr id='" + sCor + "' " + sDestaque + ">");
                                     
 
                                     //out.print("<td>" + liv.getTituloLivro() + "</td>");
                                     //out.print("<td>" + "<img src='capa" + liv.getCodLivro() + ".jpg'/>" + "</td>");
                                     //out.print("<td>" + "<img src='capa " + liv.getCodLivro() + ".jpg'height='40px' width='40px' align='left' />" + "</td>");
                                     //out.print("<td>" + "<img src='newimage.jpg' "+ liv.getImagem()+ "/>" + "</td>");
-                                    out.print("<td><img src='img/livros.png' 'height='80px' width='100px' align='middle'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a></td>");
+                                    out.print("<div class='col-xs-3' id=imagem>");
+                                    out.print("<img src='img/livros.png' 'height='80px' width='100px' align='middle'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
+                                    out.print("</div>");
                                     
                                     
-                                    out.print("</tr>");
-
                                 }
                             %>
-                        </table>
+                        
 
-                    </div>
+                    
                 </div>
             </div>
 

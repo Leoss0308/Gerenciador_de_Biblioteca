@@ -10,6 +10,7 @@
 
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
         <title>Home</title>
+        <link rel="icon" type="image/png" href="img/iconLivro.png">
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -70,31 +71,21 @@
 
                     <div class="form-group">
                         <div class="col-xs-8 col-md-8 col-md-offset-1">
-                            <input type="text" class="form-control" id="txtpesquisa" placeholder="Palavra Chave" style="width: 100%">
+                            <input type="text" class="form-control" id="txtpesquisa" name="txtpesquisa" placeholder="Palavra Chave" style="width: 100%">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-xs-8 col-md-8 col-md-offset-1">
                             <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-lg btn-block" style="margin-top: 2px" />
+                            <%  out.print("<a href='livros.jsp?CodLivro='></a>"); %>
                         </div>
                     </div>
 
                 </form>
 
             </div>       
-  <%
-            LivroDAO livdao = new LivroDAO();
-            List<Livro> livro = livdao.getLista();
-            String palavra = request.getParameter("txtpesquisa");
-            if (palavra == null) {
-                livro = livdao.getLista();
-            } else {
-                String tipo = request.getParameter("slcTipoPesquisa");
-                livro = livdao.getListaLike(palavra, tipo);
-            }
-        %>
-        
+
         </article>
         
         <!-- aonde deveria ficar o rodapé se tivesse um --> 

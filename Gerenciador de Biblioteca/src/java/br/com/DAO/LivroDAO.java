@@ -38,12 +38,12 @@ public class LivroDAO {
     Conecta c = new Conecta();
     //inserir dados no banco
 
-    public boolean inserir(Livro liv, File imgfile, InputStream fin) throws Exception {
+    public boolean inserir(Livro liv) throws Exception {
         try {
 
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria, Emprestado, Cod_Matricula, Imagem) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria, Emprestado, Cod_Matricula) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -59,7 +59,6 @@ public class LivroDAO {
             ps.setInt(12, 0);
             ps.setInt(13, 0);
             ps.setInt(14, liv.getMatriculaFunc());
-            ps.setBinaryStream(15, (InputStream) fin, (int) imgfile.length());
             ps.executeUpdate();
             ps.close();
             return true;
@@ -143,7 +142,6 @@ public class LivroDAO {
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
             liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
-            
 
             // Adicionando o objeto à lista:
             Liv.add(liv);
@@ -178,79 +176,18 @@ public class LivroDAO {
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
             liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
-          //  liv.setImagem(rs.getBytes("Imagem"));
 
-            /* do prof
-            rs = ps.executeQuery("select imagem from livro");
-            byte buff[] = new byte[1024];
-            while (rs.next()) {
-                Blob ablob = rs.getBlob(1);
-                File newfile = new File("newimage.jpg");
-
-                InputStream is = ablob.getBinaryStream();
-
-                FileOutputStream fos = new FileOutputStream(newfile);
-
-                for (int b = is.read(buff); b != -1; b = is.read(buff)) {
-                    fos.write(buff, 0, b);
-                     ByteArrayOutputStream output = new ByteArrayOutputStream();
-                }
-            is.close();
-            fos.close();
-            
+            Liv.add(liv);
         }
 
-        ps.close();
         rs.close();
-        cnn.close(); */
-        /*try{
-            
-         while (rs.next()) {
-         InputStream in = rs.getBinaryStream(1);
-         OutputStream f = new FileOutputStream(new File("capa" + liv.getCodLivro() + ".jpeg"));
-                    
-         int c = 0;
-         while ((c = in.read()) > -1) {
-         f.write(c);
-         }
-         f.close();
-         in.close();
-         }
-         } catch (Exception ex) {
-         System.out.println(ex.getMessage());
-         }
-         */
-        /*  InputStream input = rs.getBinaryStream("Imagem");
-         if (input != null) {
-         ByteArrayOutputStream output = new ByteArrayOutputStream();
-         // set read buffer size
-         byte[] rb = new byte[1024];
-         int ch = 0;
-         while ((ch = input.read(rb)) != -1) {
-         output.write(rb, 0, ch);
-         }
-         // transfer to byte buffer
-         byte[] b = output.toByteArray();
-         liv.setImagem(b);
-         input.close();
-         output.close();
-         // onde o método setImagem espera um array de bytes
-         //umObjeto.setImagem(b);
-             
-         }
-         */
-        // Adicionando o objeto à lista:
-        Liv.add(liv);
+
+        ps.close();
+        return Liv;
     }
 
-    rs.close ();
-
-    ps.close ();
-    return Liv ;
-}
-
 // Este método, instancia o JavaBeans para consulta de um registro:
-public Livro getLivro(int Cod_Livro) throws SQLException, ClassNotFoundException {
+    public Livro getLivro(int Cod_Livro) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
         ps = cnn.prepareStatement("select * from Livro where Cod_Livro=?");
         ps.setInt(1, Cod_Livro);
