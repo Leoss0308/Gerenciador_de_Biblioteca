@@ -55,12 +55,12 @@
 
             <div class="col-xs-9 col-xs-offset-3  col-md-offset-2">
 
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="livros.jsp" method="get">
 
                     <div class="form-group">
                         <label for="slcTipoPesquisa" class="col-xs-6 col-md-3 control-label">Pesquisar livro pelo: </label>
                         <div class="col-xs-8 col-md-6">
-                            <select class="form-control" id="slcTipoPesquisa">
+                            <select class="form-control" id="slcTipoPesquisa" name="slcTipoPesquisa">
                                 <option value="Titulo">Título</option>
                                 <option value="ISBN">ISBN</option>
                                 <option value="Autor">Nome do Autor </option>
@@ -78,7 +78,7 @@
                     <div class="form-group">
                         <div class="col-xs-8 col-md-8 col-md-offset-1">
                             <input type="submit" value="Pesquisar" name="btnPesquisar" class="btn btn-default btn-lg btn-block" style="margin-top: 2px" />
-                            <%  out.print("<a href='livros.jsp?CodLivro='></a>"); %>
+                            
                         </div>
                     </div>
 

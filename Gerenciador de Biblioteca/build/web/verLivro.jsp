@@ -73,7 +73,7 @@
 
         <article id="Alteracao"  class="row">         
             <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
-                <form class="form-horizontal"  action="LivroServletAlterar" method="post">
+                <form class="form-control-static" style="text-align: justify;" action="LivroServletAlterar" method="post">
 
                     <div class="form-group">
                         <label for="txtCodLivro" class="col-xs-4 col-md-4 control-label">Código: </label>
