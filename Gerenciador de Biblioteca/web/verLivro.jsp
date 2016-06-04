@@ -11,9 +11,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Menu -->
+        <%@include file="menu.jsp" %>
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
         <title>Ver Livro</title>
-
+        
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -40,134 +42,136 @@
             webshims.setOptions('forms-ext', {types: 'date'});
             webshims.polyfill('forms forms-ext');
         </script>
-     
+
     <hgroup class="col-xs-6 col-xs-offset-6 col-md-6 col-md-offset-4">
         <h1></h1> 
         <h1></h1>
     </hgroup>
 
 
-        <style>
-            body{
-                background: url(img/fundo.jpg) no-repeat center top fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                /*overflow: hidden;*/
-            }   
-        </style>
+    <style>
+        body{
+            background: url(img/fundo.jpg) no-repeat center top fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            /*overflow: hidden;*/
+        }   
+    </style>
 
 
 </head>
 <body>
 
 
-        <%
-            Livro liv = new Livro();
-            int cod = 0;
-            cod = Integer.parseInt(request.getParameter("CodLivro"));
-            liv = new LivroDAO().getLivro(cod);  // Obtem o item do BD que foi solicitado via parâmetro.            
+    <%
+        Livro liv = new Livro();
+        int cod = 0;
+        cod = Integer.parseInt(request.getParameter("CodLivro"));
+        liv = new LivroDAO().getLivro(cod);  // Obtem o item do BD que foi solicitado via parâmetro.            
 
-        %>
+    %>
 
-        <article id="Alteracao"  class="row">         
-            <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
-                <form class="form-control-static" style="text-align: justify;" action="LivroServletAlterar" method="post">
+    <article id="Alteracao"  class="row">         
+        <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
+            <form class="form-control" action="LivroServletAlterar" method="post">
 
-                    <div class="form-group">
-                        <label for="txtCodLivro" class="col-xs-4 col-md-4 control-label">Código: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getCodLivro()%></label>
-                        </div>
+              
+             
+                <div class="form-group">
+                    <label for="txtCodLivro" class="col-xs-4 col-md-4 control-label">Código: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getCodLivro()%></label>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="txtISBN" class="col-xs-4 col-md-4 control-label">ISBN: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getISBN()%></label>
-                        </div>
+                <div class="form-group">
+                    <label for="txtISBN" class="col-xs-4 col-md-4 control-label">ISBN: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getISBN()%></label>
                     </div>
+                </div>
 
 
-                    <div class="form-group">
-                        <label for="txtEdicao" class="col-xs-4 col-md-4 control-label">Edição: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getEdicaoLivro()%></label>
-                        </div>
+                <div class="form-group">
+                    <label for="txtEdicao" class="col-xs-4 col-md-4 control-label">Edição: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getEdicaoLivro()%></label>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="txtTitulo" class="col-xs-4 col-md-4 control-label">Título: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getTituloLivro()%></label>
-                        </div>
+                <div class="form-group">
+                    <label for="txtTitulo" class="col-xs-4 col-md-4 control-label">Título: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getTituloLivro()%></label>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="txtAutor" class="col-xs-4 col-md-4 control-label">Autor: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getAutorLivro()%></label>
-                        </div>
+                <div class="form-group">
+                    <label for="txtAutor" class="col-xs-4 col-md-4 control-label">Autor: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getAutorLivro()%></label>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="txtEditora" class="col-xs-4 col-md-4 control-label">Editora: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getEditoraLivro()%></label>
-                        </div>
+                <div class="form-group">
+                    <label for="txtEditora" class="col-xs-4 col-md-4 control-label">Editora: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getEditoraLivro()%></label>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="txtResumo" class="col-xs-4 col-md-4 control-label">Resumo: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getResumoLivro()%></label>
-                        </div>
+                <div class="form-group">
+                    <label for="txtResumo" class="col-xs-4 col-md-4 control-label">Resumo: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getResumoLivro()%></label>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="txtPreco" class="col-xs-4 col-md-4 control-label">Preço: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getPrecoLivro()%></label>
-                        </div>
-                    </div>        
-
-                    <div class="form-group">
-                        <label for="txtAnoPublicacao" class="col-xs-4 col-md-4 control-label">Ano de Publicação: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getAnoPublicacao()%></label>
-                        </div>
-                    </div> 
-
-                    <div class="form-group">
-                        <label for="txtCategoria" class="col-xs-4 col-md-4 control-label">Categoria: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getCategoriaLivro()%></label>
-                        </div>
-                    </div> 
-
-
-                    <div class="form-group">
-                        <label for="txtTags" class="col-xs-4 col-md-4 control-label">Tags: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getTags()%></label>
-                        </div>
-                    </div>                     
-
-                    <div class="form-group">
-                        <label for="txtObs" class="col-xs-4 col-md-4 control-label">Observações: </label>
-                        <div class="col-xs-6 col-md-6">
-                            <label class="control-label"><%=liv.getObsLivro()%></label>
-                        </div>
+                <div class="form-group">
+                    <label for="txtPreco" class="col-xs-4 col-md-4 control-label">Preço: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getPrecoLivro()%></label>
                     </div>
+                </div>        
 
-                </form>
-            </div>
+                <div class="form-group">
+                    <label for="txtAnoPublicacao" class="col-xs-4 col-md-4 control-label">Ano de Publicação: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getAnoPublicacao()%></label>
+                    </div>
+                </div> 
 
-        </article>
-        <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-        <script src="js/bootstrap.min.js"></script>
-    </body>
+                <div class="form-group">
+                    <label for="txtCategoria" class="col-xs-4 col-md-4 control-label">Categoria: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getCategoriaLivro()%></label>
+                    </div>
+                </div> 
+
+
+                <div class="form-group">
+                    <label for="txtTags" class="col-xs-4 col-md-4 control-label">Tags: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getTags()%></label>
+                    </div>
+                </div>                     
+
+                <div class="form-group">
+                    <label for="txtObs" class="col-xs-4 col-md-4 control-label">Observações: </label>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="control-label"><%=liv.getObsLivro()%></label>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </article>
+    <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
 </html>

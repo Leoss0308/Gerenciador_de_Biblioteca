@@ -117,9 +117,9 @@ public final class verLivro_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        <article id=\"Alteracao\"  class=\"row\">         \n");
       out.write("            <div class=\"col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1\">\n");
-      out.write("                <form class=\"form-inline\"  action=\"LivroServletAlterar\" method=\"post\">\n");
+      out.write("                <form class=\"form-control-static\"  action=\"LivroServletAlterar\" method=\"post\">\n");
       out.write("\n");
-      out.write("                    <div class=\"form-group\">\n");
+      out.write("                    <div class=\"form-control-static\">\n");
       out.write("                        <label for=\"txtCodLivro\" class=\"col-xs-4 col-md-4 control-label\">Código: </label>\n");
       out.write("                        <div class=\"col-xs-6 col-md-6\">\n");
       out.write("                            <label class=\"control-label\">");
@@ -128,7 +128,7 @@ public final class verLivro_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("\n");
-      out.write("                    <div class=\"form-group\">\n");
+      out.write("                    <div class=\"form-control-static\">\n");
       out.write("                        <label for=\"txtISBN\" class=\"col-xs-4 col-md-4 control-label\">ISBN: </label>\n");
       out.write("                        <div class=\"col-xs-6 col-md-6\">\n");
       out.write("                            <label class=\"control-label\">");

@@ -116,8 +116,7 @@ public class ClienteDAO {
         }
       
     }
-    
-    
+      
     
     //desativar o cliente
     public boolean desativarcli(int cli) throws Exception {
