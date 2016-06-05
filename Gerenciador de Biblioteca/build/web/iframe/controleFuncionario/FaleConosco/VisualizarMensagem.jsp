@@ -9,7 +9,7 @@
     <title>Visualizar Mensagem</title>
 
     <!-- Bootstrap -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
       
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
@@ -18,11 +18,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <!-- jquery para a mascara -->
-    <script src = "../../js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
-    <script src = "../../js/jquery-2.1.3.js"  type = "text/javascript" ></script>
-    <script src = "../../js/jquery.maskedinput.js"  type = "text/javascript" ></script>
-            
         
         <!-- Para funcionar no mozila -->
         <!-- cdn for modernizr, if you haven't included it already -->

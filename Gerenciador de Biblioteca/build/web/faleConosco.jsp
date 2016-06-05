@@ -41,7 +41,7 @@
 
 
                 <div class="col-xs-5 col-md-4">
-                    <img src="img/logo.png" alt="Biblioteca" id="logo" class="img-responsive">
+                    <img src="img/faleConosco.png" alt="Biblioteca" id="logo" class="img-responsive">
                 </div>
 
                 <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
