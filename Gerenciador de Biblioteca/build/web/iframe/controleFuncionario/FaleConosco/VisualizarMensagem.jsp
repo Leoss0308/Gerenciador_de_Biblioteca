@@ -33,7 +33,7 @@
     
     <style>
         body{
-            background: url(../../img/fundoTabela.jpg) no-repeat center top fixed;
+            background: url(../../../img/fundoTabela.jpg) no-repeat center top fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;

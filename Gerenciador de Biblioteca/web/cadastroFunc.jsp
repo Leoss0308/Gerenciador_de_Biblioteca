@@ -151,6 +151,7 @@
                         <label for="txtEstado" class="col-xs-4 col-md-4 control-label">Estado: </label>
                         <div class="col-xs-6 col-md-6">
                             <select class="form-control" id="txtEstado" name="txtEstado" required="" value="<%out.print(session.getAttribute("txtEstado"));%>">
+                                <option value="<%out.print(session.getAttribute("txtEstado"));%>"><%out.print(session.getAttribute("txtEstado"));%></option> 
                                 <option value="ac">Acre</option> 
                                 <option value="al">Alagoas</option> 
                                 <option value="am">Amazonas</option> 

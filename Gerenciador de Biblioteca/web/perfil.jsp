@@ -21,6 +21,20 @@
 
         <!--CSS do index.jsp -->
         <link href="css/perfil.css" rel="stylesheet">
+        
+        <style>
+            .titulo{
+                background-color: #000063;
+                color: white
+            }
+            .titulo:hover{
+                background-color: #000063;
+                color: white
+            }
+            .espaco{
+                margin: 13%;
+            }
+        </style>
 
 
     </head>
@@ -38,29 +52,63 @@
             <div class="row aumenta" id="conteudoFrame">
                 <div class="col-xs-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Clientes<span class="sr-only">(current)</span></a></li>
-                        <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Cliente</a></li>
-                        <li><a href="iframe/controleCliente/visualizaClienteClie.jsp" target="frmConteudo">Visualizar Cliente</a></li>
-
-                        <li class="active"><a href="#">Funcionários<span class="sr-only">(current)</span></a></li>
-                        <li><a href="cadastroFunc.jsp" target="frmConteudo">Cadastrar Funcionário</a></li>
-                        <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionario.jsp" target="frmConteudo">Ver Funcionário</a></li>
-                        <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionarioFunc.jsp" target="frmConteudo">Visualizar Funcionário</a></li>
-                        <li><a href="iframe/controleFuncionario/FaleConosco/VisualizarFaleConosco.jsp" target="frmConteudo">Visualizar Mensagens</a></li>
-
-                        <li class="active"><a href="#">Livros<span class="sr-only">(current)</span></a></li>
-                        <li><a href="cadastroLivro.jsp" target="frmConteudo">Cadastrar Livro</a></li>
-                        <li><a href="iframe/controleFuncionario/livros/visualizaLivro.jsp" target="frmConteudo">Ver Livro</a></li>
                         
-                        <li class="active"><a href="#">Reservas<span class="sr-only">(current)</span></a></li>
-                        <li><a href="iframe/controleFuncionario/funcionario/visualizaReserva.jsp" target="frmConteudo">Ver Reservas</a></li>
-                         
-                        <li class="active"><a href="#">Empréstimos<span class="sr-only">(current)</span></a></li>
-                        <li><a href="iframe/controleFuncionario/funcionario/visualizaEmprestimo.jsp" target="frmConteudo">Ver Empréstimos</a></li>
+                    <%
+                        if (session.getAttribute("permissao") == null) {
+                    %>
+                    <li class="active"><a href="#">Visitante<span class="sr-only">(current)</span></a></li>
+                    <li><a href="login.jsp">Por favor faça login</a></li>
+                    <%
+                        }
+                    %>
+                    
+                    <%
+                        if (session.getAttribute("permissao") == "1") {
+                    %>
+                    <li class="active"><a href="#">Clientes<span class="sr-only">(current)</span></a></li>
+                    <li><a href="iframe/controleCliente/visualizaClienteClie.jsp" target="frmConteudo">Visualizar Cliente</a></li>
+                    <%
+                        }
+                    %>
+                    
+                    <%
+                        if (session.getAttribute("permissao") == "2" || session.getAttribute("permissao") == "3") {
+                    %>
+                    <li class="active"><a href="#">Funcionario<span class="sr-only">(current)</span></a></li>
+                    
+                    <li class="titulo"><span class="espaco">Cliente</span></li>
+                    <li><a href="iframe/controleFuncionario/cliente/visualizaCliente.jsp" target="frmConteudo">Ver Clientes</a></li>
+                    
+                    <li class="titulo"><span class="espaco">Funcionários</span></li>
+                    <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionarioFunc.jsp" target="frmConteudo">Visualizar Funcionário</a></li>
+                    <%
+                            if (session.getAttribute("permissao") == "3"){
+                    %>    
+                    <li><a href="cadastroFunc.jsp" target="frmConteudo">Cadastrar Funcionário</a></li>
+                    <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionario.jsp" target="frmConteudo">Ver Funcionários</a></li>
+                            
+                    <%
+                            }
+                    %>     
+                    <li class="titulo"><span class="espaco">Mensagens</span></li>
+                    <li><a href="iframe/controleFuncionario/FaleConosco/VisualizarFaleConosco.jsp" target="frmConteudo">Visualizar Mensagens</a></li>
+                    
+                    <li class="titulo"><span class="espaco">Livros</span></li>
+                    <li><a href="cadastroLivro.jsp" target="frmConteudo">Cadastrar Livro</a></li>
+                    <li><a href="iframe/controleFuncionario/livros/visualizaLivro.jsp" target="frmConteudo">Ver Livro</a></li>
 
-                        <li class="active"><a href="#">Avarias<span class="sr-only">(current)</span></a></li>
-                        <li><a href="iframe/controleFuncionario/Avarias/visualizaAvarias.jsp" target="frmConteudo">Ver Avarias</a></li>
-                        
+                    <li class="titulo"><span class="espaco">Reservas</span></li>
+                    <li><a href="iframe/controleFuncionario/funcionario/visualizaReserva.jsp" target="frmConteudo">Ver Reservas</a></li>
+
+                    <li class="titulo"><span class="espaco">Empréstimos</span></li>
+                    <li><a href="iframe/controleFuncionario/funcionario/visualizaEmprestimo.jsp" target="frmConteudo">Ver Empréstimos</a></li>
+
+                    <li class="titulo"><span class="espaco">Avarias</span></li>
+                    <li><a href="iframe/controleFuncionario/Avarias/visualizaAvarias.jsp" target="frmConteudo">Ver Avarias</a></li>
+
+                    <%
+                        }
+                    %>
 
                     </ul>
                 </div>
