@@ -7,6 +7,7 @@
 
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
         <title>Cadastro De Cliente</title>
+        <link rel="icon" type="image/png" href="img/iconLivro.png">
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">

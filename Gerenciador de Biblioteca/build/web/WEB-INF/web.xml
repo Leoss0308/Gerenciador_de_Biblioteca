@@ -56,6 +56,10 @@
         <servlet-name>ImageServlet</servlet-name>
         <servlet-class>br.com.Servlet.ImageServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FaleConoscoServlet</servlet-name>
+        <servlet-class>br.com.Servlet.FaleConoscoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>ImageServlet</servlet-name>
         <url-pattern>/ImageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FaleConoscoServlet</servlet-name>
+        <url-pattern>/FaleConoscoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

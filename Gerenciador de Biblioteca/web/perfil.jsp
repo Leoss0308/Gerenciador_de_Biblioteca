@@ -7,6 +7,7 @@
 
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
         <title>Perfil</title>
+        <link rel="icon" type="image/png" href="img/iconLivro.png">
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,6 +46,7 @@
                         <li><a href="cadastroFunc.jsp" target="frmConteudo">Cadastrar Funcionário</a></li>
                         <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionario.jsp" target="frmConteudo">Ver Funcionário</a></li>
                         <li><a href="iframe/controleFuncionario/funcionario/visualizaFuncionarioFunc.jsp" target="frmConteudo">Visualizar Funcionário</a></li>
+                        <li><a href="iframe/controleFuncionario/FaleConosco/VisualizarFaleConosco.jsp" target="frmConteudo">Visualizar Mensagens</a></li>
 
                         <li class="active"><a href="#">Livros<span class="sr-only">(current)</span></a></li>
                         <li><a href="cadastroLivro.jsp" target="frmConteudo">Cadastrar Livro</a></li>

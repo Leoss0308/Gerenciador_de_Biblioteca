@@ -7,7 +7,8 @@
     
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
         <title>Fale Conosco</title>
-
+        <link rel="icon" type="image/png" href="img/iconLivro.png">
+        
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -18,9 +19,13 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <!--CSS do index.jsp -->
+        <!--CSS do faleConosco.jsp -->
         <link href="css/faleConosco.css" rel="stylesheet">
-
+        <!-- jquery para a mascara -->
+        <script src = "js/jquery-1.12.3.min.js"  type = "text/javascript" ></script>
+        <script src = "js/jquery-2.1.3.js"  type = "text/javascript" ></script>
+        <script src = "js/jquery.maskedinput.js"  type = "text/javascript" ></script>
+          
 
     </head>
     <body>
@@ -51,12 +56,12 @@
 
         <article id="faleConosco"  class="row">         
             <div class="col-xs-9 col-xs-offset-3 col-md8 col-md-offset-2">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="FaleConoscoServlet" method="post">
                     
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-6 col-md-3 control-label">Nome: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="text" class="form-control" id="txtNome">
+                            <input type="text" class="form-control" id="txtNome" name="txtNome" maxlength="40" required="">
                         </div>
                     </div>
                                 
@@ -64,28 +69,28 @@
                     <div class="form-group">
                         <label for="txtEmail" class="col-xs-6 col-md-3 control-label">Email: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="email" class="form-control" id="txtEmail">
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" maxlength="40" required="">
                         </div>
                     </div>
                       
                     <div class="form-group">
                         <label for="txtTelefone" class="col-xs-6 col-md-3 control-label">Telefone: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="tel" class="form-control" id="txtTelefone">
+                            <input type="text" class="form-control" id="txtTelefone" name="txtTelefone" required="">
                         </div>
                     </div>    
                     
                     <div class="form-group">
-                        <label for="txtWebsite" class="col-xs-6 col-md-3 control-label">Website: </label>
+                        <label for="txtAssunto" class="col-xs-6 col-md-3 control-label">Assunto: </label>
                         <div class="col-xs-8 col-md-6">
-                            <input type="website" class="form-control" id="txtWebsite">
+                            <input type="text" class="form-control" id="txtAssunto" name="txtAssunto" maxlength="40">
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtMensagem" class="col-xs-6 col-md-3 control-label">Mensagem: </label>
                         <div class="col-xs-8 col-md-6">
-                            <textarea type="Mensagem" class="form-control" id="txtMensagem"></textarea>
+                            <textarea type="text" class="form-control" id="txtMensagem" name="txtMensagem" required="" maxlength="400"></textarea>
                         </div>
                     </div>
                     
@@ -103,6 +108,12 @@
         <footer class="footer">
 
         </footer>
+        <!-- Script para fazer as mascaras dos campos --> 
+        <script>
+            jQuery(function($){
+                $("#txtTelefone").mask("(99)9999-9999");
+            });
+        </script>
 
         <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
