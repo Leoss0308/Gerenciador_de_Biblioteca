@@ -46,7 +46,7 @@
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Clientes</tr> -->
                 <tr>
-                    <th>Código do Emprestimo</th><th>Código do Cliente</th><th>Funcionario</th><th>Código da Reserva</th><th>Titilo do Livro</th><th>Quantidade Do Livro</th><th>Data da Retirada</th><th>Data da Entrega</th><th>Código do Livro 1</th><th>Código do Livro 2</th><th>Código do Livro 3</th><th></th>
+                    <th>Código do Emprestimo</th><th>Código do Cliente</th><th>Funcionario</th><th>Código da Reserva</th><th>Data da Retirada</th><th>Data da Entrega</th><th>Código do Livro 1</th><th>Código do Livro 2</th><th>Código do Livro 3</th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -66,7 +66,6 @@
                         out.print("<td>" + Emp.getCodCliente() + "</td>");
                         out.print("<td>" + Emp.getMatriculaFunc() + "</td>");
                         out.print("<td>" + Emp.getCodReserva() + "</td>");
-                        out.print("<td>" + Emp.getTitulo() + "</td>");
                         out.print("<td>" + Emp.getDataRetirada() + "</td>");
                         out.print("<td>" + Emp.getDataDevolucao() + "</td>");
 

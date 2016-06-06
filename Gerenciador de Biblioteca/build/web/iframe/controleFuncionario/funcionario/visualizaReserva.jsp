@@ -76,7 +76,7 @@ Author     : Erico
                             out.print("<td>" + ItensR.getCodLivro() + "</td>");
                             //out.print("<td>");
                             //Controle para manutenção: Efetiva Emprestimo, para colocar o livro como emprestado
-                            out.print("<td id='cmd'><a href='../../../efetivaEmprestimo.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "&codLivro=" + ItensR.getCodLivro() + "'><img src='../../../img/confirmar.png' title='Efetivar Emprestimo' /></a></td>");
+                            out.print("<td id='cmd'><a href='../funcionario/efetivaEmprestimo.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "&codLivro=" + ItensR.getCodLivro() + "'><img src='../../../img/confirmar.png' title='Efetivar Emprestimo' /></a></td>");
 
                         }
                         //POG ALERT !!!
@@ -86,7 +86,7 @@ Author     : Erico
                         out.print("<td <div id='teste' style='display:none'></div>>");
                         out.print("<td <div id='teste' style='display:none'></div>>");
                         //passagem de parametros para cancelar a reserva
-                        out.print("<td id='cmd'><a href='cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/excluir.png' title='Cancelar Reserva'/></a></td>");
+                        out.print("<td id='cmd'><a href='../funcionario/cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/excluir.png' title='Cancelar Reserva'/></a></td>");
 
                         // out.print("</tr>");
                     }
@@ -94,6 +94,7 @@ Author     : Erico
             </table>
         </div>
 
+               
 
 
 
