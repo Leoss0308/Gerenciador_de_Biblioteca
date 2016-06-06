@@ -63,8 +63,8 @@
                 <form class="form-group"  action="" method="post">
                     
                     <div class="form-group">
-                        <label for="txtCodigo" class="col-xs-4 col-md-4 control-label">Codigo: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtCodigo" class="col-xs-6 col-md-6 control-label">Codigo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getCodClie()%></label>
                         </div>
                     </div>
@@ -72,8 +72,8 @@
                         <hr>
                         
                     <div class="form-group">
-                        <label for="txtNome" class="col-xs-4 col-md-4 control-label">Nome Completo: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtNome" class="col-xs-6 col-md-6 control-label">Nome Completo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getNome()%></label>
                         </div>
                     </div>
@@ -81,8 +81,8 @@
                         <hr>
                                                             
                     <div class="form-group">
-                        <label for="txtDataNasc" class="col-xs-4 col-md-4 control-label">Data De Nascimento: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtDataNasc" class="col-xs-6 col-md-6 control-label">Data De Nascimento: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getDtNasc()%></label>
                         </div>
                     </div>
@@ -90,8 +90,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtCPF" class="col-xs-4 col-md-4 control-label">CPF: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtCPF" class="col-xs-6 col-md-6 control-label">CPF: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getCpfClie()%></label>
                         </div>
                     </div>
@@ -99,8 +99,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtEmail" class="col-xs-6 col-md-6 control-label">Email: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getEmail()%></label>
                         </div>
                     </div>
@@ -108,8 +108,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtTelefone" class="col-xs-4 col-md-4 control-label">Telefone: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtTelefone" class="col-xs-6 col-md-6 control-label">Telefone: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getTelefone()%></label>
                         </div>
                     </div>
@@ -117,8 +117,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtCEP" class="col-xs-4 col-md-4 control-label">CEP: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtCEP" class="col-xs-6 col-md-6 control-label">CEP: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getCep()%></label>
                         </div>
                     </div>
@@ -126,8 +126,8 @@
                         <hr>
                      
                     <div class="form-group">
-                        <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtEndereco" class="col-xs-6 col-md-6 control-label">Endereço: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getEnd()%></label>
                         </div>
                     </div>        
@@ -135,8 +135,8 @@
                         <hr>
                            
                     <div class="form-group">
-                        <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtBairro" class="col-xs-6 col-md-6 control-label">Bairro: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getBairro()%></label>
                         </div>
                     </div> 
@@ -144,8 +144,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtComplemento" class="col-xs-6 col-md-6 control-label">Complemento: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getComplemento()%></label>
                         </div>
                     </div> 
@@ -153,8 +153,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtEstado" class="col-xs-4 col-md-4 control-label">Estado: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtEstado" class="col-xs-6 col-md-6 control-label">Estado: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getEstado()%></label>
                         </div>
                     </div>
@@ -162,8 +162,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtCidade" class="col-xs-6 col-md-6 control-label">Cidade: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getCidade()%></label>
                         </div>
                     </div>                     
@@ -171,8 +171,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtLogin" class="col-xs-4 col-md-4 control-label">Login: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtLogin" class="col-xs-6 col-md-6 control-label">Login: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getLogin()%></label>
                         </div>
                     </div>
@@ -180,8 +180,8 @@
                         <hr>
                            
                     <div class="form-group">
-                        <label for="txtSenha" class="col-xs-4 col-md-4 control-label">Senha: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtSenha" class="col-xs-6 col-md-6 control-label">Senha: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getSenha()%></label>
                         </div>
                     </div>
@@ -192,8 +192,8 @@
                         if(cli.getStatusClie()==0){
                     %>   
                     <div class="form-group">
-                        <label for="txtStatus" class="col-xs-4 col-md-4 control-label">Status: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtStatus" class="col-xs-6 col-md-6 control-label">Status: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label">Regular</label>
                         </div>
                     </div>
@@ -201,8 +201,8 @@
                         }if(cli.getStatusClie()==1){
                     %>
                     <div class="form-group">
-                        <label for="txtStatus" class="col-xs-4 col-md-4 control-label">Status: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtStatus" class="col-xs-6 col-md-6 control-label">Status: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label">Irregular</label>
                         </div>
                     </div>
@@ -213,18 +213,17 @@
                         <hr>
                        
                     <div class="form-group">
-                        <label for="txtObs" class="col-xs-4 col-md-4 control-label">Observação: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtObs" class="col-xs-6 col-md-6 control-label">Observação: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=cli.getObsClie()%></label>
                         </div>
                     </div>
-                        
                         <hr>
-
+                       
                     <div class="form-group">
-                        <div class="col-xs-5 col-md-5 control-label">
-                            <label class="control-label"> <a href="../../alterarAutoCliente.jsp?codClie=+<%=cod%>" class="btn btn-success btn-lg btn-block">Alterar</a>
-                            </label>
+                        <div class="col-xs-8 col-md-6 col-md-offset-3">
+                            <a href="../../alterarAutoCliente.jsp?codClie=+<%=cod%>" class="btn btn-success btn-lg btn-block">Alterar</a>
+                            
                         </div>
                     </div>
                             
