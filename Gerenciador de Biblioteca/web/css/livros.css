@@ -52,7 +52,8 @@ input#txtpesquisa{
 }
 
 div#imagem{
-
-    text-align: center;
+    
+    text-align: start;
+    text-orientation: auto;
     
 }

@@ -2,8 +2,6 @@
     Document   : verLivro
     Author     : Amanda
 --%>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <%@page import="br.com.Modelagem.Livro, br.com.DAO.LivroDAO" %>
@@ -11,12 +9,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Menu -->
-        <%@include file="menu.jsp" %>
+
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
         <title>Ver Livro</title>
         <link rel="icon" type="image/png" href="img/iconLivro.png">
-        
+
+        <!-- Menu -->
+        <%@include file="menu.jsp" %>
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -57,7 +56,7 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            /*overflow: hidden;*/
+            overflow: hidden;
         }   
     </style>
 
@@ -66,29 +65,28 @@
 <body>
 
 
-    <%
+    <%       
         Livro liv = new Livro();
         int cod = 0;
         cod = Integer.parseInt(request.getParameter("CodLivro"));
-        liv = new LivroDAO().getLivro(cod);  // Obtem o item do BD que foi solicitado via parâmetro.            
-
+        liv = new LivroDAO().getLivro(cod);  // Obtem o item do BD que foi solicitado via parâmetro. 
     %>
 
     <article id="Alteracao"  class="row">         
-        <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
-            <form class="form-control" action="LivroServletAlterar" method="post">
+        <div class="col-xs-10 scol-xs-offset-1 col-md-10 col-md-offset-1">
+            <form class="form-group" action="" method="post">
 
-              
-             
+                <br> <br>
+
                 <div class="form-group">
-                    <label for="txtCodLivro" class="col-xs-4 col-md-4 control-label">Código: </label>
+                    <label for="txtCodLivro" class="col-xs-6 col-md-6 control-label">Código: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getCodLivro()%></label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="txtISBN" class="col-xs-4 col-md-4 control-label">ISBN: </label>
+                    <label for="txtISBN" class="col-xs-6 col-md-6 control-label">ISBN: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getISBN()%></label>
                     </div>
@@ -96,56 +94,56 @@
 
 
                 <div class="form-group">
-                    <label for="txtEdicao" class="col-xs-4 col-md-4 control-label">Edição: </label>
+                    <label for="txtEdicao" class="col-xs-6 col-md-6 control-label">Edição: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getEdicaoLivro()%></label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="txtTitulo" class="col-xs-4 col-md-4 control-label">Título: </label>
+                    <label for="txtTitulo" class="col-xs-6 col-md-6 control-label">Título: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getTituloLivro()%></label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="txtAutor" class="col-xs-4 col-md-4 control-label">Autor: </label>
+                    <label for="txtAutor" class="col-xs-6 col-md-6 control-label">Autor: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getAutorLivro()%></label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="txtEditora" class="col-xs-4 col-md-4 control-label">Editora: </label>
+                    <label for="txtEditora" class="col-xs-6 col-md-6 control-label">Editora: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getEditoraLivro()%></label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="txtResumo" class="col-xs-4 col-md-4 control-label">Resumo: </label>
+                    <label for="txtResumo" class="col-xs-6 col-md-6 control-label">Resumo: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getResumoLivro()%></label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="txtPreco" class="col-xs-4 col-md-4 control-label">Preço: </label>
+                    <label for="txtPreco" class="col-xs-6 col-md-6 control-label">Preço: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getPrecoLivro()%></label>
                     </div>
                 </div>        
 
                 <div class="form-group">
-                    <label for="txtAnoPublicacao" class="col-xs-4 col-md-4 control-label">Ano de Publicação: </label>
+                    <label for="txtAnoPublicacao" class="col-xs-6 col-md-6 control-label">Ano de Publicação: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getAnoPublicacao()%></label>
                     </div>
                 </div> 
 
                 <div class="form-group">
-                    <label for="txtCategoria" class="col-xs-4 col-md-4 control-label">Categoria: </label>
+                    <label for="txtCategoria" class="col-xs-6 col-md-6 control-label">Categoria: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getCategoriaLivro()%></label>
                     </div>
@@ -153,18 +151,35 @@
 
 
                 <div class="form-group">
-                    <label for="txtTags" class="col-xs-4 col-md-4 control-label">Tags: </label>
+                    <label for="txtTags" class="col-xs-6 col-md-6 control-label">Tags: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getTags()%></label>
                     </div>
                 </div>                     
 
                 <div class="form-group">
-                    <label for="txtObs" class="col-xs-4 col-md-4 control-label">Observações: </label>
+                    <label for="txtObs" class="col-xs-6 col-md-6 control-label">Observações: </label>
                     <div class="col-xs-6 col-md-6">
                         <label class="control-label"><%=liv.getObsLivro()%></label>
                     </div>
                 </div>
+                <div class="form-group">
+                    <img src= img/livros.png height='190px' width='190px'/>
+                </div>
+                <!--<div class="form-group">
+                       <div class="col-xs-8 col-md-6 col-md-offset-3">
+                            <input type="submit" value="Reservar livro" name="btnEnviar" id="btnEnviarCC" class="btn btn-success btn-lg" />    
+                        </div>
+                 </div> 
+                
+                  <div class="form-group">
+                        <div class="col-xs-4 col-xs-offset-2 col-md-4 col-md-offset-2">
+                            <a href="iframe/controleFuncionario/funcionario/visualizaReserva.jsp?codClie=+<%=cod%>" class="btn btn-success btn-lg btn-block">Reservar Livro</a>
+                            
+                        </div>
+                  </div>
+                            
+                -->
 
             </form>
         </div>

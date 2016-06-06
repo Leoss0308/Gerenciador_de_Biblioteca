@@ -124,7 +124,7 @@
                                     //out.print("<td>" + "<img src='capa " + liv.getCodLivro() + ".jpg'height='40px' width='40px' align='left' />" + "</td>");
                                     //out.print("<td>" + "<img src='newimage.jpg' "+ liv.getImagem()+ "/>" + "</td>");
                                     out.print("<div class='col-xs-3' id=imagem>");
-                                    out.print("<img src='img/livros.png' 'height='80px' width='100px' align='middle'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
+                                    out.print("<img src='img/livros.png' 'height='90px' width='90px'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
                                     out.print("</div>");
                                     
                                     
