@@ -173,8 +173,8 @@
                  </div> 
                 
                   <div class="form-group">
-                        <div class="col-xs-4 col-xs-offset-2 col-md-4 col-md-offset-2">
-                            <a href="iframe/controleFuncionario/funcionario/visualizaReserva.jsp?codClie=+<%=cod%>" class="btn btn-success btn-lg btn-block">Reservar Livro</a>
+                        <div class="col-xs-8 col-md-6 col-md-offset-3">
+                            <a href="iframe/controleFuncionario/funcionario/visualizaReserva.jsp?CodLivro=+<%=cod%>" class="btn btn-success btn-lg btn-block">Reservar Livro</a>
                             
                         </div>
                   </div>

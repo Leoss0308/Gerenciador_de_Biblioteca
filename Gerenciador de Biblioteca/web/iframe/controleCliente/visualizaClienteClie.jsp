@@ -60,7 +60,7 @@
         
         <article id="Alteracao"  class="row">         
             <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
-                <form class="form-horizontal"  action="" method="post">
+                <form class="form-group"  action="" method="post">
                     
                     <div class="form-group">
                         <label for="txtCodigo" class="col-xs-4 col-md-4 control-label">Codigo: </label>
@@ -213,18 +213,18 @@
                         <hr>
                        
                     <div class="form-group">
-                        <label for="txtObs" class="col-xs-4 col-md-4 control-label">observação: </label>
+                        <label for="txtObs" class="col-xs-4 col-md-4 control-label">Observação: </label>
                         <div class="col-xs-8 col-md-8">
                             <label class="control-label"><%=cli.getObsClie()%></label>
                         </div>
                     </div>
                         
                         <hr>
-                    
+
                     <div class="form-group">
-                        <div class="col-xs-4 col-xs-offset-2 col-md-4 col-md-offset-2">
-                            <a href="../../alterarAutoCliente.jsp?codClie=+<%=cod%>" class="btn btn-success btn-lg btn-block">Alterar</a>
-                            
+                        <div class="col-xs-5 col-md-5 control-label">
+                            <label class="control-label"> <a href="../../alterarAutoCliente.jsp?codClie=+<%=cod%>" class="btn btn-success btn-lg btn-block">Alterar</a>
+                            </label>
                         </div>
                     </div>
                             
