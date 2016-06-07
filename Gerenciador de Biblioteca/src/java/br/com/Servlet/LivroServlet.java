@@ -80,10 +80,11 @@ public class LivroServlet extends HttpServlet {
            
 
             String photo = "";
-            String path = "path here";
+            String usuario = System.getProperty("user.name");
+            String path = "C:\\Users\\"+usuario+"\\Documents\\projeto 5 semestre\\trunk\\Gerenciador de Biblioteca\\web\\capaslivros";
 
             File file = new File(path);
-            file.mkdir();
+            boolean v = file.mkdir();
             String fileName = getFileName(filePart);
 
             OutputStream outs = null;
@@ -103,15 +104,15 @@ public class LivroServlet extends HttpServlet {
                     outs.write(bytes, 0, read);
 
                     photo = path + "/" + fileName;
-
+                    
                 }
-
+                    String teste = "capaslivros/" + fileName;
 
 
                 //stmt.executeUpdate("insert into livro(imagem) values('" + photo + "')");
 
                 LivroDAO livDAO = new LivroDAO();
-                livDAO.inserir(liv,photo);
+                livDAO.inserir(liv,teste);
                 pagina += "?msg=Cadastrado com sucesso!";
 
             } catch (Exception ex) {
