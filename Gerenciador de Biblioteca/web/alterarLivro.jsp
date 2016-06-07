@@ -67,7 +67,7 @@
 
     <article id="Alteracao"  class="row">         
         <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
-            <form class="form-horizontal"  action="LivroServletAlterar" method="post">
+            <form class="form-horizontal"  action="LivroServletAlterar" method="post"  enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="txtCodLivro" class="col-xs-4 col-md-4 control-label">Código: </label>
@@ -116,7 +116,7 @@
                 <div class="form-group">
                     <label for="txtResumo" class="col-xs-4 col-md-4 control-label">Resumo: </label>
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" class="form-control" id="txtResumo" maxlength="100" name="txtResumo" required="" value="<%=liv.getResumoLivro()%>">
+                        <input type="text" class="form-control" id="txtResumo" maxlength="1000" name="txtResumo" required="" value="<%=liv.getResumoLivro()%>">
                     </div>
                 </div>
 
@@ -167,7 +167,12 @@
 
                     </div>
                 </div>
-
+                 <div class="form-group">
+                      <label for="txtImagem" class="col-xs-4 col-md-4 control-label">Alterar Imagem: </label>
+                      <div class="col-xs-6 col-md-6">
+                          <input type="file" name="filecover" value="Upload"/></td>
+                      </div>
+                  </div>
                  
                 <div class="form-group">
                     <div class="col-xs-6 col-xs-offset-4 col-md-6 col-md-offset-4">

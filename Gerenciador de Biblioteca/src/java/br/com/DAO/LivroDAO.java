@@ -68,11 +68,11 @@ public class LivroDAO {
     }
 
     //atualizar dados do banco
-    public boolean atualizar(Livro liv) throws Exception {
+    public boolean atualizar(Livro liv, String photo) throws Exception {
         try {
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "UPDATE Livro set   ISBN=?, Edicao_Livro=?, Titulo=?, Autor=?, Editora=?, Resumo=?, Preco=?, Ano_Publicacao=?, Categoria=?, Tags=?,  Observacao=? where Cod_Livro=?");
+                    "UPDATE Livro set   ISBN=?, Edicao_Livro=?, Titulo=?, Autor=?, Editora=?, Resumo=?, Preco=?, Ano_Publicacao=?, Categoria=?, Tags=?,  Observacao=?, Imagem=? where Cod_Livro=?");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -85,7 +85,8 @@ public class LivroDAO {
             ps.setString(9, liv.getCategoriaLivro());
             ps.setString(10, liv.getTags());
             ps.setString(11, liv.getObsLivro());
-            ps.setInt(12, liv.getCodLivro());
+            ps.setString(12, photo);
+            ps.setInt(13, liv.getCodLivro());
 
             ps.executeUpdate();
             ps.close();
@@ -262,6 +263,7 @@ public class LivroDAO {
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
             liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
+            liv.setImagem(rs.getString("Imagem"));
             // Adicionando o objeto à lista:
             Liv.add(liv);
         }

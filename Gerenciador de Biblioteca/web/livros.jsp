@@ -29,15 +29,15 @@
 
         <!--CSS do index.jsp -->
         <link href="css/livros.css" rel="stylesheet">
-
+         <!-- Menu -->
+          <%@include file="menu.jsp" %>
 
     </head>
     <body>
         <!-- Cabeçalho da pagina com o menu, logo e nome -->
         <header id="cabecalivros">    
 
-            <!-- Menu -->
-            <%@include file="menu.jsp" %>
+         
 
             <!-- logo e titulo -->
             <div class="row" id="tituloLivros">
@@ -117,15 +117,14 @@
                                     //out.print("");
 
                                    // out.print("<tr id='" + sCor + "' " + sDestaque + ">");
-                                    
-
+                          
                                     //out.print("<td>" + liv.getTituloLivro() + "</td>");
                                     //out.print("<td>" + "<img src='capa" + liv.getCodLivro() + ".jpg'/>" + "</td>");
                                     //out.print("<td>" + "<img src='capa " + liv.getCodLivro() + ".jpg'height='40px' width='40px' align='left' />" + "</td>");
                                     //out.print("<td>" + "<img src='newimage.jpg' "+ liv.getImagem()+ "/>" + "</td>");
                                     out.print("<div class='col-xs-3' id=imagem>");
-                                    //out.print("<img src='img/livros.png' 'height='90px' width='90px'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
-                                    out.print("<img src='"+liv.getImagem()+"'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
+                                    //out.print("<img src='img/livros.png' height='90px' width='90px'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
+                                    out.print("<img src='"+liv.getImagem()+"' height='150' width='150'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
                                     out.print("</div>");
                                     
                                     

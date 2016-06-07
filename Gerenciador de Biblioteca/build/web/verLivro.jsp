@@ -56,7 +56,7 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            overflow: hidden;
+            overflow: auto;
         }   
     </style>
 
@@ -164,8 +164,11 @@
                     </div>
                 </div>
                 <div class="form-group">
+                     <img src="<%=liv.getImagem()%>" height="190" width="190"/>
+                </div> 
+              <!-- <div class="form-group">
                     <img src= img/livros.png height='190px' width='190px'/>
-                </div>
+                </div> -->
                 <!--<div class="form-group">
                        <div class="col-xs-8 col-md-6 col-md-offset-3">
                             <input type="submit" value="Reservar livro" name="btnEnviar" id="btnEnviarCC" class="btn btn-success btn-lg" />    

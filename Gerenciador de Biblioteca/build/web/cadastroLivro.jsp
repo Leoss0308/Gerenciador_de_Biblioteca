@@ -108,7 +108,7 @@
                     <div class="form-group">
                         <label for="txtResumo" class="col-xs-4 col-md-4 control-label">Resumo: </label>
                         <div class="col-xs-6 col-md-6">
-                            <input type="text" class="form-control" id="txtResumo" maxlength="100" name="txtResumo" required="">
+                            <input type="text" class="form-control" id="txtResumo" maxlength="1000" name="txtResumo" required="">
                         </div>
                     </div>
 
