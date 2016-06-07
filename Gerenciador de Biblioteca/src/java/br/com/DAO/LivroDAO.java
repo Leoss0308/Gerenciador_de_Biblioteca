@@ -34,12 +34,12 @@ public class LivroDAO {
     Conecta c = new Conecta();
     //inserir dados no banco
 
-    public boolean inserir(Livro liv) throws Exception {
+    public boolean inserir(Livro liv, String photo) throws Exception {
         try {
 
             cnn = c.getConexao();
             ps = cnn.prepareStatement(
-                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria, Emprestado, Cod_Matricula) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+                    "INSERT INTO Livro ( ISBN, Edicao_Livro, Titulo, Autor, Editora, Resumo, Preco, Ano_Publicacao, Categoria, Tags,  Observacao, Avaria, Emprestado, Cod_Matricula, Imagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 
             ps.setString(1, liv.getISBN());
             ps.setString(2, liv.getEdicaoLivro());
@@ -55,6 +55,7 @@ public class LivroDAO {
             ps.setInt(12, 0);
             ps.setInt(13, 0);
             ps.setInt(14, liv.getMatriculaFunc());
+            ps.setString(15, photo);
             ps.executeUpdate();
             ps.close();
             return true;

@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/web/iframe/controleFuncionario/funcionario/visualizaReserva.jsp</file>
-            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/web/iframe/controleFuncionario/cliente/visualizaEmprestimoCli.jsp</file>
-            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/web/perfil.jsp</file>
-            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/web/iframe/controleFuncionario/funcionario/visualizaEmprestimo.jsp</file>
-            <file>file:/C:/Users/erico/Desktop/Projeto%205%20Semestre/Projeto%205%20Semestre/trunk/Gerenciador%20de%20Biblioteca/web/iframe/controleFuncionario/cliente/visualizaReservaCli.jsp</file>
+            <file>file:/C:/Users/i7/Documents/projeto%205%20semestre/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/Servlet/FuncionarioServlet.java</file>
+            <file>file:/C:/Users/i7/Documents/projeto%205%20semestre/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/Servlet/LivroServlet.java</file>
+            <file>file:/C:/Users/i7/Documents/projeto%205%20semestre/trunk/Gerenciador%20de%20Biblioteca/src/java/br/com/DAO/LivroDAO.java</file>
+            <file>file:/C:/Users/i7/Documents/projeto%205%20semestre/trunk/Gerenciador%20de%20Biblioteca/web/cadastroLivro.jsp</file>
         </group>
     </open-files>
 </project-private>

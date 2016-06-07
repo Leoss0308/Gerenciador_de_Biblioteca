@@ -59,7 +59,7 @@ public class LivroServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         try (PrintWriter out1 = response.getWriter()) {
             HttpSession session = request.getSession();
-            String name = request.getParameter("unname");
+            //String name = request.getParameter("unname");
             Part filePart = request.getPart("filecover");
             
             Livro liv = new Livro();
@@ -92,8 +92,7 @@ public class LivroServlet extends HttpServlet {
 
             PrintWriter writer = response.getWriter();
             try {
-                outs = new FileOutputStream(new File(path + File.separator
-                        + fileName));
+                outs = new FileOutputStream(new File(path + File.separator + fileName));
 
                 filecontent = filePart.getInputStream();
 
@@ -107,24 +106,62 @@ public class LivroServlet extends HttpServlet {
 
                 }
 
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("URL", "USERNAME", "PASSWORD");
-                Statement stmt = con.createStatement();
 
-                stmt.executeUpdate("insert into livro(imagem) values('" + name + "','" + photo + "')");
+
+                //stmt.executeUpdate("insert into livro(imagem) values('" + photo + "')");
 
                 LivroDAO livDAO = new LivroDAO();
-                livDAO.inserir(liv);
+                livDAO.inserir(liv,photo);
                 pagina += "?msg=Cadastrado com sucesso!";
 
             } catch (Exception ex) {
                 pagina += "?msg=Descupe, mas ocorreu um erro: " + ex.getMessage();
             } finally {
                 request.getRequestDispatcher(pagina).forward(request, response);
-                out1.print("<html><body><script>alert('Sucessfully Saved! Check the database and the path!');</script></body></html>");
                 out.close();
             }
 
         }
     }
+
+
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
 }
