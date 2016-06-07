@@ -174,7 +174,7 @@
                 -->
                   <div class="form-group">
                         <div class="col-xs-8 col-md-6 col-md-offset-3">
-                            <a href="iframe/controleFuncionario/funcionario/visualizaReserva.jsp?CodLivro=+<%=cod%>" class="btn btn-success btn-lg btn-block">Reservar Livro</a>
+                            <a href="iframe/controleFuncionario/funcionario/fazReserva.jsp?CodLivro=+<%=liv.getCodLivro()%>" class="btn btn-success btn-lg btn-block">Reservar Livro</a>
                             
                         </div>
                   </div>

@@ -79,7 +79,7 @@
                         out.print("<td <div id='teste' style='display:none'></div>>");
                         out.print("<td <div id='teste' style='display:none'></div>>");
                         //passagem de parametros para cancelar a reserva
-                        out.print("<td id='cmd'><a href='../cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' title='Cancelar Reserva'/></a></td>");
+                        out.print("<td id='cmd'><a href='../funcionario/cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' title='Cancelar Reserva'/></a></td>");
 
                         out.print("</tr>");
 
