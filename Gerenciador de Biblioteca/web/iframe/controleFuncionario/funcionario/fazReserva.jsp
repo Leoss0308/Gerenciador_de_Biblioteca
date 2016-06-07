@@ -33,7 +33,7 @@
             //inserir os dados na tabela Itens Reserva
             ItemReservaDAO itemdao = new ItemReservaDAO();
             //Requisitando os valores para inserção na tabela
-            int codReserva = reservadao.getCodReser(Integer.parseInt(request.getParameter("codClie")));
+            int codReserva = reservadao.getCodReser(Integer.parseInt(String.valueOf(session.getAttribute("cod"))));
             int codLivro = Integer.parseInt(request.getParameter("CodLivro"));
             
             // Chamando o parametro de inserção do DAO, e enviando os valores
