@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     
-                        <hr>
+                       
                         
                     <div class="form-group">
                         <label for="txtNome" class="col-xs-6 col-md-6 control-label">Nome Completo: </label>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     
-                        <hr>
+                       
                                                          
                     <div class="form-group">
                         <label for="txtDataNasc" class="col-xs-6 col-md-6 control-label">Data De Nascimento: </label>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     
-                        <hr>
+                       
                     
                     <div class="form-group">
                         <label for="txtEmail" class="col-xs-6 col-md-6 control-label">Email: </label>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     
-                        <hr>
+                        
                     
                     <div class="form-group">
                         <label for="txtTelefone" class="col-xs-6 col-md-6 control-label">Telefone: </label>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     
-                        <hr>
+                       
                     
                     <div class="form-group">
                         <label for="txtCEP" class="col-xs-6 col-md-6 control-label">CEP: </label>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                      
-                        <hr>
+                      
                     
                     <div class="form-group">
                         <label for="txtEndereco" class="col-xs-6 col-md-6 control-label">Endereço: </label>
@@ -123,7 +123,7 @@
                         </div>
                     </div>        
                     
-                        <hr>
+                    
                            
                     <div class="form-group">
                         <label for="txtBairro" class="col-xs-6 col-md-6 control-label">Bairro: </label>
@@ -132,7 +132,7 @@
                         </div>
                     </div> 
                     
-                        <hr>
+                      
                     
                     <div class="form-group">
                         <label for="txtComplemento" class="col-xs-6 col-md-6 control-label">Complemento: </label>
@@ -141,7 +141,7 @@
                         </div>
                     </div> 
                     
-                        <hr>
+                      
                     
                     <div class="form-group">
                         <label for="txtEstado" class="col-xs-6 col-md-6 control-label">Estado: </label>
@@ -150,7 +150,7 @@
                         </div>
                     </div>
                     
-                        <hr>
+                        
                     
                     <div class="form-group">
                         <label for="txtCidade" class="col-xs-6 col-md-6 control-label">Cidade: </label>
@@ -159,7 +159,7 @@
                         </div>
                     </div>                     
                     
-                        <hr>
+                        
                     
                     <div class="form-group">
                         <label for="txtLogin" class="col-xs-6 col-md-6 control-label">Login: </label>
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                     
-                        <hr>
+                        
                            
                     <div class="form-group">
                         <label for="txtSenha" class="col-xs-6 col-md-6 control-label">Senha: </label>
@@ -177,7 +177,7 @@
                         </div>
                     </div> 
                     
-                        <hr>
+                       
                     
                     <%
                         if(func.getTipoFunc()==2){
@@ -185,7 +185,7 @@
                     <div class="form-group">
                         <label for="txtTipo" class="col-xs-6 col-md-6 control-label">Tipo: </label>
                         <div class="col-xs-6 col-md-6">
-                            <label class="control-label">Funcionario</label>
+                            <label class="control-label">Funcionário</label>
                         </div>
                     </div>
                     <%
