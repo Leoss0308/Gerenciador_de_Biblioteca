@@ -33,7 +33,7 @@ public class Livro {
     private int avaria = 0;
     private int emprestado = 0;
     private int matriculaFunc = 0;
-    private byte[] imagem;
+    private String imagem;
 
     //getters and setters
     public int getCodLivro() {
@@ -164,13 +164,13 @@ public class Livro {
         return matriculaFunc;
     }
 
-    public byte[] getImagem() {
+    public String getImagem() {
 
         return imagem;
 
     }
 
-    public void setImagem(byte[] imagem) {
+    public void setImagem(String imagem) {
         this.imagem = imagem;
 
     }

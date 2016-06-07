@@ -139,6 +139,7 @@ public class LivroDAO {
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
             liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
+            liv.setImagem(rs.getString("Imagem"));
 
             // Adicionando o objeto à lista:
             Liv.add(liv);
@@ -173,6 +174,7 @@ public class LivroDAO {
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
             liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
+            liv.setImagem(rs.getString("Imagem"));
 
             Liv.add(liv);
         }
@@ -210,7 +212,7 @@ public class LivroDAO {
             liv.setAvaria(rs.getInt("Avaria"));
             liv.setEmprestado(rs.getInt("Emprestado"));
             liv.setMatriculaFunc(rs.getInt("Cod_Matricula"));
-
+            liv.setImagem(rs.getString("Imagem"));
         }
         rs.close();
         ps.close();

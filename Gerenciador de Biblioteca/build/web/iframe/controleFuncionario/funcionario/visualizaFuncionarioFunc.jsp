@@ -60,11 +60,11 @@
         
         <article id="Alteracao"  class="row">         
             <div class="col-xs-9 col-xs-offset-1 col-md-9 col-md-offset-1">
-                <form class="form-horizontal"  action="FuncionarioServletAlterar" method="post">
+                <form class="form-group"  action="FuncionarioServletAlterar" method="post">
                     
                     <div class="form-group">
-                        <label for="txtMatricula" class="col-xs-4 col-md-4 control-label">Matricula: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtMatricula" class="col-xs-6 col-md-6 control-label">Matricula: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getMatriculaFunc()%></label>
                         </div>
                     </div>
@@ -72,8 +72,8 @@
                         <hr>
                         
                     <div class="form-group">
-                        <label for="txtNome" class="col-xs-4 col-md-4 control-label">Nome Completo: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtNome" class="col-xs-6 col-md-6 control-label">Nome Completo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getNome()%></label>
                         </div>
                     </div>
@@ -81,8 +81,8 @@
                         <hr>
                                                          
                     <div class="form-group">
-                        <label for="txtDataNasc" class="col-xs-4 col-md-4 control-label">Data De Nascimento: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtDataNasc" class="col-xs-6 col-md-6 control-label">Data De Nascimento: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getDtNasc()%></label>
                         </div>
                     </div>
@@ -90,8 +90,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtEmail" class="col-xs-4 col-md-4 control-label">Email: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtEmail" class="col-xs-6 col-md-6 control-label">Email: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getEmail()%></label>
                         </div>
                     </div>
@@ -99,8 +99,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtTelefone" class="col-xs-4 col-md-4 control-label">Telefone: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtTelefone" class="col-xs-6 col-md-6 control-label">Telefone: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getTelefone()%></label>
                         </div>
                     </div>
@@ -108,8 +108,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtCEP" class="col-xs-4 col-md-4 control-label">CEP: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtCEP" class="col-xs-6 col-md-6 control-label">CEP: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getCep()%></label>
                         </div>
                     </div>
@@ -117,8 +117,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtEndereco" class="col-xs-4 col-md-4 control-label">Endereço: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtEndereco" class="col-xs-6 col-md-6 control-label">Endereço: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getEnd()%></label>
                         </div>
                     </div>        
@@ -126,8 +126,8 @@
                         <hr>
                            
                     <div class="form-group">
-                        <label for="txtBairro" class="col-xs-4 col-md-4 control-label">Bairro: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtBairro" class="col-xs-6 col-md-6 control-label">Bairro: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getBairro()%></label>
                         </div>
                     </div> 
@@ -135,8 +135,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtComplemento" class="col-xs-4 col-md-4 control-label">Complemento: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtComplemento" class="col-xs-6 col-md-6 control-label">Complemento: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getComplemento()%></label>
                         </div>
                     </div> 
@@ -144,8 +144,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtEstado" class="col-xs-4 col-md-4 control-label">Estado: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtEstado" class="col-xs-6 col-md-6 control-label">Estado: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getEstado()%></label>
                         </div>
                     </div>
@@ -153,8 +153,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtCidade" class="col-xs-4 col-md-4 control-label">Cidade: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtCidade" class="col-xs-6 col-md-6 control-label">Cidade: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getCidade()%></label>
                         </div>
                     </div>                     
@@ -162,8 +162,8 @@
                         <hr>
                     
                     <div class="form-group">
-                        <label for="txtLogin" class="col-xs-4 col-md-4 control-label">Login: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtLogin" class="col-xs-6 col-md-6 control-label">Login: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getLogin()%></label>
                         </div>
                     </div>
@@ -171,8 +171,8 @@
                         <hr>
                            
                     <div class="form-group">
-                        <label for="txtSenha" class="col-xs-4 col-md-4 control-label">Senha: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtSenha" class="col-xs-6 col-md-6 control-label">Senha: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label"><%=func.getSenha()%></label>
                         </div>
                     </div> 
@@ -183,8 +183,8 @@
                         if(func.getTipoFunc()==2){
                     %>   
                     <div class="form-group">
-                        <label for="txtTipo" class="col-xs-4 col-md-4 control-label">Tipo: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtTipo" class="col-xs-6 col-md-6 control-label">Tipo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label">Funcionario</label>
                         </div>
                     </div>
@@ -192,8 +192,8 @@
                         }if(func.getTipoFunc()==3){
                     %>
                     <div class="form-group">
-                        <label for="txtTipo" class="col-xs-4 col-md-4 control-label">Tipo: </label>
-                        <div class="col-xs-8 col-md-8">
+                        <label for="txtTipo" class="col-xs-6 col-md-6 control-label">Tipo: </label>
+                        <div class="col-xs-6 col-md-6">
                             <label class="control-label">Administrador</label>
                         </div>
                     </div>
