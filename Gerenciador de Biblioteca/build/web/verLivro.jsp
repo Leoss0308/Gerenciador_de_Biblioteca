@@ -171,7 +171,7 @@
                             <input type="submit" value="Reservar livro" name="btnEnviar" id="btnEnviarCC" class="btn btn-success btn-lg" />    
                         </div>
                  </div> 
-                
+                -->
                   <div class="form-group">
                         <div class="col-xs-8 col-md-6 col-md-offset-3">
                             <a href="iframe/controleFuncionario/funcionario/visualizaReserva.jsp?CodLivro=+<%=cod%>" class="btn btn-success btn-lg btn-block">Reservar Livro</a>
@@ -179,7 +179,6 @@
                         </div>
                   </div>
                             
-                -->
 
             </form>
         </div>

@@ -117,6 +117,7 @@ public class ReservaDAO {
     public List<Reserva> getReserCli(int CodClie) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
         ps = cnn.prepareStatement("select * from Reserva where Cod_Cliente=?");
+        ps.setInt(1, CodClie);
         ResultSet rs = ps.executeQuery();
         List<Reserva> ReservCli = new ArrayList<Reserva>();
         while (rs.next()) {

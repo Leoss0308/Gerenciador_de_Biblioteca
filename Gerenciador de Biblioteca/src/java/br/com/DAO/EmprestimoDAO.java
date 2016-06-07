@@ -128,6 +128,7 @@ public class EmprestimoDAO {
         public List<Emprestimo> getEmprestimoCli(int CodClie) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
         ps = cnn.prepareStatement("select * from Emprestimo where Cod_Cliente=?");
+        ps.setInt(1, CodClie);
         ResultSet rs = ps.executeQuery();
         List<Emprestimo> EmpCli = new ArrayList<Emprestimo>();
         while (rs.next()) {
