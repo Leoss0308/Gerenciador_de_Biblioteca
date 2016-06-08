@@ -7,7 +7,7 @@
 <%@page import="br.com.Modelagem.Reserva"%>
 <%@page import="br.com.Modelagem.Itens_Reserva"%>
 <html>
-    <%@page import="br.com.DAO.ReservaDAO, br.com.DAO.ItemReservaDAO"%>
+    <%@page import="br.com.DAO.ReservaDAO, br.com.DAO.ItemReservaDAO, br.com.DAO.LivroDAO"%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
@@ -16,12 +16,22 @@
         <%-- Instanciar a DAO para acesso a regras que depensam do banco e CRUD --%>
         <%
         //Inserir os dados na tabela Reserva
-           
+                      
             //requisitando os valores para inserção na tabela;
             int codClie = Integer.parseInt(String.valueOf(session.getAttribute("cod")));
             // Instanciar o DAO para inserção dos valores
             
             ReservaDAO reservadao = new ReservaDAO();
+            
+            int qtd = reservadao.getQTDReser(Integer.parseInt(String.valueOf(session.getAttribute("cod"))));
+            
+            if(qtd == 3){
+                
+                out.println("Você já possui a Quantidade Maxima de Livros Reservados!");
+                out.close();
+            }
+            
+            else {
             //Chamando o parametro de inserção do DAO, e enviando os valores
             
             Reserva reser = new Reserva();
@@ -42,13 +52,18 @@
             ItemReser.setCodReserva(codReserva);
             ItemReser.setCodLivro(codLivro);
                         
-            boolean ress = itemdao.inserirItemReserva(ItemReser);
+            res = itemdao.inserirItemReserva(ItemReser);
+            
+            LivroDAO livrodao = new LivroDAO();
+            
+            livrodao.reservaLivro(1, codLivro);        
             
             if (!res) {
-                out.println("Falha no Emprestimo do Livro!");
+                out.println("Falha na Reserva do Livro!");
                 out.close();
             }
+          }
         %>
-        <jsp:forward page="visualizaReservaCli"></jsp:forward>
+        <jsp:forward page="livros.jsp"></jsp:forward>
     </body>
 </html>

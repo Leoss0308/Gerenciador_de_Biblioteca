@@ -26,13 +26,21 @@ Author     : Erico
 
         <style>
             body{
-                background: url(../img/fundo.jpg) no-repeat center top fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                /*overflow: hidden;*/
-            }   
+            background: url(../../../img/fundoTabela.jpg) no-repeat center top fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            /*overflow: hidden;*/
+        }   
+        
+        td {
+            white-space: nowrap;
+        }
+        
+        th {
+            white-space: nowrap;
+        }    
         </style>
 
     </head>
@@ -47,7 +55,7 @@ Author     : Erico
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Clientes</tr> -->
                 <tr>
-                    <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th>Código do Livro 1</th><th>Efetivar Reserva 1</th><th>Código do Livro 2</th><th>Efetivar Reserva 2</th><th>Código do Livro 3</th><th>Efetivar Reserva 3</th><th></th><th></th>
+                    <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th>Código do Livro</th><th>Efetivar Reserva</th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -70,22 +78,18 @@ Author     : Erico
 
                         ItemReservaDAO itensdao = new ItemReservaDAO();
                         List<Itens_Reserva> Itens = itensdao.getLista(reserv.getCodReserva());
-
+                        
                         for (Itens_Reserva ItensR : Itens) {
 
                             out.print("<td>" + ItensR.getCodLivro() + "</td>");
                             //out.print("<td>");
                             //Controle para manutenção: Efetiva Emprestimo, para colocar o livro como emprestado
                             out.print("<td id='cmd'><a href='../funcionario/efetivaEmprestimo.jsp?codClie=" + reserv.getCodClie() + "&codReserva=" + reserv.getCodReserva() + "&codLivro=" + ItensR.getCodLivro() + "'><img src='../../../img/confirmar.png' title='Efetivar Emprestimo' /></a></td>");
-
+                           // gamb--;
                         }
-                        //POG ALERT !!!
-                        //gambi, era isso ou o ícone de excluir ia ficar desalinhado, ae fizemos este css inline para "tratar" isso eeeeeee
-                        out.print("<td <div id='teste' style='display:none'></div>>");
-                        out.print("<td <div id='teste' style='display:none'></div>>");
-                        out.print("<td <div id='teste' style='display:none'></div>>");
-                        out.print("<td <div id='teste' style='display:none'></div>>");
+                        
                         //passagem de parametros para cancelar a reserva
+                       
                         out.print("<td id='cmd'><a href='../funcionario/cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/excluir.png' title='Cancelar Reserva'/></a></td>");
 
                         // out.print("</tr>");

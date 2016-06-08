@@ -69,10 +69,10 @@
                     <li><a href="iframe/controleCliente/visualizaClienteClie.jsp" target="frmConteudo">Perfil</a></li>
                     
                     <li class="titulo"><span class="espaco">Reservas</span></li>
-                    <li><a href="iframe/controleFuncionario/cliente/visualizaReservaCli.jsp" target="frmConteudo">Ver Reservas</a></li>
+                    <li><a href="iframe/controleCliente/visualizaReservaCli.jsp" target="frmConteudo">Ver Reservas</a></li>
 
                     <li class="titulo"><span class="espaco">Empréstimos</span></li>
-                    <li><a href="iframe/controleFuncionario/cliente/visualizaEmprestimoCli.jsp" target="frmConteudo">Ver Empréstimos</a></li>
+                    <li><a href="iframe/controleCliente/visualizaEmprestimoCli.jsp" target="frmConteudo">Ver Empréstimos</a></li>
 
                     <%
                         }

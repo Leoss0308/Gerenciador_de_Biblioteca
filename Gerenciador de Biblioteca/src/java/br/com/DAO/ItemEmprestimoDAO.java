@@ -82,7 +82,22 @@ public class ItemEmprestimoDAO {
         ps.close();
         return ItemEmp;
     }
-    
+    //retornar o codigo do livro pelo emprestimo
+    public int getCodLiv(int codEmpr) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("SELECT Cod_Livro FROM Item_Emprestimo WHERE Cod_Emprestimo = ?");
+        ps.setInt(1, codEmpr);
+        ResultSet rs = ps.executeQuery();
+
+        Itens_Emprestimo CodEmp = new Itens_Emprestimo();
+        if (rs.next()) {
+            // Criando o objeto e setando valores:
+            CodEmp.setCodLivro(rs.getInt("Cod_Livro"));
+        }
+        rs.close();
+        ps.close();
+        return CodEmp.getCodLivro();
+    }
 
     
 }

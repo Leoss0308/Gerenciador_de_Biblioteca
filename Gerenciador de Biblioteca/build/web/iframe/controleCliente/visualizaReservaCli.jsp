@@ -15,7 +15,7 @@
         <title>Visualiza Reserva</title>
 
         <!-- Bootstrap -->
-        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
         <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
         <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
@@ -26,13 +26,21 @@
 
         <style>
             body{
-                background: url(../img/fundo.jpg) no-repeat center top fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                /*overflow: hidden;*/
-            }   
+            background: url(../../img/fundoTabela.jpg) no-repeat center top fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            /*overflow: hidden;*/
+        }   
+        
+        td {
+            white-space: nowrap;
+        }
+        
+        th {
+            white-space: nowrap;
+        }      
         </style>
 
     </head>
@@ -46,7 +54,7 @@
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Clientes</tr> -->
                 <tr>
-                    <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th>Código do Livro 1</th><th>Código do Livro 2</th><th>Código do Livro 3</th><th></th>
+                    <th>Código da Reserva</th><th>Código do Cliente</th><th>Data Reserva</th><th>Código do Livro</th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
@@ -68,18 +76,16 @@
 
                         ItemReservaDAO itensdao = new ItemReservaDAO();
                         List<Itens_Reserva> Itens = itensdao.getLista(reserv.getCodReserva());
-
+                        
                         for (Itens_Reserva ItensR : Itens) {
 
-                            out.print("<td>" + ItensR.getCodLivro() + "<td>");
+                            out.print("<td>" + ItensR.getCodLivro() + "</td>");                           
 
                         }
-                        out.print("<td <div id='teste' style='display:none'></div>>");
-                        out.print("<td <div id='teste' style='display:none'></div>>");
-                        out.print("<td <div id='teste' style='display:none'></div>>");
-                        out.print("<td <div id='teste' style='display:none'></div>>");
+                        
                         //passagem de parametros para cancelar a reserva
-                        out.print("<td id='cmd'><a href='../funcionario/cancelarReserva.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../../img/delete-peq.jpg' title='Cancelar Reserva'/></a></td>");
+                        
+                        out.print("<td id='cmd'><a href='cancelarReservaCli.jsp?codReserva=" + reserv.getCodReserva() + "'><img src='../../img/excluir.png' title='Cancelar Reserva'/></a></td>");
 
                         out.print("</tr>");
 
@@ -88,10 +94,7 @@
                 %>
             </table>
         </div>
-
-
-
-
+            <a href=""
 
 
         <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
@@ -100,3 +103,4 @@
         <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
+

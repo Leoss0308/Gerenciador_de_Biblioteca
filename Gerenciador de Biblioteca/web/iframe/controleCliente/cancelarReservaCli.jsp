@@ -1,7 +1,7 @@
 <%-- 
-    Document   : cancelarReserva
-    Created on : 14/05/2016, 19:10:23
-    Author     : Erico
+    Document   : cancelarReservaCli
+    Created on : 07/06/2016, 20:30:01
+    Author     : erico
 --%>
 
 <html>
@@ -30,6 +30,6 @@
             out.close();
         }
         %>
-        <jsp:forward page="visualizaReserva.jsp"></jsp:forward>
+        <jsp:forward page="visualizaReservaCli.jsp"></jsp:forward>
     </body>
 </html>

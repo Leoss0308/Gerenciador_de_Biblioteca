@@ -75,7 +75,7 @@ public class EmprestimoDAO {
         rs.close();
         ps.close();
         return CodEmp.getCodEmprestimo();
-    }
+    }  
 
     // Este método, instancia o JavaBeans para auxiliar a montar a lista:
     public List<Emprestimo> getLista() throws SQLException, ClassNotFoundException {

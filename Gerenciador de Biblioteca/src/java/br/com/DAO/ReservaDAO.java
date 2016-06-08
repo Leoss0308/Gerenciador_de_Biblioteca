@@ -107,13 +107,31 @@ public class ReservaDAO {
         Reserva CodReser = new Reserva();
         if (rs.next()) {
             // Criando o objeto e setando valores:
-            CodReser.setCodReserva(rs.getInt("Cod_Reserva"));
+            CodReser.getCodClie(rs.getInt("Cod_Cliente"));
         }
         rs.close();
         ps.close();
-        return CodReser.getCodReserva();
+        return CodReser.getCodClie();
     }
+    
+    //verifica quantas reservas o cliente tem
+    public int getQTDReser(int CodClie) throws SQLException, ClassNotFoundException {
+        cnn = c.getConexao();
+        ps = cnn.prepareStatement("SELECT COUNT(*) FROM reserva WHERE COD_CLIENTE = ?");
+        ps.setInt(1, CodClie);
+        ResultSet rs = ps.executeQuery();
 
+        Reserva CodReser = new Reserva();
+        if (rs.next()) {
+            // Criando o objeto e setando valores:
+            CodReser.setCodClie(rs.getInt("Cod_Cliente"));
+        }
+        rs.close();
+        ps.close();
+        return CodReser.getCodClie();
+    }
+    
+    
     public List<Reserva> getReserCli(int CodClie) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
         ps = cnn.prepareStatement("select * from Reserva where Cod_Cliente=?");

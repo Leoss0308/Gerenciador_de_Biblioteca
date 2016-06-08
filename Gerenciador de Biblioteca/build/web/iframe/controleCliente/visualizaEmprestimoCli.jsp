@@ -15,7 +15,7 @@
         <title>Visualiza Emprestimo</title>
 
         <!-- Bootstrap -->
-        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
         <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
         <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
@@ -26,13 +26,21 @@
 
         <style>
             body{
-                background: url(../img/fundo.jpg) no-repeat center top fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                /*overflow: hidden;*/
-            }   
+            background: url(../../img/fundoTabela.jpg) no-repeat center top fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            /*overflow: hidden;*/
+        }   
+        
+        td {
+            white-space: nowrap;
+        }
+        
+        th {
+            white-space: nowrap;
+        }   
         </style>
 
     </head>
@@ -46,7 +54,7 @@
             <table class="table table-bordered">
                 <!-- <tr><th colspan="18">Clientes</tr> -->
                 <tr>
-                    <th>Código do Emprestimo</th><th>Código do Cliente</th><th>Funcionario</th><th>Código da Reserva</th><th>Data da Retirada</th><th>Data da Entrega</th><th>Código do Livro 1</th><th>Código do Livro 2</th><th>Código do Livro 3</th><th></th>
+                    <th>Código do Emprestimo</th><th>Código do Cliente</th><th>Funcionario</th><th>Código da Reserva</th><th>Data da Retirada</th><th>Data da Entrega</th><th>Código do Livro</th><th></th>
                 </tr>
                 <%
                     String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";

@@ -114,7 +114,25 @@ public class LivroDAO {
             return false;
         }
     }
-
+    
+    
+    //update quando o livro for reservado
+     public boolean reservaLivro(int emp, int liv) throws Exception {
+        try {
+            cnn = c.getConexao();
+            ps = cnn.prepareStatement(
+                    "UPDATE Livro set Emprestado=? where Cod_Livro=?");
+            ps.setInt(1,emp);
+            ps.setInt(2, liv);
+            ps.executeUpdate();
+            ps.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return false;
+        }
+    }
+    
     // Este método, instancia o JavaBeans para auxiliar a montar a lista:
     public List<Livro> getLista() throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
