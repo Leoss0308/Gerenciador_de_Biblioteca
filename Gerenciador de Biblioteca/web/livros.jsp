@@ -124,7 +124,7 @@
                                     //out.print("<td>" + "<img src='newimage.jpg' "+ liv.getImagem()+ "/>" + "</td>");
                                     out.print("<div class='col-xs-3'>");
                                     //out.print("<img src='img/livros.png' height='90px' width='90px'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
-                                    out.print("<a class='capa' href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "'><img src='"+liv.getImagem()+"' height='150' width='150'/> <br/> <span class='col-xs-12 nomecapa'>"  + liv.getTituloLivro() + "</span></a>");//<img src='"+liv.getImagem()+"' height='150' width='150'/><a clas href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "'>" + liv.getTituloLivro() + "</a>
+                                    out.print("<a class='capa' href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "'><img class='img-responsive' src='"+liv.getImagem()+"' height='150' width='150'/> <br/> <span class='col-xs-12 nomecapa'>"  + liv.getTituloLivro() + "</span></a>");//<img src='"+liv.getImagem()+"' height='150' width='150'/><a clas href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "'>" + liv.getTituloLivro() + "</a>
                                     out.print("</div>");
                                     
                                     
