@@ -107,7 +107,7 @@ public class ReservaDAO {
         Reserva CodReser = new Reserva();
         if (rs.next()) {
             // Criando o objeto e setando valores:
-            CodReser.getCodClie(rs.getInt("Cod_Cliente"));
+            CodReser.setCodClie(rs.getInt("Cod_Cliente"));
         }
         rs.close();
         ps.close();
