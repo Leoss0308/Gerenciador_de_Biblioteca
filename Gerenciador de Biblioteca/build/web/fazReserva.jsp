@@ -28,7 +28,8 @@
             if(qtd >= 3){
                 
                 out.println("Você já possui a Quantidade Maxima de Livros Reservados!");
-                out.close();
+                out.close();%>
+                <jsp:forward page="sucessoPagCheia.jsp?msg=Você já possui a Quantidade Maxima de Livros Reservados!"></jsp:forward><%
             }
             
             else {
@@ -60,10 +61,11 @@
             
             if (!res) {
                 out.println("Falha na Reserva do Livro!");
-                out.close();
+                out.close();%>
+                <jsp:forward page="sucessoPagCheia.jsp?msg=Falha na Reserva do Livro!"></jsp:forward><%
             }
           }
         %>
-        <jsp:forward page="livros.jsp"></jsp:forward>
+        <jsp:forward page="sucessoPagCheia.jsp?msg=Livro reservado com sucesso!"></jsp:forward>
     </body>
 </html>
