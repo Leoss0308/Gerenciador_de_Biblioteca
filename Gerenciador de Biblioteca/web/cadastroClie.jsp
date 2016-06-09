@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-        <title>Cadastro De Cliente</title>
+        <title>Cadastro de Cliente</title>
         <link rel="icon" type="image/png" href="img/iconLivro.png">
 
         <!-- Bootstrap -->
@@ -70,7 +70,7 @@
                 </div>
 
                 <hgroup class="col-xs-6 col-xs-offset-1 col-md-7 col-md-offset-1">
-                    <h1>Cadastro De Cliente</h1>
+                    <h1>Cadastro de Cliente</h1>
                 </hgroup>
 
             </div>

@@ -170,7 +170,7 @@
                  <div class="form-group">
                       <label for="txtImagem" class="col-xs-4 col-md-4 control-label">Alterar Imagem: </label>
                       <div class="col-xs-6 col-md-6">
-                          <input type="file" name="filecover" value="Upload"/></td>
+                          <input type="file" name="filecover" required=""  value="Upload"/></td>
                       </div>
                   </div>
                  

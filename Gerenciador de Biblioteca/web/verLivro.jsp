@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                     <img src="<%=liv.getImagem()%>" height="190" width="190"/>
+                     <img src="<%=liv.getImagem()%>" class="img-responsive" height="200" width="200"/>
                 </div> 
               <!-- <div class="form-group">
                     <img src= img/livros.png height='190px' width='190px'/>

@@ -29,15 +29,15 @@
 
         <!--CSS do index.jsp -->
         <link href="css/livros.css" rel="stylesheet">
-         <!-- Menu -->
-          <%@include file="menu.jsp" %>
+        <!-- Menu -->
+        <%@include file="menu.jsp" %>
 
     </head>
     <body>
         <!-- Cabeçalho da pagina com o menu, logo e nome -->
         <header id="cabecalivros">    
 
-         
+
 
             <!-- logo e titulo -->
             <div class="row" id="tituloLivros">
@@ -89,9 +89,7 @@
 
             </div>
 
-            <%                
-            
-                LivroDAO livdao = new LivroDAO();
+            <%                LivroDAO livdao = new LivroDAO();
                 List<Livro> livro = livdao.getLista();
                 String palavra = request.getParameter("txtpesquisa");
                 if (palavra == null) {
@@ -100,40 +98,51 @@
                     String tipo = request.getParameter("slcTipoPesquisa");
                     livro = livdao.getListaLike(palavra, tipo);
                 }
+
+                int gamb = 0;
+                String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
+                sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
+
+                int cor = 0;
+                for (Livro liv : livro) {
+
+                    if (gamb == 0) {
+
+
             %>
             <div class="row" >
-               <div class="col-xs-10 col-xs-offset-1">
-                    
-                            <%
-                                String sDestaque = "onMouseOver=\"this.style.backgroundColor='#ECECFF'; this.style.cursor='hand';\"";
-                                sDestaque += "onMouseOut=\"this.style.backgroundColor='';\"";
+                <div class="col-xs-10 col-xs-offset-1">
 
-                                int cor = 0;
-                                for (Livro liv : livro) {
-                                    String sCor = "cor" + (cor % 2);
-                                    cor++;
-
-                                    // Fazer da linha da tabela, um link para exibição:
-                                    //out.print("");
-
-                                   // out.print("<tr id='" + sCor + "' " + sDestaque + ">");
-                          
-                                    //out.print("<td>" + liv.getTituloLivro() + "</td>");
-                                    //out.print("<td>" + "<img src='capa" + liv.getCodLivro() + ".jpg'/>" + "</td>");
-                                    //out.print("<td>" + "<img src='capa " + liv.getCodLivro() + ".jpg'height='40px' width='40px' align='left' />" + "</td>");
-                                    //out.print("<td>" + "<img src='newimage.jpg' "+ liv.getImagem()+ "/>" + "</td>");
-                                    out.print("<div class='col-xs-3'>");
-                                    //out.print("<img src='img/livros.png' height='90px' width='90px'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
-                                    out.print("<a class='capa' href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "'><img class='img-responsive' src='"+liv.getImagem()+"' height='150' width='150'/> <br/> <span class='col-xs-12 nomecapa'>"  + liv.getTituloLivro() + "</span></a>");//<img src='"+liv.getImagem()+"' height='150' width='150'/><a clas href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "'>" + liv.getTituloLivro() + "</a>
-                                    out.print("</div>");
-                                    
-                                    
-                                }
-                            %>
+                    <%                                        
+                            }
                             
-                    
-                </div>
-            </div>
+                            String sCor = "cor" + (cor % 2);
+                            cor++;
+
+                            // Fazer da linha da tabela, um link para exibição:
+                            //out.print("");
+                           // out.print("<tr id='" + sCor + "' " + sDestaque + ">");
+                            //out.print("<td>" + liv.getTituloLivro() + "</td>");
+                            //out.print("<td>" + "<img src='capa" + liv.getCodLivro() + ".jpg'/>" + "</td>");
+                            //out.print("<td>" + "<img src='capa " + liv.getCodLivro() + ".jpg'height='40px' width='40px' align='left' />" + "</td>");
+                            //out.print("<td>" + "<img src='newimage.jpg' "+ liv.getImagem()+ "/>" + "</td>");
+                            out.print("<div class='col-xs-3 esp'>");
+                            //out.print("<img src='img/livros.png' height='90px' width='90px'/><a href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "&TituloLivro=" + liv.getTituloLivro() + "'>" + liv.getTituloLivro() + "</a>");
+                            out.print("<a class='capa' href='verLivro.jsp?CodLivro=" + liv.getCodLivro() + "'><img class='img-responsive' src='" + liv.getImagem() + "' height='150' width='150'/> <br/> <span class='col-xs-7 nomecapa'>" + liv.getTituloLivro() + "</span></a>");//<img src='"+liv.getImagem()+"' height='150' width='150'/><a clas href='verLivro.jsp?CodLivro=" +liv.getCodLivro() + "'>" + liv.getTituloLivro() + "</a>
+                            out.print("</div>");
+                            gamb++;
+                            if (gamb == 4) {
+                            out.print("</div>");
+                            out.print("</div>");
+                            gamb = 0;
+                            }
+                            
+                            
+
+                        }
+                    %>
+
+
 
 
         </article>

@@ -50,7 +50,7 @@ public class FaleConoscoServlet extends HttpServlet {
                
 
                 fcDAO.inserir(fc);
-                pagina += "?msg=Cadastrado com sucesso!";
+                pagina += "?msg=Enviado com sucesso!";
                 request.getRequestDispatcher(pagina).forward(request, response);
             
         } catch (Exception ex) {
