@@ -258,7 +258,7 @@ public class LivroDAO {
 
     public List<Livro> getListaLike(String palavra, String tipo) throws SQLException, ClassNotFoundException {
         cnn = c.getConexao();
-        ps = cnn.prepareStatement("select * from Livro where AVARIA = 0 AND " + tipo + " LIKE ?");
+        ps = cnn.prepareStatement("select * from Livro where AVARIA = 0 AND " + tipo + " LIKE ? and Avaria = 0 and Emprestado = 0");
         ps.setString(1, '%' + palavra + '%');
         ResultSet rs = ps.executeQuery();
         List<Livro> Liv = new ArrayList<Livro>();

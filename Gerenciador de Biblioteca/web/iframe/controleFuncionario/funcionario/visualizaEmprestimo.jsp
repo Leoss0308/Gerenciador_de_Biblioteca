@@ -25,22 +25,22 @@
         <![endif]-->
 
         <style>
-             body{
-            background: url(../../../img/fundoTabela.jpg) no-repeat center top fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            /*overflow: hidden;*/
-        }   
-        
-        td {
-            white-space: nowrap;
-        }
-        
-        th {
-            white-space: nowrap;
-        }   
+            body{
+                background: url(../../../img/fundoTabela.jpg) no-repeat center top fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                /*overflow: hidden;*/
+            }   
+
+            td {
+                white-space: nowrap;
+            }
+
+            th {
+                white-space: nowrap;
+            }   
         </style>
 
     </head>
@@ -84,18 +84,19 @@
 
                             out.print("<td>" + ItenE.getCodLivro() + "</td>");
 
-                            // Controle para manutenção: Efetiva devolução do Emprestimo, colocando a data de devolução do livro
-                            out.print("<td id='cmd'><a href='../funcionario/devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../../img/confirmar.png' title='Livro Devolvido' /></a></td>");
+                            if (Emp.getDataDevolucao()==null) {
 
+                                // Controle para manutenção: Efetiva devolução do Emprestimo, colocando a data de devolução do livro
+                                out.print("<td id='cmd'><a href='../funcionario/devolucaoEmprestimo.jsp?codEmprestimo=" + Emp.getCodEmprestimo() + "'><img src='../../../img/confirmar.png' title='Livro Devolvido' /></a></td>");
+                            }
                         }
 
-                       
                     }
                 %>
             </table>
         </div>
 
-            
+
 
 
 

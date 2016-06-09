@@ -53,7 +53,7 @@ public class Reserva {
      * @param dataReseva the dataReseva to set
      */
     public void setDataReseva(Date dataReseva) {
-        this.dataReseva = new Date();
+        this.dataReseva = dataReseva;
     }
   
     public boolean inserirReserva() {

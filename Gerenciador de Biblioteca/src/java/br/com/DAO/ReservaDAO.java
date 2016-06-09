@@ -45,8 +45,7 @@ public class ReservaDAO {
     public boolean cancelarReserva(int Reser) throws Exception {
         try {
             cnn = c.getConexao();
-            ps = cnn.prepareStatement(
-                    "DELETE from Reserva where Cod_Reserva=?");
+            ps = cnn.prepareStatement("DELETE from Reserva where Cod_Reserva=?");
             ps.setInt(1, Reser);
             ps.executeUpdate();
             ps.close();
@@ -107,11 +106,11 @@ public class ReservaDAO {
         Reserva CodReser = new Reserva();
         if (rs.next()) {
             // Criando o objeto e setando valores:
-            CodReser.setCodClie(rs.getInt("Cod_Cliente"));
+            CodReser.setCodReserva(rs.getInt("Cod_Reserva"));
         }
         rs.close();
         ps.close();
-        return CodReser.getCodClie();
+        return CodReser.getCodReserva();
     }
     
     //verifica quantas reservas o cliente tem
@@ -120,15 +119,14 @@ public class ReservaDAO {
         ps = cnn.prepareStatement("SELECT COUNT(*) FROM reserva WHERE COD_CLIENTE = ?");
         ps.setInt(1, CodClie);
         ResultSet rs = ps.executeQuery();
-
-        Reserva CodReser = new Reserva();
+        int qtdr = 0;
         if (rs.next()) {
             // Criando o objeto e setando valores:
-            CodReser.setCodClie(rs.getInt("Cod_Cliente"));
+            qtdr = (rs.getInt("COUNT(*)"));
         }
         rs.close();
         ps.close();
-        return CodReser.getCodClie();
+        return qtdr;
     }
     
     

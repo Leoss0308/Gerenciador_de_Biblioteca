@@ -48,8 +48,7 @@ public class EmprestimoDAO {
     public boolean devolucaoEmprestimo(int Emp) throws Exception {
         try {
             cnn = c.getConexao();
-            ps = cnn.prepareStatement(
-                    "UPDATE Emprestimo SET Data_Entrega = NOW() where Cod_Emprestimo=?");
+            ps = cnn.prepareStatement("UPDATE Emprestimo SET Data_Entrega = NOW() where Cod_Emprestimo=?");
             ps.setInt(1, Emp);
             ps.executeUpdate();
             ps.close();

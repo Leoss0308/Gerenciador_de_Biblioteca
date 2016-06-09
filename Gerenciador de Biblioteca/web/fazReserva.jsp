@@ -25,7 +25,7 @@
             
             int qtd = reservadao.getQTDReser(Integer.parseInt(String.valueOf(session.getAttribute("cod"))));
             
-            if(qtd == 3){
+            if(qtd >= 3){
                 
                 out.println("Você já possui a Quantidade Maxima de Livros Reservados!");
                 out.close();

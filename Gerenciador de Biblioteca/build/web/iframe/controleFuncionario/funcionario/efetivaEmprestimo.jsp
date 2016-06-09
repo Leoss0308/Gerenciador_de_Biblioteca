@@ -7,7 +7,7 @@
 <%@page import="br.com.Modelagem.Emprestimo"%>
 <%@page import="br.com.Modelagem.Itens_Emprestimo"%>
 <html>
-    <%@page import="br.com.DAO.EmprestimoDAO, br.com.DAO.ItemEmprestimoDAO, br.com.DAO.LivroDAO"%>
+    <%@page import="br.com.DAO.EmprestimoDAO, br.com.DAO.ItemEmprestimoDAO, br.com.DAO.LivroDAO, br.com.DAO.ReservaDAO, br.com.DAO.ItemReservaDAO"%>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
@@ -53,6 +53,15 @@
             ItemEmp.setCodLivro(codLivro);
             
             boolean ress = itemdao.inserirItemEmprestimo(ItemEmp);
+            //deletar reserva
+            
+            ItemReservaDAO itensDAO = new ItemReservaDAO();
+            res = itensDAO.cancelarItemReserva(codReserva);
+            //deletar os dados da tabela reserva
+            // Instanciar DAO para CRUD:
+            ReservaDAO reservDAO = new ReservaDAO();
+            // Inserir (enviando objeto que coletou dados pelo Java Beans:
+            res = reservDAO.cancelarReserva(codReserva);
             
             if (!res) {
                 out.println("Falha no Emprestimo do Livro!");
